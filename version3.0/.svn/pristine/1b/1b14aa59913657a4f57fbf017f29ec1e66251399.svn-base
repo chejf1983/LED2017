@@ -1,0 +1,162 @@
+﻿using LED2017.Device.IDevice;
+using System;
+using System.Threading;
+using LED2017.DevControl.IDevControl;
+
+namespace LED2017.DevControl.NDevControl
+{
+    public class DataCollector : LED2017.DevControl.IDevControl.IDataCollector
+    {
+        /// <summary>
+        /// 所属控制器
+        /// </summary>
+        private DevControl.NDevControl.SPDevControl spdevcontrol;
+
+        /// <summary>
+        /// 采集数据事件
+        /// </summary>
+        public event ReceiveData CollectDataEvent;
+        private bool isSustainedStart = false;
+        /// <summary>
+        /// 采样间隔，默认100ms
+        /// </summary>
+        private int timelag = 100;
+
+        /// <summary>
+        /// 连续采集是否开始
+        /// </summary>
+        /// <returns></returns>
+        bool IDataCollector.IsSustainedCollectStart
+        {
+            get
+            {
+                return this.isSustainedStart;
+            }
+        }
+        
+        /// <summary>
+        /// 设置采样间隔
+        /// </summary>
+        public int SustainTimeLag
+        {
+            get
+            {
+                return this.timelag;
+            }
+
+            set
+            {
+                if(value < 10)
+                {
+                    value = 10;
+                }
+                this.timelag = value;
+            }
+        }
+
+        public DataCollector(SPDevControl spdevcontrol)
+        {
+            this.spdevcontrol = spdevcontrol;
+        }
+
+        /// <summary>
+        /// 单次采集
+        /// </summary>
+        public void OneTimeCollect()
+        {
+            //如果连续采样开始，不采集
+            if (this.isSustainedStart)
+            {
+                return;
+            }
+            this.CollectDataFromDevice();
+        }
+
+
+        /// <summary>
+        /// 开始连续采集
+        /// </summary>
+        public void SustainedCollect()
+        {
+            lock (this)
+            {
+                //如果连续采样开始，不采集
+                if (this.isSustainedStart)
+                {
+                    return;
+                }
+
+                this.spdevcontrol.SetControlState(ControlState.COLLECTING);
+                ///启动新线程
+                new Thread(new ThreadStart(delegate
+                {
+                    int timeindex = 0;
+                    while (this.isSustainedStart)
+                    {
+                        try
+                        {
+                            if (timeindex++ >= this.timelag / 10)
+                            {
+                                ///从设备采集数据，并上报
+                                this.CollectDataFromDevice();
+
+                                timeindex = 0;
+                            }
+                            else
+                            {
+                                ///采样间隔
+                                Thread.Sleep(10);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            ///出现异常，停止采集
+                            this.StopSustainedCollect();
+                            ///通过控制器上报异常
+                            this.spdevcontrol.ReportException(ex.ToString());
+                            ///跳出循环
+                            break;
+                        }
+                    }
+                })).Start();
+                this.isSustainedStart = true;
+            }
+        }
+
+        /// <summary>
+        /// 停止连续采集
+        /// </summary>
+        public void StopSustainedCollect()
+        {
+            lock (this)
+            {
+                this.isSustainedStart = false;
+                this.spdevcontrol.SetControlState(ControlState.CONNECT);
+            }
+        }
+        
+        /// <summary>
+        /// 从设备中获取数据
+        /// </summary>
+        private void CollectDataFromDevice()
+        {
+            ///从设备中心获取数据
+            IDevice dev = this.spdevcontrol.devcenter.GetDevice();
+
+
+            Device.Data.SPData data = dev.GetSPData();
+
+            ///如果有接收数据者，发送数据结果
+            if (this.CollectDataEvent != null)
+            {
+                this.CollectDataEvent(data);
+            }
+
+        }
+
+        public void SetSustainedTimeLag(int timelag)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

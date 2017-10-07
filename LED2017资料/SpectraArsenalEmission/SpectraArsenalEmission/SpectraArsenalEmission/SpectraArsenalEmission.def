@@ -1,0 +1,14 @@
+; SpectraArsenalEmission.def : 声明 DLL 的模块参数。
+
+LIBRARY
+
+EXPORTS
+    ; 此处可以是显式导出
+	JK_Emission_Close				@1
+	JK_Emission_Init				@2
+	JK_Emission_DarkStorage			@3
+	JK_Emission_GetData				@4
+	JK_Emission_Calib				@5
+	JK_ScanStartAsyncSoftTrigger	@6
+	JK_GetSpectumAsyncSoftTrigger	@7
+	JK_Emission_CalcDxy				@8

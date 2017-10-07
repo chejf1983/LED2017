@@ -1,0 +1,32 @@
+Set
+MODE           :HAAS-1200_V1_USB
+SN.            :M118193BM1341117
+Dark           :0
+OverK          :0.87
+WLK            :0.10
+WL             :350-1000
+IntTime        :0.10-10000
+BIN MODE       :2
+CCD MODE       :128
+EDITION        :V3
+BAUDRATE       :115200
+CCD NUM        :4 2060
+SetWLP         :700 nm
+
+
+//MODE           :光谱仪类型
+//SN.            :仪器编号
+//Dark           :光谱仪大多数情况下的暗电流,一般设为0,(STC4000有一段时间是20000)
+//OverK          :溢出判定(满AD的比例)
+//WLK            :波长校正时用
+//WL             :波长范围
+//IntTime        :积分时间可设定范围(ms)
+//BIN MODE       :2或者3，高中低
+//CCD MODE       :64或者128
+//EDITION        :版本号
+
+
+//光谱仪类型　STC3000_V2
+//光谱仪类型　STC3000_V3_USB
+//光谱仪类型　STC3000_V3_RS232
+//光谱仪类型　HAAS-1200_V1_USB

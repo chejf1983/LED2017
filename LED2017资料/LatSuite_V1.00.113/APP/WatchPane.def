@@ -1,0 +1,44 @@
+TemperatureControl Numer:16
+Area Number:12
+TemperatureControlName:温控1区(℃)
+TemperatureControlName:温控2区(℃)
+TemperatureControlName:温控3区(℃)
+TemperatureControlName:温控4区(℃)
+TemperatureControlName:温控5区(℃)
+TemperatureControlName:温控6区(℃)
+TemperatureControlName:温控7区(℃)
+TemperatureControlName:温控8区(℃)
+TemperatureControlName:温控9区(℃)
+TemperatureControlName:温控10区(℃)
+TemperatureControlName:温控11区(℃)
+TemperatureControlName:温控12区(℃)
+TemperatureControlName:温控13区(℃)
+TemperatureControlName:温控14区(℃)
+TemperatureControlName:温控15区(℃)
+TemperatureControlName:温控16区(℃)
+AreaName:额定区1A
+AreaName:额定区1B
+AreaName:额定区1C
+AreaName:额定区1D&&开关区1F
+AreaName:高压区1E
+AreaName:低压区1G
+AreaName:额定区2B
+AreaName:额定区2C
+AreaName:额定区2D
+AreaName:额定区2E
+AreaName:额定区2F
+AreaName:额定区1H
+USE Area2:1
+Area2 Number:7
+AreaName2:额定区2A
+AreaName2:额定区2B
+AreaName2:高温区2C&&额定区2F
+AreaName2:综合试验区2B&&2D
+AreaName2:高压区2C
+AreaName2:低压区2E
+AreaName2:低压区2d
+-1, -1
+
+
+
+

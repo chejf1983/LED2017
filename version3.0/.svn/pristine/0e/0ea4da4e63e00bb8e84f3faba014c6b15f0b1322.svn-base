@@ -1,0 +1,47 @@
+﻿using LED2017.Device.Data;
+using LED2017.SPDevLab.LEDLab.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LED2017.SPDevLab.LEDLab
+{
+    public class CIEAnalyzer
+    {
+        private ColorPar GetColorData(SPData spdata)
+        {
+            ColorPar color = new ColorPar();
+
+            Random r = new Random();
+
+            color.C = r.Next(0, 100);
+            color.Ra = r.Next(0, 100);
+            color.Ld = r.Next(0, 100);
+            color.Lp = r.Next(0, 100);
+            color.Lav = r.Next(0, 100);
+            color.HW = r.Next(0, 100);
+            color.GR = r.Next(0, 100);
+            color.RR = r.Next(0, 100);
+            color.BR = r.Next(0, 100);
+            color.CCT = r.Next(0, 100);
+            color.CDI = r.Next(0, 100);
+            color.Pur = r.Next(0, 100);
+            color.Ph = r.Next(0, 100);
+            color.x1931 = (float)r.Next(0, 80) / 100;
+            color.y1931 = (float)r.Next(0, 80) / 100;
+
+            for (int i = 0; i < color.Ri.Length; i++){
+                color.Ri[i] = r.Next(0, 100);
+            }
+
+            return color;
+        }
+
+        public CIEData BuildCIEData(SPData data)
+        {
+            return new CIEData(this.GetColorData(data), data);
+        }        
+    }
+}

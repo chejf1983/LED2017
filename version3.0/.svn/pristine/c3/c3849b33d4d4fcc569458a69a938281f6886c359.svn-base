@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LED2017.Device
+{
+    public class DeviceSearch
+    {
+        public static IDevice.IDevice CreateTestDevice()
+        {
+            return new TestDevice.TestDev();
+        }
+    }
+}

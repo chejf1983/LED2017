@@ -1,0 +1,9 @@
+﻿生成启动时间为 2014/12/25 10:35:10。
+     1>项目“E:\work\GCS-300\SpectraArsenalEmission\SpectraArsenalEmission\SpectraArsenalEmission.vcxproj”在节点 2 上(build 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“E:\work\GCS-300\SpectraArsenalEmission\Debug\”。
+       InitializeBuildStatus:
+         正在创建“Debug\SpectraArsenalEmission.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\SpectraArsenalEmission.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp

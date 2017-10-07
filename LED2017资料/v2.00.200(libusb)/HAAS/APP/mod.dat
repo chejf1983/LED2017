@@ -1,0 +1,37 @@
+POWER MODIFIC:OFF
+FLUX  MODIFIC:OFF
+FLUX GROUP:OFF
+SELF MODEK:ON
+UseHLK:OFF
+FLUX_PL_MODIFIC:OFF
+Level:1
+FluxDec:0
+TMPDec:0
+CRI:0
+TR80_or_90:0
+Use_FluxLamp_SelfCal:0
+OpenColorCorrectXY:0
+OpenMultiCalSpectrum:0
+UseExTestBox:0
+OpenWaitLamp:0
+OpenColorCorrect:0
+ExDtr:0
+CorrectXY_mode1:0
+CorrectXY_mode2:0
+
+//说明:
+POWER MODIFIC:OFF 关闭电参数修改功能
+FLUX  MODIFIC:OFF 关闭光通量修改功能
+FLUX GROUP:OFF    关闭光通量多组功能
+SELF MODEK:OFF    关闭自吸收系数功能
+UseHLK:OFF        关闭高低灵敏度互校功能
+FLUX_PL_MODIFIC:ON光谱通道多组光通量功能
+Level:1		  新方法分级功能
+FluxDec:0	  光度探头有无
+TMPDec:0	  温度探头有无
+CRI:0		  显示指数计算RA'
+TR80_or_90:1	  反射率装置80:0 90:1
+Use_FluxLamp_SelfCal: 光通量灯与色温灯分开定标
+OpenMultiCalSpectrum: 多组光谱定标，对LT－300A可能用。
+CorrectXY_mode1:1 快速 色校正开
+CorrectXY_mode2:0 精确 色校正关

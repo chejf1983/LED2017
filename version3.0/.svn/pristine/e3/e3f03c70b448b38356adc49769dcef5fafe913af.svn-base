@@ -1,0 +1,20 @@
+﻿
+namespace LED2017.DevControl.IDevControl
+{
+    public delegate void ReceiveData(Device.Data.SPData data);
+
+    public interface IDataCollector
+    {
+        event ReceiveData CollectDataEvent;
+
+        void OneTimeCollect();
+        
+        void SustainedCollect();
+
+        void StopSustainedCollect();
+
+        bool IsSustainedCollectStart { get; }
+
+        int SustainTimeLag { get; set; }
+    }
+}

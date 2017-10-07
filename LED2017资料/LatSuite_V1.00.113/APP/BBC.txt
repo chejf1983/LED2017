@@ -1,0 +1,18 @@
+
+	float x11[320],y11[320],xp[220],yp[220];
+
+	// Black Body Curve
+	if((fp=fopen(strPath+"colors.xyz","rb"))==NULL)
+		return FALSE;
+
+	for(i=0;i<320;i++)
+	{
+		fread(&x11[i],sizeof(float),1,fp);
+		fread(&y11[i],sizeof(float),1,fp);
+	}
+	for(i=0;i<220;i++)
+	{
+		fread(&xp[i],sizeof(float),1,fp);
+		fread(&yp[i],sizeof(float),1,fp);
+	}
+	fclose(fp);

@@ -1,0 +1,280 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GCSDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\GCSDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 GCSDemo"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "GCSDemo 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2014",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_GCSDEMO_DIALOG DIALOGEX 0, 0, 596, 333
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GCSDemo"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,7,7,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出",IDCANCEL,501,302,82,25
+    PUSHBUTTON      "初始化",IDC_BUTTON_INIT,353,7,82,25
+    PUSHBUTTON      "校零",IDC_BUTTON_INIT_DARK,353,36,82,25
+    PUSHBUTTON      "单次测试",IDC_BUTTON_INIT_TEST,353,65,82,25
+    PUSHBUTTON      "定标",IDC_BUTTON_CALC,501,265,82,25
+    EDITTEXT        IDC_EDIT1,13,5,335,148,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "积分时间(0.1ms-60s):",IDC_STATIC,454,23,83,8
+    EDITTEXT        IDC_EDIT2,541,21,40,14,ES_AUTOHSCROLL
+    LTEXT           "平均次数(1-100):",IDC_STATIC,454,41,83,8
+    EDITTEXT        IDC_EDIT3,541,38,40,14,ES_AUTOHSCROLL
+    LTEXT           "标准灯色温(K):",IDC_STATIC,461,234,73,8
+    EDITTEXT        IDC_EDIT4,536,232,40,14,ES_AUTOHSCROLL
+    LTEXT           "标准灯光通量(lm):",IDC_STATIC,461,252,73,8
+    EDITTEXT        IDC_EDIT5,537,250,40,14,ES_AUTOHSCROLL
+    LTEXT           "滤波宽度(1-10):",IDC_STATIC,454,59,83,8
+    EDITTEXT        IDC_EDIT6,541,55,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "关闭光谱仪",IDC_BUTTON_INIT2,407,304,82,25
+    CONTROL         "",IDC_NTGRAPHCTRL,
+                    "{C9FE01C2-2746-479B-96AB-E0BE9931B018}",WS_TABSTOP,13,
+                    159,334,167
+    CONTROL         "使用触发模式",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,469,149,64,10
+    GROUPBOX        "触发",IDC_STATIC,444,139,144,67
+    LTEXT           "触发模式选择:",IDC_STATIC,471,170,70,8
+    COMBOBOX        IDC_COMBO1,464,185,98,130,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "参数设置",IDC_STATIC,444,3,144,89
+    GROUPBOX        "标准灯参数",IDC_STATIC,444,216,144,84
+    PUSHBUTTON      "自动积分",IDC_BUTTON_AUTO,546,124,19,6,NOT WS_VISIBLE
+    LTEXT           "预测积分时间:",IDC_STATIC,546,122,19,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT7,546,118,19,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "最大积分时间:",IDC_STATIC,546,122,19,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT8,546,118,19,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "3晶LED校零",IDC_BUTTON1,353,176,82,25
+    PUSHBUTTON      "3晶LED测试",IDC_BUTTON2,353,206,82,25
+    PUSHBUTTON      "连续测试",IDC_BUTTON3,353,107,82,25
+    PUSHBUTTON      "停 止",IDC_BUTTON4,353,136,82,25,WS_DISABLED
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "GCSDemo Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "GCSDemo\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2014\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "GCSDemo.EXE\0"
+            VALUE "ProductName", "GCSDemo 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_GCSDEMO_DIALOG DLGINIT
+BEGIN
+    IDC_NTGRAPHCTRL, 0x376, 371, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x33c8, 0x0000, 0x19f1, 0x0000, 0x00c2, 
+0x0000, 0x2003, 0x2020, 0x0001, 0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 
+0x9e7d, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0x0000, 0x8080, 
+0x0080, 0x0029, 0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0xffff, 0x00ff, 0x2504, 0x312e, 0x0466, 0x2e25, 
+0x6631, 0x0000, 0x0000, 0x0000, 0x0101, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x4509, 0x656c, 0x656d, 
+0x746e, 0x302d, 0x0000, 0x0000, 0xff00, 0xffff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0001, 0x5203, 0x0be3, 
+0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x0001, 0x0000, 0x0190, 
+0x7cdc, 0x0001, 0x4d0d, 0x2053, 0x6153, 0x736e, 0x5320, 0x7265, 0x6669, 
+0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 
+0x0000, 0xbc00, 0x5802, 0x020f, 0x0d00, 0x534d, 0x5320, 0x6e61, 0x2073, 
+0x6553, 0x6972, 0x0066, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 
+0x4b00, 0x51b8, 0x0001, 0x0000, 0x02bc, 0x4244, 0x0001, 0x4d0d, 0x2053, 
+0x6153, 0x736e, 0x5320, 0x7265, 0x6669, 0x0300, 0xe352, 0x910b, 0xce8f, 
+0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 0x0000, 0x9000, 0x4401, 0x0142, 
+0x0d00, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x0066, 0x5204, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x746c, 0x0000, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    IDC_COMBO1, 0x403, 13, 0
+0xedc8, 0xfebc, 0xaccd, 0xbdb2, 0xa5b4, 0xa2b7, "\000" 
+    IDC_COMBO1, 0x403, 13, 0
+0xedc8, 0xfebc, 0xecd2, 0xbdb2, 0xa5b4, 0xa2b7, "\000" 
+    IDC_COMBO1, 0x403, 10, 0
+0xa5b4, 0xa2b7, 0xa3c4, 0xbdca, 0x0033, 
+    IDC_COMBO1, 0x403, 11, 0
+0xcfc9, 0xfdc9, 0xd8d1, 0xa5b4, 0xa2b7, "\000" 
+    IDC_COMBO1, 0x403, 11, 0
+0xc2cf, 0xb5bd, 0xd8d1, 0xa5b4, 0xa2b7, "\000" 
+    IDC_COMBO1, 0x403, 11, 0
+0xdfb8, 0xe7b5, 0xbdc6, 0xa5b4, 0xa2b7, "\000" 
+    IDC_COMBO1, 0x403, 11, 0
+0xcdb5, 0xe7b5, 0xbdc6, 0xa5b4, 0xa2b7, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 GCSDemo(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\GCSDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

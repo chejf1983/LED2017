@@ -1,0 +1,82 @@
+﻿namespace TestWindows
+{
+    partial class SPCurve
+    {
+        /// <summary> 
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region 组件设计器生成的代码
+
+        /// <summary> 
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.button_CurveReset = new System.Windows.Forms.Button();
+            this.panel_cie = new System.Windows.Forms.Panel();
+            this.panel_curve = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // button_CurveReset
+            // 
+            this.button_CurveReset.Location = new System.Drawing.Point(3, 15);
+            this.button_CurveReset.Name = "button_CurveReset";
+            this.button_CurveReset.Size = new System.Drawing.Size(29, 23);
+            this.button_CurveReset.TabIndex = 2;
+            this.button_CurveReset.Text = "R";
+            this.button_CurveReset.UseVisualStyleBackColor = true;
+            this.button_CurveReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // panel_cie
+            // 
+            this.panel_cie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_cie.Location = new System.Drawing.Point(415, 44);
+            this.panel_cie.Name = "panel_cie";
+            this.panel_cie.Size = new System.Drawing.Size(339, 326);
+            this.panel_cie.TabIndex = 4;
+            // 
+            // panel_curve
+            // 
+            this.panel_curve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_curve.Location = new System.Drawing.Point(3, 44);
+            this.panel_curve.Name = "panel_curve";
+            this.panel_curve.Size = new System.Drawing.Size(406, 394);
+            this.panel_curve.TabIndex = 5;
+            // 
+            // SPCurve
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel_curve);
+            this.Controls.Add(this.panel_cie);
+            this.Controls.Add(this.button_CurveReset);
+            this.Name = "SPCurve";
+            this.Size = new System.Drawing.Size(757, 441);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Button button_CurveReset;
+        private System.Windows.Forms.Panel panel_cie;
+        private System.Windows.Forms.Panel panel_curve;
+    }
+}

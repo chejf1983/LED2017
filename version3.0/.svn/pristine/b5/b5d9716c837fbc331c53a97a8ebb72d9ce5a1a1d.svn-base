@@ -1,0 +1,22 @@
+﻿using LED2017.Device.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LED2017.SPDevLab.LEDLab.Data
+{
+    public class CIEData
+    {
+        public ColorPar color;
+        public SPData data;
+
+
+        public CIEData (ColorPar color, SPData data)
+        {
+            this.data = data;
+            this.color = color;
+        }
+    }
+}

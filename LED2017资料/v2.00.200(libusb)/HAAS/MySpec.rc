@@ -1,0 +1,2357 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\MySpec.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#include ""l.chs\\afxprint.rc""        // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\MySpec.ico"
+IDR_MYSPECTYPE          ICON    DISCARDABLE     "res\\MySpecDoc.ico"
+IDI_CIE                 ICON    DISCARDABLE     "res\\cie.ico"
+IDI_SDCM                ICON    DISCARDABLE     "res\\sdcm.ico"
+IDI_DATA                ICON    DISCARDABLE     "res\\data.ico"
+IDI_SPEC                ICON    DISCARDABLE     "res\\spec.ico"
+IDI_CURR_VS_L_1         ICON    DISCARDABLE     "res\\curr_vs_.ico"
+IDI_CURR_VS_L_2         ICON    DISCARDABLE     "res\\ico00001.ico"
+IDI_FLUX_CAL            ICON    DISCARDABLE     "res\\flux_cal.ico"
+IDI_SPECT_CAL_U         ICON    DISCARDABLE     "res\\ico00002.ico"
+IDI_SPECT_CAL           ICON    DISCARDABLE     "res\\spect_ca.ico"
+IDI_CIE_UV              ICON    DISCARDABLE     "res\\cie_uv1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_MATRIXLARGE         BITMAP  DISCARDABLE     "res\\matrixsetblue.bmp"
+IDB_MATRIXSMALL         BITMAP  DISCARDABLE     "res\\matrixsetsmallblue.bmp"
+IDB_MATRIXTINY          BITMAP  DISCARDABLE     "res\\matrixsettinyblue.bmp"
+IDB_SPLASH              BITMAP  DISCARDABLE     "Splsh16.bmp"
+IDB_SMALLICONS          BITMAP  DISCARDABLE     "res\\smallico.bmp"
+IDB_CIE1931             BITMAP  DISCARDABLE     "res\\cie1931.bmp"
+IDB_CIE1976             BITMAP  DISCARDABLE     "res\\cie1976.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE_AS
+    SEPARATOR
+    BUTTON      ID_TEST
+    SEPARATOR
+    BUTTON      ID_TEST_CON
+    BUTTON      ID_TEST_STOP
+    SEPARATOR
+    BUTTON      ID_DELETE
+    SEPARATOR
+    BUTTON      ID_DARK
+    SEPARATOR
+    BUTTON      ID_SPECTRUM_CAL
+    SEPARATOR
+    BUTTON      ID_ALL_SELE
+    SEPARATOR
+    BUTTON      ID_EXPORT_CSV
+    BUTTON      ID_EXPORT_SPEC_CAV
+    BUTTON      ID_FILE_PRINT_PREVIEW
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "新建(&N)\tCtrl+N",            ID_FILE_NEW
+        MENUITEM "打开(&O)...\tCtrl+O",         ID_FILE_OPEN
+        MENUITEM "另存为(&A)...",               ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "导出数据列表以&Excel 文件(*.xls)\tF7", ID_EXPORT_CSV
+        MENUITEM "导出光谱数据以Excel文件(&C)\tF9", ID_EXPORT_SPEC_CAV
+        MENUITEM "导出所有光谱数据...",         ID_EXPORT_ALL_SPEC
+        MENUITEM SEPARATOR
+        MENUITEM "打印(&P)...\tCtrl+P",         ID_FILE_PRINT
+        MENUITEM "打印预览(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "打印设置(&R)...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "最近文件",                    ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    ID_APP_EXIT
+    END
+    POPUP "操作(&M)"
+    BEGIN
+        MENUITEM "系统设置(&S)...",             ID_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "单次测量(&T)\tF3",            ID_TEST
+        MENUITEM "连续测量(&C)\tF4",            ID_TEST_CON
+        MENUITEM "停止连续测试(&P)\tF5",        ID_TEST_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "采样系统暗电流(&D)",          ID_DARK
+        MENUITEM SEPARATOR
+        MENUITEM "参数分级编辑(&L)...",         ID_EDIT_LEVEL
+        MENUITEM "白光色品分类(&W)...",         ID_EDIT_WHITE
+        MENUITEM SEPARATOR
+        MENUITEM "调试(&B)...",                 ID_DEBUG
+    END
+    POPUP "定标(&C)"
+    BEGIN
+        MENUITEM "光谱定标(&P)...\tF10",        ID_SPECTRUM_CAL
+        MENUITEM "波长校正校验(&K)...",         ID_WL_CHECK
+        MENUITEM SEPARATOR
+        MENUITEM "自吸收系数测试...",           ID_SELF_PH
+    END
+    POPUP "查看(&V)"
+    BEGIN
+        MENUITEM "测试信息(I)...",              ID_TEST_INFO
+        MENUITEM SEPARATOR
+        MENUITEM "选项(&O)...",                 ID_OPTION
+        MENUITEM SEPARATOR
+        POPUP "色容差用标准色温 (&C)    "
+        BEGIN
+            MENUITEM "选择色温(&C)...",             ID_SELE_SDCM
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "工具栏(&T)",                  ID_VIEW_TOOLBAR
+        MENUITEM "状态栏(&S)",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 SpectraNexus(&A)...",    ID_APP_ABOUT
+    END
+END
+
+CG_IDR_POPUP_MY_SPEC_VIEW MENU DISCARDABLE 
+BEGIN
+    POPUP "_POPUP_"
+    BEGIN
+        MENUITEM "复制专用格式数据(&C)",        ID_EDIT_COPY_TXT_1
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_DELETE,              VIRTKEY, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F10,         ID_SPECTRUM_CAL,        VIRTKEY, NOINVERT
+    VK_F11,         ID_CAL_FLUX,            VIRTKEY, NOINVERT
+    VK_F12,         ID_SPECT_CAL_U,         VIRTKEY, NOINVERT
+    VK_F3,          ID_TEST,                VIRTKEY, NOINVERT
+    VK_F4,          ID_TEST_CON,            VIRTKEY, NOINVERT
+    VK_F5,          ID_TEST_STOP,           VIRTKEY, NOINVERT
+    VK_F6,          ID_BUTTON_TRIG,         VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_F7,          ID_EXPORT_CSV,          VIRTKEY, NOINVERT
+    VK_F8,          ID_EXPORT_ACCESS,       VIRTKEY, NOINVERT
+    VK_F9,          ID_EXPORT_SPEC_CAV,     VIRTKEY, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 312, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 SpectraNexus"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,12,20,20
+    LTEXT           "NAHON SpectraNexus系列测试与分析软件 ",IDC_STATIC,65,10,
+                    176,9,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2014 纳宏光电信息有限公司 (NAHON)",
+                    IDC_STATIC,65,44,222,9
+    DEFPUSHBUTTON   "确定(&O)",IDOK,251,15,50,22,WS_GROUP
+    LTEXT           "http://www.nahon.cn",IDC_EV,65,67,178,9
+    LTEXT           "",IDC_STATIC_NOTE,0,89,312,8,NOT WS_VISIBLE
+    LTEXT           "版本: V1.00.100_SpectraNexus",IDC_STATIC,65,25,181,9
+END
+
+CG_IDD_MYNOTEBAR DIALOG DISCARDABLE  0, 0, 272, 25
+STYLE DS_3DLOOK | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "状态:",IDC_STATIC,7,4,22,8
+    LTEXT           "正在测试请等待...",IDC_NOTE,33,4,229,8
+END
+
+IDD_WHITE DIALOGEX 0, 0, 436, 249
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "白光色品分类"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,0,235,6,14,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,356,230,68,14
+    LTEXT           "",IDC_DRAW,235,19,192,201,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "保存文件(&S)",IDC_W_SAVE,276,230,68,14
+    PUSHBUTTON      "添加(&A)",IDC_BUTTON_ADD,4,4,41,14
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DEL,51,4,41,14
+    EDITTEXT        IDC_EDIT_NAME,188,25,40,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_D,194,3,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "添加(&T)",IDC_BUTTON_ADD2,102,4,41,14
+    PUSHBUTTON      "删除(&L)",IDC_BUTTON_DEL2,150,4,41,14
+    LTEXT           "x:",IDC_STATIC,239,6,9,8
+    LTEXT           "y:",IDC_STATIC,299,4,9,8
+    EDITTEXT        IDC_EDIT_X,253,3,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_Y,315,3,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "判断(&C)",IDC_BUTTON_CHECK,375,3,50,14
+    LTEXT           "http://www.NAHON.cn",IDC_EV,59,232,100,9,0,
+                    WS_EX_TRANSPARENT
+    LTEXT           "Website:",IDC_STATIC,15,232,37,9
+    PUSHBUTTON      "选择分类文件(&O)",IDC_W_OPEN,196,230,68,14
+    CONTROL         "",IDC_MSFLEXGRID1,
+                    "{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,7,19,
+                    91,201
+    CONTROL         "",IDC_MSFLEXGRID2,
+                    "{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,99,
+                    19,135,201
+END
+
+IDD_PARA_SELE DIALOG DISCARDABLE  0, 0, 141, 68
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "参数"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,16,41,51,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,75,41,51,14
+    LTEXT           "请选择参数:",IDC_STATIC,11,12,52,8
+    COMBOBOX        IDC_COMBO_NAME,65,9,65,151,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_FAST_LEVEL DIALOG DISCARDABLE  0, 0, 222, 176
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "快速分级"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,84,150,50,14
+    PUSHBUTTON      "退出(&C)",IDCANCEL,143,150,50,14
+    LTEXT           "分级参数:",IDC_STATIC,91,23,45,8
+    EDITTEXT        IDC_EDIT_NAME,141,20,52,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "设置",IDC_STATIC,5,7,209,131
+    LTEXT           "该参数分级:",IDC_STATIC,91,45,45,8
+    EDITTEXT        IDC_EDIT_N,141,42,52,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "修改(&M)",IDC_BUTTON_MOD,143,117,50,14
+    LISTBOX         IDC_LIST,18,20,66,108,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "第一级最大:",IDC_STATIC_S2,91,89,45,8
+    EDITTEXT        IDC_EDIT_DATA2,141,86,52,14,ES_AUTOHSCROLL
+    LTEXT           "第一级最小:",IDC_STATIC_S1,91,67,45,8
+    EDITTEXT        IDC_EDIT_DATA1,141,64,52,14,ES_AUTOHSCROLL
+END
+
+IDD_OPTION1 DIALOG DISCARDABLE  0, 0, 290, 283
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "报告选项"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "打印选项",IDC_STATIC,8,7,273,148
+    LTEXT           "可以在打印预览时,把打印报告粘贴至Word软件中，制作成常用电子格式文件。",
+                    IDC_STATIC,215,225,76,32,NOT WS_VISIBLE
+    CONTROL         "打印单个选择的测试报告(&O)",IDC_RADIO_REPORT1,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,169,212,
+                    113,10
+    CONTROL         "打印所有数据以表格形式(&A)",IDC_RADIO_REPORT2,"Button",
+                    BS_AUTORADIOBUTTON | NOT WS_VISIBLE,169,224,115,10
+    CONTROL         "打印CIE1931色品图",IDC_RADIO_SHOW1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,19,53,107,10
+    CONTROL         "打印CIE1976色品图",IDC_RADIO_SHOW4,"Button",
+                    BS_AUTORADIOBUTTON,19,65,107,10
+    CONTROL         "打印色容差图",IDC_RADIO_SHOW2,"Button",
+                    BS_AUTORADIOBUTTON,19,77,107,10
+    CONTROL         "打印白光分级图",IDC_RADIO_SHOW3,"Button",
+                    BS_AUTORADIOBUTTON,19,89,107,10
+    GROUPBOX        "报告样式",IDC_STATIC,165,200,125,39,NOT WS_VISIBLE
+    LTEXT           "导出光谱数据波长间隔:",IDC_STATIC,20,179,109,8
+    COMBOBOX        IDC_COMBO_INTERVAL_WL,161,175,48,72,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "导出间隔",IDC_STATIC,8,165,273,32
+    CONTROL         "打印公司徽标(&G) ",IDC_CHECK_PRINT_LOGO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,23,76,10
+    COMBOBOX        IDC_COMBO_POS,97,21,45,59,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "修改公司徽标(&M)...",IDC_STATIC_LOGO,147,24,76,8
+    CONTROL         "打印第几页共几页(&D)",IDC_CHECK_PRINT_PAGE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,38,90,10
+    LTEXT           "打印报告标题:",IDC_STATIC,19,108,58,8
+    EDITTEXT        IDC_EDIT_PRINT_TITLE,81,105,192,14,ES_AUTOHSCROLL
+    CONTROL         "新版报告格式",IDC_RADIO_PRINT_G1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,142,66,60,10
+    CONTROL         "老版通用格式",IDC_RADIO_PRINT_G2,"Button",
+                    BS_AUTORADIOBUTTON,142,79,60,10
+    LTEXT           "打印报告格式选择:",IDC_STATIC,140,51,73,8
+    LTEXT           "打印公司名称:",IDC_STATIC,19,124,58,8
+    EDITTEXT        IDC_EDIT_PRINT_COMPANY,81,121,192,14,ES_AUTOHSCROLL
+    LTEXT           "打印公司地址:",IDC_STATIC,19,140,58,8
+    EDITTEXT        IDC_EDIT_PRINT_ADDR,81,137,192,14,ES_AUTOHSCROLL
+    CONTROL         "产品编号",IDC_RADIO_N_TYPE1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,64,210,49,10
+    CONTROL         "检验编号",IDC_RADIO_N_TYPE2,"Button",BS_AUTORADIOBUTTON,
+                    134,210,49,10
+    LTEXT           "编号:",IDC_STATIC,20,210,29,8
+    CONTROL         "打印审核人员",IDC_CHECK_PRINT_CHECKER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,236,64,10
+    EDITTEXT        IDC_EDIT_CHECKER,99,234,76,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NEW_T,18,259,208,14,ES_CENTER | ES_AUTOHSCROLL
+END
+
+IDD_OPTION2 DIALOG DISCARDABLE  0, 0, 282, 288
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "参数显示"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "参数显示",IDC_STATIC,10,7,266,195
+    CONTROL         "Ip",IDC_CHECK_IP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    140,78,24,10
+    CONTROL         "编号",IDC_CHECK_NOTE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,24,31,10
+    CONTROL         "x,y",IDC_CHECK_XY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    18,42,28,10
+    CONTROL         "u',v'",IDC_CHECK_UV,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,42,28,10
+    CONTROL         "色温",IDC_CHECK_TC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,140,42,31,10
+    CONTROL         "主波长",IDC_CHECK_LD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,196,42,38,10
+    CONTROL         "色纯度",IDC_CHECK_PUR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,196,60,38,10
+    CONTROL         "峰值波长",IDC_CHECK_LP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,60,45,10
+    CONTROL         "半波宽",IDC_CHECK_HW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,60,38,10
+    CONTROL         "红色比",IDC_CHECK_RR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,140,60,38,10
+    CONTROL         "显色指数Ra",IDC_CHECK_RA,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,78,53,10
+    CONTROL         "光度或辐射度",IDC_CHECK_PH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,196,78,64,10
+    CONTROL         "U",IDC_CHECK_VF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    84,24,24,10
+    CONTROL         "I",IDC_CHECK_IF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    140,24,24,10
+    CONTROL         "功率 P",IDC_CHECK_P,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,196,24,39,10
+    CONTROL         "等级(LEVEL)",IDC_CHECK_LEVEL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,96,71,10
+    CONTROL         "白光色品分类(WHITE)",IDC_CHECK_WHITE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,140,96,88,10
+    CONTROL         "紫外参数",IDC_CHECK_ZW,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,140,114,45,10
+    CONTROL         "测试信息",IDC_CHECK_INFO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,114,45,10
+    CONTROL         "R1-R15",IDC_CHECK_RO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,84,78,40,10
+    CONTROL         "白光LED荧光粉转换效率",IDC_CHECK_PHO_EFF,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,18,132,108,10
+    PUSHBUTTON      "设置荧光粉波段",IDC_BUTTON_PHO,151,129,76,14
+    CONTROL         "暗视觉光度及S/P(暗视觉/明视觉)",IDC_CHECK_PH_S_P,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,18,155,146,10
+    CONTROL         "打印 暗视觉光度及S/P(暗视觉/明视觉)",
+                    IDC_CHECK_PRINT_PH_,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,211,160,10
+    CONTROL         "色差dC",IDC_CHECK_DC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,17,175,39,10
+    CONTROL         "色校正选择",IDC_CHECK_COLOR_CORRECT_STR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,152,175,75,10
+END
+
+IDD_SELE_CT DIALOG DISCARDABLE  0, 0, 229, 213
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,161,162,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,161,181,50,14
+    LISTBOX         IDC_LIST,9,20,129,176,LBS_NOINTEGRALHEIGHT | 
+                    LBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "SDCM1:",IDC_STATIC,147,21,25,8
+    EDITTEXT        IDC_EDIT_SDCM1,174,15,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,201,15,11,14
+    LTEXT           "SDCM2:",IDC_STATIC,147,37,25,8
+    EDITTEXT        IDC_EDIT_SDCM2,174,31,30,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN5,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,201,31,11,14
+    LTEXT           "选择色容差用标准色温:",IDC_STATIC,9,8,104,8
+END
+
+IDD_DEBUG1 DIALOGEX 0, 0, 478, 411
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "调试<一>"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_DRAW,7,25,384,203,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "校零(&Z)",IDC_BUTTON_ZERO,406,127,56,14
+    PUSHBUTTON      "测试(&T)",IDC_BUTTON_TEST,406,145,56,14
+    PUSHBUTTON      "开始(&C)",IDC_BUTTON_START,406,160,56,14
+    PUSHBUTTON      "停止(&S)",IDC_BUTTON_STOP,406,174,56,14,WS_DISABLED
+    PUSHBUTTON      "保存数据(&S)",IDC_BUTTON_SAVE,406,190,56,14
+    DEFPUSHBUTTON   "退出(&E)",IDC_BUTTON_EXIT,406,206,56,14
+    PUSHBUTTON      "初调零位",IDC_BUTTON_ZERO_C,3,1,9,6,NOT WS_VISIBLE
+    CONTROL         "调试单根",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,275,28,8,8
+    LTEXT           "选择采样第",IDC_STATIC,0,4,8,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT1,8,0,8,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS | UDS_HOTTRACK | NOT 
+                    WS_VISIBLE,0,7,11,8
+    LTEXT           "采样曲线:",IDC_STATIC,7,11,41,8
+    LTEXT           "积分时间(ms):",IDC_STATIC,406,35,56,8
+    EDITTEXT        IDC_EDIT_INT_TIME,406,46,56,14,ES_AUTOHSCROLL
+    GROUPBOX        "设置",IDC_STATIC,399,21,72,72
+    LTEXT           "平均次数:",IDC_STATIC,406,64,56,8
+    EDITTEXT        IDC_EDIT_AVG_N,406,73,56,14,ES_AUTOHSCROLL
+    GROUPBOX        "操作",IDC_STATIC,399,113,72,112
+    CONTROL         "网格线(&L)",IDC_CHECK_LINE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,306,10,55,10
+    EDITTEXT        IDC_EDIT_PIX,83,7,30,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "像素点:",IDC_STATIC,50,11,31,8
+    EDITTEXT        IDC_EDIT_WL,159,7,30,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "波长(nm):",IDC_STATIC,118,11,39,8
+    EDITTEXT        IDC_EDIT_AD,221,7,41,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "AD值:",IDC_STATIC,198,11,22,8
+    CONTROL         "Spin1",IDC_SPIN_1,"msctls_updown32",UDS_ARROWKEYS | 
+                    UDS_HORZ,344,231,48,9
+    LTEXT           "游标线微调:",IDC_STATIC,294,232,46,8
+    CONTROL         "放大",IDC_CHECK_ZOOM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,233,28,10
+    EDITTEXT        IDC_EDIT_X1,85,230,22,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_X2,109,230,22,14,ES_AUTOHSCROLL
+    LTEXT           "像素范围:",IDC_STATIC_X12,44,233,35,8
+    PUSHBUTTON      "确定(&O)",IDC_BUTTON_OK,135,230,35,14,WS_DISABLED
+    LTEXT           "设置...",IDC_STATIC_SETUP,431,7,29,8
+    LTEXT           "行",IDC_STATIC,0,1,8,8,NOT WS_VISIBLE
+    GROUPBOX        "单根",IDC_STATIC,0,13,8,9,NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC_HALF,0,4,8,8,NOT WS_VISIBLE,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "",IDOK,0,0,9,6,NOT WS_VISIBLE
+    PUSHBUTTON      "读取数据",IDC_BUTTON1,366,3,50,14
+    CONTROL         "校正",IDC_CHECK_CRO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,175,233,31,10
+    PUSHBUTTON      "激光器测试",IDC_BUTTON_TEST_J,0,6,6,6,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO1,0,0,16,134,CBS_DROPDOWNLIST | NOT WS_VISIBLE | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "激光器选择:",IDC_STATIC,0,4,8,8,NOT WS_VISIBLE
+    PUSHBUTTON      "Button2",IDC_BUTTON2,0,6,6,6,NOT WS_VISIBLE
+    CONTROL         "显示半宽度",IDC_CHECK_HALF_WL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,23,283,53,10
+    CONTROL         "A光源",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,274,265,35,10
+    CONTROL         "LED",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,274,281,28,
+                    10
+    CTEXT           "",IDC_STATIC_LEVEL,315,263,107,32,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    GROUPBOX        "杂散光水平检验",IDC_STATIC,261,248,170,78
+    GROUPBOX        "半宽度检验",IDC_STATIC,6,248,242,78
+    LTEXT           "谱线位置(nm):",IDC_STATIC,22,264,53,8
+    EDITTEXT        IDC_EDIT_PX,79,262,46,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STATIC_WL_HF,173,259,60,19,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "确定(&O)",IDC_BUTTON_GET_HF,133,262,35,14
+    LTEXT           "",IDC_STATIC_BW,85,279,150,19,0,WS_EX_CLIENTEDGE
+    CONTROL         "取暗电流时，不动色盘",IDC_CHECK_NOT_USE_COLOR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,23,335,102,10
+    CONTROL         "百分法",IDC_RADIO_TYPE1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,23,304,38,10
+    CONTROL         "面积法",IDC_RADIO_TYPE2,"Button",BS_AUTORADIOBUTTON,116,
+                    304,38,10
+    EDITTEXT        IDC_EDIT_PER,66,303,21,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PER2,161,302,25,14,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,192,305,8,8
+    LTEXT           "%",IDC_STATIC,89,305,8,8
+    PUSHBUTTON      "开始",IDC_BUTTON_START2,338,351,35,14
+    PUSHBUTTON      "停止",IDC_BUTTON_STOP2,383,351,35,14,WS_DISABLED
+    GROUPBOX        "自动非线性",IDC_STATIC,143,327,286,73
+    EDITTEXT        IDC_EDIT_PIX_SELE,181,344,33,14,ES_AUTOHSCROLL
+    LTEXT           "像素:",IDC_STATIC,156,349,20,8
+    EDITTEXT        IDC_EDIT_INTTIME_2,159,379,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_INTTIME_1,203,379,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_INTTIME_INTERVAL,279,379,40,14,ES_AUTOHSCROLL
+    LTEXT           "积分时间范围与间隔(ms)",IDC_STATIC,159,366,112,8
+    LTEXT           "间隔:",IDC_STATIC,249,381,25,8
+    EDITTEXT        IDC_EDIT_PIX_SELE2,225,344,33,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_STEP_TYPE,331,379,48,102,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "初始化",IDC_BUTTON_INIT,409,99,50,14
+    CONTROL         "-Dark",IDC_CHECK_DARK_MOVE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,415,236,36,10
+END
+
+IDD_DEBUG2 DIALOGEX 0, 0, 442, 343
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "调试<二>"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "测试(&T))",IDC_BUTTON_TEST,240,166,44,14
+    CONTROL         "List1",IDC_LIST_WL,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,287,163,102,57
+    LTEXT           "",IDC_DRAW,5,16,255,144,0,WS_EX_CLIENTEDGE
+    COMBOBOX        IDC_COMBO_STA_WL,55,187,81,104,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "像素点:",IDC_STATIC,139,190,30,8
+    EDITTEXT        IDC_EDIT_PIX,172,187,38,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "添加(&A)==>",IDC_BUTTON_ADD,240,186,44,14
+    EDITTEXT        IDC_EDIT_COR,55,208,179,14,ES_AUTOHSCROLL | ES_READONLY,
+                    WS_EX_TRANSPARENT
+    LTEXT           "波长校正系数:",IDC_STATIC,7,211,54,8
+    LTEXT           "标准谱线:",IDC_STATIC,7,191,50,8
+    LTEXT           "积分时间(ms):",IDC_STATIC,7,169,56,8
+    EDITTEXT        IDC_EDIT_INT_TIME,55,166,81,14,ES_AUTOHSCROLL,
+                    WS_EX_TRANSPARENT
+    LTEXT           "平均次数:",IDC_STATIC,139,170,36,8
+    EDITTEXT        IDC_EDIT_AVG_N,172,165,38,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_DRAW2,264,16,165,144,0,WS_EX_CLIENTEDGE
+    CONTROL         "Spin1",IDC_SPIN_1,"msctls_updown32",UDS_ARROWKEYS | 
+                    UDS_HORZ,170,2,48,9
+    LTEXT           "游标线微调:",IDC_STATIC,124,3,46,8
+    PUSHBUTTON      "找到峰值",IDC_BUTTON_PEAK,280,1,45,14
+    PUSHBUTTON      "删除",IDC_BUTTON_DEL2,394,163,33,14
+    PUSHBUTTON      "计算",IDC_BUTTON_CALC,394,178,33,14
+    PUSHBUTTON      "打开",IDC_BUTTON_OPEN,394,193,33,14
+    PUSHBUTTON      "保存",IDC_BUTTON_SAVE,394,208,33,14
+    PUSHBUTTON      "替换Wavecor",IDC_BUTTON_SAVE_COR,240,208,44,14,
+                    WS_DISABLED
+    CONTROL         "峰值",IDC_RADIO_TYPE1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,334,3,31,10
+    CONTROL         "面积",IDC_RADIO_TYPE2,"Button",BS_AUTORADIOBUTTON,371,3,
+                    31,10
+    PUSHBUTTON      "读取数据",IDC_BUTTON1,5,1,50,14
+    EDITTEXT        IDC_EDIT_HALF,404,2,22,14,ES_AUTOHSCROLL
+    LTEXT           "%",IDC_STATIC,427,4,8,8
+    PUSHBUTTON      "保存数据(&S)",IDC_BUTTON_SAVE2,63,1,56,14
+    GROUPBOX        "定标时小AD处理 (重要数据)",IDC_STATIC,8,264,258,69
+    EDITTEXT        IDC_EDIT_SET_DO_WL,118,282,40,14,ES_AUTOHSCROLL
+    LTEXT           "最前与最后波长范围设置:",IDC_STATIC,19,286,96,8
+    LTEXT           "nm",IDC_STATIC,162,285,9,8
+    EDITTEXT        IDC_EDIT_SET_DO_LIMIT_AD,118,305,40,14,ES_AUTOHSCROLL
+    LTEXT           "AD值(减零位后)都小于:",IDC_STATIC,19,308,92,8
+    PUSHBUTTON      "确定",IDC_BUTTON_OK_SET,197,279,50,14
+    COMBOBOX        IDC_COMBO_SR_2_ANGLE,104,231,157,195,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "波长定标文件:",IDC_STATIC,46,234,57,8
+    PUSHBUTTON      "下载到仪器",IDC_BUTTON_LOAD,295,223,83,20
+END
+
+IDD_DEBUG3 DIALOG DISCARDABLE  0, 0, 410, 229
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "调试<三>"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "仪器编号:",IDC_STATIC,9,15,39,8
+    PUSHBUTTON      "改写",IDC_BUTTON_W_SN,172,10,30,14
+    EDITTEXT        IDC_EDIT_SN,53,11,115,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "读取",IDC_BUTTON_R_SN,172,44,30,14
+    EDITTEXT        IDC_EDIT_C1,53,67,115,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_C2,53,85,115,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_C3,53,103,115,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_C4,53,121,115,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "波长校正:",IDC_STATIC,9,70,39,8
+    PUSHBUTTON      "改写",IDC_BUTTON_W_COR,172,68,30,14
+    PUSHBUTTON      "读取",IDC_BUTTON_R_COR,172,85,30,14
+    LTEXT           "制冷控制:",IDC_STATIC,13,142,39,8
+    PUSHBUTTON      "开",IDC_BUTTON_S_ON,53,139,50,14
+    PUSHBUTTON      "关",IDC_BUTTON_S_OFF,118,139,50,14
+    COMBOBOX        IDC_COMBO_R_SN,53,43,116,97,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BUAD,53,27,116,97,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "波特率选择:",IDC_STATIC,11,31,39,8
+    LTEXT           "仪器编号:",IDC_STATIC,221,30,34,8
+    EDITTEXT        IDC_EDIT_HAAS_SN,258,26,123,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "修改",IDC_BUTTON_MOD_SN,296,108,70,21
+    GROUPBOX        "定标数据信息编辑",IDC_STATIC,212,7,185,135
+    LTEXT           "软件版本:",IDC_STATIC,221,49,34,8
+    EDITTEXT        IDC_EDIT_SOFT_VER,258,45,123,14,ES_AUTOHSCROLL
+    LTEXT           "EPROM:",IDC_STATIC,221,68,34,8
+    EDITTEXT        IDC_EDIT_EPROM,258,64,123,14,ES_AUTOHSCROLL
+    LTEXT           "Driver:",IDC_STATIC,221,87,34,8
+    EDITTEXT        IDC_EDIT_DRIVER,258,83,123,14,ES_AUTOHSCROLL
+END
+
+IDD_SPECTRUM_CAL DIALOGEX 0, 0, 470, 323
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "光谱定标"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,3,1,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,383,57,59,14
+    GROUPBOX        "定标设置",IDC_STATIC,10,7,292,93
+    LTEXT           "",IDC_DRAW,20,127,299,172,0,WS_EX_CLIENTEDGE
+    COMBOBOX        IDC_COMBO_TYPE,86,21,61,64,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "光度定标类型:",IDC_STATIC,14,25,63,8
+    LTEXT           "标准灯电流(A):",IDC_STATIC,14,41,63,8
+    EDITTEXT        IDC_EDIT_STA_CURR,86,37,59,14,ES_AUTOHSCROLL
+    LTEXT           "标定光通量(lm):",IDC_STATIC_STA_PH,151,41,61,8
+    EDITTEXT        IDC_EDIT_STA_PH,213,37,80,14,ES_AUTOHSCROLL
+    LTEXT           "标定色温(K):",IDC_STATIC,151,25,61,8
+    EDITTEXT        IDC_EDIT_STA_TC,213,21,80,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "开灯(&O)",IDC_BUTTON_ON,383,23,59,14
+    PUSHBUTTON      "校零(&Z)",IDC_BUTTON_OFF,383,40,59,14
+    LTEXT           "积分时间(ms):",IDC_STATIC,151,57,61,8
+    EDITTEXT        IDC_EDIT_INT_TIME,213,53,80,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "开始定标(&C)",IDC_BUTTON_CAL,318,23,59,14
+    PUSHBUTTON      "保存定标(&S)",IDC_BUTTON_SAVE,318,57,59,14,WS_DISABLED
+    LTEXT           "Ip:",IDC_STATIC,234,116,21,8
+    LTEXT           "65535(99.8%)",IDC_IP,260,116,56,8
+    LTEXT           "参考电压(V):",IDC_STATIC,14,57,63,8
+    EDITTEXT        IDC_EDIT_STA_VOL,86,53,59,14,ES_AUTOHSCROLL
+    GROUPBOX        "定标曲线",IDC_STATIC,10,105,444,200
+    GROUPBOX        "定标操作",IDC_STATIC,307,7,147,93
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,324,127,120,172
+    LTEXT           "数据表格:",IDC_STATIC,326,116,80,8
+    PUSHBUTTON      "停止定标(&T)",IDC_BUTTON_STOP,318,40,59,14,WS_DISABLED
+    LTEXT           "光谱分析曲线:",IDC_STATIC,20,116,67,8
+    CONTROL         "使用WY系列电源",IDC_CHECK_WY,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,20,308,68,10
+    LTEXT           "设置...",IDC_STATIC_SETUP,218,2,29,8
+    LTEXT           "标准灯测试距离(m):",IDC_STATIC_I_S1,14,73,71,8
+    EDITTEXT        IDC_EDIT_DISTANCE,86,68,59,14,ES_AUTOHSCROLL
+    LTEXT           "平均次数:",IDC_STATIC,151,72,61,8
+    EDITTEXT        IDC_EDIT_AVE_N,213,68,80,14,ES_AUTOHSCROLL
+    CONTROL         "多模式定标",IDC_CHECK_ALL,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,327,309,53,10
+    LTEXT           "标准灯类型:",IDC_STATIC,23,4,47,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_LAMP_TYPE,81,0,76,206,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "选择标准灯:",IDC_STATIC,161,2,61,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_LAMP,223,0,80,197,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "自动调节",IDC_CHECK_AUTO,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,407,309,45,10
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",NOT 
+                    WS_VISIBLE | WS_BORDER,103,307,216,10
+    LTEXT           "定标数据保存:",IDC_STATIC_LIST_S,323,83,56,8
+    COMBOBOX        IDC_COMBO_LIST_CAL_SELE,387,79,58,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SET_POWER DIALOGEX 0, 0, 123, 38
+STYLE DS_MODALFRAME | WS_POPUP
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,0,1,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "取消(&C)",IDCANCEL,36,20,50,14
+    CTEXT           "正在调节,请等待...",IDC_STATIC,15,6,98,8
+END
+
+IDD_SETUP1 DIALOG DISCARDABLE  0, 0, 322, 227
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "功率计/电源"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "使用功率计或WY电源获得电参数(&H)",IDC_CHECK_HAVE_POWER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,13,148,10
+    LTEXT           "功率计类型:",IDC_STATIC_S2,20,42,52,8
+    COMBOBOX        IDC_COMBO_POW_TYPE,90,38,99,89,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "通讯串行口:",IDC_STATIC_S3,20,57,52,8
+    COMBOBOX        IDC_COMBO_POW_COM,90,53,99,104,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "设置",IDC_STATIC_S1,9,25,303,71
+    CONTROL         "手动输入电参数(&M)",IDC_CHECK1_MANU,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,20,72,79,10
+    CONTROL         "测试前自动点灯控制",IDC_CHECK_AUTO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,199,116,94,10
+    COMBOBOX        IDC_COMBO_SOU,89,113,99,143,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "电源选择",IDC_STATIC,9,102,303,112
+    LTEXT           "电源选择:",IDC_STATIC,20,114,68,8
+    LTEXT           "通讯串行口:",IDC_STATIC,20,136,68,8
+    COMBOBOX        IDC_COMBO_SOU_COM,89,132,99,104,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PER_TIME,89,165,99,14,ES_AUTOHSCROLL
+    RTEXT           "开灯预热时间(ms):",IDC_STATIC,20,167,68,8
+    EDITTEXT        IDC_EDIT_VOL,89,181,99,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CURR,89,199,99,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "关灯",IDC_BUTTON_LAMP_OFF,212,198,50,14
+    RTEXT           "电压(V):",IDC_STATIC,20,184,68,8
+    RTEXT           "电流(A):",IDC_STATIC_S,20,201,68,8
+    PUSHBUTTON      "设置",IDC_BUTTON_ON,212,156,50,14
+    PUSHBUTTON      "开灯",IDC_BUTTON_ON2,212,177,50,14
+END
+
+IDD_PAGE1 DIALOGEX 0, 0, 244, 315
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_SDCM,209,46,24,35,0,WS_EX_CLIENTEDGE
+END
+
+IDD_PAGE2 DIALOGEX 0, 0, 244, 314
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         145,IDC_CIE1931,"Static",SS_BITMAP,0,0,195,237,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_SETUP2 DIALOG DISCARDABLE  0, 0, 313, 204
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "快速光谱仪"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "光谱仪",IDC_STATIC,9,18,222,68
+    LTEXT           "光谱仪类型:",IDC_STC_S1,30,37,70,8
+    COMBOBOX        IDC_COMBO_STC_TYPE,110,37,100,124,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "光谱仪串行口:",IDC_STC_S2,30,54,70,8
+    COMBOBOX        IDC_COMBO_STC_COM,110,53,100,77,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "不连接系统,演示模式(&D)",IDC_CHECK_DEMO,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,28,107,100,10
+    LTEXT           "请先开仪器,再启动软件,开关机后请重启软件!",IDC_STATIC,
+                    49,123,169,8
+    LTEXT           "注意:",IDC_STATIC,28,123,20,8
+    GROUPBOX        "杂项",IDC_STATIC,9,93,222,45
+    LTEXT           "380-1050nm",IDC_WL_RANGE,110,70,84,8
+    LTEXT           "波长范围:",IDC_STATIC,30,69,70,8
+    LTEXT           "仪器编号:",IDC_STATIC,30,7,52,8,NOT WS_VISIBLE
+    LTEXT           "708001",IDC_MODE,103,7,108,8,NOT WS_VISIBLE
+    CONTROL         "年月日",IDC_RADIO_T_TYPE1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,43,166,73,10
+    CONTROL         "年月日时分秒",IDC_RADIO_T_TYPE2,"Button",
+                    BS_AUTORADIOBUTTON,123,166,73,10
+    GROUPBOX        "时间格式",IDC_STATIC,9,147,222,47
+END
+
+IDD_TEST_INFO DIALOG DISCARDABLE  0, 0, 243, 236
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "测试信息"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_MODEL,61,16,162,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NUMBER,61,32,162,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FACTORY,61,102,162,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_T,61,119,41,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_H,170,118,41,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TESTER,61,136,162,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DATE,61,153,162,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_REMARK,61,170,162,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定(&O)",IDOK,42,193,64,26
+    PUSHBUTTON      "取消(&C)",IDCANCEL,137,193,64,26
+    LTEXT           "样品型号:",IDC_STATIC,13,20,46,8
+    LTEXT           "样品编号:",IDC_STATIC,13,37,46,8
+    LTEXT           "制造厂商:",IDC_STATIC,13,106,46,8
+    LTEXT           "测试人员:",IDC_STATIC,13,140,46,8
+    LTEXT           "测试时间:",IDC_STATIC,13,157,46,8
+    LTEXT           "备    注：",IDC_STATIC,13,174,46,8
+    LTEXT           "环境温度:",IDC_STATIC,13,123,46,8
+    LTEXT           "环境湿度:",IDC_STATIC,127,123,41,8
+    LTEXT           "℃",IDC_STATIC,105,123,12,8
+    LTEXT           "%",IDC_STATIC,218,123,11,8
+    EDITTEXT        IDC_EDIT_NAME,61,48,162,14,ES_AUTOHSCROLL
+    LTEXT           "样品名称:",IDC_STATIC,13,52,46,8
+    EDITTEXT        IDC_EDIT_STATE,61,65,162,14,ES_AUTOHSCROLL
+    LTEXT           "样品状态:",IDC_STATIC,13,68,46,8
+    EDITTEXT        IDC_EDIT_STANDARD,61,82,162,14,ES_AUTOHSCROLL
+    LTEXT           "依据与方法:",IDC_STATIC,13,87,46,8
+END
+
+IDD_PAGE3 DIALOGEX 0, 0, 159, 146
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_DRAW,5,26,151,56,0,WS_EX_CLIENTEDGE
+    CONTROL         "游标",IDC_CHECK_CUR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,5,6,33,10
+    PUSHBUTTON      "<<",IDC_BUTTON_LL,41,3,18,14
+    PUSHBUTTON      "<",IDC_BUTTON_L,61,3,18,14
+    PUSHBUTTON      ">",IDC_BUTTON_R,81,3,18,14
+    PUSHBUTTON      ">>",IDC_BUTTON_RR,101,3,18,14
+    PUSHBUTTON      "图类型",IDC_BUTTON_TYPE,121,3,35,14
+END
+
+CG_IDD_MYTESTBAR DIALOG DISCARDABLE  0, 0, 187, 25
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "自动积分",IDC_CHECK_AUTO,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,99,5,45,10
+    EDITTEXT        IDC_EDIT_INT_TIME,63,2,33,14,ES_AUTOHSCROLL
+    LTEXT           "积分时间(ms):",IDC_STATIC,8,5,54,8
+    LTEXT           "平均:",IDC_STATIC,145,5,20,8
+    EDITTEXT        IDC_EDIT_AVG_N,166,2,18,14,ES_AUTOHSCROLL
+END
+
+IDD_SETUP3 DIALOG DISCARDABLE  0, 0, 362, 235
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "测试设置"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "测试设置",IDC_STATIC,7,9,183,180
+    LTEXT           "自动积分调节上限:",IDC_STATIC,22,25,69,8
+    EDITTEXT        IDC_EDIT_AUTO_TIME2,94,21,66,14,ES_AUTOHSCROLL
+    LTEXT           "ms",IDC_STATIC,163,25,12,8
+    LTEXT           "光度测量类型:",IDC_STATIC,22,57,69,8
+    COMBOBOX        IDC_COMBO_TYPE,94,54,67,97,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "灵敏度选择：",IDC_STATIC,205,47,69,8,NOT WS_VISIBLE
+    LTEXT           "测试模式:",IDC_STATIC,205,63,69,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_BIN,277,44,67,99,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO1,277,60,67,97,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "典型样品选择:",IDC_STATIC,205,77,69,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_LED,277,74,67,169,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "    注意：典型测试只有在单次和连续测试时可用，其他如光谱定标等均不可用。",
+                    IDC_STATIC_S1,192,3,8,8,NOT WS_VISIBLE
+    CONTROL         "使用衰减片",IDC_CHECK_ATT,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,204,0,67,12
+    LTEXT           "衰减片选择:",IDC_STATIC_A1,204,0,67,12,NOT WS_VISIBLE
+    CONTROL         "衰减片2(强)",IDC_RADIO_ATT1,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE | WS_GROUP,204,0,67,12
+    CONTROL         "衰减片1(弱)",IDC_RADIO_ATT2,"Button",BS_AUTORADIOBUTTON | 
+                    NOT WS_VISIBLE,204,0,67,12
+    LTEXT           "光源类型:",IDC_STATIC,198,23,69,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_LAMP,270,20,67,97,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_PE,204,0,67,70,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "荧光粉测试装置:",IDC_STATIC_PE,204,0,67,12,NOT 
+                    WS_VISIBLE
+    CONTROL         "PHOTO-2000M",IDC_CHECK_FLUX_APP,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,204,0,67,
+                    12
+    LTEXT           "触发模式选择:",IDC_STATIC_TRIG,204,0,67,12,NOT 
+                    WS_VISIBLE
+    CONTROL         "输入",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,204,0,67,12
+    CONTROL         "输出",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,204,0,67,12
+    GROUPBOX        "其他",IDC_STATIC,204,0,67,12,NOT WS_VISIBLE
+    CONTROL         "使用触发模式",IDC_CHECK_TRIG,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,204,0,67,12
+    LTEXT           "光强测试距离：",IDC_STATIC_I_S1,22,80,69,8
+    EDITTEXT        IDC_EDIT_DISTANCE,94,77,66,14,ES_AUTOHSCROLL
+    LTEXT           "m",IDC_STATIC_I_S2,163,81,14,8
+    LTEXT           "光强修正系数：",IDC_STATIC_I_S3,22,105,69,8
+    EDITTEXT        IDC_EDIT_I_K,94,102,66,14,ES_AUTOHSCROLL
+    LTEXT           "亮度测试视场角:",IDC_STATIC_L_SELE,204,0,67,12,NOT 
+                    WS_VISIBLE
+    COMBOBOX        IDC_COMBO_L_SELE,204,0,67,133,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "脉冲信号宽度(ms):",IDC_STATIC_P_S,204,0,67,12,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_PLUSE_TIME,204,0,67,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    LTEXT           "积分时间内脉冲个数:",IDC_STATIC_P_S2,204,0,67,12,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_EDIT_PLUSE_NUM,204,0,67,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    LTEXT           "波长测量范围:",IDC_STATIC,22,170,55,8
+    EDITTEXT        IDC_EDIT_WL1,82,168,29,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_WL2,131,168,29,14,ES_AUTOHSCROLL
+    LTEXT           "nm-",IDC_STATIC,114,170,13,8
+    LTEXT           "nm",IDC_STATIC,162,170,13,8
+    LTEXT           "定标数据选择:",IDC_STATIC_LIST_S,204,0,67,12,NOT 
+                    WS_VISIBLE
+    COMBOBOX        IDC_COMBO_LIST_CAL_SELE,204,0,67,325,CBS_DROPDOWNLIST | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "使用多组光谱定标数据",IDC_CHECK_LIST_CAL,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,204,0,67,
+                    12
+    LTEXT           "光信号选择:",IDC_STATIC_SIG,204,0,67,12,NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBO_SIG_TYPE,204,0,67,166,CBS_DROPDOWNLIST | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_WL_CHECK DIALOGEX 0, 0, 519, 319
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "波长校正校验"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "单次测试(&T)",IDC_BUTTON_TEST,214,296,55,14
+    PUSHBUTTON      "连续测试(&C)",IDC_BUTTON_START,273,296,55,14
+    PUSHBUTTON      "停止(&S)",IDC_BUTTON_STOP,332,296,55,14,WS_DISABLED
+    PUSHBUTTON      "退出(&E)",IDCANCEL,450,296,55,14
+    DEFPUSHBUTTON   "OK",IDOK,0,0,6,10,NOT WS_VISIBLE
+    LTEXT           "",IDC_DRAW,18,96,252,176,0,WS_EX_CLIENTEDGE
+    GROUPBOX        "采样设置",IDC_STATIC,8,28,269,34
+    CONTROL         "自动积分(&A)",IDC_CHECK_AUTO,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,123,43,58,10
+    EDITTEXT        IDC_EDIT_INT_TIME,74,41,40,14,ES_AUTOHSCROLL
+    LTEXT           "积分时间(ms):",IDC_STATIC,18,44,54,8
+    LTEXT           "平均次数:",IDC_STATIC,190,44,37,8
+    EDITTEXT        IDC_EDIT_AVG_N,230,40,35,14,ES_AUTOHSCROLL
+    GROUPBOX        "光谱曲线",IDC_STATIC,8,66,269,215
+    LTEXT           "Ip:",IDC_STATIC,185,84,21,8
+    LTEXT           "65535(99.8%)",IDC_IP,211,84,56,8
+    CONTROL         "List1",IDC_LIST2,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,288,55,214,196
+    GROUPBOX        "标准谱线与误差",IDC_STATIC,281,28,227,252
+    LTEXT           "均 差(nm):",IDC_STATIC,288,44,46,8
+    LTEXT           "2.32nm",IDC_AVG_ERR,338,44,59,8
+    LTEXT           "http://www.NAHON.cn",IDC_EV,20,299,100,9
+    CONTROL         "游标",IDC_CHECK_CUR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,83,33,10
+    PUSHBUTTON      "<<",IDC_BUTTON_LL,56,80,18,14
+    PUSHBUTTON      "<",IDC_BUTTON_L,76,80,18,14
+    PUSHBUTTON      ">",IDC_BUTTON_R,96,80,18,14
+    PUSHBUTTON      ">>",IDC_BUTTON_RR,116,80,18,14
+    PUSHBUTTON      "波长校正",IDC_BUTTON_CORR,391,296,55,14,WS_DISABLED
+    CONTROL         "峰值",IDC_RADIO_TYPE1,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,393,12,31,10
+    CONTROL         "面积",IDC_RADIO_TYPE2,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,436,12,31,10
+    LTEXT           "添加标准谱线位置(nm):",IDC_STATIC,292,263,90,8
+    EDITTEXT        IDC_EDIT_PX,381,260,36,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "添加(&A)",IDC_BUTTON_ADD,421,260,35,14
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DELETE,463,260,35,14
+    LTEXT           "带宽检验 546.07nm:",IDC_STATIC,18,10,85,8
+    EDITTEXT        IDC_EDIT_DW,106,7,60,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "校零",IDC_BUTTON_TEST3,155,296,55,14
+END
+
+IDD_FLUX_CAL DIALOG DISCARDABLE  0, 0, 266, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "光通量定标"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,13,7,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出定标(&E)",IDCANCEL,172,135,66,17
+    PUSHBUTTON      "光通量标定(&C)",IDC_BUTTON_CAL,172,72,66,17
+    PUSHBUTTON      "光通量检验(&K)",IDC_BUTTON_CHECK,172,94,66,17
+    PUSHBUTTON      "保存数据(&S)",IDC_BUTTON_SAVE,172,116,66,17,WS_DISABLED
+    LTEXT           "标准光通量:",IDC_STATIC_S3,15,91,52,8
+    LTEXT           "光通量检验:",IDC_STATIC_S5,15,113,52,8
+    EDITTEXT        IDC_EDIT_STA_FLUX,73,82,52,20,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "lm",IDC_STATIC_S4,130,91,9,8
+    EDITTEXT        IDC_EDIT_FLUX,73,105,52,20,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "lm",IDC_STATIC_S6,129,113,9,8
+    LTEXT           "1.开灯后,输入标准灯光通量,请等待标准灯稳定(约30分).",
+                    IDC_STATIC_S1,22,23,122,18
+    LTEXT           "安装标准灯后请按以下步骤进行操作:",IDC_STATIC,22,9,134,
+                    8
+    LTEXT           "2.稳定后按""光通量标定""键.",IDC_STATIC_S2,22,44,120,8
+    LTEXT           "3.检验合格后，按""保存数据""键,然后“退出定标”.",
+                    IDC_STATIC,22,59,120,20
+    PUSHBUTTON      "&WY系列电源",IDC_BUTTON_WY,172,28,66,17
+    PUSHBUTTON      "关灯校零(&Z)",IDC_BUTTON_ZERO,172,50,66,17
+    LTEXT           "修正系数:",IDC_STATIC_MOD,15,135,52,8
+    EDITTEXT        IDC_EDIT1,73,128,52,20,ES_AUTOHSCROLL
+    LTEXT           "自吸收系数:",IDC_STATIC_MOD_S2,15,157,52,8
+    EDITTEXT        IDC_EDIT_MODE_K2,73,152,52,20,ES_AUTOHSCROLL
+    PUSHBUTTON      "测量自吸收系数",IDC_TEST_SELF_K,172,154,66,17
+END
+
+IDD_CAL_ATT DIALOGEX 0, 0, 411, 227
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "模式系数定标"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,3,1,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,342,206,59,14
+    LTEXT           "",IDC_DRAW,19,31,228,159,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "开始定标(&C)",IDC_BUTTON_CAL,159,206,59,14
+    PUSHBUTTON      "保存定标(&S)",IDC_BUTTON_SAVE,281,206,59,14,WS_DISABLED
+    LTEXT           "Ip:",IDC_STATIC,160,21,21,8
+    LTEXT           "65535(99.8%)",IDC_IP,186,21,56,8
+    GROUPBOX        "定标曲线",IDC_STATIC,9,7,393,189
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,254,31,139,159
+    LTEXT           "数据表格:",IDC_STATIC,254,19,49,8
+    PUSHBUTTON      "停止定标(&T)",IDC_BUTTON_STOP,220,206,59,14,WS_DISABLED
+    LTEXT           "光谱分析曲线:",IDC_STATIC,19,21,67,8
+END
+
+IDD_INPUT_POWER DIALOG DISCARDABLE  0, 0, 210, 137
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请输入电参数"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,152,15,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "取消(&C)",IDCANCEL,114,112,50,14
+    GROUPBOX        "电参数",IDC_STATIC,14,8,181,96
+    LTEXT           "电压:",IDC_STATIC,36,28,39,8
+    EDITTEXT        IDC_EDIT_U,86,25,52,14,ES_AUTOHSCROLL
+    LTEXT           "电流:",IDC_STATIC,36,46,39,8
+    EDITTEXT        IDC_EDIT_I,86,43,52,14,ES_AUTOHSCROLL
+    LTEXT           "功率:",IDC_STATIC,36,64,39,8
+    EDITTEXT        IDC_EDIT_P,86,61,52,14,ES_AUTOHSCROLL
+    LTEXT           "功率因数:",IDC_STATIC,36,82,39,8
+    EDITTEXT        IDC_EDIT_PF,86,79,52,14,ES_AUTOHSCROLL
+    LTEXT           "V",IDC_STATIC,144,28,8,8
+    LTEXT           "A",IDC_STATIC,144,46,8,8
+    LTEXT           "W",IDC_STATIC,144,64,8,8
+    PUSHBUTTON      "确定(&O)",IDC_BUTTON1,50,112,50,14
+END
+
+IDD_WY_DIALOG DIALOGEX 0, 0, 285, 139
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "WY"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_COM,67,7,41,67,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "读取(&G)",IDC_BUTTON_GET,237,47,38,14
+    PUSHBUTTON      "设定(&S)",IDC_BUTTON_SET,237,66,38,14
+    PUSHBUTTON      "退出(&C)",IDCANCEL,237,117,38,14
+    CONTROL         "稳压(&U)",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,13,83,44,10
+    CONTROL         "稳流(&I)",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,128,83,
+                    44,10
+    EDITTEXT        IDC_EDIT_SET_VOL,59,81,48,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,103,82,10,14
+    EDITTEXT        IDC_EDIT_SET_CURR,174,81,48,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,215,82,10,14
+    DEFPUSHBUTTON   "确定",IDOK,4,7,6,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,110,85,8,8
+    LTEXT           "A",IDC_STATIC,225,85,8,8
+    LTEXT           "通讯串行口:",IDC_STATIC,14,10,52,8
+    RTEXT           "电压值:",IDC_STATIC,7,55,50,8
+    RTEXT           "电流值:",IDC_STATIC,126,55,45,8
+    GROUPBOX        "通讯控制",IDC_STATIC,4,29,278,81
+    EDITTEXT        IDC_EDIT_VOL,59,52,48,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_CURR,174,52,48,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "V",IDC_STATIC,110,55,8,8
+    LTEXT           "A",IDC_STATIC,225,55,8,8
+    LTEXT           "",IDC_RANGE,144,9,135,8
+    LTEXT           "量程:",IDC_STATIC,119,9,23,8
+    PUSHBUTTON      "复位(&R)",IDC_BUTTON_RESET,237,85,38,14
+    COMBOBOX        IDC_COMBO_WY_TYPE,59,118,168,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "通讯模式:",IDC_STATIC,13,121,41,8
+END
+
+IDD_NAME DIALOG DISCARDABLE  0, 0, 158, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "输入"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_NAME,57,11,80,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确定(&O)",IDOK,21,36,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,86,36,50,14
+    LTEXT           "输入名称:",IDC_STATIC,16,14,36,8
+END
+
+IDD_SELE_PARA DIALOGEX 0, 0, 115, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "选择"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,6,162,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,59,162,50,14
+    LISTBOX         IDC_LIST,7,12,100,125,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "颜色:",IDC_STATIC,9,145,22,8
+    LTEXT           "",IDC_C,33,145,67,10,SS_NOTIFY,WS_EX_STATICEDGE
+    LTEXT           "参数选择:",IDC_STATIC,7,2,57,8
+END
+
+IDD_CAL_FLUX DIALOG DISCARDABLE  0, 0, 268, 262
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "光通量定标[多组]"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,13,7,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,206,239,50,14
+    LTEXT           "光通量标准灯",IDC_STATIC,16,35,140,8
+    EDITTEXT        IDC_EDIT_FLUX,78,61,69,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME,78,45,69,14,ES_AUTOHSCROLL
+    LTEXT           "类型:",IDC_STATIC,16,47,58,8
+    LTEXT           "标准光通量(lm):",IDC_STATIC,16,63,62,8
+    LTEXT           "电流(A):",IDC_STATIC,16,79,58,8
+    CONTROL         "List3",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,14,139,227,76
+    CONTROL         "使用定标(&D)",IDC_CHECK_USB_CAL_FLUX,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,248,17,11,
+                    8
+    EDITTEXT        IDC_EDIT_CURR,78,77,69,14,ES_AUTOHSCROLL
+    LTEXT           "定标系数:",IDC_STATIC,16,95,58,8
+    EDITTEXT        IDC_EDIT_K,78,93,69,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_SELE,150,11,91,127,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "已定标的标准灯:",IDC_STATIC,14,127,104,8
+    PUSHBUTTON      "定标(&C)",IDC_BUTTON_CAL,186,77,56,14
+    LTEXT           "选择已定标标准灯类型:",IDC_STATIC_SELE,60,14,86,8
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,186,94,56,14,WS_DISABLED
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DEL,206,222,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,14,29,
+                    226,1
+    PUSHBUTTON      "WY电源开灯",IDC_BUTTON_ON,186,43,56,14
+    PUSHBUTTON      "校零",IDC_BUTTON_OFF,186,60,56,14
+    EDITTEXT        IDC_EDIT_FLUX_CHECK,78,109,69,14,ES_AUTOHSCROLL
+    LTEXT           "测量光通量(lm):",IDC_STATIC,16,111,62,8
+    PUSHBUTTON      "检验(&K)",IDC_BUTTON_CHECK,186,111,56,14
+    LTEXT           "修正系数:",IDC_STATIC_MOD,15,224,46,8
+    EDITTEXT        IDC_EDIT_MODE_K,64,222,52,14,ES_AUTOHSCROLL
+    LTEXT           "自吸收系数:",IDC_STATIC_MOD2,15,241,46,8
+    EDITTEXT        IDC_EDIT_MODE_K2,64,239,52,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "测量自吸收系数(&T)",IDC_TEST_SELF_K,121,241,66,14
+END
+
+IDD_SET_HAAS DIALOG DISCARDABLE  0, 0, 171, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "HAAS2000 光谱仪测量设置"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,28,67,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,97,67,50,14
+    GROUPBOX        "测量模式",IDC_STATIC,8,7,156,53
+    LTEXT           "灵敏度选择：",IDC_STATIC,15,25,69,8
+    LTEXT           "色度测量方式:",IDC_STATIC,15,40,69,8
+    COMBOBOX        IDC_COMBO_BIN,87,22,67,99,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_MODE,87,36,67,97,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_SPECTRUM_CAL_U DIALOGEX 0, 0, 424, 303
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "紫外光谱定标"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,3,1,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,345,56,59,14
+    GROUPBOX        "定标设置",-1,10,7,254,83
+    LTEXT           "",IDC_DRAW,20,117,262,159,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "校零(&Z)",IDC_BUTTON_OFF,345,20,59,14
+    LTEXT           "积分时间(ms):",-1,20,27,61,8
+    EDITTEXT        IDC_EDIT_INT_TIME,82,23,46,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "开始定标(&C)",IDC_BUTTON_CAL,280,20,59,14
+    PUSHBUTTON      "保存定标(&S)",IDC_BUTTON_SAVE,280,56,59,14,WS_DISABLED
+    LTEXT           "Ip:",-1,196,107,21,8
+    LTEXT           "65535(99.8%)",IDC_IP,222,107,56,8
+    GROUPBOX        "定标曲线",-1,10,93,405,189
+    GROUPBOX        "定标操作",-1,268,7,147,83
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,288,117,117,159
+    LTEXT           "数据表格:",-1,288,105,80,8
+    PUSHBUTTON      "停止定标(&T)",IDC_BUTTON_STOP,280,38,59,14,WS_DISABLED
+    LTEXT           "光谱分析曲线:",-1,20,107,67,8
+    LTEXT           "设置...",IDC_STATIC_SETUP,149,25,46,8
+    LTEXT           "平均次数:",-1,20,43,61,8
+    EDITTEXT        IDC_EDIT_AVE_N,82,39,46,14,ES_AUTOHSCROLL
+    CONTROL         "多模式定标",IDC_CHECK_ALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,233,287,53,10
+END
+
+IDD_CAL_FE DIALOGEX 0, 0, 339, 329
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "光通量修正"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,245,300,73,14
+    LTEXT           "光通量标准灯:",IDC_STATIC,17,54,123,8
+    EDITTEXT        IDC_EDIT_FLUX,79,89,69,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_NAME,79,71,69,14,ES_AUTOHSCROLL
+    LTEXT           "标准灯名称:",IDC_STATIC,17,74,58,8
+    LTEXT           "光通量(lm):",IDC_STATIC,17,92,58,8
+    CONTROL         "List3",IDC_LIST,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,15,215,311,76
+    CONTROL         "使用光通量标准灯修正数据(&D)",IDC_CHECK_USB_CAL_FE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,18,13,146,10
+    LTEXT           "修正系数:",IDC_STATIC,17,109,58,8
+    EDITTEXT        IDC_EDIT_K,79,106,69,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_SELE,146,25,179,127,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "已定标的光通量标准灯:",IDC_STATIC,15,204,140,8
+    PUSHBUTTON      "定标(&C)",IDC_BUTTON_CAL_FLUX,15,175,54,14
+    LTEXT           "选择标准灯:",IDC_STATIC_SELE,91,28,54,8
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,77,175,58,14,WS_DISABLED
+    LTEXT           "",IDC_DRAW,156,60,170,137,0,WS_EX_CLIENTEDGE
+    LTEXT           "光谱曲线:",IDC_STATIC,156,50,43,8
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DEL,15,300,54,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,15,43,
+                    310,1
+    LTEXT           "设置...",IDC_STATIC_SETUP,18,31,29,8,NOT WS_VISIBLE
+END
+
+IDD_OPTION3 DIALOGEX 0, 0, 187, 113
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "颜色设置"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "分级不合格颜色选择:",IDC_STATIC,21,28,85,8
+    LTEXT           "字体颜色:",IDC_STATIC,25,49,43,8
+    LTEXT           "",IDC_STATIC_TEXT,74,47,27,12,0,WS_EX_CLIENTEDGE
+    LTEXT           "背景颜色:",IDC_STATIC,25,70,43,8
+    LTEXT           "",IDC_STATIC_BK,74,67,27,12,0,WS_EX_CLIENTEDGE
+    PUSHBUTTON      "选择",IDC_BUTTON_SELE_TEXT,107,47,37,14
+    PUSHBUTTON      "选择",IDC_BUTTON_SELE_BK,107,67,37,14
+    GROUPBOX        "颜色选择",IDC_STATIC,7,6,160,90
+END
+
+IDD_LED_CLASS_SET_PARA DIALOG DISCARDABLE  0, 0, 333, 188
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设定分类参数"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,266,17,50,14
+    PUSHBUTTON      "取消",IDCANCEL,0,0,6,6,NOT WS_VISIBLE
+    LISTBOX         IDC_LIST,13,18,103,155,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "分类参数:",IDC_STATIC,13,7,60,8
+    COMBOBOX        IDC_COMBO_TYPE,175,18,63,318,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "添加",IDC_BUTTON_ADD,157,41,50,14
+    PUSHBUTTON      "删除",IDC_BUTTON_DEL,157,152,50,14
+    LTEXT           "选择参数:",IDC_STATIC,127,20,45,8
+END
+
+IDD_LED_CLASS_EDIT DIALOG DISCARDABLE  0, 0, 572, 414
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LED参数分类文件编辑"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,0,0,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "退出(&E)",IDCANCEL,498,385,65,14
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,6,17,559,358
+    PUSHBUTTON      "选择分级文件(&O)...",IDC_BUTTON_OPEN,67,385,72,14
+    PUSHBUTTON      "保存(&S)...",IDC_BUTTON_SAVE,141,385,57,14
+    PUSHBUTTON      "添加分类...",IDC_BUTTON_ADD,274,385,65,14
+    PUSHBUTTON      "删除分类",IDC_BUTTON_DEL,414,385,65,14
+    PUSHBUTTON      "新建文件...",IDC_BUTTON_SET,8,385,57,14
+    PUSHBUTTON      "修改分类...",IDC_BUTTON_MOD,344,385,65,14
+    PUSHBUTTON      "导出(&E)...",IDC_BUTTON_EXPORT,200,385,57,14
+    LTEXT           "分类数据:",IDC_STATIC,11,6,99,8
+    RTEXT           "注意:     编辑完成后,请注意保存文件。",IDC_STATIC,391,6,
+                    174,8
+END
+
+IDD_LED_CLASS_DATA_EDIT DIALOGEX 0, 0, 379, 257
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "上下限设置"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,254,205,50,14
+    PUSHBUTTON      "取消",IDCANCEL,310,205,50,14
+    LISTBOX         IDC_LIST,13,13,204,208,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_D1,227,33,53,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_D2,293,33,53,14,ES_AUTOHSCROLL
+    LTEXT           "下限值:",IDC_STATIC,227,20,49,8
+    LTEXT           "上限值:",IDC_STATIC,293,20,49,8
+    PUSHBUTTON      "修改(&A)",IDC_BUTTON_MOD,289,68,50,14
+    LTEXT           "名称:",IDC_STATIC,227,98,36,8
+    EDITTEXT        IDC_EDIT_NAME,227,115,127,14,ES_AUTOHSCROLL
+    LTEXT           "注: 各参数同时满足时为一类!",IDC_STATIC,13,230,261,8
+    LTEXT           "",IDC_COLOR,227,143,127,22,SS_NOTIFY,WS_EX_STATICEDGE
+END
+
+IDD_SETUP4 DIALOG DISCARDABLE  0, 0, 340, 245
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "定时测试"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "灯点亮后测试次数:",IDC_STATIC,31,41,94,8
+    EDITTEXT        IDC_EDIT_NUM,31,53,167,14,ES_AUTOHSCROLL
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,31,84,166,127
+    LTEXT           "时间(分):",IDC_STATIC,212,94,44,8
+    EDITTEXT        IDC_EDIT_T,212,105,50,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "设定(&S)",IDC_BUTTON_SET,212,147,50,14
+    LTEXT           "各次测试时间：",IDC_STATIC,31,71,108,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,31,33,
+                    232,1
+    LTEXT           "该功能用于同一个灯在点亮后，不同时间下自动测试，自动保存功能。",
+                    IDC_STATIC,33,18,251,9
+    PUSHBUTTON      "确定次数(&N)",IDC_BUTTON_SET_OK,212,53,50,14
+    GROUPBOX        "定时测试设置",IDC_STATIC,8,5,313,231
+    CONTROL         "定时测试",IDC_CHECK_TIME_TEST,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,219,81,10
+    CONTROL         "等间隔",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,221,172,38,10
+END
+
+IDD_DIALOG_KTY DIALOG DISCARDABLE  0, 0, 293, 152
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "KEITHLEY 仪器控制"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_COMBO_COM,67,7,41,67,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "读取(&G)",IDC_BUTTON_GET,237,47,38,14
+    PUSHBUTTON      "设定(&S)",IDC_BUTTON_SET,237,66,38,14
+    PUSHBUTTON      "退出(&C)",IDCANCEL,237,117,38,14
+    CONTROL         "稳压(&U)",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,13,83,44,10
+    CONTROL         "稳流(&I)",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,128,83,
+                    44,10
+    EDITTEXT        IDC_EDIT_SET_VOL,59,81,48,14,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,103,82,10,14
+    EDITTEXT        IDC_EDIT_SET_CURR,174,81,48,14,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN2,"msctls_updown32",UDS_ALIGNRIGHT | 
+                    UDS_AUTOBUDDY | UDS_ARROWKEYS,215,82,10,14
+    DEFPUSHBUTTON   "确定",IDOK,4,7,6,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,110,85,8,8
+    LTEXT           "A",IDC_STATIC,225,85,8,8
+    LTEXT           "通讯串行口:",IDC_STATIC,14,10,52,8
+    RTEXT           "电压值:",IDC_STATIC,7,55,50,8
+    RTEXT           "电流值:",IDC_STATIC,126,55,45,8
+    GROUPBOX        "通讯控制",IDC_STATIC,4,29,278,81
+    EDITTEXT        IDC_EDIT_VOL,59,52,48,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_CURR,174,52,48,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "V",IDC_STATIC,110,55,8,8
+    LTEXT           "A",IDC_STATIC,225,55,8,8
+    PUSHBUTTON      "复位(&R)",IDC_BUTTON_RESET,237,85,38,14
+END
+
+IDD_PAGE4 DIALOGEX 0, 0, 244, 314
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         IDI_CIE,IDC_CIE1976,"Static",SS_BITMAP,0,0,195,237,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_CHECK_BW DIALOGEX 0, 0, 460, 262
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "半宽度校验"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "单次测试(&T)",IDC_BUTTON_TEST,246,238,46,14
+    PUSHBUTTON      "连续测试(&C)",IDC_BUTTON_START,297,238,46,14
+    PUSHBUTTON      "停止(&S)",IDC_BUTTON_STOP,348,238,46,14,WS_DISABLED
+    PUSHBUTTON      "退出(&E)",IDCANCEL,399,238,46,14
+    DEFPUSHBUTTON   "OK",IDOK,0,0,6,10,NOT WS_VISIBLE
+    LTEXT           "",IDC_DRAW,18,74,252,152,0,WS_EX_CLIENTEDGE
+    GROUPBOX        "采样设置",IDC_STATIC,8,6,269,34
+    CONTROL         "自动积分(&A)",IDC_CHECK_AUTO,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,123,21,58,10
+    EDITTEXT        IDC_EDIT_INT_TIME,74,19,40,14,ES_AUTOHSCROLL
+    LTEXT           "积分时间(ms):",IDC_STATIC,18,22,54,8
+    LTEXT           "平均次数:",IDC_STATIC,190,22,37,8
+    EDITTEXT        IDC_EDIT_AVG_N,230,18,35,14,ES_AUTOHSCROLL
+    GROUPBOX        "光谱曲线",IDC_STATIC,8,44,269,187
+    LTEXT           "Ip:",IDC_STATIC,185,62,21,8
+    LTEXT           "",IDC_IP,211,62,56,8
+    CONTROL         "List1",IDC_LIST2,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,288,21,160,169
+    GROUPBOX        "标准谱线与半宽度",IDC_STATIC,281,6,172,226
+    LTEXT           "http://www.NAHON.cn",IDC_EV,0,3,19,9,NOT WS_VISIBLE
+    CONTROL         "游标",IDC_CHECK_CUR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,20,61,33,10
+    PUSHBUTTON      "<<",IDC_BUTTON_LL,56,58,18,14
+    PUSHBUTTON      "<",IDC_BUTTON_L,76,58,18,14
+    PUSHBUTTON      ">",IDC_BUTTON_R,96,58,18,14
+    PUSHBUTTON      ">>",IDC_BUTTON_RR,116,58,18,14
+    LTEXT           "添加标准谱线位置(nm):",IDC_STATIC,286,197,84,8
+    EDITTEXT        IDC_EDIT_PX,371,194,36,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "添加(&A)",IDC_BUTTON_GET_HF,410,194,35,14
+    CONTROL         "放大",IDC_CHECK_ZOOM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,242,28,10
+    EDITTEXT        IDC_EDIT_X1,93,239,29,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_X2,125,239,29,14,ES_AUTOHSCROLL
+    LTEXT           "波长范围:",IDC_STATIC_X12,52,242,38,8
+    PUSHBUTTON      "确定(&O)",IDC_BUTTON_OK,158,239,35,14,WS_DISABLED
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DELETE,410,212,35,14
+END
+
+IDD_NEW_FLUX_CAL DIALOG DISCARDABLE  0, 0, 352, 141
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "光通灯定标"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "定标",IDOK,0,0,8,12,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "退出(&E)",IDCANCEL,272,107,57,14
+    LTEXT           "光通灯标准值(lm):",IDC_STATIC,19,51,93,8
+    EDITTEXT        IDC_EDIT_STA_FLUX,115,47,51,14,ES_AUTOHSCROLL
+    LTEXT           "测试值:",IDC_STATIC,19,81,87,8
+    EDITTEXT        IDC_EDIT_TEST_FLUX,115,78,51,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "标准灯信息描述:",IDC_STATIC,19,25,72,8
+    EDITTEXT        IDC_EDIT_REMARKS,115,21,215,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "定标",IDC_BUTTON_CAL,272,55,57,14
+    PUSHBUTTON      "保存定标",IDC_BUTTON_SAVE_CAL,272,81,57,14,WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,3,3,346,133
+    LTEXT           "定标时间:",IDC_STATIC,19,110,48,8
+    EDITTEXT        IDC_EDIT_DATE,115,105,91,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_PAGE5 DIALOGEX 0, 0, 194, 212
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CTEXT           "",IDC_PASS,8,39,157,101,0,WS_EX_STATICEDGE
+    CTEXT           "",IDC_COLOR,16,163,129,36,0,WS_EX_STATICEDGE
+END
+
+IDD_SELF_K_EDIT DIALOG DISCARDABLE  0, 0, 277, 107
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自吸收系数选择"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,218,6,50,14
+    PUSHBUTTON      "取消",IDCANCEL,218,23,50,14
+    COMBOBOX        IDC_COMBO_SELE,9,9,196,185,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_NAME,70,32,81,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_K,70,50,81,14,ES_AUTOHSCROLL
+    LTEXT           "灯类型:",IDC_STATIC,9,36,52,8
+    LTEXT           "自吸收系数:",IDC_STATIC,9,53,52,8
+    PUSHBUTTON      "修改",IDC_BUTTON_MOD,80,79,50,14
+    PUSHBUTTON      "删除",IDC_BUTTON_DEL,142,79,50,14
+    PUSHBUTTON      "增加",IDC_BUTTON_ADD,18,79,50,14
+END
+
+IDD_SELF_PH_K DIALOG DISCARDABLE  0, 0, 257, 238
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "自吸收系数设定"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,72,213,50,14
+    PUSHBUTTON      "取消(&C)",IDCANCEL,135,213,50,14
+    LTEXT           "输入自吸收系数:",IDC_STATIC,18,54,73,8
+    EDITTEXT        IDC_EDIT_SELF_PH_K,106,50,52,14,ES_AUTOHSCROLL
+    GROUPBOX        "设定",IDC_STATIC,6,9,245,70
+    GROUPBOX        "测定自吸收系数",IDC_STATIC,6,90,245,105
+    LTEXT           "点亮辅助灯,测定被测灯自吸收系数:",IDC_STATIC,18,110,130,
+                    8
+    LTEXT           "安装标准灯时:",IDC_STATIC,18,128,61,8
+    EDITTEXT        IDC_EDIT_PH1,106,124,63,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "安装被测试灯时:",IDC_STATIC,18,146,61,8
+    EDITTEXT        IDC_EDIT_PH2,106,142,63,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "测试",IDC_BUTTON_TEST1,180,124,50,14
+    PUSHBUTTON      "测试",IDC_BUTTON_TEST2,180,142,50,14
+    EDITTEXT        IDC_EDIT_PH_K,106,160,63,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "测定的自吸收系数:",IDC_STATIC,18,165,75,8
+    LTEXT           "使用方法:",IDC_STATIC,18,30,51,8
+    COMBOBOX        IDC_COMBO_TYPE,106,23,130,102,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "选择自吸收系数...",IDC_BUTTON_SELE,164,50,74,14
+    PUSHBUTTON      "保存",IDC_BUTTON_SAVE,180,161,50,14
+END
+
+IDD_SPECTRUM_VIEW DIALOGEX 0, 0, 235, 117
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_NTGRAPHCTRL,
+                    "{C9FE01C2-2746-479B-96AB-E0BE9931B018}",WS_TABSTOP,4,4,
+                    111,105
+    CONTROL         "",IDC_DATA_SHEET,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,125,7,20,28
+    LTEXT           "",IDC_STATIC_WAVE,133,52,62,49,NOT WS_VISIBLE,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_DATA_PAGE3 DIALOGEX 0, 0, 235, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "色品区域"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_DRAW,7,7,221,142,0,WS_EX_CLIENTEDGE
+END
+
+IDD_DATA_PAGE2 DIALOGEX 0, 0, 235, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "CIE1931"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         145,IDC_CIE,"Static",SS_BITMAP,0,0,195,237,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_DATA_PAGE1 DIALOGEX 0, 0, 235, 157
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "色容差"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_SDCM,32,36,85,93,0,WS_EX_CLIENTEDGE
+END
+
+IDD_DATA_PAGE4 DIALOGEX 0, 0, 235, 156
+STYLE WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "CIE1976"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         IDI_CIE,IDC_CIE,"Static",SS_BITMAP,0,0,195,237,
+                    WS_EX_CLIENTEDGE
+END
+
+IDD_DEBUG_LINE DIALOG DISCARDABLE  0, 0, 455, 316
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "调试四-非线性校准"
+FONT 8, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,22,6,6,NOT WS_VISIBLE
+    PUSHBUTTON      "Cancel",IDCANCEL,7,22,6,6,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_DATA,19,7,211,285,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "像素范围:",IDC_STATIC,245,22,56,8
+    EDITTEXT        IDC_EDIT_CRO_PIX1,304,18,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CRO_PIX2,359,18,40,14,ES_AUTOHSCROLL
+    LTEXT           "-",IDC_STATIC,349,22,8,8
+    LTEXT           "积分时间范围:",IDC_STATIC,245,40,56,8
+    LTEXT           "积分时间间隔:",IDC_STATIC,245,58,56,8
+    EDITTEXT        IDC_EDIT_CRO_T1,303,38,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CRO_T2,359,38,40,14,ES_AUTOHSCROLL
+    LTEXT           "-",IDC_STATIC,349,41,8,8
+    EDITTEXT        IDC_EDIT_CRO_T3,304,57,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动校准",IDC_BUTTON1,341,83,54,22
+    PUSHBUTTON      "线性反算",IDC_BUTTON2,364,166,54,22
+    LTEXT           "线性反算像素点设置:",IDC_STATIC,245,142,71,8
+    EDITTEXT        IDC_EDIT_JS_PIX1,326,137,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_JS_PIX2,381,137,40,14,ES_AUTOHSCROLL
+    LTEXT           "-",IDC_STATIC,371,140,8,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,2,5,0
+ PRODUCTVERSION 2,2,5,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "NAHON\0"
+            VALUE "FileDescription", "SpectraNexus\0"
+            VALUE "FileVersion", "v1.00.100\0"
+            VALUE "InternalName", "SpectraNexus\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2014\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SpectraNexus.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "SpectraNexus 应用程序\0"
+            VALUE "ProductVersion", "v1.00.100\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    CG_IDD_MYNOTEBAR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 216
+    END
+
+    IDD_PARA_SELE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 134
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 61
+    END
+
+    IDD_DEBUG1, DIALOG
+    BEGIN
+        RIGHTMARGIN, 477
+        BOTTOMMARGIN, 410
+    END
+
+    IDD_DEBUG3, DIALOG
+    BEGIN
+        RIGHTMARGIN, 409
+        BOTTOMMARGIN, 226
+    END
+
+    IDD_SET_POWER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 31
+    END
+
+    IDD_TEST_INFO, DIALOG
+    BEGIN
+        RIGHTMARGIN, 241
+    END
+
+    IDD_PAGE3, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 145
+    END
+
+    IDD_SETUP3, DIALOG
+    BEGIN
+        RIGHTMARGIN, 355
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_INPUT_POWER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 151
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_CAL_FLUX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+
+    IDD_SET_HAAS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 164
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_CAL_FE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 332
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 322
+    END
+
+    IDD_LED_CLASS_DATA_EDIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 371
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 250
+    END
+
+    IDD_CHECK_BW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 459
+    END
+
+    IDD_DATA_PAGE3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_DATA_PAGE1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_DEBUG_LINE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 448
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 309
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND                CURSOR  DISCARDABLE     "res\\hand.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_WHITE DLGINIT
+BEGIN
+    IDC_MSFLEXGRID1, 0x37a, 359, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032, 
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031, 
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043, 
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045, 
+0x0033, 0x0030, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x0e29, 0x0000, 0x1c87, 
+0x0000, 0x6f42, 0x506f, 0x0000, 0x0006, 0x0080, 0x0000, 0x03ea, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0005, 
+0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 0x000d, 0x8000, 
+0x000e, 0x8000, 0x8080, 0x0080, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 
+0x0003, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 
+0x0000, 0x0000, 0x003e, 0x0000, 0x0031, 0x0032, 0x0033, 0x0034, 0x0035, 
+0x0035, 0x0000, 0x0061, 0x0073, 0x0073, 0x0020, 0x006d, 0x0065, 0x006d, 
+0x0000, 0x0061, 0x0073, 0x0053, 0x0075, 0x0069, 0x0074, 0x0065, 0x005c, 
+0x0076, 0x0032, 0x002e, 0x0030, 0x0030, 0x002e, 0x0032, 0x0000, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8601, 0x0000, 
+0x0190, 0x7cdc, 0x0001, 0xcb04, 0xccce, 0x04e5, 0xe352, 0x910b, 0xce8f, 
+0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    IDC_MSFLEXGRID2, 0x37a, 359, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032, 
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031, 
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043, 
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045, 
+0x0033, 0x0030, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x14fb, 0x0000, 0x1c87, 
+0x0000, 0x6f42, 0x506f, 0x0000, 0x0006, 0x0080, 0x0000, 0x0066, 0x0000, 
+0x0003, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0005, 
+0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 0x000d, 0x8000, 
+0x000e, 0x8000, 0x8080, 0x0080, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 
+0x0003, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 
+0x0000, 0x0000, 0x003e, 0x0000, 0x0031, 0x0032, 0x0033, 0x0034, 0x0035, 
+0x0035, 0x0000, 0x0000, 0x0001, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 
+0x0000, 0xffff, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0002, 0x0000, 0x0000, 0x0004, 0x0000, 0x0000, 0x0000, 0x0000, 0x5203, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x8601, 0x0000, 
+0x0190, 0x7cdc, 0x0001, 0xcb04, 0xccce, 0x04e5, 0xe352, 0x910b, 0xce8f, 
+0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+IDD_OPTION1 DLGINIT
+BEGIN
+    IDC_COMBO_INTERVAL_WL, 0x403, 7, 0
+0x2e30, 0x2031, 0x6d6e, "\000" 
+    IDC_COMBO_INTERVAL_WL, 0x403, 7, 0
+0x2e31, 0x2030, 0x6d6e, "\000" 
+    IDC_COMBO_INTERVAL_WL, 0x403, 7, 0
+0x2e32, 0x2030, 0x6d6e, "\000" 
+    IDC_COMBO_INTERVAL_WL, 0x403, 7, 0
+0x2e35, 0x2030, 0x6d6e, "\000" 
+    IDC_COMBO_POS, 0x403, 7, 0
+0xf3d7, 0xcfc9, 0xc7bd, "\000" 
+    IDC_COMBO_POS, 0x403, 7, 0
+0xd2d3, 0xcfc9, 0xc7bd, "\000" 
+    0
+END
+
+IDD_SPECTRUM_CAL DLGINIT
+BEGIN
+    IDC_COMBO_TYPE, 0x403, 3, 0
+0xdece, "\000" 
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xe2b9, 0xa8cd, 0xbfc1, "\000" 
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xe2b9, 0xd5d5, 0xc8b6, "\000" 
+    IDC_COMBO_TYPE, 0x403, 5, 0
+0xe2b9, 0xbfc7, "\000" 
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xe2b9, 0xc1c1, 0xc8b6, "\000" 
+    IDC_COMBO_LAMP_TYPE, 0x403, 6, 0
+0xb941, 0xd4e2, 0x00b4, 
+    IDC_COMBO_LAMP_TYPE, 0x403, 11, 0
+0xeab1, 0xbcd7, 0xc6b5, 0xfdca, 0xddbe, "\000" 
+    IDC_COMBO_LIST_CAL_SELE, 0x403, 4, 0
+0x6544, 0x0066, 
+    0
+END
+
+IDD_SETUP1 DLGINIT
+BEGIN
+    IDC_COMBO_POW_TYPE, 0x403, 13, 0
+0x414e, 0x5550, 0x5f49, 0x4d50, 0x3839, 0x3530, "\000" 
+    IDC_COMBO_POW_COM, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMBO_POW_COM, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMBO_POW_COM, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMBO_POW_COM, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_COMBO_SOU, 0x403, 7, 0
+0x5844, 0x3033, 0x3330, "\000" 
+    IDC_COMBO_SOU_COM, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMBO_SOU_COM, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMBO_SOU_COM, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMBO_SOU_COM, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    0
+END
+
+IDD_SETUP2 DLGINIT
+BEGIN
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x354d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x364d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x374d, "\000" 
+    IDC_COMBO_STC_COM, 0x403, 5, 0
+0x4f43, 0x384d, "\000" 
+    0
+END
+
+IDD_SETUP3 DLGINIT
+BEGIN
+    IDC_COMBO_TYPE, 0x403, 3, 0
+0xdece, "\000" 
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xe2b9, 0xa8cd, 0xbfc1, "\000" 
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xe2b9, 0xd5d5, 0xc8b6, "\000" 
+    IDC_COMBO_TYPE, 0x403, 5, 0
+0xe2b9, 0xbfc7, "\000" 
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xe2b9, 0xc1c1, 0xc8b6, "\000" 
+    IDC_COMBO_BIN, 0x403, 3, 0
+0xdfb8, "\000" 
+    IDC_COMBO_BIN, 0x403, 3, 0
+0xcdb5, "\000" 
+    IDC_COMBO1, 0x403, 9, 0
+0xecbf, 0xd9cb, 0xe2b2, 0xd4ca, "\000" 
+    IDC_COMBO1, 0x403, 9, 0
+0xabbe, 0xb7c8, 0xe2b2, 0xd4ca, "\000" 
+    IDC_COMBO1, 0x403, 9, 0
+0xe4b5, 0xcdd0, 0xe2b2, 0xd4ca, "\000" 
+    IDC_COMBO_LAMP, 0x403, 7, 0
+0xe7b5, 0xe2b9, 0xb4d4, "\000" 
+    IDC_COMBO_LAMP, 0x403, 7, 0
+0xabd3, 0xe2b9, 0xdbb7, "\000" 
+    IDC_COMBO_PE, 0x403, 18, 0
+0x4550, 0x322d, 0xd320, 0xb9ab, 0xb7e2, 0xbcdb, 0xb7a4, 0xd6a2, 0x00c3, 
+
+    IDC_COMBO_PE, 0x403, 21, 0
+0x4550, 0x352d, 0x4c20, 0x4445, 0xabd3, 0xe2b9, 0xdbb7, 0xa4bc, 0xa2b7, 
+0xc3d6, "\000" 
+    IDC_COMBO_L_SELE, 0x403, 6, 0
+0x2e30, 0xb631, 0x00c8, 
+    IDC_COMBO_L_SELE, 0x403, 6, 0
+0x2e30, 0xb632, 0x00c8, 
+    IDC_COMBO_L_SELE, 0x403, 6, 0
+0x2e31, 0xb630, 0x00c8, 
+    IDC_COMBO_L_SELE, 0x403, 6, 0
+0x2e32, 0xb630, 0x00c8, 
+    IDC_COMBO_LIST_CAL_SELE, 0x403, 4, 0
+0x6544, 0x0066, 
+    IDC_COMBO_SIG_TYPE, 0x403, 3, 0
+0x4344, "\000" 
+    IDC_COMBO_SIG_TYPE, 0x403, 5, 0
+0x3035, 0x7a48, "\000" 
+    IDC_COMBO_SIG_TYPE, 0x403, 5, 0
+0x3036, 0x7a48, "\000" 
+    0
+END
+
+IDD_WY_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_COMBO_WY_TYPE, 0x403, 19, 0
+0xa5b5, 0xfabb, 0xa3c4, 0xbdca, 0xd428, 0xc6e7, 0xd2da, 0xc6c7, 0x29f7, 
+"\000" 
+    IDC_COMBO_WY_TYPE, 0x403, 16, 0
+0xe0b6, 0xfabb, 0xa3c4, 0xbdca, 0x3928, 0x4942, 0x5354, 0x0029, 
+    0
+END
+
+IDD_SET_HAAS DLGINIT
+BEGIN
+    IDC_COMBO_BIN, 0x403, 3, 0
+0xdfb8, "\000" 
+    IDC_COMBO_BIN, 0x403, 3, 0
+0xcdb5, "\000" 
+    IDC_COMBO_MODE, 0x403, 9, 0
+0xecbf, 0xd9cb, 0xe2b2, 0xd4ca, "\000" 
+    IDC_COMBO_MODE, 0x403, 9, 0
+0xabbe, 0xb7c8, 0xe2b2, 0xd4ca, "\000" 
+    0
+END
+
+IDD_DEBUG3 DLGINIT
+BEGIN
+    IDC_COMBO_BUAD, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_COMBO_BUAD, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_COMBO_BUAD, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_COMBO_BUAD, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_COMBO_BUAD, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_COMBO_BUAD, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    0
+END
+
+IDD_DEBUG1 DLGINIT
+BEGIN
+    IDC_COMBO1, 0x403, 6, 0
+0x3034, 0x6e35, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3734, 0x6e33, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3335, 0x6e32, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3336, 0x6e32, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3636, 0x6e30, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3837, 0x6e30, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3538, 0x6e30, 0x006d, 
+    IDC_COMBO1, 0x403, 6, 0
+0x3839, 0x6e30, 0x006d, 
+    IDC_COMBO_STEP_TYPE, 0x403, 7, 0
+0xc8b5, 0xe4bc, 0xf4b8, "\000" 
+    IDC_COMBO_STEP_TYPE, 0x403, 7, 0
+0xbbb2, 0xc8b5, 0xf4b8, "\000" 
+    0
+END
+
+IDD_DIALOG_KTY DLGINIT
+BEGIN
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_COMBO_COM, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    0
+END
+
+IDD_DEBUG2 DLGINIT
+BEGIN
+    IDC_COMBO_SR_2_ANGLE, 0x403, 5, 0
+0x4148, 0x5341, "\000" 
+    IDC_COMBO_SR_2_ANGLE, 0x403, 27, 0
+0x5253, 0x322d, 0x3020, 0x312e, 0xc8b6, 0xd3ca, 0xc7bd, 0x4120, 0x676e, 
+0x656c, 0x505f, 0x736f, 0x5f31, "\000" 
+    IDC_COMBO_SR_2_ANGLE, 0x403, 27, 0
+0x5253, 0x322d, 0x3020, 0x322e, 0xc8b6, 0xd3ca, 0xc7bd, 0x4120, 0x676e, 
+0x656c, 0x505f, 0x736f, 0x5f32, "\000" 
+    IDC_COMBO_SR_2_ANGLE, 0x403, 27, 0
+0x5253, 0x322d, 0x3120, 0x302e, 0xc8b6, 0xd3ca, 0xc7bd, 0x4120, 0x676e, 
+0x656c, 0x505f, 0x736f, 0x5f33, "\000" 
+    IDC_COMBO_SR_2_ANGLE, 0x403, 27, 0
+0x5253, 0x322d, 0x3220, 0x302e, 0xc8b6, 0xd3ca, 0xc7bd, 0x4120, 0x676e, 
+0x656c, 0x505f, 0x736f, 0x5f34, "\000" 
+    0
+END
+
+IDD_SELF_PH_K DLGINIT
+BEGIN
+    IDC_COMBO_TYPE, 0x403, 7, 0
+0xbbb2, 0xb9ca, 0xc3d3, "\000" 
+    IDC_COMBO_TYPE, 0x403, 13, 0
+0xe2b9, 0xd7c6, 0xa8b7, 0xd4d7, 0xfcce, 0xd5ca, "\000" 
+    IDC_COMBO_TYPE, 0x403, 23, 0
+0xe2b9, 0xc8b6, 0xa8b7, 0xd4d7, 0xfcce, 0xd5ca, 0xcd28, 0xbcc6, 0xb7f6, 
+0xb7bd, 0x29a8, "\000" 
+    0
+END
+
+IDD_SPECTRUM_VIEW DLGINIT
+BEGIN
+    IDC_NTGRAPHCTRL, 0x376, 371, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x1143, 0x0000, 0x0ee2, 0x0000, 0x00c2, 
+0x0000, 0x2003, 0x2020, 0x0001, 0x0000, 0x0100, 0x0000, 0x0000, 0x0000, 
+0x9e7d, 0x00c0, 0xffff, 0x00ff, 0x0000, 0x0000, 0x0000, 0x0000, 0x8080, 
+0x0080, 0x0029, 0x0000, 0x0002, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0xffff, 0x00ff, 0x2504, 0x312e, 0x0466, 0x2e25, 
+0x6631, 0x0000, 0x0000, 0x0000, 0x0101, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x4509, 0x656c, 0x656d, 
+0x746e, 0x302d, 0x0000, 0x0000, 0xff00, 0xffff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0100, 0x0001, 0x5203, 0x0be3, 
+0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x0001, 0x0000, 0x0190, 
+0x7cdc, 0x0001, 0x4d0d, 0x2053, 0x6153, 0x736e, 0x5320, 0x7265, 0x6669, 
+0x0300, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 
+0x0000, 0xbc00, 0x5802, 0x020f, 0x0d00, 0x534d, 0x5320, 0x6e61, 0x2073, 
+0x6553, 0x6972, 0x0066, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 
+0x4b00, 0x51b8, 0x0001, 0x0000, 0x02bc, 0x4244, 0x0001, 0x4d0d, 0x2053, 
+0x6153, 0x736e, 0x5320, 0x7265, 0x6669, 0x0300, 0xe352, 0x910b, 0xce8f, 
+0x9d11, 0x00e3, 0x00aa, 0xb84b, 0x0151, 0x0000, 0x9000, 0x4401, 0x0142, 
+0x0d00, 0x534d, 0x5320, 0x6e61, 0x2073, 0x6553, 0x6972, 0x0066, 0x5204, 
+0x0be3, 0x8f91, 0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x746c, 0x0000, 
+0x0000, 0x0000, 0x0400, 0xe352, 0x910b, 0xce8f, 0x9d11, 0x00e3, 0x00aa, 
+0xb84b, 0x6c51, 0x0074, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "杭州纳宏 快速光谱测试与分析软件\nSpectraNexus\nSpectraNexus\nSpectraNexus 文件 (*.gcs)\n.gcs\nSpectraNexus.Document\nSpectraNexus Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SpectraNexus"
+    AFX_IDS_IDLEMESSAGE     "就绪"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "扩展名"
+    ID_INDICATOR_CAPS       "大写"
+    ID_INDICATOR_NUM        "数字"
+    ID_INDICATOR_SCRL       "滚动"
+    ID_INDICATOR_OVR        "改写"
+    ID_INDICATOR_REC        "记录"
+    INDICATOR_LOGO          "Indicator logo"
+    ID_INDICATOR_MODE       "-SN.:607001-128--SN.:607001-128-"
+    ID_INDICATOR_CAL        "--CAL:000--"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "建立新文档\n新建"
+    ID_FILE_OPEN            "打开一个现有文档\n打开"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+    ID_FILE_SAVE            "保存活动文档\n保存"
+    ID_FILE_SAVE_AS         "将活动文档以一个新文件名保存\n另存为"
+    ID_FILE_PAGE_SETUP      "改变打印选项\n页面设置"
+    ID_FILE_PRINT_SETUP     "改变打印机及打印选项\n打印设置"
+    ID_FILE_PRINT           "打印活动文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示整页\n打印预览"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序；提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开该文档"
+    ID_FILE_MRU_FILE2       "打开该文档"
+    ID_FILE_MRU_FILE3       "打开该文档"
+    ID_FILE_MRU_FILE4       "打开该文档"
+    ID_FILE_MRU_FILE5       "打开该文档"
+    ID_FILE_MRU_FILE6       "打开该文档"
+    ID_FILE_MRU_FILE7       "打开该文档"
+    ID_FILE_MRU_FILE8       "打开该文档"
+    ID_FILE_MRU_FILE9       "打开该文档"
+    ID_FILE_MRU_FILE10      "打开该文档"
+    ID_FILE_MRU_FILE11      "打开该文档"
+    ID_FILE_MRU_FILE12      "打开该文档"
+    ID_FILE_MRU_FILE13      "打开该文档"
+    ID_FILE_MRU_FILE14      "打开该文档"
+    ID_FILE_MRU_FILE15      "打开该文档"
+    ID_FILE_MRU_FILE16      "打开该文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回前一个窗格\n前一窗格"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "将活动的窗口分隔成窗格\n分隔"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n显隐工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n显隐状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小成图标"
+    AFX_IDS_SCMAXIMIZE      "把窗口放大到最大尺寸"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到先前的文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动的窗口并提示保存所有文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "把窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预阅"
+    IDS_DATA_SHEET_CAPTION  "Sheet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    CG_ID_VIEW_MYLEDBAR     "Show or hide My LED Bar\nToggle My LED Bar"
+    IDS_TOO_MANY_ROWS       "WARNING:  Limit exceeded.  Cannot display/print one or more checks."
+    CG_ID_VIEW_MYTESTBAR    "Show or hide My Test Bar\nToggle My Test Bar"
+    CG_ID_VIEW_MYNOTEBAR    "Show or hide My Note Bar\nToggle My Note Bar"
+    CG_ID_VIEW_MYTYPEBAR    "Show or hide My Type Bar\nToggle My Type Bar"
+    IDS_TYPE_SHEET_CAPTION  "IDS_TYPE_SHEET_CAPTION"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EXPORT_CSV           "导出数据以Excel格式\n导出数据以Excel格式"
+    ID_TEST                 "单次测量\n单次测量"
+    ID_TEST_CON             "连续测量\n连续测量"
+    ID_DELETE               "删除\n删除"
+    ID_VIEW_SETBAR          "显示CIE色品图\n显示CIE色品图"
+    ID_VIEW_DATABAR         "显示或隐藏DataBar工具栏\n显隐DataBar工具栏"
+    ID_VIEW_TYPEBAR         "显示或隐藏TypeBar工具栏\n显隐TypeBar工具栏"
+    ID_EXPORT_SPEC_CAV      "导出光谱数据以Excel文件\n导出光谱数据以Excel文件"
+    ID_OPTION               "选项\n选项"
+    ID_SELE_SDCM            "选择色温\n选择色温"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_DEBUG                "调试\n调试"
+    ID_SPECTRUM_CAL         "光谱定标\n光谱定标"
+    ID_SETUP                "系统设置\n系统设置"
+    ID_SET_WY               "WY系列程控电源\nWY系列程控电源"
+    ID_TEST_INFO            "测试信息\n测试信息"
+    ID_TEST_STOP            "停止连续测试\n停止连续测试"
+    ID_SHOW_CUR             "游标\n游标"
+    ID_WL_CHECK             "波长校正校验\n波长校正校验"
+    ID_DARK                 "采样系统暗电流\n采样系统暗电流"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    CG_ID_VIEW_MYTESTBAR1   "Show or hide My Test Bar\nToggle My Test Bar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_BUTTON_FLUX          "光度定标\n光度定标"
+    ID_PARA                 "显示测试数据\n显示测试数据"
+    ID_ENGLISH              "英文版\n英文版"
+    ID_CHINESE              "中文版\n中文版"
+    ID_CAL_FLUX             "光度定标\n光度定标"
+    ID_CAL_TYPE             "分类定标\n分类定标"
+    ID_ALL_SELE             "全选或者全部取消\n全选或者全部取消"
+    ID_BUTTON_TRIG          "触发测量\n触发测量"
+    ID_TEST_UP              "光电变化曲线测试\n光电变化曲线测试"
+    ID_PHO_BRESS            "荧光粉相对亮度定标\n荧光粉相对亮度定标"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_WHITE           "白光色品分类\n白光色品分类"
+    ID_EDIT_LEVEL           "参数分级编辑\n参数分级编辑"
+    ID_EXPORT_ACCESS        "导出数据以Access格式\n导出数据以Access格式"
+    ID_TEST_CURR_VS_L       "电流VS亮度曲线测试\n电流VS亮度曲线测试"
+    ID_SHOW_MODE_SELE       "启动时显示模式选择\n启动时显示模式选择"
+    ID_MODE_INTTIME         "修正积分时间\n修正积分时间"
+    ID_TEST_STC             "快速光谱仪\n快速光谱仪"
+    ID_TEST_CURR_VS_T       "时间变化曲线测试\n时间变化曲线测试"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SPECT_CAL_U          "紫外光谱定标\n紫外光谱定标"
+    ID_TPS_METERS           "TPS系列程控电源\nTPS系列程控电源"
+    ID_VPS_METERS           "VPS系列程控电源\nVPS系列程控电源"
+    ID_SELF_PH              "自吸收系数测试\n自吸收系数测试"
+    ID_CAL_PL_FLUX          "光通量修正\n光通量修正"
+    ID_EXPORT_OSRAM1        "导出测试数据OSRAM格式1\n导出测试数据OSRAM格式1"
+    ID_VPS_1010B            "VPS_1010B程控电源\nVPS_1010B程控电源"
+    ID_CHECK_BW             "半宽度检验\n半宽度检验"
+    ID_EXPORT_ALL_SPEC      "导出所有光谱数据\n导出所有光谱数据"
+    ID_GPIB_KEITHLEY_2420   "KEITHLEY 2420 SourceMeter\nKEITHLEY 2420 SourceMeter"
+    ID_RS232_REMOTE_COMM    "RS232/485远程控制\nRS232/485远程控制"
+    ID_CORRECT_XY           "色校正\n色校正"
+    ID_USE_CORRECT_XY       "使用色校正\n使用色校正"
+    ID_COLOR_CORRECT        "色校正编辑\n色校正编辑"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COLOR_CORRECT_SELE   "色校正选择\n色校正选择"
+    ID_COLOR_CORRECT_EDIT   "色校正编辑\n色校正编辑"
+    ID_COLOR_CORRECT_EVERY_SET 
+                            "每次测试前提示选择色校正\n每次测试前提示选择色校正"
+    ID_WAIT_LAMP            "测试前稳定光源\n测试前稳定光源"
+    ID_EX_TEST_BOX_SHOW     "进入外部测试盒\n进入外部测试盒"
+    ID_EXDTR                "格式转换工具 ExDtr\n格式转换工具 ExDtr"
+    ID_WD_TEST              "雾度测试\n雾度测试"
+    ID_EXPORT_PHS           "导出数据以PHS文件\n导出数据以PHS文件"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\MySpec.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#include "l.chs\afxprint.rc"        // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

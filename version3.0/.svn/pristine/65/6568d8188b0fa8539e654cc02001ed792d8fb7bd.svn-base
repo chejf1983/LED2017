@@ -1,0 +1,46 @@
+﻿using LED2017.Device.IDevice;
+
+namespace LED2017.DevControl.NDevControl
+{
+    public class DevCenter : IDevControl.IDevCenter
+    {
+        private IDevice spdev;
+        private DevControl.NDevControl.SPDevControl spdevcontrol;
+
+        public DevCenter(SPDevControl spdevcontrol)
+        {
+            this.spdevcontrol = spdevcontrol;
+        }
+
+        public void DeleteDev()
+        {
+            if (this.spdev != null)
+            {
+                this.spdev.DisConnect();
+                this.spdev = null;
+            }
+        }
+
+        public void ImportDev(IDevice newdev)
+        {
+            this.DeleteDev();
+            this.spdev = newdev;
+        }
+
+        public IDevice GetDevice()
+        {
+            return this.spdev;
+        }
+
+        private bool CheckState()
+        {
+            if(this.spdevcontrol.GetControlState() != IDevControl.ControlState.COLLECTING)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+    }
+}

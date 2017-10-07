@@ -1,0 +1,12 @@
+PrintSet:,
+1, 1,QTY:, 0,Auto_Qty, 0, 10, 10
+2, 1,CAT:, 0,Auto_CAT, 0, 10, 50
+3, 1,BIN:, 0,Auto_Bin, 1, 10, 90
+4, 1,Box:, 0,Auto_Boxnum, 0, 10, 180
+5, 0,LOT NO:, 0,SZ130926B-W9-1275, 0, 0, 0
+6, 0,Reference:, 0,BSZ13092790725, 0, 0, 0
+7, 0,NULL, 0,Auto_Qty, 0, 0, 0
+8, 0,NULL, 0,Auto_CAT, 0, 0, 0
+9, 0,NULL, 0,NULL, 0, 0, 0
+10, 0,NULL, 0,NULL, 0, 0, 0
+CAT:, 1, 2, 1

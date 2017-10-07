@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{30BDBF3A-2B2B-417C-9EB2-73AE220D7A9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LTISDLL</RootNamespace>
+    <AssemblyName>LTISDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.0\lib\net40\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.105.0\lib\net40\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FaultSystem\FaultCenter.cs" />
+    <Compile Include="ILEDPlatForm.cs" />
+    <Compile Include="LEDPlatForm.cs" />
+    <Compile Include="LEDSYS\DataFilter\FilterSaver.cs" />
+    <Compile Include="LEDSYS\DataFilter\LEDataFilter.cs" />
+    <Compile Include="LEDSYS\DataFilter\ConditionElement\AreaElement.cs" />
+    <Compile Include="LEDSYS\DataFilter\ConditionElement\IElement.cs" />
+    <Compile Include="LEDSYS\DataFilter\ConditionElement\LineElement.cs" />
+    <Compile Include="LEDSYS\DataFilter\Data\DataDefine.cs" />
+    <Compile Include="LEDSYS\DataFilter\FilterCondition\DefPolicy.cs" />
+    <Compile Include="LEDSYS\DataFilter\FilterCondition\FilterMap.cs" />
+    <Compile Include="LEDSYS\DataFilter\FilterCondition\FilterPolicy.cs" />
+    <Compile Include="LEDSYS\DataReport\DataSaver.cs" />
+    <Compile Include="LEDSYS\DataReport\FileDB.cs" />
+    <Compile Include="LEDSYS\Data\LEDData.cs" />
+    <Compile Include="LEDSYS\Data\LEDNum.cs" />
+    <Compile Include="LEDSYS\LEDSystem.cs" />
+    <Compile Include="LEDSYS\LTISDriver\Data\ADValueList.cs" />
+    <Compile Include="LEDSYS\LTISDriver\DevConfiger.cs" />
+    <Compile Include="LEDSYS\LTISDriver\Data\SPCollectPar.cs" />
+    <Compile Include="LEDSYS\LTISDriver\Data\EleCollectPar.cs" />
+    <Compile Include="LEDSYS\LTISDriver\LTISDev.cs" />
+    <Compile Include="LEDSYS\LTISDriver\LTISDevDriver.cs" />
+    <Compile Include="LOGSYS\SysLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SYSControl\CalControl.cs" />
+    <Compile Include="SYSControl\ControlSystem.cs" />
+    <Compile Include="LEDSYS\LTISDriver\Data\CalData.cs" />
+    <Compile Include="SYSControl\FilterConfig.cs" />
+    <Compile Include="SYSControl\LEDTest.cs" />
+    <Compile Include="SYSControl\LEDTestConfig.cs" />
+    <Compile Include="SYSControl\SPDevControl.cs" />
+    <Compile Include="SYSControl\ConnectControl.cs" />
+    <Compile Include="User\NahonUser.cs" />
+    <Compile Include="User\SQLDB.cs" />
+    <Compile Include="User\SQLiteTest.cs" />
+    <Compile Include="User\User.cs" />
+    <Compile Include="User\UserCenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.0\build\net40\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

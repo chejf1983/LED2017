@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Root Name="calconfig">
+  <LedNum>1</LedNum>
+  <eTimeNode>2017_06_19 17:13:33</eTimeNode>
+  <CalElement>
+    <EfPh>0.432</EfPh>
+    <EfLd>0.89</EfLd>
+    <EfLp>0.2999</EfLp>
+    <EfR9>0.321</EfR9>
+    <EfRa>0.8601</EfRa>
+    <EfVol>0</EfVol>
+    <Efx>0.0063</Efx>
+    <Efy>0.0041</Efy>
+  </CalElement>
+</Root>

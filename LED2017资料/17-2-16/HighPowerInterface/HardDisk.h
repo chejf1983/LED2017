@@ -1,0 +1,1 @@
+BOOL GetHDSerialCode(char* lpSerialID);

@@ -1,0 +1,14 @@
+Flux:
+StaFlux:12.000
+IntTime:10.000
+FluxK  :0.001112870
+
+StaFlux:1000.000
+FluxK  :1.00000000
+Range  :0
+
+LX:
+StaFlux:1000.000
+FluxK  :1.00000000
+Range  :0
+2012-11-23 02:38

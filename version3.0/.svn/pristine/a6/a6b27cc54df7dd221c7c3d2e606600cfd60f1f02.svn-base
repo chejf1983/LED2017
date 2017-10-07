@@ -1,0 +1,55 @@
+﻿using LED2017.DevControl.IDevControl;
+using LED2017.SPDevLab.LEDLab.Data;
+using LED2017.SPDevLab.LEDLab.DataReport;
+
+namespace LED2017.SPDevLab.LEDLab
+{
+    public class LEDLabor
+    {
+        private CIEAnalyzer dataAnalyzer; //数据分析器
+        private IDevControl devControl;   //设备控制器
+        private DataTabled dataTable;     //数据报表
+
+        public LEDLabor()
+        {
+            this.dataAnalyzer = new CIEAnalyzer();
+            this.devControl = DevControlFactory.CreateDevControl();
+            this.dataTable = new DataTabled();
+
+            this.InitLEDLabor();
+        }
+
+        private void InitLEDLabor()
+        {
+            this.devControl.GetDataCollectControl().CollectDataEvent += LEDLabor_CollectDataEvent;
+        }
+
+        private void LEDLabor_CollectDataEvent(Device.Data.SPData data)
+        {
+            CIEData cdata = this.dataAnalyzer.BuildCIEData(data);
+
+            this.dataTable.AddNewRecord(cdata);
+        }
+
+        /// <summary>
+        /// 设备控制
+        /// </summary>
+        public IDevControl DevControl
+        {
+            get { return this.devControl; }
+        }
+
+        /// <summary>
+        /// 数据分析器
+        /// </summary>
+        public CIEAnalyzer CieAnalyzer
+        {
+            get { return this.dataAnalyzer; }
+        }
+
+        /// <summary>
+        /// 数据报表
+        /// </summary>
+        public DataTabled DataTable { get { return this.dataTable; } }
+    }
+}

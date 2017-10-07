@@ -1,0 +1,61 @@
+﻿using System;
+using System.Windows.Forms;
+using TestWindows.chartlib;
+
+namespace TestWindows
+{
+    public partial class SPCurve : UserControl
+    {
+        private Chart1931 chart1931;
+        private ChartCurve chartcurve;
+        public SPCurve()
+        {
+            InitializeComponent();
+            
+            //添加CIE1983
+            this.chart1931 = new Chart1931();
+            this.chart1931.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart1931.Size = this.panel_cie.Size;
+            this.panel_cie.Controls.Add(chart1931);
+
+            //添加CURVE
+            this.chartcurve = new ChartCurve();
+            this.chartcurve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chartcurve.Size = this.panel_curve.Size;
+            this.panel_curve.Controls.Add(this.chartcurve);
+
+            this.initChartReport();
+        }
+        
+        //充置曲线
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            this.chartcurve.Reset();
+        }
+               
+        //清理CIE
+        public void ClearCIE()
+        {
+            this.chart1931.clearCIE();
+        }
+
+        //注册报表更新响应
+        private void initChartReport()
+        {
+            LED2017.LEDPlatForm.Instance.LEDLabor.DataTable.NewDataEvent += DataTable_NewDataEvent; 
+        }
+
+        private void DataTable_NewDataEvent(LED2017.SPDevLab.LEDLab.Data.CIEData data)
+        {
+            this.Invoke(new EventHandler(delegate {
+                this.chartcurve.displayData("led curve", data.data.spdata);
+                this.chart1931.addCiePoint(data.color.x1931, data.color.y1931);
+            }));
+        }
+
+    }
+}

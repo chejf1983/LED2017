@@ -1,0 +1,667 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1F639536-6AC4-4586-BE8A-2F457A05C6C5}</ProjectGuid>
+    <RootNamespace>LAT2000</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>LAT2000</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>LatSuite_d</TargetName>
+    <OutDir>$(SolutionDir)APP\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>LatSuite</TargetName>
+    <OutDir>$(SolutionDir)APP\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>AboutDialogBox.lib;HAAS1200MeterDLL.lib;RegionToolDLL.lib;WYDll.lib;NewCorrectColorParaDLL.lib;DPSPowerDLL.lib;SC1000_CommDLL.lib;NewPowDLL.lib;EmcMeter5ADLL.lib;CEmcMeter11KDLL.lib;CalcColorDLL.lib;HLS-200.lib;TouchSrceenDLL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>AboutDialogBox.lib;HAAS1200MeterDLL.lib;RegionToolDLL.lib;WYDll.lib;NewCorrectColorParaDLL.lib;DPSPowerDLL.lib;SC1000_CommDLL.lib;NewPowDLL.lib;EmcMeter5ADLL.lib;CEmcMeter11KDLL.lib;CalcColorDLL.lib;HLS-200.lib;TouchSrceenDLL.lib;TmpCtrlDLL.lib;SDCM_DLL.lib;UserEver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="C:\Documents and Settings\Administrator\桌面\图标\测试信息\Info-8.ico" />
+    <None Include="C:\Documents and Settings\Administrator\桌面\图标\测试信息\Info-8.png" />
+    <None Include="C:\Documents and Settings\Administrator\桌面\图标\测试信息\wordprocessing.ico" />
+    <None Include="D:\My Documents\My Pictures\ACCEPTABLE.bmp" />
+    <None Include="D:\My Documents\My Pictures\BAD.bmp" />
+    <None Include="D:\My Documents\My Pictures\GOOD.bmp" />
+    <None Include="D:\My Documents\My Pictures\ID_MYTOOLBAR.bmp" />
+    <None Include="D:\My Documents\My Pictures\NotTest.bmp" />
+    <None Include="d:\my documents\my pictures\toolbar1.bmp" />
+    <None Include="LAT2000.reg" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\-2σ , -σ.bmp" />
+    <None Include="res\-2σ.bmp" />
+    <None Include="res\-σ.bmp" />
+    <None Include="res\2σ.bmp" />
+    <None Include="res\about.bmp" />
+    <None Include="res\alert.ico" />
+    <None Include="res\bitmap1.bmp" />
+    <None Include="res\bmp00001.bmp" />
+    <None Include="res\Calculator - Fire.ico" />
+    <None Include="res\display-1.ico" />
+    <None Include="res\hand.cur" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\icon3.ico" />
+    <None Include="res\LED850.ico" />
+    <None Include="res\LED850.rc2" />
+    <None Include="res\LED850Doc.ico" />
+    <None Include="res\listreader.ico" />
+    <None Include="res\Print.ico" />
+    <None Include="res\PrintPriview.ico" />
+    <None Include="res\properties.bmp" />
+    <None Include="res\properties_hc.bmp" />
+    <None Include="res\properties_wnd.ico" />
+    <None Include="res\properties_wnd_hc.ico" />
+    <None Include="res\smallico.bmp" />
+    <None Include="res\Tab.bmp" />
+    <None Include="res\Tab16.bmp" />
+    <None Include="res\Toolbar.bmp" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="res\Toolbar256.bmp" />
+    <None Include="res\ToolBar32.bmp" />
+    <None Include="res\_alert.ico" />
+    <None Include="res\σ,2σ.bmp" />
+    <None Include="res\σ.bmp" />
+    <None Include="Splsh16.bmp" />
+    <None Include="UserImages.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LAT2000.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccountDlg.h" />
+    <ClInclude Include="AccreditData.h" />
+    <ClInclude Include="AlarmRingData.h" />
+    <ClInclude Include="AlarmRingEditDlg.h" />
+    <ClInclude Include="AlarmSettingsData.h" />
+    <ClInclude Include="AlarmSettingsDlg.h" />
+    <ClInclude Include="axciexyzctrl1.h" />
+    <ClInclude Include="ax_cie_xyz.h" />
+    <ClInclude Include="ax_spectrumdrawctrl1.h" />
+    <ClInclude Include="BribeComm.h" />
+    <ClInclude Include="BurnInSettingsDlg.h" />
+    <ClInclude Include="ButtonEx.h" />
+    <ClInclude Include="CalibrationData.h" />
+    <ClInclude Include="CalibrationDlg.h" />
+    <ClInclude Include="ColorDemo.h" />
+    <ClInclude Include="Comm.h" />
+    <ClInclude Include="CommSettingsData.h" />
+    <ClInclude Include="Configure_AssistantPage.h" />
+    <ClInclude Include="Configure_ExaminationPage.h" />
+    <ClInclude Include="Configure_IndicatorPage.h" />
+    <ClInclude Include="Configure_OthersPage.h" />
+    <ClInclude Include="Configure_TestControlPage.h" />
+    <ClInclude Include="Configure_WatchPage.h" />
+    <ClInclude Include="ContainerDrawFormView.h" />
+    <ClInclude Include="ContainerGridView.h" />
+    <ClInclude Include="ContainerWatchView.h" />
+    <ClInclude Include="ContJydzComm.h" />
+    <ClInclude Include="ContNyyComm.h" />
+    <ClInclude Include="ContXldlComm.h" />
+    <ClInclude Include="CurrentBoardID_Dlg.h" />
+    <ClInclude Include="CurrentLEDID_Dlg.h" />
+    <ClInclude Include="DataListViewSelectShow.h" />
+    <ClInclude Include="DebugA90Page.h" />
+    <ClInclude Include="DebugBribePage.h" />
+    <ClInclude Include="DebugDPSPage.h" />
+    <ClInclude Include="DebugEMS61000_11KPage.h" />
+    <ClInclude Include="DebugEMS61000_5APage.h" />
+    <ClInclude Include="DebugGaugePage.h" />
+    <ClInclude Include="DebugIndicatorPage.h" />
+    <ClInclude Include="DebugLineControllerPage.h" />
+    <ClInclude Include="DebugLRAPage.h" />
+    <ClInclude Include="DebugPageHandAuto.h" />
+    <ClInclude Include="DebugPF2010APage.h" />
+    <ClInclude Include="DebugSC1600Page.h" />
+    <ClInclude Include="DebugScanerPage.h" />
+    <ClInclude Include="DebugTemperaturePage.h" />
+    <ClInclude Include="DebugTestChannelControler.h" />
+    <ClInclude Include="DebugThunderRelayPage.h" />
+    <ClInclude Include="DebugWYPage.h" />
+    <ClInclude Include="DlgBeforeChangeLamp.h" />
+    <ClInclude Include="DlgControlShow.h" />
+    <ClInclude Include="DlgCurrentBroad.h" />
+    <ClInclude Include="DlgDebugSaft.h" />
+    <ClInclude Include="DlgInputPower.h" />
+    <ClInclude Include="DlgListParaChoose.h" />
+    <ClInclude Include="DlgMyLastSet.h" />
+    <ClInclude Include="DlgSaftSetup.h" />
+    <ClInclude Include="DlgSeleLamp.h" />
+    <ClInclude Include="DlgSetOldLineTime.h" />
+    <ClInclude Include="DlgShowOldingTime.h" />
+    <ClInclude Include="DlgShowOtherNote.h" />
+    <ClInclude Include="DlgStatisticFileChoose.h" />
+    <ClInclude Include="DPSDefinition.h" />
+    <ClInclude Include="DPSPowerComm.h" />
+    <ClInclude Include="EditLimitDlg.h" />
+    <ClInclude Include="ExCalcColorDLL.h" />
+    <ClInclude Include="ExCalc_Color.h" />
+    <ClInclude Include="ExEmc11kMeterDLL.h" />
+    <ClInclude Include="ExEmc5AMeterDLL.h" />
+    <ClInclude Include="ExEverLincese.h" />
+    <ClInclude Include="ExitSelectionDlg.h" />
+    <ClInclude Include="ExNewCorrectColorParaDLL.h" />
+    <ClInclude Include="ExNewPowDLL.h" />
+    <ClInclude Include="ExWYDll.h" />
+    <ClInclude Include="Ex_SDCM_DLL.h" />
+    <ClInclude Include="EX_TmpDLL.h" />
+    <ClInclude Include="Ex_TouchSrceenDLL.h" />
+    <ClInclude Include="HandAutoComm.h" />
+    <ClInclude Include="HistogramGraphCtrl.h" />
+    <ClInclude Include="HLS-200DLLComm.h" />
+    <ClInclude Include="ipiechartx1.h" />
+    <ClInclude Include="Label.h" />
+    <ClInclude Include="LAT_SaftComm.h" />
+    <ClInclude Include="LEDDataStatView.h" />
+    <ClInclude Include="LineControlerDlg.h" />
+    <ClInclude Include="MySheet.h" />
+    <ClInclude Include="PageSDCM.h" />
+    <ClInclude Include="SafetyTestComm.h" />
+    <ClInclude Include="SC1000Comm.h" />
+    <ClInclude Include="font.h" />
+    <ClInclude Include="FujiTMPComm.h" />
+    <ClInclude Include="GaugeComm.h" />
+    <ClInclude Include="Haas1200Meter.h" />
+    <ClInclude Include="ianalogdisplayx_tmp1.h" />
+    <ClInclude Include="ieditx_tmp1.h" />
+    <ClInclude Include="ilabelx1.h" />
+    <ClInclude Include="InputPasswordDlg.h" />
+    <ClInclude Include="ipiechartx.h" />
+    <ClInclude Include="iplotannotationx.h" />
+    <ClInclude Include="iplotaxisx.h" />
+    <ClInclude Include="iplotchannelx.h" />
+    <ClInclude Include="iplotdatacursorx.h" />
+    <ClInclude Include="iplotdataviewx.h" />
+    <ClInclude Include="iplotlabelx.h" />
+    <ClInclude Include="iplotlegendx.h" />
+    <ClInclude Include="iplotlimitx.h" />
+    <ClInclude Include="iplottablecolumnx.h" />
+    <ClInclude Include="iplottablex.h" />
+    <ClInclude Include="iplottoolbarx.h" />
+    <ClInclude Include="iplotx.h" />
+    <ClInclude Include="LAT2000.h" />
+    <ClInclude Include="LAT2000Doc.h" />
+    <ClInclude Include="IndicatorComm.h" />
+    <ClInclude Include="LineControllerComm.h" />
+    <ClInclude Include="LRAComm.h" />
+    <ClInclude Include="MainTestFormView.h" />
+    <ClInclude Include="LedData.h" />
+    <ClInclude Include="LEDDataContainer.h" />
+    <ClInclude Include="LEDDataContainerView.h" />
+    <ClInclude Include="RectificationTestDlg.h" />
+    <ClInclude Include="ScanerComm.h" />
+    <ClInclude Include="Splash.h" />
+    <ClInclude Include="StatisticDistributionGridView.h" />
+    <ClInclude Include="StatisticGridView.h" />
+    <ClInclude Include="StatisticLedDataContainer.h" />
+    <ClInclude Include="StatisticParaChooseDlg.h" />
+    <ClInclude Include="TestInfoData.h" />
+    <ClInclude Include="TestInfoPage_LampInfoPage.h" />
+    <ClInclude Include="TestInfoPage_PrintOpinionPage.h" />
+    <ClInclude Include="TestInfoPage_TestConditionPage.h" />
+    <ClInclude Include="TestSettingsData.h" />
+    <ClInclude Include="LedSpectrumData.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MainTabWnd.h" />
+    <ClInclude Include="ModifyCalProtectPassword.h" />
+    <ClInclude Include="MyCheckLED.h" />
+    <ClInclude Include="MyDockablePaneData.h" />
+    <ClInclude Include="MyListCtrl.h" />
+    <ClInclude Include="MyMFCToolBar.h" />
+    <ClInclude Include="MyMFC_Lib.h" />
+    <ClInclude Include="NewTestColorData.h" />
+    <ClInclude Include="NoneBorderDlg.h" />
+    <ClInclude Include="ntgraph.h" />
+    <ClInclude Include="picture.h" />
+    <ClInclude Include="PolygonEx.h" />
+    <ClInclude Include="PropertiesWnd.h" />
+    <ClInclude Include="RegionToolDLL.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Serial.h" />
+    <ClInclude Include="SheetDebug.h" />
+    <ClInclude Include="SpectrumCommDemo.h" />
+    <ClInclude Include="StandardLampSettingsDlg.h" />
+    <ClInclude Include="StaticOtherInfo.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SystemSettingsDlg.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TestContainer.h" />
+    <ClInclude Include="ThunderRelayComm.h" />
+    <ClInclude Include="ToolTipEx.h" />
+    <ClInclude Include="TouchScreen.h" />
+    <ClInclude Include="WarningYesNODlg.h" />
+    <ClInclude Include="_cell.h" />
+    <ClInclude Include="_column.h" />
+    <ClInclude Include="_Font.h" />
+    <ClInclude Include="_grid.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AccountDlg.cpp" />
+    <ClCompile Include="AccreditData.cpp" />
+    <ClCompile Include="AlarmRingData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AlarmRingEditDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AlarmSettingsData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AlarmSettingsDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="axciexyzctrl1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ax_cie_xyz.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ax_spectrumdrawctrl1.cpp" />
+    <ClCompile Include="BribeComm.cpp" />
+    <ClCompile Include="BurnInSettingsDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ButtonEx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CalibrationData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="CalibrationDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ColorDemo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Comm.cpp" />
+    <ClCompile Include="CommSettingsData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Configure_AssistantPage.cpp" />
+    <ClCompile Include="Configure_ExaminationPage.cpp" />
+    <ClCompile Include="Configure_IndicatorPage.cpp" />
+    <ClCompile Include="Configure_OthersPage.cpp" />
+    <ClCompile Include="Configure_TestControlPage.cpp" />
+    <ClCompile Include="Configure_WatchPage.cpp" />
+    <ClCompile Include="ContainerDrawFormView.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ContainerGridView.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ContainerWatchView.cpp" />
+    <ClCompile Include="ContJydzComm.cpp" />
+    <ClCompile Include="ContNyyComm.cpp" />
+    <ClCompile Include="ContXldlComm.cpp" />
+    <ClCompile Include="CurrentBoardID_Dlg.cpp" />
+    <ClCompile Include="CurrentLEDID_Dlg.cpp" />
+    <ClCompile Include="DataListViewSelectShow.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugA90Page.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugBribePage.cpp" />
+    <ClCompile Include="DebugDPSPage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugEMS61000_11KPage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugEMS61000_5APage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugGaugePage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugIndicatorPage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugLineControllerPage.cpp" />
+    <ClCompile Include="DebugLRAPage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugPageHandAuto.cpp" />
+    <ClCompile Include="DebugPF2010APage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugSC1600Page.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugScanerPage.cpp" />
+    <ClCompile Include="DebugTemperaturePage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DebugTestChannelControler.cpp" />
+    <ClCompile Include="DebugThunderRelayPage.cpp" />
+    <ClCompile Include="DebugWYPage.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="DlgBeforeChangeLamp.cpp" />
+    <ClCompile Include="DlgControlShow.cpp" />
+    <ClCompile Include="DlgCurrentBroad.cpp" />
+    <ClCompile Include="DlgDebugSaft.cpp" />
+    <ClCompile Include="DlgInputPower.cpp" />
+    <ClCompile Include="DlgListParaChoose.cpp" />
+    <ClCompile Include="DlgMyLastSet.cpp" />
+    <ClCompile Include="DlgSaftSetup.cpp" />
+    <ClCompile Include="DlgSeleLamp.cpp" />
+    <ClCompile Include="DlgSetOldLineTime.cpp" />
+    <ClCompile Include="DlgShowOldingTime.cpp" />
+    <ClCompile Include="DlgShowOtherNote.cpp" />
+    <ClCompile Include="DlgStatisticFileChoose.cpp" />
+    <ClCompile Include="EditLimitDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ExitSelectionDlg.cpp" />
+    <ClCompile Include="font.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="FujiTMPComm.cpp" />
+    <ClCompile Include="GaugeComm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HandAutoComm.cpp" />
+    <ClCompile Include="HistogramGraphCtrl.cpp" />
+    <ClCompile Include="ianalogdisplayx_tmp1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ieditx_tmp1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ilabelx1.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="InputPasswordDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ipiechartx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ipiechartx1.cpp" />
+    <ClCompile Include="iplotannotationx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotaxisx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotchannelx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotdatacursorx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotdataviewx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotlabelx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotlegendx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotlimitx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplottablecolumnx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplottablex.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplottoolbarx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="iplotx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Label.cpp" />
+    <ClCompile Include="LAT2000.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LAT2000Doc.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="IndicatorComm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LAT_SaftComm.cpp" />
+    <ClCompile Include="LEDDataStatView.cpp" />
+    <ClCompile Include="LineControlerDlg.cpp" />
+    <ClCompile Include="LineControllerComm.cpp" />
+    <ClCompile Include="LRAComm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MainTestFormView.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LedData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LEDDataContainer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LEDDataContainerView.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MySheet.cpp" />
+    <ClCompile Include="PageSDCM.cpp" />
+    <ClCompile Include="RectificationTestDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SafetyTestComm.cpp" />
+    <ClCompile Include="SC1000Comm.cpp" />
+    <ClCompile Include="ScanerComm.cpp" />
+    <ClCompile Include="Splash.cpp" />
+    <ClCompile Include="StatisticDistributionGridView.cpp" />
+    <ClCompile Include="StatisticGridView.cpp" />
+    <ClCompile Include="StatisticLedDataContainer.cpp" />
+    <ClCompile Include="StatisticParaChooseDlg.cpp" />
+    <ClCompile Include="TestInfoData.cpp" />
+    <ClCompile Include="TestInfoPage_LampInfoPage.cpp" />
+    <ClCompile Include="TestInfoPage_PrintOpinionPage.cpp" />
+    <ClCompile Include="TestInfoPage_TestConditionPage.cpp" />
+    <ClCompile Include="TestSettingsData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LedSpectrumData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MainTabWnd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ModifyCalProtectPassword.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MyCheckLED.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MyDockablePaneData.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MyListCtrl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MyMFCToolBar.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MyMFC_Lib.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="NoneBorderDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ntgraph.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="picture.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PolygonEx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Serial.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SheetDebug.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SpectrumCommDemo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StandardLampSettingsDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StaticOtherInfo.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SystemSettingsDlg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TestContainer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ThunderRelayComm.cpp" />
+    <ClCompile Include="ToolTipEx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TouchScreen.cpp" />
+    <ClCompile Include="WarningYesNODlg.cpp" />
+    <ClCompile Include="_cell.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="_column.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="_grid.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="" _x007B_0A362353-2E5E-11D3-85BF-00105AC8B715_x007D_="CIledroundx1" _x007B_4C599241-6926-101B-9992-00000B65C6F9_x007D_="CImage1" _x007B_E120518C-9ECE-46CF-921B-BB5F074D141A_x007D_="CIimagedisplayx1" _x007B_A8B345A5-74B5-11D3-85C2-00105AC8B715_x007D_="CIledmatrixx1" _x007B_1791C036-8981-492A-BD28-F2331BC9B7C7_x007D_="CIplotx_draw" _x007B_FCB4B50A-E3F1-4174-BD18-54C3B3287258_x007D_="CTchart1" _x007B_D1CAE8F4-6DFF-4187-B1B8-DDCF91F98A8A_x007D_="CIxyplotx1" _x007B_B6C10489-FB89-11D4-93C9-006008A7EED4_x007D_="CTchart1" _x007B_593CF92C-F3C3-4EBB-B094-FAEE9BB27D46_x007D_="CAxciexyzctrl1" _x007B_C5412DAA-2E2F-11D3-85BF-00105AC8B715_x007D_="CIanalogdisplayx_tmp1" _x007B_27E1C61A-7770-4D80-932A-93B7FC45008C_x007D_="CIeditx_tmp1" _x007B_EBF31E97-980B-4C2B-9645-8FEBD518356B_x007D_="CIlabelx1" _x007B_2BDD96A9-1455-4DA8-83BC-F43D47A70EB6_x007D_="C_Grid" _x007B_E1170F38-DD82-4A59-B242-E66B030AC644_x007D_="CGrid_main" _x007B_B7261F64-D336-11D3-85C2-00A0CC3A58C9_x007D_="CIpiechartx1" _x007B_62F184CF-F518-4589-A2C9-FB4DD2E99ED7_x007D_="CAx_spectrumdrawctrl1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

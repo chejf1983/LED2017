@@ -1,0 +1,304 @@
+﻿namespace TestWindows
+{
+    partial class DataList
+    {
+        /// <summary> 
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region 组件设计器生成的代码
+
+        /// <summary> 
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Lav = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.R15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CDI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Time,
+            this.CCT,
+            this.C,
+            this.LD,
+            this.Pur,
+            this.Lp,
+            this.HW,
+            this.Lav,
+            this.Ra,
+            this.R1,
+            this.R2,
+            this.R3,
+            this.R4,
+            this.R5,
+            this.R6,
+            this.R7,
+            this.R8,
+            this.R9,
+            this.R10,
+            this.R11,
+            this.R12,
+            this.R13,
+            this.R14,
+            this.R15,
+            this.CDI,
+            this.RR,
+            this.GR,
+            this.BR,
+            this.Ph});
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.RowTemplate.Height = 23;
+            this.dataGridView.Size = new System.Drawing.Size(707, 441);
+            this.dataGridView.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "行";
+            this.ID.Name = "ID";
+            // 
+            // Time
+            // 
+            this.Time.HeaderText = "时间";
+            this.Time.Name = "Time";
+            // 
+            // CCT
+            // 
+            this.CCT.HeaderText = "CCT(K)";
+            this.CCT.Name = "CCT";
+            // 
+            // C
+            // 
+            this.C.HeaderText = "C(dc)";
+            this.C.Name = "C";
+            // 
+            // LD
+            // 
+            this.LD.HeaderText = "Ld(nm)";
+            this.LD.Name = "LD";
+            // 
+            // Pur
+            // 
+            this.Pur.HeaderText = "Pur(%)";
+            this.Pur.Name = "Pur";
+            // 
+            // Lp
+            // 
+            this.Lp.HeaderText = "Lp(nm)";
+            this.Lp.Name = "Lp";
+            // 
+            // HW
+            // 
+            this.HW.HeaderText = "HW(nm)";
+            this.HW.Name = "HW";
+            // 
+            // Lav
+            // 
+            this.Lav.HeaderText = "Lav(nm)";
+            this.Lav.Name = "Lav";
+            // 
+            // Ra
+            // 
+            this.Ra.HeaderText = "Ra";
+            this.Ra.Name = "Ra";
+            // 
+            // R1
+            // 
+            this.R1.HeaderText = "R1";
+            this.R1.Name = "R1";
+            // 
+            // R2
+            // 
+            this.R2.HeaderText = "R2";
+            this.R2.Name = "R2";
+            // 
+            // R3
+            // 
+            this.R3.HeaderText = "R3";
+            this.R3.Name = "R3";
+            // 
+            // R4
+            // 
+            this.R4.HeaderText = "R4";
+            this.R4.Name = "R4";
+            // 
+            // R5
+            // 
+            this.R5.HeaderText = "R5";
+            this.R5.Name = "R5";
+            // 
+            // R6
+            // 
+            this.R6.HeaderText = "R6";
+            this.R6.Name = "R6";
+            // 
+            // R7
+            // 
+            this.R7.HeaderText = "R7";
+            this.R7.Name = "R7";
+            // 
+            // R8
+            // 
+            this.R8.HeaderText = "R8";
+            this.R8.Name = "R8";
+            // 
+            // R9
+            // 
+            this.R9.HeaderText = "R9";
+            this.R9.Name = "R9";
+            // 
+            // R10
+            // 
+            this.R10.HeaderText = "R10";
+            this.R10.Name = "R10";
+            // 
+            // R11
+            // 
+            this.R11.HeaderText = "R11";
+            this.R11.Name = "R11";
+            // 
+            // R12
+            // 
+            this.R12.HeaderText = "R12";
+            this.R12.Name = "R12";
+            // 
+            // R13
+            // 
+            this.R13.HeaderText = "R13";
+            this.R13.Name = "R13";
+            // 
+            // R14
+            // 
+            this.R14.HeaderText = "R14";
+            this.R14.Name = "R14";
+            // 
+            // R15
+            // 
+            this.R15.HeaderText = "R15";
+            this.R15.Name = "R15";
+            // 
+            // CDI
+            // 
+            this.CDI.HeaderText = "CDI";
+            this.CDI.Name = "CDI";
+            // 
+            // RR
+            // 
+            this.RR.HeaderText = "RR";
+            this.RR.Name = "RR";
+            // 
+            // GR
+            // 
+            this.GR.HeaderText = "GR";
+            this.GR.Name = "GR";
+            // 
+            // BR
+            // 
+            this.BR.HeaderText = "BR";
+            this.BR.Name = "BR";
+            // 
+            // Ph
+            // 
+            this.Ph.HeaderText = "Ph";
+            this.Ph.Name = "Ph";
+            // 
+            // DataList
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridView);
+            this.Name = "DataList";
+            this.Size = new System.Drawing.Size(707, 441);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HW;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Lav;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn R15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CDI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ph;
+    }
+}

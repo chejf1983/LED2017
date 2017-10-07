@@ -1,0 +1,1092 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\properties_wnd.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties_wnd_hc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\properties_hc.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="UserImages.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\LED850.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\LED850Doc.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\LED850.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\toolbar1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="D:\My Documents\My Pictures\ID_MYTOOLBAR.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="D:\My Documents\My Pictures\NotTest.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="D:\My Documents\My Pictures\ACCEPTABLE.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="D:\My Documents\My Pictures\BAD.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="D:\My Documents\My Pictures\GOOD.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="d:\my documents\my pictures\toolbar1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\ToolBar32.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmp00001.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\about.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="LAT2000.reg" />
+    <None Include="res\-σ.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\-2σ , -σ.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\2σ.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\-2σ.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\σ,2σ.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\σ.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\listreader.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Calculator - Fire.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\display-1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Tab.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\PrintPriview.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Print.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\hand.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Documents and Settings\Administrator\桌面\图标\测试信息\Info-8.png">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon3.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Documents and Settings\Administrator\桌面\图标\测试信息\Info-8.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Documents and Settings\Administrator\桌面\图标\测试信息\wordprocessing.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Splsh16.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\alert.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\_alert.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\smallico.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Tab16.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LAT2000.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LedData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainTabWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotannotationx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotaxisx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotchannelx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotdatacursorx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotdataviewx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotlabelx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotlegendx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplotlimitx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplottablecolumnx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplottablex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="iplottoolbarx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="font.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="picture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Serial.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMFCToolBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EditLimitDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Haas1200Meter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyCheckLED.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolTipEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NewTestColorData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LedSpectrumData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StandardLampSettingsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DataListViewSelectShow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InputPasswordDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ModifyCalProtectPassword.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PolygonEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ntgraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RegionToolDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ipiechartx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CalibrationDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SpectrumCommDemo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMFC_Lib.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CalibrationData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LEDDataContainer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LEDDataContainerView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_grid.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ax_cie_xyz.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ContainerDrawFormView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ContainerGridView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_cell.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_column.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExNewCorrectColorParaDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="axciexyzctrl1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LAT2000Doc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestContainer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LAT2000.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainTestFormView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SheetDebug.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyDockablePaneData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GaugeComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugGaugePage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDPSPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugSC1600Page.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommSettingsData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugIndicatorPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugA90Page.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugWYPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugPF2010APage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugEMS61000_5APage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugEMS61000_11KPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugTemperaturePage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExEmc5AMeterDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IndicatorComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExEmc11kMeterDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ianalogdisplayx_tmp1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ieditx_tmp1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemSettingsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="NoneBorderDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ilabelx1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticOtherInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BurnInSettingsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestSettingsData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmSettingsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmSettingsData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmRingData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RectificationTestDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmRingEditDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LRAComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugLRAPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FujiTMPComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Comm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugThunderRelayPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LineControllerComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugLineControllerPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SC1000Comm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExitSelectionDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DPSPowerComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DPSDefinition.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestInfoPage_LampInfoPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestInfoPage_TestConditionPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MySheet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LEDDataStatView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestInfoData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticGridView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticDistributionGridView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ipiechartx1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticParaChooseDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Label.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExNewPowDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TestInfoPage_PrintOpinionPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentLEDID_Dlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LineControlerDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgBeforeChangeLamp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSetOldLineTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgShowOldingTime.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HistogramGraphCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Splash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="StatisticLedDataContainer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStatisticFileChoose.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgListParaChoose.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AccreditData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_Font.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ax_spectrumdrawctrl1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ScanerComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentBoardID_Dlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugScanerPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExCalc_Color.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExCalcColorDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WarningYesNODlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HLS-200DLLComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Configure_ExaminationPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Configure_TestControlPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Configure_OthersPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Configure_WatchPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Configure_IndicatorPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugBribePage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Configure_AssistantPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExWYDll.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugTestChannelControler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgShowOtherNote.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMyLastSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SafetyTestComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDebugSaft.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LAT_SaftComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSaftSetup.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgControlShow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ThunderRelayComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BribeComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ContJydzComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ContNyyComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ContXldlComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugPageHandAuto.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HandAutoComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgInputPower.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgSeleLamp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TouchScreen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex_TouchSrceenDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ContainerWatchView.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EX_TmpDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgCurrentBroad.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Ex_SDCM_DLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PageSDCM.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ExEverLincese.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="LedData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTabWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotannotationx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotaxisx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotchannelx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotdatacursorx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotdataviewx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotlabelx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotlegendx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplotlimitx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplottablecolumnx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplottablex.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="iplottoolbarx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="font.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="picture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Serial.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMFCToolBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EditLimitDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyCheckLED.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolTipEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LedSpectrumData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StandardLampSettingsDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DataListViewSelectShow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InputPasswordDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ModifyCalProtectPassword.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PolygonEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ntgraph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ipiechartx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CalibrationDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SpectrumCommDemo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMFC_Lib.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CalibrationData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LEDDataContainer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LEDDataContainerView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_grid.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ax_cie_xyz.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ContainerDrawFormView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ContainerGridView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_cell.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="_column.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="axciexyzctrl1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LAT2000Doc.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestContainer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LAT2000.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTestFormView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SheetDebug.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyDockablePaneData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GaugeComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugGaugePage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDPSPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugSC1600Page.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CommSettingsData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugIndicatorPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugA90Page.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugWYPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugPF2010APage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugEMS61000_5APage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugEMS61000_11KPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugTemperaturePage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IndicatorComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ianalogdisplayx_tmp1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ieditx_tmp1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemSettingsDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NoneBorderDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ilabelx1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticOtherInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BurnInSettingsDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestSettingsData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmSettingsDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmSettingsData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmRingData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RectificationTestDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmRingEditDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LRAComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugLRAPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FujiTMPComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Comm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugThunderRelayPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LineControllerComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugLineControllerPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SC1000Comm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ExitSelectionDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestInfoPage_LampInfoPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestInfoPage_TestConditionPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MySheet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LEDDataStatView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestInfoData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticGridView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticDistributionGridView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ipiechartx1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticParaChooseDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Label.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TestInfoPage_PrintOpinionPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentLEDID_Dlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LineControlerDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgBeforeChangeLamp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSetOldLineTime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgShowOldingTime.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HistogramGraphCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Splash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="StatisticLedDataContainer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStatisticFileChoose.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgListParaChoose.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AccreditData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ax_spectrumdrawctrl1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ScanerComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentBoardID_Dlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugScanerPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WarningYesNODlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Configure_ExaminationPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Configure_TestControlPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Configure_OthersPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Configure_WatchPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Configure_IndicatorPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugBribePage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Configure_AssistantPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugTestChannelControler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgShowOtherNote.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMyLastSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SafetyTestComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDebugSaft.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LAT_SaftComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSaftSetup.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgControlShow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ThunderRelayComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BribeComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ContJydzComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ContNyyComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ContXldlComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugPageHandAuto.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HandAutoComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgInputPower.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgSeleLamp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TouchScreen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ContainerWatchView.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgCurrentBroad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageSDCM.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+﻿  stdafx.cpp
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+  SpectraArsenalEmission.cpp
+SpectraArsenalEmission.cpp(216): warning C4473: “fscanf_s”: 没有为格式字符串传递足够的参数
+  SpectraArsenalEmission.cpp(216): note: 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
+  SpectraArsenalEmission.cpp(216): note: 缺失的可变参数 2 为格式字符串“%s”所需
+  SpectraArsenalEmission.cpp(216): note: 此参数用作缓冲区大小
+    正在创建库 D:\项目\led2017\LED2017资料\SpectraArsenalEmission\SpectraArsenalEmission\Release\SpectraArsenalEmission.lib 和对象 D:\项目\led2017\LED2017资料\SpectraArsenalEmission\SpectraArsenalEmission\Release\SpectraArsenalEmission.exp
+  正在生成代码
+  All 155 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  SpectraArsenalEmission.vcxproj -> D:\项目\led2017\LED2017资料\SpectraArsenalEmission\SpectraArsenalEmission\Release\SpectraArsenalEmission.dll
+  SpectraArsenalEmission.vcxproj -> D:\项目\led2017\LED2017资料\SpectraArsenalEmission\SpectraArsenalEmission\Release\SpectraArsenalEmission.pdb (Full PDB)

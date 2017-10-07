@@ -1,0 +1,69 @@
+﻿using LED2017;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace SPFormBill
+{
+    public partial class MyForm : Form
+    {
+        public MyForm()
+        {
+            InitializeComponent();
+
+            LED2017.FaultReport.FaultCenter.Instance.FaultEvent += Instance_FaultEvent;
+        }
+
+        private void Instance_FaultEvent(LED2017.FaultReport.FaultLevel level, string info)
+        {
+            this.Invoke(new EventHandler(delegate {
+                MessageBox.Show(level + "\r\n" + info);
+            }));
+        }
+
+        private void FileMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenMenuItem_Click(object sender, EventArgs e)
+        {
+            LEDPlatForm.Instance.LEDLabor.DevControl.GetDeviceControl().ImportDev(LED2017.Device.DeviceSearch.CreateTestDevice());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            this.spCurve.ClearCIE();
+            this.dataList.ClearData();
+        }
+
+        private void toolStripButton_OneTest_Click(object sender, EventArgs e)
+        {
+            LED2017.LEDPlatForm.Instance.LEDLabor.DevControl.GetDataCollectControl().OneTimeCollect();
+        }
+
+        private void toolStripButton_SustainCollect_Click(object sender, EventArgs e)
+        {
+            LED2017.DevControl.IDevControl.IDataCollector collector = LEDPlatForm.Instance.LEDLabor.DevControl.GetDataCollectControl();
+            if (collector.IsSustainedCollectStart)
+            {
+                collector.StopSustainedCollect();
+            }else
+            {
+                collector.StartSustainedCollect();
+            }
+        }
+    }
+}

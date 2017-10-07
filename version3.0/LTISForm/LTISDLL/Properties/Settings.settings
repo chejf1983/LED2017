@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LTISDLL.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FileDB_dirpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./Datadir</Value>
+    </Setting>
+    <Setting Name="fdx" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="fdy" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="filter_dirpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./condition/</Value>
+    </Setting>
+    <Setting Name="filter_deffile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">nadefmap.xml</Value>
+    </Setting>
+    <Setting Name="testTriggerMode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

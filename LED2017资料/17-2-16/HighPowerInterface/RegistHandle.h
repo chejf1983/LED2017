@@ -1,0 +1,16 @@
+CString GetCPUID();
+CString GetHardDiskID();
+CString GetCharacterCode();
+CString InsertDays(CString str, int days);
+int Decrypt(CString str);
+CString Encrypt(CString str, int days);
+CString CalSubKey(CString str);
+CString TransformToString(int year, int month, int day);
+int TransformToInt(CString str);
+bool WriteRegFile(CString str, int days);
+bool WriteRegester(CString str, int days);
+bool ReadRegFile();
+int CaculateDays(int date1, int date2);
+bool IfOverdue(CString strReg);
+int IsRegisted();
+void DeleteRegedit();

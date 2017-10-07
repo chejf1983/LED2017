@@ -1,0 +1,98 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: HighPowerInterface - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP58.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /I "C:\Program Files\Ocean Optics\OmniDriverSPAM\include" /I "C:\JDK\include" /I "C:\JDK\include\win32" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/HighPowerInterface.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\ʥо\HighPowerInterface\Functions.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP58.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP59.tmp" with contents
+[
+SpectraArsenalEmission.lib msimg32.lib common32.lib SPAM32.lib highpower.lib HolyChipOptics.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/HighPowerInterface.pdb" /machine:I386 /out:"APP/HighPowerInterface.exe" /libpath:"C:\System\OOI_HOME" 
+".\Release\AccumulateLevel.obj"
+".\Release\AddUsersDlg.obj"
+".\Release\AuthorityView.obj"
+".\Release\BinDlg.obj"
+".\Release\BitButtonNL.obj"
+".\Release\ChangePassword.obj"
+".\Release\Chip1Dlg.obj"
+".\Release\Chip2Dlg.obj"
+".\Release\Chip3Dlg.obj"
+".\Release\ChipsHandle.obj"
+".\Release\ChipType.obj"
+".\Release\CIEDiagram.obj"
+".\Release\ComboListCtrl.obj"
+".\Release\ControlsDlg.obj"
+".\Release\CoolMenu.obj"
+".\Release\CSpecGCS.obj"
+".\Release\DeleteUsersDlg.obj"
+".\Release\EngineerLogin.obj"
+".\Release\FileHandle.obj"
+".\Release\Functions.obj"
+".\Release\HandleLevel.obj"
+".\Release\HardDisk.obj"
+".\Release\HighPowerInterface.obj"
+".\Release\HighPowerInterfaceDlg.obj"
+".\Release\INITIALDlg.obj"
+".\Release\InPlaceCombo.obj"
+".\Release\InPlaceEdit.obj"
+".\Release\LevelDlg.obj"
+".\Release\Light.obj"
+".\Release\Login.obj"
+".\Release\MacProgressCtrl.obj"
+".\Release\MD5Checksum.obj"
+".\Release\mscomm.obj"
+".\Release\PopupMenu.obj"
+".\Release\ReDrawEdit.obj"
+".\Release\RedrawTabCtrl.obj"
+".\Release\RedrawTabCtrl2.obj"
+".\Release\RegisterDlg.obj"
+".\Release\RegistHandle.obj"
+".\Release\ResizingDialog.obj"
+".\Release\SetChipFeet.obj"
+".\Release\SetParameter.obj"
+".\Release\SetPrint.obj"
+".\Release\SetPrintForm.obj"
+".\Release\SetSpmCompen.obj"
+".\Release\SetSpmReadLmp.obj"
+".\Release\SetSpmReadParam.obj"
+".\Release\SetSpmSaveDark.obj"
+".\Release\SetSpmSaveRefer.obj"
+".\Release\SettingDlg.obj"
+".\Release\ShootDiagram.obj"
+".\Release\ShowLevel.obj"
+".\Release\ShowTestDlg.obj"
+".\Release\ShowTestPopup.obj"
+".\Release\SkinHeaderCtrl.obj"
+".\Release\SkinHorizontalScrollbar.obj"
+".\Release\SkinVerticleScrollbar.obj"
+".\Release\Spectrum.obj"
+".\Release\SpectrumSetting.obj"
+".\Release\StatisticDlg.obj"
+".\Release\Status.obj"
+".\Release\StdAfx.obj"
+".\Release\Subclass.obj"
+".\Release\SystemSetting.obj"
+".\Release\Tools.obj"
+".\Release\Wizard.obj"
+".\Release\HighPowerInterface.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP59.tmp"
+<h3>Output Window</h3>
+Compiling...
+Functions.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+HighPowerInterface.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

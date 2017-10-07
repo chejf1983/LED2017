@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LED2017.SPDevLab.LEDLab.Data
+{
+    public class ColorPar
+    {
+        public float x1931;    // 1931
+        public float y1931;
+
+        public float x1960;    //1960
+        public float y1960;
+
+        public float x1976;    //1976
+        public float y1976;
+
+        public float CCT;      //(K)
+        public float C;        //dC
+        public float Ld;       //(nm)
+        public float Pur;      //(%)
+        public float Lp;       //(nm)
+        public float HW;       //(nm)
+        public float Lav;      //(nm)
+        public float Ra;       //Ra
+        public float[] Ri = new float[15];   // R1-R15
+        public float CDI;      // CDI
+
+        public float RR;       //red
+        public float GR;       //green
+        public float BR;       //blue
+
+        public float Ph;       //ph
+    }
+}

@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: LITS - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2D1.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "LITS_EXPORTS" /FR"Debug/" /Fp"Debug/LITS.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\SpectraArsenal\GCS\LITS\source\LITS.cpp"
+"E:\SpectraArsenal\GCS\LITS\source\MIGP.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2D1.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2D2.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib USB_Driver.lib /nologo /dll /incremental:yes /pdb:"Debug/LITS.pdb" /debug /machine:I386 /out:"Debug/LITS.dll" /implib:"Debug/LITS.lib" /pdbtype:sept 
+.\Debug\LITS.obj
+.\Debug\MIGP.obj
+.\Debug\StdAfx.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP2D2.tmp"
+<h3>Output Window</h3>
+Compiling...
+LITS.cpp
+MIGP.cpp
+Linking...
+   Creating library Debug/LITS.lib and object Debug/LITS.exp
+Creating command line "bscmake.exe /nologo /o"Debug/LITS.bsc"  .\Debug\LITS.sbr .\Debug\MIGP.sbr .\Debug\StdAfx.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+LITS.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

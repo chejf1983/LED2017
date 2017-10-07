@@ -1,0 +1,35 @@
+﻿using LED2017.DevControl.IDevControl;
+using LED2017.SPDevLab.LEDLab;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LED2017
+{
+    public class LEDPlatForm
+    {
+        private static LEDPlatForm instance = null;
+        private LEDPlatForm()
+        {
+            //初始化数据报表
+            this.ledLaboruary = new LEDLabor();
+        }
+
+        public static LEDPlatForm Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new LEDPlatForm();
+                }
+                return instance;
+            }
+        }
+
+        private LEDLabor ledLaboruary;
+        public LEDLabor LEDLabor { get { return this.ledLaboruary; } }
+    }
+}

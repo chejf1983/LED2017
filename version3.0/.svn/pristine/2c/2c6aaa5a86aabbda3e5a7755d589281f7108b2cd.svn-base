@@ -1,0 +1,13 @@
+﻿using LED2017.DevControl.NDevControl;
+
+namespace LED2017.DevControl.IDevControl
+{
+    public class DevControlFactory
+    {
+
+        public static IDevControl CreateDevControl()
+        {
+            return new SPDevControl();
+        }
+    }
+}

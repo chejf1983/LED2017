@@ -1,0 +1,44 @@
+﻿
+using LED2017.SPDevLab.LEDLab.Data;
+using System.Collections.Generic;
+
+
+namespace LED2017.SPDevLab.LEDLab.DataReport
+{
+
+    public delegate void AddNewData(CIEData data);
+    /// <summary>
+    /// 数据表
+    /// </summary>
+    public class DataTabled
+    {
+        /// <summary>
+        /// 最大记录缓存
+        /// </summary>
+        private int maxdatacount = 1000;
+        public int MaxDataCount { get { return maxdatacount; } }
+
+        private List<CIEData> datas = new List<CIEData>();
+
+        public event AddNewData NewDataEvent;
+
+        /// <summary>
+        /// 新增数据
+        /// </summary>
+        /// <param name="dataPacket"></param>
+        public void AddNewRecord(CIEData dataPacket)
+        {
+            if(this.datas.Count > this.maxdatacount)
+            {
+                this.datas.RemoveAt(0);
+            }
+
+            datas.Add(dataPacket); 
+            
+            if(this.NewDataEvent != null)
+            {
+                this.NewDataEvent(dataPacket);
+            }           
+        }
+    }
+}

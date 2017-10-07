@@ -1,0 +1,55 @@
+﻿using LED2017.Device.IDevice;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using LED2017.Device.Data;
+
+namespace LED2017.Device.TestDevice
+{
+    public class TestDev : IDevice.IDevice
+    {
+        private bool isConnect = false;
+        public void Connect()
+        {
+            this.isConnect = true;
+        }
+
+        public void DisConnect()
+        {
+            this.isConnect = false;
+        }
+
+        public bool IsConnect()
+        {
+            return this.isConnect;
+        }
+
+        #region 创建数据
+        /// <summary>
+        /// 创建数据次数
+        /// </summary>
+        private int buildnum = 0;
+        /// <summary>
+        /// 创建虚拟数据
+        /// </summary>
+        public SPData GetSPData()
+        {
+            buildnum++;
+
+            double[,] spdata = new double[2, 1024];
+            for (int i = 0; i < spdata.GetLength(1); i++)
+            {
+                spdata[0, i] = i;
+                spdata[1, i] = Math.Sin(buildnum + (double)i / 50) * 100;
+            }
+
+            SPData data = new SPData();
+            data.spdata = spdata;
+            data.time = DateTime.Now;
+            return data;
+        }
+        #endregion
+    }
+}

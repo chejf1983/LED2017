@@ -1,0 +1,69 @@
+﻿using LED2017.DevControl.IDevControl;
+using LED2017.SPDevLab.LEDLab.Data;
+using LED2017.SPDevLab.LEDLab.DataReport;
+
+namespace LED2017.SPDevLab.LEDLab
+{
+    public class LEDLabor
+    {
+        private CIEAnalyzer dataAnalyzer; //数据分析器
+        private IDevControl devControl;   //设备控制器
+        private DataTabled dataTable;     //数据报表
+
+        public LEDLabor()
+        {
+            this.dataAnalyzer = new CIEAnalyzer();
+            this.devControl = DevControlFactory.CreateDevControl();
+            this.dataTable = new DataTabled();
+
+            this.InitLEDLabor();
+        }
+
+        /// <summary>
+        /// 初始化LED实验室
+        /// </summary>
+        private void InitLEDLabor()
+        {
+            ///连接设备控制器，数据响应事件
+            this.devControl.GetDataCollectControl().CollectDataEvent += LEDLabor_CollectDataEvent;
+        }
+
+        /// <summary>
+        /// 数据响应流程
+        /// </summary>
+        /// <param name="data"></param>
+        private void LEDLabor_CollectDataEvent(Device.Data.SPData data)
+        {
+            ///创建单独进程处理
+            System.Threading.ThreadPool.QueueUserWorkItem(new System.Threading.WaitCallback(delegate
+            {
+                ///由数据分析仪，分析数据，得到最后的结果
+                CIEData cdata = this.dataAnalyzer.BuildCIEData(data);
+
+                ///添加到数据表中，由数据表负责保存
+                this.dataTable.AddNewRecord(cdata);
+            }));
+        }
+
+        /// <summary>
+        /// 设备控制
+        /// </summary>
+        public IDevControl DevControl
+        {
+            get { return this.devControl; }
+        }
+
+        /// <summary>
+        /// 数据分析器
+        /// </summary>
+        public CIEAnalyzer CieAnalyzer
+        {
+            get { return this.dataAnalyzer; }
+        }
+
+        /// <summary>
+        /// 数据报表
+        /// </summary>
+        public DataTabled DataTable { get { return this.dataTable; } }
+    }
+}

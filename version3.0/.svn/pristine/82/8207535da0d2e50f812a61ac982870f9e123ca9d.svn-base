@@ -1,0 +1,21 @@
+﻿using System;
+
+namespace LED2017.DevControl.IDevControl
+{
+    public enum ControlState
+    {
+        CLOSE,
+        CONNECT,
+        COLLECTING
+    }
+
+    public interface IDevControl
+    {
+        //控制器状态
+        ControlState GetControlState();
+
+        IDevCenter GetDeviceControl();
+
+        IDataCollector GetDataCollectControl();
+    }
+}

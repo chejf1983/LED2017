@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Root Name="stdcal">
+  <LedNum>1</LedNum>
+  <CalElement>
+    <EfPh>2</EfPh>
+    <EfLd>1</EfLd>
+    <EfLp>379</EfLp>
+    <EfR9>1</EfR9>
+    <EfRa>2</EfRa>
+    <EfVol>5.21</EfVol>
+    <Efx>0.01</Efx>
+    <Efy>0.01</Efy>
+  </CalElement>
+</Root>

@@ -1,0 +1,86 @@
+﻿using System;
+using LED2017.DevControl.IDevControl;
+using LED2017.Device.IDevice;
+using LED2017.FaultReport;
+
+namespace LED2017.DevControl.NDevControl
+{
+    public class DevCenter : IDevControl.IDevCenter
+    {
+        /// <summary>
+        /// 光谱仪
+        /// </summary>
+        private IDevice spdev;
+        /// <summary>
+        /// 控制器
+        /// </summary>
+        private SPDevControl spdevcontrol;
+
+        public DevCenter(SPDevControl spdevcontrol)
+        {
+            this.spdevcontrol = spdevcontrol;
+        }
+
+        /// <summary>
+        /// 删除设备
+        /// </summary>
+        public ControlState DeleteDev()
+        {
+            lock (this.spdevcontrol)
+            {
+                if (this.spdevcontrol.GetControlState() > IDevControl.ControlState.CONNECT)
+                {
+                    ///如果在运行中，不关闭设备
+                    FaultCenter.Instance.SendFault(FaultLevel.ERROR, "设备正在忙碌，请先停止再删除，当前状态：" + this.spdevcontrol.GetControlState());
+                }
+                else if (this.spdevcontrol.GetControlState() == IDevControl.ControlState.CONNECT)
+                {
+                    ///连接状态下，先断开连接
+                    this.spdev.DisConnect();
+                    this.spdev = null;
+                    this.spdevcontrol.SetControlState(IDevControl.ControlState.CLOSE);
+                }
+            }
+            return this.spdevcontrol.GetControlState();
+        }
+
+        /// <summary>
+        /// 加载设备
+        /// </summary>
+        /// <param name="newdev"></param>
+        /// <returns></returns>
+        public IDevControl.ControlState ImportDev(IDevice newdev)
+        {
+            lock (this.spdevcontrol)
+            {
+                ///关闭设备成功，再添加新设备
+                if (this.DeleteDev() == IDevControl.ControlState.CLOSE)
+                {
+                    this.spdev = newdev;
+
+                    ///尝试连接设备
+                    try
+                    {
+                        this.spdev.Connect();
+                        this.spdevcontrol.SetControlState(IDevControl.ControlState.CONNECT);
+                    }
+                    catch (Exception ex)
+                    {
+                        FaultReport.FaultCenter.Instance.SendFault(FaultReport.FaultLevel.ERROR, "连接设备失败：" + ex.ToString());
+                    }
+                }
+
+                return this.spdevcontrol.GetControlState();
+            }
+        }
+
+        /// <summary>
+        /// 获取设备，内部接口
+        /// </summary>
+        /// <returns></returns>
+        public IDevice GetDevice()
+        {
+            return this.spdev;
+        }
+    }
+}

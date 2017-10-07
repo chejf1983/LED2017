@@ -1,0 +1,23 @@
+﻿using LED2017.SPDevLab.LEDLab.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LED2017.SPDevLab.LEDLab.DataFilter
+{
+    public class DataConfig
+    {
+        public ColorPar minvalue;
+        public ColorPar maxvalue;
+    }
+
+    public class LEDFilter
+    {
+        public void SetFilterConfig()
+        {
+
+        }
+    }
+}

@@ -1,0 +1,200 @@
+﻿namespace SPFormBill
+{
+    partial class MyForm
+    {
+        /// <summary>
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows 窗体设计器生成的代码
+
+        /// <summary>
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyForm));
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton_OneTest = new System.Windows.Forms.ToolStripButton();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.spCurve = new TestWindows.SPCurve();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataList = new TestWindows.DataList();
+            this.toolStripButton_SustainCollect = new System.Windows.Forms.ToolStripButton();
+            this.menuStrip2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(920, 25);
+            this.menuStrip2.TabIndex = 1;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // FileMenuItem
+            // 
+            this.FileMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OpenMenuItem});
+            this.FileMenuItem.Name = "FileMenuItem";
+            this.FileMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.FileMenuItem.Text = "文件";
+            this.FileMenuItem.Click += new System.EventHandler(this.FileMenuItem_Click);
+            // 
+            // OpenMenuItem
+            // 
+            this.OpenMenuItem.Name = "OpenMenuItem";
+            this.OpenMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.OpenMenuItem.Text = "打开";
+            this.OpenMenuItem.Click += new System.EventHandler(this.OpenMenuItem_Click);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton_OneTest,
+            this.toolStripButton_SustainCollect});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(920, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton_OneTest
+            // 
+            this.toolStripButton_OneTest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton_OneTest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_OneTest.Name = "toolStripButton_OneTest";
+            this.toolStripButton_OneTest.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButton_OneTest.Text = "单次采集";
+            this.toolStripButton_OneTest.Click += new System.EventHandler(this.toolStripButton_OneTest_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(0, 67);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(920, 460);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.spCurve);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(912, 434);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "时实数据";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // spCurve
+            // 
+            this.spCurve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.spCurve.Location = new System.Drawing.Point(-4, 3);
+            this.spCurve.Name = "spCurve";
+            this.spCurve.Size = new System.Drawing.Size(916, 438);
+            this.spCurve.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataList);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(912, 434);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "统计数据";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataList
+            // 
+            this.dataList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataList.Location = new System.Drawing.Point(-4, 0);
+            this.dataList.Name = "dataList";
+            this.dataList.Size = new System.Drawing.Size(916, 431);
+            this.dataList.TabIndex = 0;
+            // 
+            // toolStripButton_SustainCollect
+            // 
+            this.toolStripButton_SustainCollect.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton_SustainCollect.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton_SustainCollect.Image")));
+            this.toolStripButton_SustainCollect.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton_SustainCollect.Name = "toolStripButton_SustainCollect";
+            this.toolStripButton_SustainCollect.Size = new System.Drawing.Size(60, 22);
+            this.toolStripButton_SustainCollect.Text = "连续采集";
+            this.toolStripButton_SustainCollect.Click += new System.EventHandler(this.toolStripButton_SustainCollect_Click);
+            // 
+            // MyForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(920, 526);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.menuStrip2);
+            this.Name = "MyForm";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem FileMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton_OneTest;
+    
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private TestWindows.SPCurve spCurve;
+        private TestWindows.DataList dataList;
+        private System.Windows.Forms.ToolStripButton toolStripButton_SustainCollect;
+    }
+}
+

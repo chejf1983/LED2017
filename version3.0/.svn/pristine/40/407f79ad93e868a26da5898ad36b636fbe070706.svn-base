@@ -1,0 +1,182 @@
+﻿using LED2017.Device.IDevice;
+using System;
+using System.Threading;
+using LED2017.DevControl.IDevControl;
+using LED2017.FaultReport;
+
+namespace LED2017.DevControl.NDevControl
+{
+    public class DataCollector : IDataCollector
+    {
+        /// <summary>
+        /// 所属控制器
+        /// </summary>
+        private DevControl.NDevControl.SPDevControl spdevcontrol;
+
+        /// <summary>
+        /// 采集数据事件
+        /// </summary>
+        public event ReceiveData CollectDataEvent;
+
+        public DataCollector(SPDevControl spdevcontrol)
+        {
+            this.spdevcontrol = spdevcontrol;
+        }
+
+        #region 连续采集
+        /// <summary>
+        /// 连续采集是否开始
+        /// </summary>
+        private bool isSustainedStart = false;
+        /// <summary>
+        /// 采样间隔，默认100ms
+        /// </summary>
+        private int timelag = 100;
+
+        /// <summary>
+        /// 连续采集是否开始
+        /// </summary>
+        /// <returns></returns>
+        bool IDataCollector.IsSustainedCollectStart
+        {
+            get
+            {
+                return this.isSustainedStart;
+            }
+        }
+
+        /// <summary>
+        /// 设置采样间隔
+        /// </summary>
+        public int SustainTimeLag
+        {
+            get
+            {
+                return this.timelag;
+            }
+
+            set
+            {
+                if (value < 10)
+                {
+                    value = 10;
+                }
+                this.timelag = value;
+            }
+        }
+
+        /// <summary>
+        /// 开始连续采集
+        /// </summary>
+        public bool StartSustainedCollect()
+        {
+            lock (this.spdevcontrol)
+            {
+                if (this.spdevcontrol.GetControlState() != ControlState.CONNECT)
+                {
+                    FaultCenter.Instance.SendFault(FaultLevel.ERROR, "无法在当前状态下开始运行，当前状态：" + this.spdevcontrol.GetControlState());
+                    return false;
+                }
+
+                this.spdevcontrol.SetControlState(ControlState.COLLECTING);
+                ///启动新线程
+                ThreadPool.QueueUserWorkItem(new WaitCallback(delegate
+                {
+                    int timeindex = 0;
+                    while (this.isSustainedStart)
+                    {
+                        try
+                        {
+                            if (timeindex++ >= this.timelag / 10)
+                            {
+                                ///从设备采集数据，并上报
+                                this.CollectDataFromDevice();
+
+                                //重置时间
+                                timeindex = 0;
+                            }
+                            else
+                            {
+                                ///采样间隔
+                                Thread.Sleep(10);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            ///出现异常，停止采集
+                            this.StopSustainedCollect();
+                            ///通过控制器上报异常
+                            FaultCenter.Instance.SendFault(FaultLevel.ERROR, "采集数据失败:" + ex.ToString());
+                            ///跳出循环
+                            break;
+                        }
+                    }
+                }));
+                this.isSustainedStart = true;
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// 停止连续采集
+        /// </summary>
+        public void StopSustainedCollect()
+        {
+            lock (this.spdevcontrol)
+            {
+                if (this.isSustainedStart)
+                {
+                    this.isSustainedStart = false;
+                    this.spdevcontrol.SetControlState(ControlState.CONNECT);
+                }
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// 单次采集
+        /// </summary>
+        public bool OneTimeCollect()
+        {
+            lock (this.spdevcontrol)
+            {
+                if (this.spdevcontrol.GetControlState() != ControlState.CONNECT)
+                {
+                    FaultCenter.Instance.SendFault(FaultLevel.ERROR, "无法在当前状态下开始运行，当前状态：" + this.spdevcontrol.GetControlState());
+                    return false;
+                }
+                else
+                {
+                    try
+                    {
+                        this.CollectDataFromDevice();
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        FaultCenter.Instance.SendFault(FaultLevel.ERROR, "采集数据失败:" + ex.ToString());
+                        return false;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 从设备中获取数据
+        /// </summary>
+        private void CollectDataFromDevice()
+        {
+            ///从设备中心获取数据
+            IDevice dev = this.spdevcontrol.devcenter.GetDevice();
+
+
+            Device.Data.SPData data = dev.GetSPData();
+
+            ///如果有接收数据者，发送数据结果
+            if (this.CollectDataEvent != null)
+            {
+                this.CollectDataEvent(data);
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+﻿using LED2017.Device.IDevice;
+
+
+namespace LED2017.DevControl.IDevControl
+{
+    public interface IDevCenter
+    {
+        void ImportDev(IDevice newdev);
+
+        void DeleteDev();
+    }
+}

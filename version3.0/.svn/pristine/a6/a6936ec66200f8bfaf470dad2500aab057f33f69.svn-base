@@ -1,0 +1,149 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+
+namespace TestWindows.chartlib
+{
+    public partial class ChartCurve : UserControl
+    {
+        public ChartCurve()
+        {
+            InitializeComponent();
+
+            this.initCurveChart();
+        }
+
+
+        private void initCurveChart()
+        {
+            // 设置显示范围
+            ChartArea chartArea1 = this.curvechart.ChartAreas[0];
+
+            curvechart.Legends[0].Docking = Docking.Bottom;
+
+            //设备背景颜色，从上到下渐变
+            curvechart.BackColor = Color.WhiteSmoke;
+            curvechart.BackGradientStyle = GradientStyle.TopBottom;
+            curvechart.BackSecondaryColor = Color.White;
+
+            //设置边框颜色和样式
+            curvechart.BorderlineColor = Color.FromArgb((26), (59), (105));
+            curvechart.BorderlineDashStyle = ChartDashStyle.Solid;
+            curvechart.BorderlineWidth = 2;
+            curvechart.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+
+            /*设置3D阴影*/
+            chartArea1.Area3DStyle.Inclination = 15;
+            chartArea1.Area3DStyle.IsClustered = true;
+            chartArea1.Area3DStyle.IsRightAngleAxes = false;
+            chartArea1.Area3DStyle.Perspective = 10;
+            chartArea1.Area3DStyle.Rotation = 10;
+            chartArea1.Area3DStyle.WallWidth = 0;
+
+            //设置X轴标签
+            chartArea1.AxisX.LabelAutoFitStyle = (LabelAutoFitStyles)(((LabelAutoFitStyles.IncreaseFont | LabelAutoFitStyles.DecreaseFont)
+                        | LabelAutoFitStyles.WordWrap));
+            chartArea1.AxisX.LabelStyle.Font = new Font("Trebuchet MS", 8.25F, FontStyle.Bold);
+            //x轴颜色
+            chartArea1.AxisX.LineColor = Color.FromArgb(64, 64, 64, (64));
+            //X轴网格线颜色和样式
+            chartArea1.AxisX.MajorGrid.LineColor = Color.Gray;
+            chartArea1.AxisX.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+            //X轴滚动条样式
+            chartArea1.AxisX.ScrollBar.LineColor = Color.Black;
+            chartArea1.AxisX.ScrollBar.Size = 10;
+
+            //设置X方向是否可以移动
+            chartArea1.CursorX.IsUserEnabled = true;
+            chartArea1.CursorX.IsUserSelectionEnabled = true;
+            chartArea1.AxisX.ScaleView.Zoomable = true;
+
+            //设置Y轴标签
+            chartArea1.AxisY.LabelStyle.Font = new Font("Trebuchet MS", 8.25F, FontStyle.Bold);
+            //Y轴颜色
+            chartArea1.AxisY.LineColor = Color.FromArgb(64, 64, 64, 64);
+            //Y轴网格线颜色和样式
+            chartArea1.AxisY.MajorGrid.LineDashStyle = ChartDashStyle.Dash;
+            chartArea1.AxisY.MajorGrid.LineColor = Color.Gray;
+            //Y轴滚动条样式
+            chartArea1.AxisY.ScrollBar.LineColor = Color.Black;
+            chartArea1.AxisY.ScrollBar.Size = 10;
+            //设置Y方向是否可以移动
+            chartArea1.CursorY.IsUserEnabled = true;
+            chartArea1.CursorY.IsUserSelectionEnabled = true;
+            chartArea1.AxisY.ScaleView.Zoomable = true;
+
+            //设置CHART背景颜色，边框颜色
+            chartArea1.BackColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+
+            chartArea1.Name = "Curve";
+            chartArea1.ShadowColor = System.Drawing.Color.Transparent;
+
+            Series series = this.curvechart.Series[0];
+            // 画样条曲线（Spline）
+            series.ChartType = SeriesChartType.FastLine;
+            // 线宽2个像素
+            series.BorderWidth = 2;
+            // 线的颜色：红色
+            series.Color = System.Drawing.Color.CadetBlue;
+
+            this.curvechart.MouseMove += Spectralchart_MouseMove;
+
+        }
+
+        private void Spectralchart_MouseMove(object sender, MouseEventArgs e)
+        {
+            ChartArea chartArea1 = curvechart.ChartAreas[0];
+
+            float _currentPointX = e.X;
+            float _currentPointY = e.Y;
+
+            chartArea1.CursorX.SetCursorPixelPosition(new PointF(_currentPointX, _currentPointY), false);
+            chartArea1.CursorY.SetCursorPixelPosition(new PointF(_currentPointX, _currentPointY), false);
+
+        }
+
+        public void Reset()
+        {
+            this.curvechart.ChartAreas[0].AxisX.ScaleView.ZoomReset(0);
+            this.curvechart.ChartAreas[0].AxisY.ScaleView.ZoomReset(0);
+        }
+
+        public void displayData(String title, double[,] data)
+        {
+            // 设置曲线的样式
+            Series series = this.curvechart.Series[0];// spectralchart.Series[0];
+
+            // 更新名称
+            series.LegendText = title;
+
+            //清理旧数据
+            series.Points.Clear();
+
+            // 检查数据是否合法
+            if (data.GetLength(0) < 2)
+            {
+                return;
+            }
+
+
+            // 在chart中显示数据
+            for (int i = 0; i < data.GetLength(1); i++)
+            {
+                //添加坐标点
+                series.Points.AddXY(data[0, i], data[1, i]);
+            }
+        }
+    }
+}

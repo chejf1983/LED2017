@@ -1,0 +1,2053 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\HighPowerInterface.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON0               ICON    DISCARDABLE     "res\\HolyChip.ico"
+IDI_ICON1               ICON    DISCARDABLE     "res\\Aqua Stripped Folder Generic.ico"
+IDI_ICON4               ICON    DISCARDABLE     "res\\Aqua Smooth Folder Developer.ico"
+IDI_ICON2               ICON    DISCARDABLE     "res\\Aqua Smooth Folder DropBox.ico"
+IDI_ICON3               ICON    DISCARDABLE     "res\\Aqua Smooth Folder Library.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 "
+FONT 9, "宋体"
+BEGIN
+    ICON            IDI_ICON0,IDC_STATIC,13,17,20,20
+    LTEXT           "分光分色软件 2.0 版",IDC_STATIC,43,15,127,8,SS_NOPREFIX
+    LTEXT           "深圳新圣芯光电设备有限公司",IDC_STATIC,44,35,150,8
+    DEFPUSHBUTTON   "确定",IDOK,180,11,50,14,WS_GROUP
+END
+
+IDD_HIGHPOWERINTERFACE_DIALOG DIALOGEX 0, 0, 320, 201
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "新圣芯分光分色软件"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_MSCOMM1,"{648A5600-2C6E-101B-82B6-000000000014}",
+                    NOT WS_VISIBLE | WS_DISABLED | WS_TABSTOP,127,147,25,25
+END
+
+IDD_Controls DIALOG DISCARDABLE  0, 0, 110, 335
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "扣除背景光",IDC_MinusDark,14,29,50,15
+    PUSHBUTTON      "单步测试",IDC_Single,14,53,50,15
+    PUSHBUTTON      "连续测试",IDC_Continuous,14,73,50,15
+    PUSHBUTTON      "重新测试",IDC_Retest,20,5,40,15,NOT WS_VISIBLE
+    CTEXT           "总     数",IDC_BUTTON1,5,138,45,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "合格数",IDC_BUTTON2,50,139,45,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "不合格数",IDC_BUTTON3,65,160,45,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "合格率",IDC_BUTTON4,60,177,45,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "测试时间",IDC_BUTTON5,60,191,45,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "ms",IDC_unit,71,269,13,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_Total,17,175,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TestTime,17,265,38,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Passnum,17,198,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Failnum,17,220,45,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Passper,17,242,45,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "停止测试",IDC_Stoptest,14,114,50,15,WS_DISABLED
+    CTEXT           "测试速度",IDC_BUTTON7,60,210,45,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "K",IDC_unit2,71,290,13,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_TestSpeed,17,288,38,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "自动测试",IDC_Auto,14,94,50,15
+    PUSHBUTTON      "Button6",IDC_BUTTON6,22,132,36,14,NOT WS_VISIBLE
+END
+
+IDD_ShowTest DIALOG DISCARDABLE  0, 0, 253, 94
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "List1",IDC_ShowTest_List,"SysListView32",LVS_REPORT | 
+                    LVS_OWNERDATA | WS_BORDER | WS_TABSTOP,0,9,240,75
+END
+
+IDD_Statistic DIALOG DISCARDABLE  0, 0, 268, 52
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "List1",IDC_Statistic_List,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,255,46
+END
+
+IDD_Bin DIALOGEX 0, 0, 157, 110
+STYLE WS_CHILD
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_Bin_List,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,1,27,147,67
+    PUSHBUTTON      "",ID_ShowBinNum,1,9,50,14,BS_TOP | BS_FLAT,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_ShootDiagram DIALOG DISCARDABLE  0, 0, 490, 359
+STYLE WS_POPUP | WS_BORDER
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_inputset,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,357,132,8,10
+    CONTROL         "",IDC_lineset,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    357,148,8,8
+    CONTROL         "",IDC_rectset,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,
+                    357,162,8,8
+    CONTROL         "",IDC_parallelrectset,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,357,177,8,8
+    CONTROL         "覆盖",IDC_CoverLevel,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,205,349,25,10
+    CONTROL         "插入",IDC_InsertLevel,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,234,333,25,10
+    CONTROL         "",IDC_SetRange,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    313,27,8,10
+    CONTROL         "",IDC_SetLevel,"Button",BS_AUTORADIOBUTTON,377,27,8,10
+    CONTROL         "",IDC_SelectLevel,"Button",BS_AUTORADIOBUTTON,440,27,8,
+                    10
+    CONTROL         "",IDC_shootchip1,"Button",BS_AUTORADIOBUTTON | WS_GROUP | 
+                    WS_TABSTOP,362,47,8,10
+    CONTROL         "",IDC_shootchip2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,401,47,8,10
+    CONTROL         "",IDC_shootchip3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,442,47,8,10
+    PUSHBUTTON      "打   靶",IDC_DrawPoint,351,196,6,14,BS_CENTER | 
+                    BS_BOTTOM | NOT WS_VISIBLE
+    PUSHBUTTON      "添加分级",IDC_AddLevel,353,287,43,16,WS_DISABLED
+    PUSHBUTTON      "删除分级",IDC_DeleteLevel,396,287,44,16,WS_DISABLED
+    CONTROL         "",IDC_LevelStyle,"Button",BS_AUTOCHECKBOX | WS_DISABLED | 
+                    WS_TABSTOP,360,241,8,10
+    EDITTEXT        levelstartbin,280,343,19,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        level_x,370,220,40,14,ES_AUTOHSCROLL
+    EDITTEXT        level_y,431,220,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "应用分级",IDC_Apply,427,238,51,14,WS_DISABLED
+    CONTROL         "",IDC_ShootPicture,"Static",SS_WHITEFRAME | SS_SUNKEN,
+                    25,46,320,264
+    PUSHBUTTON      "X",IDC_Exit,473,3,9,11
+    PUSHBUTTON      "确定",IDC_SURE,301,328,19,15,NOT WS_VISIBLE
+    PUSHBUTTON      "显示输入图形",IDC_inputpoint,422,129,57,14
+    PUSHBUTTON      "清空图形",IDC_ClearPicture,439,151,40,15
+    CTEXT           "X",IDC_STATIC,348,320,8,8,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "Y",IDC_STATIC,10,30,8,8,SS_CENTERIMAGE | NOT WS_VISIBLE
+    CTEXT           "x",IDC_STATIC,358,224,8,8,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "y",IDC_STATIC,419,224,8,8,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "起始BIN:",IDC_STATIC,247,346,31,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_XValue,410,196,28,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_YValue,455,196,28,14,ES_AUTOHSCROLL | NOT WS_TABSTOP
+    CTEXT           "x",IDC_STATIC,400,200,8,8,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "y",IDC_STATIC,445,200,8,8,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CONTROL         "",IDC_SelectCIEPicture,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,168,336,8,10
+    CONTROL         "",IDC_ShowScale,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    27,336,8,10
+    CONTROL         "List1",IDC_ShowPointList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,357,64,117,57
+    PUSHBUTTON      "颜色",IDC_SetColor,442,312,21,16
+    GROUPBOX        "",IDC_STATIC,329,20,153,19,NOT WS_VISIBLE
+    PUSHBUTTON      "查看分级",IDC_CheckBinNum,440,287,43,16
+    PUSHBUTTON      "显示分级",IDC_ShowLevelPicture,440,267,40,16
+    GROUPBOX        "",IDC_STATIC,353,40,129,19,NOT WS_VISIBLE
+    CONTROL         "",IDC_LevelAdjust,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    360,267,8,10
+    GROUPBOX        "",IDC_STATIC,353,262,131,46,NOT WS_VISIBLE
+    CONTROL         "",IDC_EnableResize,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,89,337,8,10
+    PUSHBUTTON      "+",IDC_Enlarge,75,336,10,10,NOT WS_VISIBLE
+    PUSHBUTTON      "-",IDC_Smaller,85,336,10,10,NOT WS_VISIBLE
+    EDITTEXT        IDC_XEnd,330,315,16,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_YEnd,5,40,15,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_XStart,15,315,16,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_YStart,5,303,15,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    CONTROL         "累加分级",IDC_Accumulate,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,205,346,41,10
+    PUSHBUTTON      "文  件",IDC_XYlevelFile,21,23,37,14
+    EDITTEXT        IDC_XYFilePath,67,23,166,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "清空打靶",IDC_ClearDot,439,170,40,15
+    CONTROL         "",IDC_parallelrectDrag,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,407,267,8,10
+    LTEXT           "横向",IDC_STATIC,415,268,17,8,NOT WS_VISIBLE
+    LTEXT           "分 级 精 度：",IDC_Accuracy,351,199,47,8,NOT WS_VISIBLE
+    CONTROL         "自动获取范围",IDC_FigureRange,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,240,26,64,10
+END
+
+IDD_AuthorityView DIALOGEX 0, 0, 525, 17
+STYLE WS_CHILD
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "修改权限",IDC_authoritychange,454,2,60,15
+    PUSHBUTTON      "                                      0 ℃",
+                    IDC_Showtemperature,10,2,131,15,NOT WS_VISIBLE
+    PUSHBUTTON      "普通用户",IDC_ShowAuthority,389,3,50,14
+    PUSHBUTTON      "",IDC_Chiptype,209,2,50,14,BS_TOP | BS_FLAT | NOT 
+                    WS_VISIBLE,WS_EX_TRANSPARENT
+END
+
+IDD_ChangePassword DIALOG DISCARDABLE  0, 0, 147, 147
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_Engineer,57,31,53,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Oldpd,57,50,53,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_newpd,57,69,53,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_Ensurepd,57,89,53,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "确    定",IDC_SURE,10,113,50,15
+    PUSHBUTTON      "取    消",IDC_Exit,75,113,50,15
+    CTEXT           "密码确认",IDC_STATIC,5,90,50,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "工程师",IDC_STATIC,5,15,50,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "旧密码",IDC_STATIC,5,40,50,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "新密码",IDC_STATIC,5,65,50,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+END
+
+IDD_Login DIALOG DISCARDABLE  0, 0, 136, 97
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_Engineer,56,30,63,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_password,56,51,63,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "登     陆",IDC_Login,10,75,50,14
+    PUSHBUTTON      "修改密码",IDC_changepassword,75,75,51,14
+    PUSHBUTTON      "X",IDC_Exit,119,2,10,10
+    PUSHBUTTON      "E",IDC_enterEngineer,121,31,9,11
+END
+
+IDD_SetParameter DIALOG DISCARDABLE  0, 0, 540, 327
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_SetOrderbyhand,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,394,8,8,8
+    CONTROL         "",IDC_DeadLed,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,323,
+                    8,8,8
+    CONTROL         "",IDC_testway,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    8,8,8
+    COMBOBOX        IDC_cbIVtype,61,84,48,35,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cbWLSteptypeset,56,172,60,35,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cbWLSteptype,56,189,30,35,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_ScanTimes,76,103,19,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Boxcar,76,123,19,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_FailBin,76,143,19,12,ES_AUTOHSCROLL
+    CONTROL         "Tab3",IDC_TAB_Chip,"SysTabControl32",TCS_FOCUSNEVER,130,
+                    0,405,315
+    LTEXT           "主波步长:",IDC_STATIC,15,192,35,8,NOT WS_VISIBLE
+    LTEXT           "亮度方式:",IDC_STATIC,10,88,35,8,NOT WS_VISIBLE
+    LTEXT           "长亮测试",IDC_STATIC,25,10,35,8,NOT WS_VISIBLE
+    LTEXT           "步长设置:",IDC_STATIC,15,173,35,8,NOT WS_VISIBLE
+    LTEXT           "平均扫描次数:",IDC_STATIC,10,107,51,8,NOT WS_VISIBLE
+    LTEXT           "平滑宽度:",IDC_STATIC,25,127,35,8,NOT WS_VISIBLE
+    LTEXT           "测试失败BIN:",IDC_STATIC,15,147,50,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_DiameterOptic,61,44,24,12,ES_AUTOHSCROLL | ES_NUMBER
+    CTEXT           "光纤直径:",IDC_STATIC,10,48,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "微米",IDC_STATIC,110,47,17,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_cbLighttype,61,64,48,40,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CTEXT           "测试类型:",IDC_STATIC,10,68,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CONTROL         "",IDC_MixLight,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,
+                    26,8,8
+    LTEXT           "混光测试",IDC_STATIC,25,25,35,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_SpectrumPicture,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,20,225,100,76
+    CONTROL         "平均电压",IDC_VFaverage,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,75,25,45,10
+    EDITTEXT        IDC_MaxPwr,92,223,31,12,ES_AUTOHSCROLL
+END
+
+IDD_SystemSetting DIALOG DISCARDABLE  0, 0, 177, 158
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    LTEXT           "MachineType(BIN):",IDC_STATIC,7,31,63,8,NOT WS_VISIBLE
+    LTEXT           "反向电压补偿：",IDC_STATIC,19,50,56,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_machineType,38,31,24,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_checkTimes,160,72,6,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    EDITTEXT        IDC_validTimes,160,54,6,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    EDITTEXT        IDC_sendBinDelay,160,90,6,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    EDITTEXT        IDC_minTestTime,128,31,21,14,ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "保    存",IDC_SystemSave,15,116,60,14
+    PUSHBUTTON      "取    消",IDC_Exit,101,116,60,14
+    PUSHBUTTON      "手 动 电 气 检 测",IDC_CheckHardware,20,72,130,14
+    PUSHBUTTON      "配  置  光  谱  仪",IDC_OOIConfig,20,91,130,14
+    EDITTEXT        IDC_VRoffset,80,50,23,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VRoffset2,107,50,23,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VRoffset3,134,50,23,14,ES_AUTOHSCROLL
+    LTEXT           "MinTime",IDC_STATIC,100,34,29,8,NOT WS_VISIBLE
+END
+
+IDD_CIEDiagram DIALOG DISCARDABLE  0, 0, 156, 156
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_CIEPicture,"Static",SS_BLACKFRAME | SS_SUNKEN,15,
+                    4,20,20
+END
+
+IDD_Spectrum DIALOG DISCARDABLE  0, 0, 287, 156
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_SpectrumPicture,"Static",SS_BLACKFRAME | 
+                    SS_SUNKEN,20,9,235,125
+    EDITTEXT        IDC_ShowPower,167,10,31,14,ES_AUTOHSCROLL
+END
+
+IDD_Status DIALOG DISCARDABLE  0, 0, 471, 14
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,
+                    289,0,182,13
+    PUSHBUTTON      "",IDC_ShowCurrentFile,3,0,227,14,BS_LEFT | BS_TOP
+END
+
+IDD_ShowTestPopup DIALOGEX 0, 0, 185, 94
+STYLE WS_POPUP | WS_THICKFRAME
+EXSTYLE WS_EX_STATICEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "[_]",IDC_Maximize,175,0,10,10
+    PUSHBUTTON      "B",IDC_Popup,165,0,10,10
+    CONTROL         "List1",IDC_ShowTest_List,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,12,185,82
+END
+
+IDD_Setting DIALOG DISCARDABLE  0, 0, 495, 372
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "确    定",IDC_SaveSetting,353,341,60,15
+    PUSHBUTTON      "取    消",IDC_Exit,430,341,60,15
+    CONTROL         "Tab1",IDC_SettingTab,"SysTabControl32",TCS_FOCUSNEVER | 
+                    WS_TABSTOP,5,5,485,334
+    PUSHBUTTON      "普  通  用  户",IDC_Authority,15,341,74,15
+END
+
+IDD_AddUsersDlg DIALOG DISCARDABLE  0, 0, 137, 137
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "取    消",IDC_Exit,75,98,50,15
+    EDITTEXT        IDC_NewEngineer,65,32,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_password,65,53,50,12,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_EnsurePassword,65,74,50,12,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "添    加",IDC_SURE,10,98,50,15
+END
+
+IDD_DeleteUsersDlg DIALOG DISCARDABLE  0, 0, 135, 108
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_Engineer,51,31,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_password,51,50,60,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "取消",IDC_Cancel,75,75,51,14
+    PUSHBUTTON      "删除",IDC_Delete,10,75,50,14
+END
+
+IDD_Level DIALOG DISCARDABLE  0, 0, 557, 327
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "晶片一",IDC_Bin_Chip1,482,13,25,14,NOT WS_VISIBLE
+    PUSHBUTTON      "CSV文件",IDC_levelfile,68,10,45,14
+    PUSHBUTTON      "晶片二",IDC_Bin_Chip2,507,13,25,14,NOT WS_VISIBLE
+    PUSHBUTTON      "晶片三",IDC_Bin_Chip3,531,13,26,14,NOT WS_VISIBLE
+    EDITTEXT        IDC_Showlevelfile,123,10,180,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_levelchip1,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,373,13,8,10
+    EDITTEXT        IDC_BaseData,448,29,29,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    CONTROL         "",IDC_levelchip2,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,409,13,8,10
+    CONTROL         "",IDC_levelchip3,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,444,13,8,10
+    CONTROL         "",IDC_levelWL,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,220,8,10
+    COMBOBOX        IDC_LevelWay,448,45,29,40,CBS_DROPDOWN | CBS_SORT | NOT 
+                    WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_Average,448,61,29,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_levelsnum,448,78,29,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_startbin,467,134,6,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    CONTROL         "累 加 分 级",IDC_AccumulateLevel,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,457,122,15,
+                    10
+    PUSHBUTTON      "应 用 分 级",IDC_Applylevels,417,95,51,12,NOT 
+                    WS_VISIBLE
+    CONTROL         "",IDC_levelIF,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,425,118,8,10
+    CONTROL         "",IDC_levelIR,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,133,8,10
+    CONTROL         "",IDC_levelVF,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,147,8,10
+    CONTROL         "",IDC_levelVR,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,161,8,10
+    CONTROL         "",IDC_levelDVF,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,175,8,10
+    CONTROL         "",IDC_levelTHY,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,190,8,10
+    CONTROL         "",IDC_levelIV,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,206,8,8
+    CONTROL         "List1",IDC_levellist,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,5,25,470,280
+    CONTROL         "",IDC_levelPWL,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,234,8,10
+    CONTROL         "",IDC_levelDeltaWL,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,250,8,8
+    CONTROL         "",IDC_levelPUR,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,265,8,8
+    CONTROL         "",IDC_levelCCT,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,281,8,8
+    CONTROL         "",IDC_levelCRI,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,425,297,8,8
+    GROUPBOX        "",IDC_STATIC,371,5,109,20,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,411,111,69,199,NOT WS_VISIBLE
+    PUSHBUTTON      "处 理 分 级",IDC_Handlelevel,5,10,50,14
+    LTEXT           "StartBin",IDC_STATIC,458,136,8,8,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,411,20,69,96,NOT WS_VISIBLE
+    LTEXT           "基值",IDC_STATIC,415,32,17,8,NOT WS_VISIBLE
+    LTEXT           "分级数",IDC_STATIC,415,82,25,8,NOT WS_VISIBLE
+    LTEXT           "方式",IDC_STATIC,415,48,17,8,NOT WS_VISIBLE
+    LTEXT           "差/比",IDC_STATIC,415,65,19,8,NOT WS_VISIBLE
+    CONTROL         "逆序累加",IDC_AccuFirst,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_TABSTOP,312,12,48,10
+END
+
+IDD_Register DIALOG DISCARDABLE  0, 0, 280, 108
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_RegCode1,59,51,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RegCode2,104,51,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RegCode3,149,51,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_RegCode4,194,51,40,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "注    册",IDC_Register,139,79,50,14
+    PUSHBUTTON      "取    消",IDC_Cancel,209,79,50,14
+    EDITTEXT        IDC_CharacCode,59,29,100,13,ES_AUTOHSCROLL
+    LTEXT           "特征码：",IDC_STATIC,19,32,33,8,NOT WS_VISIBLE
+    LTEXT           "注册码：",IDC_STATIC,24,55,33,8,NOT WS_VISIBLE
+END
+
+IDD_INITIAL DIALOG DISCARDABLE  0, 0, 257, 94
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "开始初始化",IDC_iniAll,125,78,50,14
+    PUSHBUTTON      "取    消",IDC_Cancel,184,78,50,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",0x0,20,40,
+                    203,6
+    PUSHBUTTON      "",IDC_ShowProgress,103,53,114,14,BS_FLAT | NOT 
+                    WS_TABSTOP
+    CONTROL         "",IDC_SelUSB2000,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,22,60,8,8
+    CONTROL         "",IDC_SelPC2000,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,22,75,8,8
+    PUSHBUTTON      "",IDC_LeftTime,20,27,50,11
+END
+
+IDD_Chip1Dlg DIALOG DISCARDABLE  0, 0, 357, 307
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_Test_IF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    43,8,8
+    CONTROL         "",IDC_Test_IR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    52,8,8
+    CONTROL         "",IDC_Test_VF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    61,8,8
+    CONTROL         "",IDC_Test_VR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    71,8,8
+    CONTROL         "",IDC_Test_DVF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    91,8,8
+    CONTROL         "",IDC_Test_THY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    101,8,8
+    CONTROL         "",IDC_Test_IV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    111,8,8
+    CONTROL         "",IDC_Test_WL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    150,8,8
+    CONTROL         "",IDC_Test_PWL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    160,8,8
+    CONTROL         "",IDC_Test_DeltaWL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,170,8,8
+    CONTROL         "",IDC_Test_PUR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    180,8,8
+    CONTROL         "",IDC_Test_CCT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    190,8,8
+    CONTROL         "",IDC_Test_CRI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    200,8,8
+    CONTROL         "",IDC_Test_XYZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    210,8,8
+    PUSHBUTTON      "打靶图",IDC_shootset,329,218,26,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    COMBOBOX        IDC_cbWLSteptype1,242,285,31,35,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cbOpticGain1,52,285,50,40,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_IntegrationTime1,52,267,35,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动调整积分时间",IDC_AutoSetInteTime1,105,265,80,14
+    PUSHBUTTON      "扣除背景光",IDC_AddDark1,295,265,50,14
+    PUSHBUTTON      "清除背景光",IDC_ClearDark1,295,285,50,14
+    PUSHBUTTON      "校正测量",IDC_CalibrationTest1,295,174,50,14,
+                    WS_DISABLED
+    CONTROL         "List2",IDC_SetChipList1,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,10,289,80
+    LTEXT           "VF",IDC_STATIC,20,60,8,8,NOT WS_VISIBLE
+    LTEXT           "VR",IDC_STATIC,20,71,15,8,NOT WS_VISIBLE
+    LTEXT           "DVF",IDC_STATIC,20,91,15,8,NOT WS_VISIBLE
+    LTEXT           "THY",IDC_STATIC,20,102,14,8,NOT WS_VISIBLE
+    LTEXT           "XYZ",IDC_STATIC,20,210,17,8,NOT WS_VISIBLE
+    LTEXT           "WL",IDC_STATIC,20,150,22,8,NOT WS_VISIBLE
+    LTEXT           "IV",IDC_STATIC,20,112,8,8,NOT WS_VISIBLE
+    LTEXT           "PWL",IDC_STATIC,20,160,22,8,NOT WS_VISIBLE
+    LTEXT           "DeltaWL",IDC_STATIC,20,171,30,8,NOT WS_VISIBLE
+    LTEXT           "CRI",IDC_STATIC,20,200,22,8,NOT WS_VISIBLE
+    LTEXT           "CCT",IDC_STATIC,20,190,22,8,NOT WS_VISIBLE
+    LTEXT           "PUR",IDC_STATIC,20,180,22,8,NOT WS_VISIBLE
+    LTEXT           "IF",IDC_STATIC,20,40,8,8,NOT WS_VISIBLE
+    LTEXT           "IR",IDC_STATIC,20,50,8,8,NOT WS_VISIBLE
+    CTEXT           "积分时间:",IDC_STATIC,10,265,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,89,269,11,10,NOT WS_VISIBLE
+    CTEXT           "光强增益:",IDC_STATIC,10,285,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "主波步长:",IDC_STATIC,195,286,35,10,SS_CENTERIMAGE | 
+                    NOT WS_VISIBLE
+    LTEXT           "长亮测试/光参测试参数:",IDC_STATIC,10,248,85,8,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_KLV,136,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_KLI,211,246,30,14,ES_AUTOHSCROLL
+    LTEXT           "电压:",IDC_STATIC,102,249,20,8,NOT WS_VISIBLE
+    LTEXT           "电流:",IDC_STATIC,183,250,20,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_KLDelay,294,246,30,14,ES_AUTOHSCROLL
+    LTEXT           "延时:",IDC_STATIC,270,250,20,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,169,250,8,8,NOT WS_VISIBLE
+    LTEXT           "mA",IDC_STATIC,251,251,11,8,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,335,251,11,8,NOT WS_VISIBLE
+    LTEXT           "POL:",IDC_STATIC,10,231,22,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_POLV,65,225,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLI,140,225,30,14,ES_AUTOHSCROLL
+    LTEXT           "电压:",IDC_STATIC,33,230,22,8,NOT WS_VISIBLE
+    LTEXT           "电流:",IDC_STATIC,115,230,20,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_POLDelay,223,225,30,14,ES_AUTOHSCROLL
+    LTEXT           "延时:",IDC_STATIC,201,229,20,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,98,230,8,8,NOT WS_VISIBLE
+    LTEXT           "mA",IDC_STATIC,173,231,11,8,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,257,230,11,8,NOT WS_VISIBLE
+    CONTROL         "List2",IDC_XYList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,173,234,37
+    PUSHBUTTON      "获取偏差",IDC_GetCalibration,295,189,50,14,WS_DISABLED
+    PUSHBUTTON      "清除偏差",IDC_ClearCalibration,295,204,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "自动获取光强增益...",IDC_AutoGetOpticGain1,105,283,80,
+                    14
+    LTEXT           "Bin :",IDC_DLedStatic,280,229,16,8
+    EDITTEXT        IDC_DLedBin,297,225,21,14,ES_AUTOHSCROLL
+    CONTROL         "List2",IDC_CalItemList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,100,289,65
+    PUSHBUTTON      "添加项目",IDC_AddItem,10,9,35,14
+    PUSHBUTTON      "删除项目",IDC_delItem,10,26,35,14
+    CONTROL         "",IDC_Test_IE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    121,8,8
+    LTEXT           "IE",IDC_STATIC,20,121,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_VZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    81,8,8
+    LTEXT           "VZ",IDC_STATIC,20,81,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_LE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    131,8,8
+    LTEXT           "LE",IDC_STATIC,20,131,10,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_LV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    141,8,8
+    LTEXT           "LV",IDC_STATIC,20,141,8,8,NOT WS_VISIBLE
+END
+
+IDD_Chip2Dlg DIALOG DISCARDABLE  0, 0, 357, 307
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "打  靶  图",IDC_shootset2,339,225,6,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    PUSHBUTTON      "自动调整积分时间",IDC_AutoSetInteTime2,105,265,80,14
+    PUSHBUTTON      "扣除背景光",IDC_AddDark2,295,265,50,14
+    PUSHBUTTON      "清除背景光",IDC_ClearDark2,295,285,50,14
+    EDITTEXT        IDC_KLV,136,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_KLI,211,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_KLDelay,294,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLV,65,225,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLI,140,225,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLDelay,223,225,30,14,ES_AUTOHSCROLL
+    CTEXT           "积分时间:",IDC_STATIC,10,265,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,89,269,11,10,NOT WS_VISIBLE
+    CTEXT           "光强增益:",IDC_STATIC,10,285,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "主波步长:",IDC_STATIC,195,286,35,10,SS_CENTERIMAGE | 
+                    NOT WS_VISIBLE
+    LTEXT           "长亮测试/光参测试参数:",IDC_STATIC,10,248,85,8,NOT 
+                    WS_VISIBLE
+    LTEXT           "电压:",IDC_STATIC,102,249,20,8,NOT WS_VISIBLE
+    LTEXT           "电流:",IDC_STATIC,183,250,20,8,NOT WS_VISIBLE
+    LTEXT           "延时:",IDC_STATIC,270,250,20,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,169,250,8,8,NOT WS_VISIBLE
+    LTEXT           "mA",IDC_STATIC,251,251,11,8,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,335,251,11,8,NOT WS_VISIBLE
+    LTEXT           "POL:",IDC_STATIC,10,231,22,8,NOT WS_VISIBLE
+    LTEXT           "电压:",IDC_STATIC,33,230,22,8,NOT WS_VISIBLE
+    LTEXT           "电流:",IDC_STATIC,115,230,20,8,NOT WS_VISIBLE
+    LTEXT           "延时:",IDC_STATIC,201,229,20,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,98,230,8,8,NOT WS_VISIBLE
+    LTEXT           "mA",IDC_STATIC,173,231,11,8,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,257,230,11,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_cbWLSteptype2,242,285,31,35,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cbOpticGain2,52,285,50,40,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_IntegrationTime2,52,267,35,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动获取光强增益...",IDC_AutoGetOpticGain2,105,283,80,
+                    14
+    PUSHBUTTON      "校正测量",IDC_CalibrationTest2,295,174,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "获取偏差",IDC_GetCalibration,295,189,50,14,WS_DISABLED
+    PUSHBUTTON      "清除偏差",IDC_ClearCalibration,295,204,50,14,
+                    WS_DISABLED
+    LTEXT           "Bin :",IDC_DLedStatic,280,229,16,8
+    EDITTEXT        IDC_DLedBin,297,225,21,14,ES_AUTOHSCROLL
+    CONTROL         "List2",IDC_SetChipList2,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,10,289,80
+    CONTROL         "List2",IDC_XYList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,173,234,37
+    CONTROL         "List2",IDC_CalItemList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,100,289,65
+    PUSHBUTTON      "添加项目",IDC_AddItem,10,9,35,14
+    PUSHBUTTON      "删除项目",IDC_delItem,10,26,35,14
+    CONTROL         "",IDC_Test_IF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    43,8,8
+    CONTROL         "",IDC_Test_IR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    52,8,8
+    CONTROL         "",IDC_Test_VF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    61,8,8
+    CONTROL         "",IDC_Test_VR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    71,8,8
+    CONTROL         "",IDC_Test_DVF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    91,8,8
+    CONTROL         "",IDC_Test_THY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    101,8,8
+    CONTROL         "",IDC_Test_IV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    111,8,8
+    CONTROL         "",IDC_Test_WL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    150,8,8
+    CONTROL         "",IDC_Test_PWL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    160,8,8
+    CONTROL         "",IDC_Test_DeltaWL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,170,8,8
+    CONTROL         "",IDC_Test_PUR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    180,8,8
+    CONTROL         "",IDC_Test_CCT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    190,8,8
+    CONTROL         "",IDC_Test_CRI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    200,8,8
+    CONTROL         "",IDC_Test_XYZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    210,8,8
+    LTEXT           "VF",IDC_STATIC,20,60,8,8,NOT WS_VISIBLE
+    LTEXT           "VR",IDC_STATIC,20,71,15,8,NOT WS_VISIBLE
+    LTEXT           "DVF",IDC_STATIC,20,91,15,8,NOT WS_VISIBLE
+    LTEXT           "THY",IDC_STATIC,20,102,14,8,NOT WS_VISIBLE
+    LTEXT           "XYZ",IDC_STATIC,20,210,17,8,NOT WS_VISIBLE
+    LTEXT           "WL",IDC_STATIC,20,150,22,8,NOT WS_VISIBLE
+    LTEXT           "IV",IDC_STATIC,20,112,8,8,NOT WS_VISIBLE
+    LTEXT           "PWL",IDC_STATIC,20,160,22,8,NOT WS_VISIBLE
+    LTEXT           "DeltaWL",IDC_STATIC,20,171,30,8,NOT WS_VISIBLE
+    LTEXT           "CRI",IDC_STATIC,20,200,22,8,NOT WS_VISIBLE
+    LTEXT           "CCT",IDC_STATIC,20,190,22,8,NOT WS_VISIBLE
+    LTEXT           "PUR",IDC_STATIC,20,180,22,8,NOT WS_VISIBLE
+    LTEXT           "IF",IDC_STATIC,20,40,8,8,NOT WS_VISIBLE
+    LTEXT           "IR",IDC_STATIC,20,50,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_IE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    121,8,8
+    LTEXT           "IE",IDC_STATIC,20,121,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_VZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    81,8,8
+    LTEXT           "VZ",IDC_STATIC,20,81,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_LE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    131,8,8
+    LTEXT           "LE",IDC_STATIC,20,131,10,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_LV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    141,8,8
+    LTEXT           "LV",IDC_STATIC,20,141,8,8,NOT WS_VISIBLE
+END
+
+IDD_Chip3Dlg DIALOG DISCARDABLE  0, 0, 357, 307
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "打  靶  图",IDC_shootset3,339,225,6,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+    PUSHBUTTON      "自动调整积分时间",IDC_AutoSetInteTime3,105,265,80,14
+    PUSHBUTTON      "扣除背景光",IDC_AddDark3,295,265,50,14
+    PUSHBUTTON      "清除背景光",IDC_ClearDark3,295,285,50,14
+    LTEXT           "V",IDC_STATIC,169,249,8,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_KLV,136,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_KLI,211,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_KLDelay,294,246,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLV,65,225,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLI,140,225,30,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLDelay,223,225,30,14,ES_AUTOHSCROLL
+    CTEXT           "积分时间:",IDC_STATIC,10,265,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,89,269,11,10,NOT WS_VISIBLE
+    CTEXT           "光强增益:",IDC_STATIC,10,285,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    CTEXT           "主波步长:",IDC_STATIC,195,286,35,10,SS_CENTERIMAGE | 
+                    NOT WS_VISIBLE
+    LTEXT           "长亮测试/光参测试参数:",IDC_STATIC,10,248,85,8,NOT 
+                    WS_VISIBLE
+    LTEXT           "电压:",IDC_STATIC,102,249,20,8,NOT WS_VISIBLE
+    LTEXT           "电流:",IDC_STATIC,183,250,20,8,NOT WS_VISIBLE
+    LTEXT           "延时:",IDC_STATIC,270,250,20,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,169,250,8,8,NOT WS_VISIBLE
+    LTEXT           "mA",IDC_STATIC,251,251,11,8,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,335,251,11,8,NOT WS_VISIBLE
+    LTEXT           "POL:",IDC_STATIC,10,231,22,8,NOT WS_VISIBLE
+    LTEXT           "电压:",IDC_STATIC,33,230,22,8,NOT WS_VISIBLE
+    LTEXT           "电流:",IDC_STATIC,115,230,20,8,NOT WS_VISIBLE
+    LTEXT           "延时:",IDC_STATIC,201,229,20,8,NOT WS_VISIBLE
+    LTEXT           "V",IDC_STATIC,98,230,8,8,NOT WS_VISIBLE
+    LTEXT           "mA",IDC_STATIC,173,231,11,8,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,257,230,11,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_cbWLSteptype3,242,285,31,35,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_cbOpticGain3,52,285,50,40,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_IntegrationTime3,52,267,35,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动获取光强增益...",IDC_AutoGetOpticGain3,105,283,80,
+                    14
+    PUSHBUTTON      "校正测量",IDC_CalibrationTest3,295,174,50,14,
+                    WS_DISABLED
+    PUSHBUTTON      "获取偏差",IDC_GetCalibration,295,189,50,14,WS_DISABLED
+    PUSHBUTTON      "清除偏差",IDC_ClearCalibration,295,204,50,14,
+                    WS_DISABLED
+    LTEXT           "Bin :",IDC_DLedStatic,280,229,16,8
+    EDITTEXT        IDC_DLedBin,297,225,21,14,ES_AUTOHSCROLL
+    CONTROL         "List2",IDC_SetChipList3,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,10,289,80
+    CONTROL         "List2",IDC_XYList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,173,234,37
+    CONTROL         "List2",IDC_CalItemList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,51,100,289,65
+    PUSHBUTTON      "添加项目",IDC_AddItem,10,9,35,14
+    PUSHBUTTON      "删除项目",IDC_delItem,10,26,35,14
+    CONTROL         "",IDC_Test_IF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    43,8,8
+    CONTROL         "",IDC_Test_IR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    52,8,8
+    CONTROL         "",IDC_Test_VF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    61,8,8
+    CONTROL         "",IDC_Test_VR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    71,8,8
+    CONTROL         "",IDC_Test_DVF,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    91,8,8
+    CONTROL         "",IDC_Test_THY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    101,8,8
+    CONTROL         "",IDC_Test_IV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    111,8,8
+    CONTROL         "",IDC_Test_WL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    150,8,8
+    CONTROL         "",IDC_Test_PWL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    160,8,8
+    CONTROL         "",IDC_Test_DeltaWL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,10,170,8,8
+    CONTROL         "",IDC_Test_PUR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    180,8,8
+    CONTROL         "",IDC_Test_CCT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    190,8,8
+    CONTROL         "",IDC_Test_CRI,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    200,8,8
+    CONTROL         "",IDC_Test_XYZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    210,8,8
+    LTEXT           "VF",IDC_STATIC,20,60,8,8,NOT WS_VISIBLE
+    LTEXT           "VR",IDC_STATIC,20,71,15,8,NOT WS_VISIBLE
+    LTEXT           "DVF",IDC_STATIC,20,91,15,8,NOT WS_VISIBLE
+    LTEXT           "THY",IDC_STATIC,20,102,14,8,NOT WS_VISIBLE
+    LTEXT           "XYZ",IDC_STATIC,20,210,17,8,NOT WS_VISIBLE
+    LTEXT           "WL",IDC_STATIC,20,150,22,8,NOT WS_VISIBLE
+    LTEXT           "IV",IDC_STATIC,20,112,8,8,NOT WS_VISIBLE
+    LTEXT           "PWL",IDC_STATIC,20,160,22,8,NOT WS_VISIBLE
+    LTEXT           "DeltaWL",IDC_STATIC,20,171,30,8,NOT WS_VISIBLE
+    LTEXT           "CRI",IDC_STATIC,20,200,22,8,NOT WS_VISIBLE
+    LTEXT           "CCT",IDC_STATIC,20,190,22,8,NOT WS_VISIBLE
+    LTEXT           "PUR",IDC_STATIC,20,180,22,8,NOT WS_VISIBLE
+    LTEXT           "IF",IDC_STATIC,20,40,8,8,NOT WS_VISIBLE
+    LTEXT           "IR",IDC_STATIC,20,50,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_IE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    121,8,8
+    LTEXT           "IE",IDC_STATIC,20,121,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_VZ,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    81,8,8
+    LTEXT           "VZ",IDC_STATIC,20,81,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_LE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    131,8,8
+    LTEXT           "LE",IDC_STATIC,20,131,10,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Test_LV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,10,
+                    141,8,8
+    LTEXT           "LV",IDC_STATIC,20,141,8,8,NOT WS_VISIBLE
+END
+
+IDD_SpectrumSetting DIALOG DISCARDABLE  0, 0, 167, 212
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "保    存",IDC_SpectrumSet,15,185,54,14
+    PUSHBUTTON      "取    消",IDC_Exit,100,185,50,14
+    LTEXT           "Pixels :",IDC_STATIC,40,20,25,8,NOT WS_VISIBLE
+    LTEXT           "FirstCoeff :",IDC_STATIC,30,60,35,8,NOT WS_VISIBLE
+    LTEXT           "SecondCoeff :",IDC_STATIC,20,80,45,8,NOT WS_VISIBLE
+    LTEXT           "ThirdCoeff  :",IDC_STATIC,25,100,40,8,NOT WS_VISIBLE
+    LTEXT           "Intercept  :",IDC_STATIC,30,40,35,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_Pixels,85,33,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Intercept,85,50,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_firstCoeff,85,67,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_secondCoeff,85,84,60,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_thirdCoeff,85,101,60,12,ES_AUTOHSCROLL
+    LTEXT           "多晶片时首次积分时间倍率：",IDC_STATIC,65,8,8,8,NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_iniTimeRate,77,5,20,14,ES_AUTOHSCROLL | ES_NUMBER | 
+                    NOT WS_VISIBLE
+    LTEXT           "%",IDC_STATIC,100,5,8,15,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "光谱仪参数自动获取",IDC_getSpectraPara,18,124,121,14
+    EDITTEXT        IDC_WaitInteDelay,85,160,60,14,ES_AUTOHSCROLL
+    LTEXT           "积分等待延时 :",IDC_STATIC,20,160,53,8,NOT WS_VISIBLE
+END
+
+IDD_SetChipFeet DIALOG DISCARDABLE  0, 0, 420, 347
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "",IDC_Selectchip,20,35,50,51,BS_FLAT
+    CONTROL         "",IDC_SetwayIF,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    20,141,8,8
+    CONTROL         "",IDC_SetwayIV,"Button",BS_AUTORADIOBUTTON,20,165,8,8
+    CONTROL         "",IDC_SetwayWL,"Button",BS_AUTORADIOBUTTON,20,190,8,8
+    EDITTEXT        IDC_POLV,44,225,35,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLI,149,226,35,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_POLDelay,269,226,35,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动获取晶片类型",IDC_FigureChipstyle,255,251,75,17
+    COMBOBOX        IDC_Polarity,292,114,48,86,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Chiptype,171,114,48,100,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_MiddleWave1,187,163,22,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动获得波长C1-C2",IDC_GetMiddleWave1,119,186,88,15
+    EDITTEXT        IDC_MiddleWave2,297,164,21,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "自动获得波长C2-C3",IDC_GetMiddleWave2,232,186,88,15
+    COMBOBOX        IDC_WLType,171,139,48,88,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Commonfoot,295,135,48,81,CBS_DROPDOWN | CBS_SORT | 
+                    NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Packageway,63,114,36,87,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SetSpmReadParam DIALOG DISCARDABLE  0, 0, 309, 213
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "标准灯文件设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "设定光谱读取参数",IDC_STATIC,8,4,65,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Picture,"Static",SS_BLACKFRAME,164,95,111,97
+    GROUPBOX        "",IDC_STATIC,5,80,141,130,NOT WS_VISIBLE
+    LTEXT           "积分时间:",IDC_STATIC,10,103,38,8
+    GROUPBOX        "",IDC_STATIC,5,27,296,33,NOT WS_VISIBLE
+    EDITTEXT        IDC_ScanTimes,89,40,50,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_BoxcarWidth,225,40,50,12,ES_AUTOHSCROLL
+    LTEXT           "平均扫描次数:",IDC_STATIC,20,41,55,8
+    LTEXT           "Boxcar Width:",IDC_STATIC,160,41,56,8
+    LTEXT           "上一个峰波值:",IDC_STATIC,10,131,60,8
+    LTEXT           "推荐的峰值:",IDC_STATIC,18,155,53,8
+    PUSHBUTTON      "自动获取积分时间",IDC_AutoSetTime,11,180,127,20,NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MaxPwr,73,128,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Recommended,73,153,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_InteTime,50,98,43,14,ES_AUTOHSCROLL
+    GROUPBOX        "",IDC_STATIC,153,65,149,145,NOT WS_VISIBLE
+    LTEXT           "ms",IDC_STATIC,96,104,10,8
+    CTEXT           "3",IDC_STATIC,190,200,8,8,SS_CENTERIMAGE
+    CTEXT           "4",IDC_STATIC,203,200,8,8,SS_CENTERIMAGE
+    CTEXT           "8",IDC_STATIC,257,200,8,8,SS_CENTERIMAGE
+    CTEXT           "5",IDC_STATIC,217,200,8,8,SS_CENTERIMAGE
+    CTEXT           "6",IDC_STATIC,231,200,8,8,SS_CENTERIMAGE
+    CTEXT           "7",IDC_STATIC,244,200,8,8,SS_CENTERIMAGE
+    CTEXT           "2",IDC_STATIC,176,200,11,8,SS_CENTERIMAGE
+    CTEXT           "1",IDC_STATIC,164,200,11,8,SS_CENTERIMAGE
+    CTEXT           "9",IDC_STATIC,270,200,8,8,SS_CENTERIMAGE
+    LTEXT           "100nm",IDC_STATIC,278,200,30,8
+    PUSHBUTTON      "启动光谱预览",IDC_ShowSpectrum,251,72,51,14
+    LTEXT           "(<=1000)",IDC_STATIC,108,104,36,8
+    LTEXT           "平滑",IDC_STATIC,5,20,17,8,NOT WS_VISIBLE
+    LTEXT           "积分时间",IDC_STATIC,5,70,33,8,NOT WS_VISIBLE
+    LTEXT           "(*1000)",IDC_STATIC,158,73,36,8
+    PUSHBUTTON      "+",IDC_Enlarge,290,94,11,10
+    PUSHBUTTON      "-",IDC_Smaller,290,104,11,10
+END
+
+IDD_SetSpmSaveRefer DIALOG DISCARDABLE  0, 0, 311, 205
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "标准灯文件设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "保存参考光谱",IDC_STATIC,13,4,49,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Picture,"Static",SS_BLACKFRAME,140,38,137,97
+    GROUPBOX        "",IDC_STATIC,120,18,184,134,NOT WS_VISIBLE
+    PUSHBUTTON      "获取参考光谱",IDC_SaveRefer,30,50,57,70
+    LTEXT           "光谱文件:",IDC_STATIC,18,187,46,8
+    EDITTEXT        IDC_FilePath,75,184,140,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览 . . .",IDC_ScanFile,227,184,64,14
+    GROUPBOX        "",IDC_STATIC,9,155,295,47,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,11,18,104,134,NOT WS_VISIBLE
+    LTEXT           "点击按钮获取参考光谱",IDC_STATIC,26,32,81,8
+    PUSHBUTTON      "光谱另存为",IDC_SaveAsSpec,30,130,67,14
+    LTEXT           "从文件加载参考光谱",IDC_STATIC,13,164,73,8,NOT 
+                    WS_VISIBLE
+    LTEXT           "参考光谱预览",IDC_STATIC,130,11,49,8,NOT WS_VISIBLE
+    LTEXT           "100nm",IDC_STATIC,281,141,30,8
+    PUSHBUTTON      "+",IDC_Enlarge,290,25,11,10
+    PUSHBUTTON      "-",IDC_Smaller,290,35,11,10
+END
+
+IDD_SetSpmSaveDark DIALOG DISCARDABLE  0, 0, 312, 205
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "标准灯文件设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "保存暗光谱",IDC_STATIC,12,2,41,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Picture,"Static",SS_BLACKFRAME,150,33,128,97
+    GROUPBOX        "",IDC_STATIC,120,18,185,134,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_STATIC,11,155,294,48,NOT WS_VISIBLE
+    PUSHBUTTON      "获取暗光谱",IDC_SaveDark,30,50,55,70
+    GROUPBOX        "",IDC_STATIC,11,18,104,134,NOT WS_VISIBLE
+    LTEXT           "光谱文件:",IDC_STATIC,20,189,45,8
+    EDITTEXT        IDC_FilePath,75,184,140,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览 . . .",IDC_ScanFile,229,184,64,14
+    LTEXT           "点击按钮获取暗光谱",IDC_STATIC,25,32,73,8
+    PUSHBUTTON      "光谱另存为",IDC_SaveAsSpec,30,130,67,14
+    LTEXT           "从文件加载暗光谱",IDC_STATIC,14,164,65,8,NOT WS_VISIBLE
+    LTEXT           "暗光谱预览",IDC_STATIC,130,12,41,8,NOT WS_VISIBLE
+    LTEXT           "100nm",IDC_STATIC,281,141,30,8
+    PUSHBUTTON      "+",IDC_Enlarge,291,25,11,10
+    PUSHBUTTON      "-",IDC_Smaller,291,35,11,10
+END
+
+IDD_EngineerLogin DIALOG DISCARDABLE  0, 0, 135, 109
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_Engineer,52,31,64,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_password,52,49,64,12,ES_PASSWORD | ES_AUTOHSCROLL
+    PUSHBUTTON      "登     陆",IDC_Login,10,75,50,14
+    PUSHBUTTON      "取    消",IDC_Exit,75,75,51,14
+END
+
+IDD_Light DIALOG DISCARDABLE  0, 0, 129, 107
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "X",IDC_Cancel,114,2,10,10
+    LTEXT           "电压(V):",IDC_STATIC,17,26,27,8,NOT WS_VISIBLE
+    LTEXT           "电流(mA):",IDC_STATIC,17,44,33,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_Chiptype,63,65,40,40,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CTEXT           "晶片类型:",IDC_STATIC,16,62,35,10,SS_CENTERIMAGE | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_Voltage,63,29,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Current,63,47,40,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "点    亮",IDC_LightOn,11,85,45,14
+    PUSHBUTTON      "关    灯",IDC_LightOff,69,85,45,14
+END
+
+IDD_ChipType DIALOG DISCARDABLE  0, 0, 187, 116
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "",IDC_type0,5,10,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type1,35,10,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type2,65,10,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type3,95,10,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type4,125,10,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type5,155,10,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type6,5,45,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type7,35,45,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type8,65,45,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type9,95,45,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type10,125,45,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type11,155,45,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type12,5,80,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type13,35,80,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type14,65,80,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type15,95,80,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type16,125,80,25,25,BS_FLAT
+    PUSHBUTTON      "",IDC_type17,155,80,25,25,BS_FLAT
+END
+
+IDD_SetSpmReadLmp DIALOG DISCARDABLE  0, 0, 308, 206
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "标准灯文件设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "Lamp File",IDC_STATIC,8,4,33,8,NOT WS_VISIBLE
+    PUSHBUTTON      "浏览...",IDC_OpenLmpFile,117,40,38,14
+    EDITTEXT        IDC_FilePath,4,40,108,14,ES_AUTOHSCROLL
+    LTEXT           "Lamp File:",IDC_STATIC,5,20,49,8,NOT WS_VISIBLE
+    CONTROL         "List1",IDC_LmpList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,4,70,151,125
+    CONTROL         "",IDC_Picture,"Static",SS_BLACKFRAME,195,60,95,117
+    GROUPBOX        "",IDC_STATIC,174,36,126,164,NOT WS_VISIBLE
+    LTEXT           "光源强度预览",IDC_STATIC,178,46,49,8,NOT WS_VISIBLE
+END
+
+IDD_SetSpmCompen DIALOG DISCARDABLE  0, 0, 300, 225
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "标准灯文件设置"
+FONT 10, "System"
+BEGIN
+    LTEXT           "最终补偿",IDC_STATIC,8,4,33,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_Picture,"Static",SS_BLACKFRAME,202,50,95,117
+    GROUPBOX        "",IDC_STATIC,180,26,115,164,NOT WS_VISIBLE
+    LTEXT           "补偿预览",IDC_STATIC,185,35,33,8,NOT WS_VISIBLE
+    CONTROL         "List1",IDC_CompenList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,8,28,141,98
+    GROUPBOX        "",IDC_STATIC,8,152,153,57,NOT WS_VISIBLE
+    LTEXT           "采光面积",IDC_STATIC,8,146,33,8,NOT WS_VISIBLE
+    CONTROL         "积分球",IDC_AreaWay0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED | WS_GROUP,17,168,40,10
+    CONTROL         "光纤直径",IDC_AreaWay1,"Button",BS_AUTORADIOBUTTON,16,
+                    186,48,10
+    EDITTEXT        IDC_Diameter,73,184,40,14,ES_AUTOHSCROLL
+    LTEXT           "微米",IDC_STATIC,119,187,17,8
+    PUSHBUTTON      "保存到文件...",IDC_SaveAs,179,199,72,14
+END
+
+IDD_AccumulateLevel DIALOG DISCARDABLE  0, 0, 442, 303
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "X",IDC_Exit,380,1,10,10,NOT WS_VISIBLE
+    CONTROL         "List1",IDC_AutoList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,107,41,128,213
+    EDITTEXT        IDC_startbin,65,142,8,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "起始BIN",IDC_STATIC,54,144,8,8,NOT WS_VISIBLE
+    PUSHBUTTON      "确    定",IDC_SURE,284,277,50,14
+    PUSHBUTTON      "取    消",IDC_Cancel,376,277,50,14
+    PUSHBUTTON      "增加项目",IDC_AddItem,336,13,45,14,NOT WS_VISIBLE
+    PUSHBUTTON      "删除项目",IDC_DeleteItem,116,14,45,14
+    CONTROL         "",IDC_levelchip1,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_GROUP,289,16,8,10
+    CONTROL         "",IDC_levelchip2,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,307,16,8,10
+    CONTROL         "",IDC_levelchip3,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE,325,16,8,10
+    GROUPBOX        "",IDC_fastSTATIC,12,39,80,96
+    EDITTEXT        IDC_BaseData,54,50,34,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_LevelWay,17,68,29,40,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_Average,54,68,34,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_levelsnum,54,87,34,12,ES_AUTOHSCROLL
+    LTEXT           "分级数",IDC_STATIC,17,91,25,8
+    LTEXT           "基值",IDC_STATIC,17,53,17,8
+    LTEXT           "方式",IDC_STATIC,11,138,17,8,NOT WS_VISIBLE
+    LTEXT           "差/比",IDC_STATIC,31,145,19,8,NOT WS_VISIBLE
+    CONTROL         "List1",IDC_AutoListTotal,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,283,32,149,229
+    PUSHBUTTON      "应 用 分 级",IDC_Applylevels,187,271,51,15
+    LTEXT           "项目",IDC_STATIC,6,18,17,8
+    PUSHBUTTON      "分    级",IDC_fastLevel,28,111,50,14
+    COMBOBOX        IDC_ShowItem,29,16,80,93,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_AutoList2,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,6,56,262,198
+    PUSHBUTTON      "打靶图分级",IDC_ShootCal,213,41,55,13
+    COMBOBOX        IDC_delway,169,16,48,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_HandleLevel DIALOG DISCARDABLE  0, 0, 225, 185
+STYLE WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "X",IDCANCEL,213,0,12,14
+    CONTROL         "List1",IDC_WhiteList,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,0,21,225,164
+    PUSHBUTTON      "白光分级",IDC_white,0,0,55,13
+END
+
+IDD_showLevel DIALOG DISCARDABLE  50, 50, 407, 373
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "显示分级"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "X",IDCANCEL,396,0,11,14,NOT WS_VISIBLE
+    CONTROL         "List1",IDC_levellist,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,131,7,248,217
+    CONTROL         "List1",IDC_offsetList,"SysListView32",LVS_REPORT | NOT 
+                    WS_VISIBLE | WS_BORDER | WS_TABSTOP,269,250,138,116
+    CONTROL         "List1",IDC_BinMapList,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,5,25,113,199
+    PUSHBUTTON      "开始清料",IDC_StartClear,5,6,50,14
+    PUSHBUTTON      "停止清料",IDC_StopClear,68,6,50,14,WS_DISABLED
+    CONTROL         "List1",IDC_NumInBox,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,5,251,113,105
+    EDITTEXT        IDC_BoxFullNum,42,233,40,14,ES_AUTOHSCROLL
+    LTEXT           "满料数量",IDC_STATIC,6,236,33,8
+    CONTROL         "List2",IDC_feedingClowNum,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,124,251,84,105
+    EDITTEXT        IDC_CodeFromHardware,117,232,276,14,ES_AUTOHSCROLL
+    LTEXT           "Code:",IDC_STATIC,94,235,20,8
+    EDITTEXT        IDC_tempcode,218,251,143,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_outboxnum,218,281,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_outboxdetail,217,306,163,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_temptest,217,332,40,14,ES_AUTOHSCROLL
+END
+
+IDD_SetPrint DIALOG DISCARDABLE  0, 0, 329, 271
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "条码列印设定"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "取     消",IDCANCEL,259,215,56,14
+    CONTROL         "List2",IDC_printlist,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,10,56,227,194
+    COMBOBOX        IDC_ItemCode,46,23,48,65,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "列印代号",IDC_STATIC,10,24,33,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_selectItem,105,22,48,64,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_printMode,258,123,59,68,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "条码列印模式",IDC_STATIC,259,108,49,8,NOT WS_VISIBLE
+    PUSHBUTTON      "清除设定",IDC_clearSet,258,161,59,14
+    PUSHBUTTON      "条码格式设定",IDC_printForm,258,185,59,14
+    PUSHBUTTON      "保    存",IDC_Save,259,236,56,14
+    LTEXT           "CAT",IDC_STATIC,50,45,14,8,NOT WS_VISIBLE
+    LTEXT           "HUE",IDC_STATIC,87,45,16,8,NOT WS_VISIBLE
+    LTEXT           "REF",IDC_STATIC,128,45,15,8,NOT WS_VISIBLE
+END
+
+IDD_SetPrintForm DIALOG DISCARDABLE  0, 0, 475, 229
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "X",IDCANCEL,464,0,11,14
+    CONTROL         "",IDC_ItemCheck1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,53,8,8
+    LTEXT           "1",IDC_STATIC,15,53,8,8,NOT WS_VISIBLE
+    LTEXT           "2",IDC_STATIC,15,68,8,8,NOT WS_VISIBLE
+    LTEXT           "3",IDC_STATIC,15,82,8,8,NOT WS_VISIBLE
+    LTEXT           "4",IDC_STATIC,15,97,8,8,NOT WS_VISIBLE
+    LTEXT           "5",IDC_STATIC,15,112,8,8,NOT WS_VISIBLE
+    LTEXT           "6",IDC_STATIC,15,127,8,8,NOT WS_VISIBLE
+    LTEXT           "7",IDC_STATIC,15,143,8,8,NOT WS_VISIBLE
+    LTEXT           "8",IDC_STATIC,15,157,8,8,NOT WS_VISIBLE
+    LTEXT           "9",IDC_STATIC,15,172,8,8,NOT WS_VISIBLE
+    LTEXT           "10",IDC_STATIC,13,187,8,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_ItemCheck2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,68,8,8
+    CONTROL         "",IDC_ItemCheck3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,82,8,8
+    CONTROL         "",IDC_ItemCheck10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,187,8,8
+    CONTROL         "",IDC_ItemCheck4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,97,8,8
+    CONTROL         "",IDC_ItemCheck5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,112,8,8
+    CONTROL         "",IDC_ItemCheck6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,127,8,8
+    CONTROL         "",IDC_ItemCheck8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,157,8,8
+    CONTROL         "",IDC_ItemCheck7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,143,8,8
+    CONTROL         "",IDC_ItemCheck9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    25,172,8,8
+    LTEXT           "Name",IDC_STATIC,35,37,20,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_Name1,34,50,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name2,34,65,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name3,34,80,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name4,34,95,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name5,34,110,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name6,34,125,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name7,34,140,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name8,34,155,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name9,34,170,40,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Name10,34,185,40,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_DataCode1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,53,8,8
+    LTEXT           "BarCode",IDC_STATIC,180,37,29,8,NOT WS_VISIBLE
+    COMBOBOX        CMB_STYLE,353,22,31,105,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "打印预览",IDC_printPreview,415,21,50,14
+    CONTROL         "",IDC_PreviewForm,"Static",SS_WHITERECT,259,41,206,179
+    EDITTEXT        IDC_EDIT4,386,21,26,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_NameCode1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,53,8,8
+    LTEXT           "BarCode",IDC_STATIC,60,37,29,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_DataCode2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,68,8,8
+    CONTROL         "",IDC_NameCode2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,68,8,8
+    CONTROL         "",IDC_DataCode3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,83,8,8
+    CONTROL         "",IDC_NameCode3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,83,8,8
+    CONTROL         "",IDC_DataCode4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,98,8,8
+    CONTROL         "",IDC_NameCode4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,98,8,8
+    CONTROL         "",IDC_DataCode5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,113,8,8
+    CONTROL         "",IDC_NameCode5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,113,8,8
+    CONTROL         "",IDC_DataCode6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,128,8,8
+    CONTROL         "",IDC_NameCode6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,128,8,8
+    CONTROL         "",IDC_DataCode7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,143,8,8
+    CONTROL         "",IDC_NameCode7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,143,8,8
+    CONTROL         "",IDC_DataCode8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,158,8,8
+    CONTROL         "",IDC_NameCode8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,158,8,8
+    CONTROL         "",IDC_DataCode9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,173,8,8
+    CONTROL         "",IDC_NameCode9,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,173,8,8
+    CONTROL         "",IDC_DataCode10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    192,188,8,8
+    CONTROL         "",IDC_NameCode10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    77,188,8,8
+    LTEXT           "Data",IDC_STATIC,91,38,16,8,NOT WS_VISIBLE
+    LTEXT           "条码资讯设定",IDC_STATIC,9,6,49,8,NOT WS_VISIBLE
+    COMBOBOX        IDC_Data1,91,50,99,60,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data2,91,65,99,59,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data3,91,80,99,61,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data4,91,95,99,61,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data5,91,110,99,60,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data6,91,125,99,63,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data7,91,140,99,59,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data8,91,156,99,72,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data9,91,170,99,68,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_Data10,91,185,99,59,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PosX1,205,50,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY1,227,50,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX2,205,65,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY2,227,65,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX3,205,80,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY3,227,80,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX4,205,95,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY4,227,95,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX5,205,110,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY5,227,110,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX6,205,125,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY6,227,125,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX7,205,140,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY7,227,140,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX8,205,155,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY8,227,155,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX9,205,170,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY9,227,170,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosX10,205,185,21,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PosY10,227,185,21,12,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,214,36,8,8,NOT WS_VISIBLE
+    LTEXT           "Y",IDC_STATIC,231,36,8,8,NOT WS_VISIBLE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 3,0,0,4
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "HighPowerInterface Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "3, 0, 0, 4\0"
+            VALUE "InternalName", "HighPowerInterface\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2011\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "HighPowerInterface.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "HighPowerInterface 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_Status, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 13
+    END
+
+    IDD_SetSpmReadParam, DIALOG
+    BEGIN
+        RIGHTMARGIN, 308
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP " 文件 "
+    BEGIN
+        MENUITEM "新建标准文件",                ID_NewFile
+        MENUITEM "打开标准文件",                ID_OpenFile
+        MENUITEM "保存",                        ID_SaveFile
+        MENUITEM "另存为",                      ID_SaveAs
+        MENUITEM SEPARATOR
+        MENUITEM "保存测试结果",                ID_SaveTestedData
+        MENUITEM "退出",                        ID_Exit
+    END
+    POPUP " 设置 "
+    BEGIN
+        MENUITEM "系统设置",                    ID_SystemSetting
+        MENUITEM "光谱仪参数设置",              ID_SetSpectrum
+        MENUITEM "标准灯文件设置",              ID_SetSpm
+        MENUITEM "测试参数设置",                ID_SetParameter
+        MENUITEM "条码列印设定",                ID_SetPrint
+    END
+    POPUP " 查看 "
+    BEGIN
+        MENUITEM "打靶图",                      ID_Shoot
+        MENUITEM "光谱图",                      ID_Spectrum, CHECKED
+        MENUITEM "色度图",                      ID_ColorTemperature, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "显示参数设置",                ID_CheckShowSetting
+        MENUITEM "单行数据显示",                ID_RADIOOneLine
+        MENUITEM "数据列表显示",                ID_RADIOList, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "查看历史记录",                ID_CheckLog
+        MENUITEM "显示分级",                    ID_showLevelSet
+    END
+    POPUP " 测试 "
+    BEGIN
+        MENUITEM "单步测试",                    ID_TestSingle
+        MENUITEM "连续测试",                    ID_TestContinuous
+        MENUITEM "自动测试",                    ID_TestAuto
+        MENUITEM "停止测试",                    ID_StopTest, GRAYED
+        MENUITEM "重新测试",                    ID_RestartTest, GRAYED
+        MENUITEM "长亮输出",                    ID_Resistance
+        MENUITEM SEPARATOR
+        MENUITEM "开始清料",                    ID_StartClearBox
+        MENUITEM "停止清料",                    ID_StopClearBox, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "清空测试数据",                ID_ClearUp, GRAYED
+        MENUITEM "清空料盒数据",                ID_ClearBinBox
+    END
+    POPUP " 权限 "
+    BEGIN
+        MENUITEM "软件注册",                    ID_Regist
+        MENUITEM "操作员",                      ID_Operator
+        MENUITEM "普通用户",                    ID_Guest
+        MENUITEM "修改密码",                    ID_RegistInformation
+        MENUITEM "添加用户",                    ID_AddUsers
+        MENUITEM "删除用户",                    ID_DeleteUsers
+    END
+    POPUP " 帮助 "
+    BEGIN
+        MENUITEM "使用手册",                    ID_Manual
+        MENUITEM "联系我们",                    ID_Connect
+        MENUITEM "关于",                        ID_About
+    END
+END
+
+IDR_MENU2 MENU DISCARDABLE 
+BEGIN
+    POPUP "晶片一"
+    BEGIN
+        MENUITEM "C1_IF",                       ID_C1_IF
+        MENUITEM "C1_IR",                       ID_C1_IR
+        MENUITEM "C1_VF",                       ID_C1_VF
+        MENUITEM "C1_VR",                       ID_C1_VR
+        MENUITEM "C1_DVF",                      ID_C1_DVF
+        MENUITEM "C1_THY",                      ID_C1_THY
+        MENUITEM "C1_IV",                       ID_C1_IV
+        MENUITEM "C1_XYZ",                      ID_C1_XYZ
+        MENUITEM "C1_WL",                       ID_C1_WL
+        MENUITEM "C1_PWL",                      ID_C1_PWL
+        MENUITEM "C1_DeltaWL",                  ID_C1_DeltaWL
+        MENUITEM "C1_PUR",                      ID_C1_PUR
+        MENUITEM "C1_CCT",                      ID_C1_CCT
+        MENUITEM "C1_CRI",                      ID_C1_CRI
+    END
+    POPUP "晶片二"
+    BEGIN
+        MENUITEM "C2_IF",                       ID_C2_IF
+        MENUITEM "C2_IR",                       ID_C2_IR
+        MENUITEM "C2_VF",                       ID_C2_VF
+        MENUITEM "C2_VR",                       ID_C2_VR
+        MENUITEM "C2_DVF",                      ID_C2_DVF
+        MENUITEM "C2_THY",                      ID_C2_THY
+        MENUITEM "C2_IV",                       ID_C2_IV
+        MENUITEM "C2_XYZ",                      ID_C2_XYZ
+        MENUITEM "C2_WL",                       ID_C2_WL
+        MENUITEM "C2_PWL",                      ID_C2_PWL
+        MENUITEM "C2_DeltaWL",                  ID_C2_DeltaWL
+        MENUITEM "C2_PUR",                      ID_C2_PUR
+        MENUITEM "C2_CCT",                      ID_C2_CCT
+        MENUITEM "C2_CRI",                      ID_C2_CRI
+    END
+    POPUP "晶片三"
+    BEGIN
+        MENUITEM "C3_IF",                       ID_C3_IF
+        MENUITEM "C3_IR",                       ID_C3_IR
+        MENUITEM "C3_VF",                       ID_C3_VF
+        MENUITEM "C3_VR",                       ID_C3_VR
+        MENUITEM "C3_DVF",                      ID_C3_DVF
+        MENUITEM "C3_THY",                      ID_C3_THY
+        MENUITEM "C3_IV",                       ID_C3_IV
+        MENUITEM "C3_XYZ",                      ID_C3_XYZ
+        MENUITEM "C3_WL",                       ID_C3_WL
+        MENUITEM "C3_PWL",                      ID_C3_PWL
+        MENUITEM "C3_DeltaWL",                  ID_C3_DeltaWL
+        MENUITEM "C3_PUR",                      ID_C3_PUR
+        MENUITEM "C3_CCT",                      ID_C3_CCT
+        MENUITEM "C3_CRI",                      ID_C3_CRI
+    END
+    POPUP "File"
+    BEGIN
+        MENUITEM "导入分级文件",                ID_Inportlevelfile
+        MENUITEM "保存分级文件",                ID_Savelevelfile
+        MENUITEM "导出分级文件",                ID_Exportlevelfile
+        MENUITEM "清空BinCode",                 ID_ClearBinCode
+    END
+    POPUP " 分 级 "
+    BEGIN
+        MENUITEM "自动分级",                    ID_AutoAccumulate
+        MENUITEM "打靶分级",                    ID_ShootSet
+    END
+    POPUP "XY分级文件"
+    BEGIN
+        MENUITEM "导入分级区域",                ID_ImportXYLevel
+        MENUITEM "保存分级区域",                ID_SaveXYLevel
+        MENUITEM "导出分级区域",                ID_ExportXYLevel
+        MENUITEM "保存打靶数据",                ID_SaveShootDot
+        MENUITEM "加载打靶数据",                ID_LoadShootDot
+        MENUITEM "显示色温线",                  ID_ShowCIELine
+        MENUITEM "新CIE坐标",                   ID_NewCIERect
+        MENUITEM "导入分级区域2",               ID_ImportXYLevel2
+        MENUITEM "保存分级区域2",               ID_SaveXYLevel2
+        MENUITEM "导出分级区域2",               ID_ExportXYLevel2
+    END
+END
+
+IDR_MENU3 MENU DISCARDABLE 
+BEGIN
+    POPUP "增加项目"
+    BEGIN
+        MENUITEM "IF",                          ID_IF
+        MENUITEM "IR",                          ID_IR
+        MENUITEM "VF",                          ID_VF
+        MENUITEM "VR",                          ID_VR
+        MENUITEM "DVF",                         ID_DVF
+        MENUITEM "THY",                         ID_THY
+        MENUITEM "IV",                          ID_IV
+        MENUITEM "XYZ",                         ID_XYZ
+        MENUITEM "WL",                          ID_WL
+        MENUITEM "PWL",                         ID_PWL
+        MENUITEM "DeltaWL",                     ID_DeltaWL
+        MENUITEM "PUR",                         ID_PUR
+        MENUITEM "CCT",                         ID_CCT
+        MENUITEM "CRI",                         ID_CRI
+    END
+END
+
+IDR_MENU4 MENU DISCARDABLE 
+BEGIN
+    POPUP "右键弹出"
+    BEGIN
+        MENUITEM "剪切",                        ID_Cut
+        MENUITEM "复制",                        ID_Copy
+        MENUITEM "粘贴",                        ID_Paste
+        MENUITEM "删除",                        ID_Delete
+    END
+    POPUP "删除列表项目"
+    BEGIN
+        MENUITEM "删除项目",                    ID_DeleteItem
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_Tool_OpenFile
+    BUTTON      ID_Tool_SaveFile
+    BUTTON      ID_Tool_SaveAs
+    BUTTON      ID_SettingParam
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_BitmapNormal        BITMAP  DISCARDABLE     "res\\add1.bmp"
+IDB_BitmapMouseDown     BITMAP  DISCARDABLE     "res\\add2.bmp"
+IDB_BitmapHigh          BITMAP  DISCARDABLE     "res\\add3.bmp"
+IDB_BitmapDisable       BITMAP  DISCARDABLE     "res\\add4.bmp"
+IDB_VERTICLE_SCROLLBAR_TOP BITMAP  DISCARDABLE     "res\\VerticleScrollbarTop.bmp"
+IDB_VERTICLE_SCROLLBAR_UPARROW BITMAP  DISCARDABLE     "res\\VerticleScrollBarUpArrow.bmp"
+IDB_VERTICLE_SCROLLBAR_SPAN BITMAP  DISCARDABLE     "res\\VerticleScrollBarSpan.bmp"
+IDB_VERTICLE_SCROLLBAR_DOWNARROW BITMAP  DISCARDABLE     "res\\VerticleScrollBarDownArrow.bmp"
+IDB_VERTICLE_SCROLLBAR_BOTTOM BITMAP  DISCARDABLE     "res\\VerticleScrollbarBottom.bmp"
+IDB_VERTICLE_SCROLLBAR_THUMB BITMAP  DISCARDABLE     "res\\VerticleScrollBarThumb.bmp"
+IDB_HORIZONTAL_SCROLLBAR_LEFTARROW BITMAP  DISCARDABLE     "res\\HorizontalScrollBarLeftArrow.bmp"
+IDB_HORIZONTAL_SCROLLBAR_SPAN BITMAP  DISCARDABLE     "res\\HorizontalScrollBarSpan.bmp"
+IDB_HORIZONTAL_SCROLLBAR_RIGHTARROW BITMAP  DISCARDABLE     "res\\HorizontalScrollBarRightArrow.bmp"
+IDB_HORIZONTAL_SCROLLBAR_THUMB BITMAP  DISCARDABLE     "res\\HorizontalScrollBarThumb.bmp"
+IDB_COLUMNHEADER_SPAN   BITMAP  DISCARDABLE     "res\\ColumnHeaderSpan.bmp"
+IDB_COLUMNHEADER_START0 BITMAP  DISCARDABLE     "res\\ColumnHeaderStart.bmp"
+IDB_COLUMNHEADER_END0   BITMAP  DISCARDABLE     "res\\ColumnHeaderEnd.bmp"
+IDB_Dark                BITMAP  DISCARDABLE     "res\\dark.bmp"
+IDB_Refer               BITMAP  DISCARDABLE     "res\\refer.bmp"
+IDB_BigZ21              BITMAP  DISCARDABLE     "res\\BigZ21.bmp"
+IDB_SmallZ21            BITMAP  DISCARDABLE     "res\\SmallZ21.bmp"
+IDB_SmallT21            BITMAP  DISCARDABLE     "res\\SmallT21.bmp"
+IDB_SmallT22            BITMAP  DISCARDABLE     "res\\SmallT22.bmp"
+IDB_SmallT42            BITMAP  DISCARDABLE     "res\\SmallT42.bmp"
+IDB_SmallT63            BITMAP  DISCARDABLE     "res\\SmallT63.bmp"
+IDB_SmallZ22            BITMAP  DISCARDABLE     "res\\SmallZ22.bmp"
+IDB_SmallZ3200          BITMAP  DISCARDABLE     "res\\SmallZ3200.bmp"
+IDB_SmallZ3201          BITMAP  DISCARDABLE     "res\\SmallZ3201.bmp"
+IDB_SmallZ3210          BITMAP  DISCARDABLE     "res\\SmallZ3210.bmp"
+IDB_SmallZ3211          BITMAP  DISCARDABLE     "res\\SmallZ3211.bmp"
+IDB_SmallZ4300          BITMAP  DISCARDABLE     "res\\SmallZ4300.bmp"
+IDB_SmallZ4301          BITMAP  DISCARDABLE     "res\\SmallZ4301.bmp"
+IDB_SmallZ4310          BITMAP  DISCARDABLE     "res\\SmallZ4310.bmp"
+IDB_BigZ22              BITMAP  DISCARDABLE     "res\\BigZ22.bmp"
+IDB_BigZ3200            BITMAP  DISCARDABLE     "res\\BigZ3200.bmp"
+IDB_BigZ3201            BITMAP  DISCARDABLE     "res\\BigZ3201.bmp"
+IDB_BigZ3210            BITMAP  DISCARDABLE     "res\\BigZ3210.bmp"
+IDB_BigZ3211            BITMAP  DISCARDABLE     "res\\BigZ3211.bmp"
+IDB_BigZ4300            BITMAP  DISCARDABLE     "res\\BigZ4300.bmp"
+IDB_BigZ4301            BITMAP  DISCARDABLE     "res\\BigZ4301.bmp"
+IDB_BigZ4310            BITMAP  DISCARDABLE     "res\\BigZ4310.bmp"
+IDB_BigT21              BITMAP  DISCARDABLE     "res\\BigT21.bmp"
+IDB_BigT22              BITMAP  DISCARDABLE     "res\\BigT22.bmp"
+IDB_BigT42              BITMAP  DISCARDABLE     "res\\BigT42.bmp"
+IDB_BigT63              BITMAP  DISCARDABLE     "res\\BigT63.bmp"
+IDB_BigT430A            BITMAP  DISCARDABLE     "res\\BigT430A.bmp"
+IDB_BigT430B            BITMAP  DISCARDABLE     "res\\BigT430B.bmp"
+IDB_BigT431A            BITMAP  DISCARDABLE     "res\\BigT431A.bmp"
+IDB_BigT431B            BITMAP  DISCARDABLE     "res\\BigT431B.bmp"
+IDB_SmallT430A          BITMAP  DISCARDABLE     "res\\SmallT430A.bmp"
+IDB_SmallT430B          BITMAP  DISCARDABLE     "res\\SmallT430B.bmp"
+IDB_SmallT431A          BITMAP  DISCARDABLE     "res\\SmallT431A.bmp"
+IDB_SmallT431B          BITMAP  DISCARDABLE     "res\\SmallT431B.bmp"
+IDB_SmallZ4311          BITMAP  DISCARDABLE     "res\\SmallZ4311.bmp"
+IDB_BigZ4311            BITMAP  DISCARDABLE     "res\\BigZ4311.bmp"
+IDB_ListBK              BITMAP  DISCARDABLE     "res\\ListBK.bmp"
+IDB_ColHeader           BITMAP  DISCARDABLE     "res\\colHeader.bmp"
+IDB_ColHeader2          BITMAP  DISCARDABLE     "res\\colHeader2.bmp"
+IDB_ArrowDown           BITMAP  DISCARDABLE     "res\\ArrowDown.bmp"
+IDB_Button_MinusDarkDown BITMAP  DISCARDABLE     "res\\MinusDarkDown.bmp"
+IDB_Button_MinusDarkHigh BITMAP  DISCARDABLE     "res\\MinusDarkHigh.bmp"
+IDB_Button_MinusDarkDisable BITMAP  DISCARDABLE     "res\\MinusDarkDisable.bmp"
+IDB_Button_SingleNormal BITMAP  DISCARDABLE     "res\\SingleNormal.bmp"
+IDB_Button_SingleDown   BITMAP  DISCARDABLE     "res\\SingleDown.bmp"
+IDB_Button_SingleHigh   BITMAP  DISCARDABLE     "res\\SingleHigh.bmp"
+IDB_Button_SingleDisable BITMAP  DISCARDABLE     "res\\SingleDisable.bmp"
+IDB_Button_ContinueNormal BITMAP  DISCARDABLE     "res\\ContinueNormal.bmp"
+IDB_Button_ContinueDown BITMAP  DISCARDABLE     "res\\ContinueDown.bmp"
+IDB_Button_ContinueHigh BITMAP  DISCARDABLE     "res\\ContinueHigh.bmp"
+IDB_Button_ContinueDisable BITMAP  DISCARDABLE     "res\\ContinueDisable.bmp"
+IDB_Button_AutoNormal   BITMAP  DISCARDABLE     "res\\AutoNormal.bmp"
+IDB_Button_AutoDown     BITMAP  DISCARDABLE     "res\\AutoDown.bmp"
+IDB_Button_AutoHigh     BITMAP  DISCARDABLE     "res\\AutoHigh.bmp"
+IDB_Button_AutoDisable  BITMAP  DISCARDABLE     "res\\AutoDisable.bmp"
+IDB_Button_StopNormal   BITMAP  DISCARDABLE     "res\\StopNormal.bmp"
+IDB_Button_StopDown     BITMAP  DISCARDABLE     "res\\StopDown.bmp"
+IDB_Button_StopHigh     BITMAP  DISCARDABLE     "res\\StopHigh.bmp"
+IDB_Button_StopDisable  BITMAP  DISCARDABLE     "res\\StopDisable.bmp"
+IDB_BinNum              BITMAP  DISCARDABLE     "res\\BinNum.bmp"
+IDB_MainBK              BITMAP  DISCARDABLE     "res\\MainBK.bmp"
+IDB_Button_MinusDarkNormal BITMAP  DISCARDABLE     "res\\MinusDarkNormal.bmp"
+IDB_Button_ContinueNormal2 BITMAP  DISCARDABLE     "res\\ContinueNormal2.bmp"
+IDB_Button_ContinueDown2 BITMAP  DISCARDABLE     "res\\ContinueDown2.bmp"
+IDB_Button_ContinueHigh2 BITMAP  DISCARDABLE     "res\\ContinueHigh2.bmp"
+IDB_Button_ContinueDisable2 BITMAP  DISCARDABLE     "res\\ContinueDisable2.bmp"
+IDB_Button_AutoNormal2  BITMAP  DISCARDABLE     "res\\AutoNormal2.bmp"
+IDB_Button_AutoDown2    BITMAP  DISCARDABLE     "res\\AutoDown2.bmp"
+IDB_Button_AutoHigh2    BITMAP  DISCARDABLE     "res\\AutoHigh2.bmp"
+IDB_Button_AutoDisable2 BITMAP  DISCARDABLE     "res\\AutoDisable2.bmp"
+IDB_Button_StopNormal2  BITMAP  DISCARDABLE     "res\\StopNormal2.bmp"
+IDB_Button_StopDown2    BITMAP  DISCARDABLE     "res\\StopDown2.bmp"
+IDB_Button_StopHigh2    BITMAP  DISCARDABLE     "res\\StopHigh2.bmp"
+IDB_Button_StopDisable2 BITMAP  DISCARDABLE     "res\\StopDisable2.bmp"
+IDB_BinNum2             BITMAP  DISCARDABLE     "res\\BinNum2.bmp"
+IDB_TabHeadSetChip      BITMAP  DISCARDABLE     "res\\TabHeadSetChip.bmp"
+IDB_TabHeadSetParam     BITMAP  DISCARDABLE     "res\\TabHeadSetParam.bmp"
+IDB_TabHeadSetLevel     BITMAP  DISCARDABLE     "res\\TabHeadSetLevel.bmp"
+IDB_SetChipBK           BITMAP  DISCARDABLE     "res\\SetChipBK.bmp"
+IDB_TabHeadChip2        BITMAP  DISCARDABLE     "res\\TabHeadChip2.bmp"
+IDB_TabHeadChip3        BITMAP  DISCARDABLE     "res\\TabHeadChip3.bmp"
+IDB_TabHeadChip1        BITMAP  DISCARDABLE     "res\\TabHeadChip1.bmp"
+IDB_SetParamBK2         BITMAP  DISCARDABLE     "res\\SetParamBK2.bmp"
+IDB_SetParamBK          BITMAP  DISCARDABLE     "res\\SetParamBK.bmp"
+IDB_SetSystemBK         BITMAP  DISCARDABLE     "res\\SetSystemBK.bmp"
+IDB_SetSpectrumBK       BITMAP  DISCARDABLE     "res\\SetSpectrumBK.bmp"
+IDB_LoginBK             BITMAP  DISCARDABLE     "res\\LoginBK.bmp"
+IDB_SetLevelBK          BITMAP  DISCARDABLE     "res\\SetLevelBK.bmp"
+IDB_Button_AuthorityNormal BITMAP  DISCARDABLE     "res\\AuthorityBtNormal.bmp"
+IDB_Button_AuthorityDown BITMAP  DISCARDABLE     "res\\AuthorityBtDown.bmp"
+IDB_Button_AuthorityHigh BITMAP  DISCARDABLE     "res\\AuthorityBtHigh.bmp"
+IDB_Button_ChangePsdNormal BITMAP  DISCARDABLE     "res\\修改密码Normal.bmp"
+IDB_Button_ChangePsdDown BITMAP  DISCARDABLE     "res\\修改密码Down.bmp"
+IDB_Button_ChangePsdHigh BITMAP  DISCARDABLE     "res\\修改密码High.bmp"
+IDB_Button_ChangePsdDisable BITMAP  DISCARDABLE     "res\\修改密码Disable.bmp"
+IDB_Wizard              BITMAP  DISCARDABLE     "res\\Wizard.bmp"
+IDB_Button_LoginNormal  BITMAP  DISCARDABLE     "res\\登陆Normal.bmp"
+IDB_Button_LoginDown    BITMAP  DISCARDABLE     "res\\登陆Down.bmp"
+IDB_Button_LoginHigh    BITMAP  DISCARDABLE     "res\\登陆High.bmp"
+IDB_Button_LoginDisable BITMAP  DISCARDABLE     "res\\登陆Disable.bmp"
+IDB_Button_CancelNormal BITMAP  DISCARDABLE     "res\\CancelNormal.bmp"
+IDB_Button_CancelDown   BITMAP  DISCARDABLE     "res\\CancelDown.bmp"
+IDB_Button_CancelHigh   BITMAP  DISCARDABLE     "res\\CancelHigh.bmp"
+IDB_Button_CancelDisable BITMAP  DISCARDABLE     "res\\CancelDisable.bmp"
+IDB_Button_DelNormal    BITMAP  DISCARDABLE     "res\\DelNormal.bmp"
+IDB_Button_DelDown      BITMAP  DISCARDABLE     "res\\DelDown.bmp"
+IDB_Button_DelHigh      BITMAP  DISCARDABLE     "res\\DelHigh.bmp"
+IDB_Button_DelDisable   BITMAP  DISCARDABLE     "res\\DelDisable.bmp"
+IDB_Button_AddNormal    BITMAP  DISCARDABLE     "res\\AddNormal.bmp"
+IDB_Button_AddDown      BITMAP  DISCARDABLE     "res\\AddDown.bmp"
+IDB_Button_AddHigh      BITMAP  DISCARDABLE     "res\\AddHigh.bmp"
+IDB_Button_AddDisable   BITMAP  DISCARDABLE     "res\\AddDisable.bmp"
+IDB_Button_CancelNormal2 BITMAP  DISCARDABLE     "res\\CancelNormal2.bmp"
+IDB_Button_CancelDown2  BITMAP  DISCARDABLE     "res\\CancelDown2.bmp"
+IDB_Button_CancelHigh2  BITMAP  DISCARDABLE     "res\\CancelHigh2.bmp"
+IDB_Button_CancelDisable2 BITMAP  DISCARDABLE     "res\\CancelDisable2.bmp"
+IDB_Button_SureNormal2  BITMAP  DISCARDABLE     "res\\SureNormal2.bmp"
+IDB_Button_SureDown2    BITMAP  DISCARDABLE     "res\\SureDown2.bmp"
+IDB_Button_SureHigh2    BITMAP  DISCARDABLE     "res\\SureHigh2.bmp"
+IDB_Button_SureDisable2 BITMAP  DISCARDABLE     "res\\SureDisable2.bmp"
+IDB_Button_CancelNormal3 BITMAP  DISCARDABLE     "res\\CancelNormal3.bmp"
+IDB_Button_CancelDown3  BITMAP  DISCARDABLE     "res\\CancelDown3.bmp"
+IDB_Button_CancelHigh3  BITMAP  DISCARDABLE     "res\\CancelHigh3.bmp"
+IDB_Button_CancelDisable3 BITMAP  DISCARDABLE     "res\\CancelDisable3.bmp"
+IDB_Button_SureNormal   BITMAP  DISCARDABLE     "res\\SureNormal.bmp"
+IDB_Button_SureDown     BITMAP  DISCARDABLE     "res\\SureDown.bmp"
+IDB_Button_SureHigh     BITMAP  DISCARDABLE     "res\\SureHigh.bmp"
+IDB_Button_SureDisable  BITMAP  DISCARDABLE     "res\\SureDisable.bmp"
+IDB_Button_CancelNormal0 BITMAP  DISCARDABLE     "res\\CancelNromal0.bmp"
+IDB_Button_CancelDown0  BITMAP  DISCARDABLE     "res\\CancelDown0.bmp"
+IDB_Button_CancelHigh0  BITMAP  DISCARDABLE     "res\\CancelHigh0.bmp"
+IDB_Button_CancelDisable0 BITMAP  DISCARDABLE     "res\\CancelDisable0.bmp"
+IDB_Button_ElecTestNormal BITMAP  DISCARDABLE     "res\\ElecTestNormal.bmp"
+IDB_Button_ElecTestDown BITMAP  DISCARDABLE     "res\\ElecTestDown.bmp"
+IDB_Button_ElecTestHigh BITMAP  DISCARDABLE     "res\\ElecTestHigh.bmp"
+IDB_Button_ElecTestDisable BITMAP  DISCARDABLE     "res\\ElecTestDisable.bmp"
+IDB_Button_OOIConfigNormal BITMAP  DISCARDABLE     "res\\SpectrumConfigNormal.bmp"
+IDB_Button_OOIConfigDown BITMAP  DISCARDABLE     "res\\SpectrumConfigDown.bmp"
+IDB_Button_OOIConfigHigh BITMAP  DISCARDABLE     "res\\SpectrumConfigHigh.bmp"
+IDB_Button_OOIConfigDisable BITMAP  DISCARDABLE     "res\\SpectrumConfigDisable.bmp"
+IDB_Button_SaveNormal   BITMAP  DISCARDABLE     "res\\SaveNormal.bmp"
+IDB_Button_SaveDown     BITMAP  DISCARDABLE     "res\\SaveDown.bmp"
+IDB_Button_SaveHigh     BITMAP  DISCARDABLE     "res\\SaveHigh.bmp"
+IDB_Button_SaveDisable  BITMAP  DISCARDABLE     "res\\SaveDisable.bmp"
+IDB_Button_GetSpecParamNormal BITMAP  DISCARDABLE     "res\\GetSpecParamNormal.bmp"
+IDB_Button_GetSpecParamfigDown BITMAP  DISCARDABLE     "res\\GetSpecParamDown.bmp"
+IDB_Button_GetSpecParamHigh BITMAP  DISCARDABLE     "res\\GetSpecParamHigh.bmp"
+IDB_Button_GetSpecParamDisable BITMAP  DISCARDABLE     "res\\GetSpecParamDisable.bmp"
+IDB_Button_SaveNormal2  BITMAP  DISCARDABLE     "res\\SaveNormal2.bmp"
+IDB_Button_SaveDown2    BITMAP  DISCARDABLE     "res\\SaveDown2.bmp"
+IDB_Button_SaveHigh2    BITMAP  DISCARDABLE     "res\\SaveHigh2.bmp"
+IDB_Button_SaveDisable2 BITMAP  DISCARDABLE     "res\\SaveDisable2.bmp"
+IDB_Button_CancelNormal4 BITMAP  DISCARDABLE     "res\\CancelNormal4.bmp"
+IDB_Button_CancelDown4  BITMAP  DISCARDABLE     "res\\CancelDown4.bmp"
+IDB_Button_CancelHigh4  BITMAP  DISCARDABLE     "res\\CancelHigh4.bmp"
+IDB_Button_CancelDisable4 BITMAP  DISCARDABLE     "res\\CancelDisable4.bmp"
+IDB_Button_AddItemNormal BITMAP  DISCARDABLE     "res\\AddItemNormal.bmp"
+IDB_Button_AddItemDown  BITMAP  DISCARDABLE     "res\\AddItemDown.bmp"
+IDB_Button_AddItemHigh  BITMAP  DISCARDABLE     "res\\AddItemHigh.bmp"
+IDB_Button_AddItemDisable BITMAP  DISCARDABLE     "res\\AddItemDisable.bmp"
+IDB_Button_DelItemNormal BITMAP  DISCARDABLE     "res\\DelItemNormal.bmp"
+IDB_Button_DelItemDown  BITMAP  DISCARDABLE     "res\\DelItemDown.bmp"
+IDB_Button_DelItemHigh  BITMAP  DISCARDABLE     "res\\DelItemHigh.bmp"
+IDB_Button_DelItemDisable BITMAP  DISCARDABLE     "res\\DelItemDisable.bmp"
+IDB_Button_SaveNormal3  BITMAP  DISCARDABLE     "res\\SureNormal3.bmp"
+IDB_Button_SureNormal3  BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+IDB_Button_SureDown3    BITMAP  DISCARDABLE     "res\\SureDown3.bmp"
+IDB_Button_SureHigh3    BITMAP  DISCARDABLE     "res\\SureHigh3.bmp"
+IDB_Button_SureDisable3 BITMAP  DISCARDABLE     "res\\SureDisable3.bmp"
+IDB_Button_CancelNormal5 BITMAP  DISCARDABLE     "res\\CancelNormal5.bmp"
+IDB_Button_CancelDown5  BITMAP  DISCARDABLE     "res\\CancelDown5.bmp"
+IDB_Button_CancelHigh5  BITMAP  DISCARDABLE     "res\\CancelHigh5.bmp"
+IDB_Button_CancelDisable5 BITMAP  DISCARDABLE     "res\\CancelDisable5.bmp"
+IDB_Button_ExitNormal   BITMAP  DISCARDABLE     "res\\ExitNormal.bmp"
+IDB_Button_ExitDown     BITMAP  DISCARDABLE     "res\\ExitDown.bmp"
+IDB_Button_ExitHigh     BITMAP  DISCARDABLE     "res\\ExitHigh.bmp"
+IDB_Button_ExitDisable  BITMAP  DISCARDABLE     "res\\ExitDisable.bmp"
+IDB_Button_GetGainNormal BITMAP  DISCARDABLE     "res\\GetGainNormal.bmp"
+IDB_Button_GetGainDown  BITMAP  DISCARDABLE     "res\\GetGainDown.bmp"
+IDB_Button_GetGainHigh  BITMAP  DISCARDABLE     "res\\GetGainHigh.bmp"
+IDB_Button_GetGainDisable BITMAP  DISCARDABLE     "res\\GetGainDisable.bmp"
+IDB_Button_InteTimeNormal BITMAP  DISCARDABLE     "res\\InteTimeNormal.bmp"
+IDB_Button_InteTimeDown BITMAP  DISCARDABLE     "res\\InteTimeDown.bmp"
+IDB_Button_InteTimeHigh BITMAP  DISCARDABLE     "res\\InteTimeHigh.bmp"
+IDB_Button_InteTimeDisable BITMAP  DISCARDABLE     "res\\InteTimeDisable.bmp"
+IDB_Button_AddDarkNormal BITMAP  DISCARDABLE     "res\\AddDarkNormal.bmp"
+IDB_Button_AddDarkDown  BITMAP  DISCARDABLE     "res\\AddDarkDown.bmp"
+IDB_Button_AddDarkHigh  BITMAP  DISCARDABLE     "res\\AddDarkHigh.bmp"
+IDB_Button_AddDarkDisable BITMAP  DISCARDABLE     "res\\AddDarkDisable.bmp"
+IDB_Button_clearDarkNormal BITMAP  DISCARDABLE     "res\\ClearDarkNormal.bmp"
+IDB_Button_clearDarkDown BITMAP  DISCARDABLE     "res\\ClearDarkDown.bmp"
+IDB_Button_clearDarkHigh BITMAP  DISCARDABLE     "res\\ClearDarkHigh.bmp"
+IDB_Button_clearDarkDisable BITMAP  DISCARDABLE     "res\\ClearDarkDisable.bmp"
+IDB_Button_CalTestNormal BITMAP  DISCARDABLE     "res\\CalTestNormal.bmp"
+IDB_Button_CalTestDown  BITMAP  DISCARDABLE     "res\\CalTestDown.bmp"
+IDB_Button_CalTestHigh  BITMAP  DISCARDABLE     "res\\CalTestHigh.bmp"
+IDB_Button_CalTestDisable BITMAP  DISCARDABLE     "res\\CalTestDisable.bmp"
+IDB_Button_GetCalNormal BITMAP  DISCARDABLE     "res\\GetCalNormal.bmp"
+IDB_Button_GetCalDown   BITMAP  DISCARDABLE     "res\\GetcalDown.bmp"
+IDB_Button_GetCalHigh   BITMAP  DISCARDABLE     "res\\GetCalHigh.bmp"
+IDB_Button_GetCalDisable BITMAP  DISCARDABLE     "res\\GetCalDisable.bmp"
+IDB_Button_ClearCalNormal BITMAP  DISCARDABLE     "res\\ClearCalNormal.bmp"
+IDB_Button_ClearCalDown BITMAP  DISCARDABLE     "res\\bmp00002.bmp"
+IDB_Button_ClearCalHigh BITMAP  DISCARDABLE     "res\\ClearCalHigh.bmp"
+IDB_Button_ClearCalDisable BITMAP  DISCARDABLE     "res\\ClearCalDisable.bmp"
+IDB_Button_LevelFileNormal BITMAP  DISCARDABLE     "res\\CSVFileNormal.bmp"
+IDB_Button_LevelFileDown BITMAP  DISCARDABLE     "res\\CSVFileDown.bmp"
+IDB_Button_LevelFileHigh BITMAP  DISCARDABLE     "res\\CSVFileHigh.bmp"
+IDB_Button_LevelFileDisable BITMAP  DISCARDABLE     "res\\CSVFileDisable.bmp"
+IDB_Button_HandleLevelNormal BITMAP  DISCARDABLE     "res\\HandleLevelNormal.bmp"
+IDB_Button_HandleLevelDown BITMAP  DISCARDABLE     "res\\HandleLevelDown.bmp"
+IDB_Button_HandleLevelHigh BITMAP  DISCARDABLE     "res\\HandleLevelHigh.bmp"
+IDB_Button_HandleLevelDisable BITMAP  DISCARDABLE     "res\\HandleLevelDisable.bmp"
+IDB_Button_ApplyLevelNormal BITMAP  DISCARDABLE     "res\\button_a.bmp"
+IDB_Button_ApplyLevelDown BITMAP  DISCARDABLE     "res\\ApplyLevelDown.bmp"
+IDB_Button_ApplyLevelHigh BITMAP  DISCARDABLE     "res\\ApplyLevelHigh.bmp"
+IDB_Button_ApplyLevelDisable BITMAP  DISCARDABLE     "res\\ApplyLevelDisable.bmp"
+IDB_Button_AuthorityDisable BITMAP  DISCARDABLE     "res\\AuthorityBtDisable.bmp"
+IDB_Button_SingleNormal2 BITMAP  DISCARDABLE     "res\\SingleNormal2.bmp"
+IDB_Button_SingleDown2  BITMAP  DISCARDABLE     "res\\SingleDown2.bmp"
+IDB_Button_SingleHigh2  BITMAP  DISCARDABLE     "res\\SingleHigh2.bmp"
+IDB_Button_SingleDisable2 BITMAP  DISCARDABLE     "res\\SingleDisable2.bmp"
+IDB_Button_MinusDarkNormal2 BITMAP  DISCARDABLE     "res\\button_m.bmp"
+IDB_Button_MinusDarkDown2 BITMAP  DISCARDABLE     "res\\MinusDarkDown2.bmp"
+IDB_Button_MinusDarkHigh2 BITMAP  DISCARDABLE     "res\\MinusDarkHigh2.bmp"
+IDB_Button_MinusDarkDisable2 BITMAP  DISCARDABLE     "res\\MinusDarkDisable2.bmp"
+IDB_GetTypeNormal       BITMAP  DISCARDABLE     "res\\GetTypeNormal.bmp"
+IDB_GetTypeDown         BITMAP  DISCARDABLE     "res\\GetTypeDown.bmp"
+IDB_GetTypeHigh         BITMAP  DISCARDABLE     "res\\GetTypeHigh.bmp"
+IDB_GetTypeDisable      BITMAP  DISCARDABLE     "res\\GetTypeDisable.bmp"
+IDB_GetWL1Normal        BITMAP  DISCARDABLE     "res\\GetWL1Normal.bmp"
+IDB_GetWL1Down          BITMAP  DISCARDABLE     "res\\GetWL1Down.bmp"
+IDB_GetWL1High          BITMAP  DISCARDABLE     "res\\GetWL1High.bmp"
+IDB_GetWL1Disable       BITMAP  DISCARDABLE     "res\\GetWL1Disable.bmp"
+IDB_GetWL2High          BITMAP  DISCARDABLE     "res\\GetWL2High.bmp"
+IDB_GetWL2Disable       BITMAP  DISCARDABLE     "res\\GetWL2Disable.bmp"
+IDB_GetWL2Normal        BITMAP  DISCARDABLE     "res\\GetWL2Normal.bmp"
+IDB_GetWL2Down          BITMAP  DISCARDABLE     "res\\GetWL2Down.bmp"
+IDB_setColor            BITMAP  DISCARDABLE     "res\\Color.bmp"
+IDB_ShootFileNormal     BITMAP  DISCARDABLE     "res\\ShootFileNormal.bmp"
+IDB_ShootFileDown       BITMAP  DISCARDABLE     "res\\ShootFileDown.bmp"
+IDB_ShootFileHigh       BITMAP  DISCARDABLE     "res\\ShootFileHigh.bmp"
+IDB_ShootFileDisable    BITMAP  DISCARDABLE     "res\\ShootFileDisable.bmp"
+IDB_ShowPointNormal     BITMAP  DISCARDABLE     "res\\ShowRectNormal.bmp"
+IDB_ShowPointDown       BITMAP  DISCARDABLE     "res\\ShowRectDown.bmp"
+IDB_ShowPointHigh       BITMAP  DISCARDABLE     "res\\ShowRectHigh.bmp"
+IDB_ShowPointDisable    BITMAP  DISCARDABLE     "res\\ShowRectDisable.bmp"
+IDB_ClearPicNormal      BITMAP  DISCARDABLE     "res\\ClearRectNormal.bmp"
+IDB_ClearPicDown        BITMAP  DISCARDABLE     "res\\ClearRectDown.bmp"
+IDB_ClearPicHigh        BITMAP  DISCARDABLE     "res\\ClearRectHigh.bmp"
+IDB_ClearPicDisable     BITMAP  DISCARDABLE     "res\\ClearRectDisable.bmp"
+IDB_ClearDotNormal      BITMAP  DISCARDABLE     "res\\ClearDotNormal.bmp"
+IDB_ClearDotDown        BITMAP  DISCARDABLE     "res\\ClearDotDown.bmp"
+IDB_ClearDotHigh        BITMAP  DISCARDABLE     "res\\ClearDotHigh.bmp"
+IDB_ClearDotDisable     BITMAP  DISCARDABLE     "res\\ClearDotDisable.bmp"
+IDB_ApplyBTNormal       BITMAP  DISCARDABLE     "res\\ApplyLevelNormal2.bmp"
+IDB_ApplyBTDown         BITMAP  DISCARDABLE     "res\\ApplyLevelDown2.bmp"
+IDB_ApplyBTHigh         BITMAP  DISCARDABLE     "res\\ApplyLevelHigh2.bmp"
+IDB_ApplyBTDisable      BITMAP  DISCARDABLE     "res\\ApplyLevelDisable2.bmp"
+IDB_ShowLevelNormal     BITMAP  DISCARDABLE     "res\\ShowLevelNormal.bmp"
+IDB_ShowLevelDown       BITMAP  DISCARDABLE     "res\\ShowLevelDown.bmp"
+IDB_ShowLevelHigh       BITMAP  DISCARDABLE     "res\\ShowLevelHigh.bmp"
+IDB_ShowLevelDisable    BITMAP  DISCARDABLE     "res\\ShowLevelDisable.bmp"
+IDB_AddLevelNormal      BITMAP  DISCARDABLE     "res\\AddLevelNormal.bmp"
+IDB_AddLevelDown        BITMAP  DISCARDABLE     "res\\AddLevelDown.bmp"
+IDB_AddLevelHigh        BITMAP  DISCARDABLE     "res\\AddLevelHigh.bmp"
+IDB_AddLevelDisable     BITMAP  DISCARDABLE     "res\\AddLevelDisable.bmp"
+IDB_DelLevelNormal      BITMAP  DISCARDABLE     "res\\DelLevelNormal.bmp"
+IDB_DelLevelDown        BITMAP  DISCARDABLE     "res\\DelLevelDown.bmp"
+IDB_DelLevelHigh        BITMAP  DISCARDABLE     "res\\DellevelHigh.bmp"
+IDB_DelLevelDisable     BITMAP  DISCARDABLE     "res\\DelLevelDisable.bmp"
+IDB_BinNumNormal        BITMAP  DISCARDABLE     "res\\CheckLevelNormal.bmp"
+IDB_BinNumDown          BITMAP  DISCARDABLE     "res\\CheckLevelDown.bmp"
+IDB_BinNumHigh          BITMAP  DISCARDABLE     "res\\CheckLevelHigh.bmp"
+IDB_BinNumDisable       BITMAP  DISCARDABLE     "res\\CheckLevelDisable.bmp"
+IDB_DotNormal           BITMAP  DISCARDABLE     "res\\ShootBTNormal.bmp"
+IDB_DotDown             BITMAP  DISCARDABLE     "res\\ShootBTDown.bmp"
+IDB_DotHigh             BITMAP  DISCARDABLE     "res\\ShootBTHigh.bmp"
+IDB_DotDisable          BITMAP  DISCARDABLE     "res\\ShootBTDisable.bmp"
+IDB_SetAuthorityNormal  BITMAP  DISCARDABLE     "res\\SetAuthorityNormal.bmp"
+IDB_SetAuthorityDown    BITMAP  DISCARDABLE     "res\\SetAuthorityDown.bmp"
+IDB_SetAuthorityHigh    BITMAP  DISCARDABLE     "res\\SetAuthorityHigh.bmp"
+IDB_SetAuthorityDisable BITMAP  DISCARDABLE     "res\\SetAuthorityDisable.bmp"
+IDB_ShowAuthority       BITMAP  DISCARDABLE     "res\\ShowAuthority.bmp"
+IDB_StaFilePath         BITMAP  DISCARDABLE     "res\\StaFilePath.bmp"
+IDB_SpmReadParam        BITMAP  DISCARDABLE     "res\\SpmReadParam.bmp"
+IDB_ReferSpec           BITMAP  DISCARDABLE     "res\\ReferSpec.bmp"
+IDB_DarkSpec            BITMAP  DISCARDABLE     "res\\DarkSpec.bmp"
+IDB_LampFile            BITMAP  DISCARDABLE     "res\\LampFile.bmp"
+IDB_FinalCal            BITMAP  DISCARDABLE     "res\\FinalCal.bmp"
+IDB_RegistBK            BITMAP  DISCARDABLE     "res\\RegistBK.bmp"
+IDB_InitialBK           BITMAP  DISCARDABLE     "res\\InitialBK.bmp"
+IDB_LeftTime            BITMAP  DISCARDABLE     "res\\LeftTime.bmp"
+IDB_InitText            BITMAP  DISCARDABLE     "res\\InitText.bmp"
+IDB_InitBTNormal        BITMAP  DISCARDABLE     "res\\InitialBTNormal.bmp"
+IDB_InitBTDown          BITMAP  DISCARDABLE     "res\\InitialBTDown.bmp"
+IDB_InitBTHigh          BITMAP  DISCARDABLE     "res\\InitialBTHigh.bmp"
+IDB_InitCancelNormal    BITMAP  DISCARDABLE     "res\\InitCancelNormal.bmp"
+IDB_InitCancelDown      BITMAP  DISCARDABLE     "res\\InitCancelDown.bmp"
+IDB_InitCancelHigh      BITMAP  DISCARDABLE     "res\\InitCancelHigh.bmp"
+IDB_RegisterBTNormal    BITMAP  DISCARDABLE     "res\\RegisterBTNormal.bmp"
+IDB_RegisterBTDown      BITMAP  DISCARDABLE     "res\\RegisterBTDown.bmp"
+IDB_RegisterBTHigh      BITMAP  DISCARDABLE     "res\\RegisterBTHigh.bmp"
+IDB_RegisterCancelNormal BITMAP  DISCARDABLE     "res\\RegisterCancelNormal.bmp"
+IDB_RegisterCancelDown  BITMAP  DISCARDABLE     "res\\RegisterCancelDown.bmp"
+IDB_RegisterCancelHigh  BITMAP  DISCARDABLE     "res\\RegisterCancelHigh.bmp"
+IDB_LightBK             BITMAP  DISCARDABLE     "res\\LightBK.bmp"
+IDB_Button_LightNormal  BITMAP  DISCARDABLE     "res\\LightNormal.bmp"
+IDB_Button_LightDown    BITMAP  DISCARDABLE     "res\\LightDown.bmp"
+IDB_Button_LightHigh    BITMAP  DISCARDABLE     "res\\LightHigh.bmp"
+IDB_Button_LightDisable BITMAP  DISCARDABLE     "res\\LightDisable.bmp"
+IDB_Button_CloseLightNormal BITMAP  DISCARDABLE     "res\\CloseLightNormal.bmp"
+IDB_Button_CloseLightDown BITMAP  DISCARDABLE     "res\\CloseLightDown.bmp"
+IDB_Button_CloseLightHigh BITMAP  DISCARDABLE     "res\\CloseLightHigh.bmp"
+IDB_Button_CloseLightDisable BITMAP  DISCARDABLE     "res\\CloseLightDisable.bmp"
+IDB_ShootBK             BITMAP  DISCARDABLE     "res\\bitmap7.bmp"
+IDB_AccumulateBK        BITMAP  DISCARDABLE     "res\\AccumulateBK.bmp"
+IDB_EngineerBK          BITMAP  DISCARDABLE     "res\\EngineerBK.bmp"
+IDB_AddUserBK           BITMAP  DISCARDABLE     "res\\AddUserBK.bmp"
+IDB_ChangePsdBK         BITMAP  DISCARDABLE     "res\\ChangePsdBK.bmp"
+IDB_DelUserBK           BITMAP  DISCARDABLE     "res\\DelUserBK.bmp"
+IDB_SettingBK           BITMAP  DISCARDABLE     "res\\settingbk.bmp"
+IDB_MainBK2             BITMAP  DISCARDABLE     "res\\MainBK2.bmp"
+IDB_Temperature2        BITMAP  DISCARDABLE     "res\\Temperature2.bmp"
+IDB_Temperature         BITMAP  DISCARDABLE     "res\\Temperature3.bmp"
+IDB_TypeBK              BITMAP  DISCARDABLE     "res\\TypeBK.bmp"
+IDB_shootCIE            BITMAP  DISCARDABLE     "res\\ShootCIE.bmp"
+IDB_CIE                 BITMAP  DISCARDABLE     "res\\CIE.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR ACCELERATORS DISCARDABLE 
+BEGIN
+    "A",            ID_Shoot,               VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_HIGHPOWERINTERFACE_DIALOG DLGINIT
+BEGIN
+    IDC_MSCOMM1, 0x376, 102, 0
+0x0013, 0x0000, 0x0043, 0x006f, 0x0070, 0x0079, 0x0072, 0x0069, 0x0067, 
+0x0068, 0x0074, 0x0020, 0x0028, 0x0063, 0x0029, 0x0020, 0x0031, 0x0039, 
+0x0039, 0x0034, 0x0020, 0x4321, 0x1234, 0x0008, 0x0000, 0x03ed, 0x0000, 
+0x03ed, 0x0000, 0x5601, 0x648a, 0x0000, 0x0006, 0x0000, 0x0003, 0x0400, 
+0x0000, 0x0200, 0x0000, 0xc200, 0x0001, 0x0000, 0x0008, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x003f, 0x0000, 0x0001, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "/"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\HighPowerInterface.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

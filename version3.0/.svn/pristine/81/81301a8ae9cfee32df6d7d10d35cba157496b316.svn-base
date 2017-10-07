@@ -1,0 +1,58 @@
+﻿using LED2017.DevControl.IDevControl;
+using System;
+
+namespace LED2017.DevControl.NDevControl
+{
+    public class SPDevControl : IDevControl.IDevControl
+    {
+        public SPDevControl()
+        {
+            this.devcenter = new DevCenter(this);
+            this.datacollect = new DataCollector(this);
+        }
+
+        /// <summary>
+        /// 获取采集器
+        /// </summary>
+        /// <returns></returns>
+        public DataCollector datacollect;
+        public IDataCollector GetDataCollectControl()
+        {
+            return this.datacollect;
+        }
+
+        /// <summary>
+        /// 获取设备管理器
+        /// </summary>
+        /// <returns></returns>
+        public DevCenter devcenter;
+        public IDevCenter GetDeviceControl()
+        {
+            return this.devcenter;
+        }
+
+        /// <summary>
+        /// 控制器状态
+        /// </summary>
+        private ControlState controlstate = ControlState.CLOSE;
+
+
+        /// <summary>
+        /// 设置控制器状态
+        /// </summary>
+        /// <param name="state"></param>
+        public void SetControlState(ControlState state)
+        {
+            this.controlstate = state;
+        }
+
+        /// <summary>
+        /// 获取控制器状态
+        /// </summary>
+        /// <returns></returns>
+        public ControlState GetControlState()
+        {
+            return this.controlstate;
+        }
+    }
+}

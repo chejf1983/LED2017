@@ -1,0 +1,71 @@
+﻿using System;
+using System.Windows.Forms;
+using System.Reflection;
+
+namespace TestWindows
+{
+    public partial class DataList : UserControl
+    {
+        public DataList()
+        {
+            InitializeComponent();
+            initChartReport();
+        }
+
+        //注册报表更新响应
+        private void initChartReport()
+        {
+            //添加数据报表更新响应
+            LED2017.LEDPlatForm.Instance.LEDLabor.DataTable.NewDataEvent += DataTable_NewDataEvent;
+            //开启双缓冲，提高性能
+            Type dgvType = dataGridView.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dataGridView, true, null);
+        }
+
+        private void DataTable_NewDataEvent(LED2017.SPDevLab.LEDLab.Data.CIEData dataPacket)
+        {
+            this.Invoke(new EventHandler(delegate {
+                this.dataGridView.Rows.Insert(0, new String[] {
+                this.dataGridView.Rows.Count.ToString(),
+                dataPacket.data.time.ToLongTimeString(),
+                dataPacket.color.CCT.ToString(),
+                dataPacket.color.C.ToString(),
+                dataPacket.color.Ld.ToString(),
+                dataPacket.color.Pur.ToString(),
+                dataPacket.color.Lp.ToString(),
+                dataPacket.color.HW.ToString(),
+                dataPacket.color.Lav.ToString(),
+                dataPacket.color.Ra.ToString(),
+                dataPacket.color.Ri[0].ToString(),
+                dataPacket.color.Ri[1].ToString(),
+                dataPacket.color.Ri[2].ToString(),
+                dataPacket.color.Ri[3].ToString(),
+                dataPacket.color.Ri[4].ToString(),
+                dataPacket.color.Ri[5].ToString(),
+                dataPacket.color.Ri[6].ToString(),
+                dataPacket.color.Ri[7].ToString(),
+                dataPacket.color.Ri[8].ToString(),
+                dataPacket.color.Ri[9].ToString(),
+                dataPacket.color.Ri[10].ToString(),
+                dataPacket.color.Ri[11].ToString(),
+                dataPacket.color.Ri[12].ToString(),
+                dataPacket.color.Ri[13].ToString(),
+                dataPacket.color.Ri[14].ToString(),
+                dataPacket.color.CDI.ToString(),
+                dataPacket.color.RR.ToString(),
+                dataPacket.color.GR.ToString(),
+                dataPacket.color.BR.ToString(),
+                dataPacket.color.Ph.ToString()
+            });
+            }));
+            
+        }
+
+        public void ClearData()
+        {
+            this.dataGridView.Rows.Clear();
+        }
+        
+    }
+}

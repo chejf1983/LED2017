@@ -1,0 +1,27 @@
+// CSpecGCS.cpp: implementation of the CCSpecGCS class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "highpowerinterface.h"
+#include "CSpecGCS.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CCSpecGCS::CCSpecGCS()
+{
+
+}
+
+CCSpecGCS::~CCSpecGCS()
+{
+
+}
