@@ -24,3 +24,17 @@ D:\项目\led2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.SqlServe
 D:\项目\led2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.xml
 D:\项目\led2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.dll
 D:\项目\led2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.pdb
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\LTISDLL.dll.config
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\LTISDLL.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\LTISDLL.pdb
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.SqlServer.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.xml
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.SqlServer.xml
+D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.xml
+D:\LED2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.csprojResolveAssemblyReference.cache
+D:\LED2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.dll
+D:\LED2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.pdb

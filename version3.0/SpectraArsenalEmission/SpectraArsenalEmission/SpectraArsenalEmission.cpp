@@ -1200,6 +1200,28 @@ DLLEXP int WINAPI LED_LITS_GetData(SSpectralPar spar, float dkdata[], int dklen,
 
 #pragma region LED+电参数控制
 
+//设置LED类型
+DLLEXP int WINAPI LED_LITS_SetLEDType(int ledtype)
+{
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	//检查初始化的设备号
+	if (selectdev < 0) {
+		return DEV_NOT_INIT;
+	}
+
+	int retry  = 0;
+	//设置模式
+	while (SA_API_SUCCESS != LITS_SetLedInterfaceType(selectdev, (BYTE)(ledtype)))
+	{
+		if(retry ++ > 3){
+			return DLL_FAILED;
+		}
+		LITS_SystemClose();
+		LITS_SystemOpen();
+	}
+	
+	return DLL_SUCCESS;
+}
 
 //设置电参数测试条件
 DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)

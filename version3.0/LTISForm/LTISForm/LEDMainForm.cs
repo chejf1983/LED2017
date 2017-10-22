@@ -374,8 +374,6 @@ namespace LTISForm
         }
         #endregion
 
-
-
         /*
         private void ShowNewForm(object sender, EventArgs e)
         {

@@ -237,6 +237,16 @@ namespace LTISDLL.LEDSYS.LTISDriver
         [DllImport("SpectraArsenalEmission.dll", EntryPoint = "LED_LITS_GetSPPar")]
         public static extern int LED_LITS_GetSPPar(ref float time1, ref float time2, ref float time3);
 
+
+        /// <summary>
+        /// 设置LED类型
+        /// </summary>
+        /// <param name="epar"></param>
+        /// <param name="ledmode"></param>
+        /// <returns></returns>
+        [DllImport("SpectraArsenalEmission.dll", EntryPoint = "LED_LITS_SetLEDType")]
+        public static extern int LED_LITS_SetLEDType(int ledtype);
+
         /// <summary>
         /// 设置电参数测试条件
         /// </summary>

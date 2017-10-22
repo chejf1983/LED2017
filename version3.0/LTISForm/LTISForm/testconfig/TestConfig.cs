@@ -14,6 +14,7 @@ using LTISForm.devconfig;
 using System.Windows.Forms.DataVisualization.Charting;
 using LTISDLL.LEDSYS.Data;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace LTISForm.testconfig
 {
@@ -23,29 +24,8 @@ namespace LTISForm.testconfig
         {
             InitializeComponent();
 
-            //触发模式初始化
-            this.comboBox_triggermode.Items.Clear();
-
-            this.comboBox_triggermode.Items.Add("软件触发");
-            this.comboBox_triggermode.Items.Add("高电平触发");
-            this.comboBox_triggermode.Items.Add("低电平触发");
-            this.comboBox_triggermode.SelectedIndex = 0;
-
-            this.comboBox_triggermode.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            //初始化界面
-            this.UpdateLEDGroup();
-
-            //初始化预测界面
-            this.InitSPCurve();
-
-            //添加系统控制状态刷新事件
-            LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent +=
-                new LTISDLL.SYSControl.ChangeState(ControlManager_StateChangeEvent);
-
-            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(UserCenter_UserChangeEvent);
+            this.initConfigUI();
         }
-
 
         #region 界面刷新控制
         void UserCenter_UserChangeEvent(LTISDLL.User.User user)
@@ -75,6 +55,84 @@ namespace LTISForm.testconfig
         #endregion
 
         #region 测试配置控制
+        private void initConfigUI()
+        {
+            //触发模式初始化
+            this.comboBox_triggermode.Items.Clear();
+
+            this.comboBox_triggermode.Items.Add("软件触发");
+            this.comboBox_triggermode.Items.Add("高电平触发");
+            this.comboBox_triggermode.Items.Add("低电平触发");
+            this.comboBox_triggermode.SelectedIndex = 0;
+
+            this.comboBox_triggermode.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //led类型选择初始化界面
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led0);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led1);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led14);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led15);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led16);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led17);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led18);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led19);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led26);
+            this.comboBox_ledtype.Items.Add(Properties.Resources.led27);
+            this.comboBox_ledtype.ItemHeight = 70;
+            this.comboBox_ledtype.Width = 100;
+            this.comboBox_ledtype.DrawMode = DrawMode.OwnerDrawVariable;
+            this.comboBox_ledtype.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.comboBox_ledtype.SelectedIndex = 1;
+            this.comboBox_ledtype.DrawItem += new DrawItemEventHandler(comboBox_ledtype_DrawItem);
+
+
+            //初始化界面
+            this.UpdateLEDGroup();
+
+            //初始化预测界面
+            this.InitSPCurve();
+
+            //添加系统控制状态刷新事件
+            LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent +=
+                new LTISDLL.SYSControl.ChangeState(ControlManager_StateChangeEvent);
+
+            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(UserCenter_UserChangeEvent);
+        }
+
+        //绘制图片combox
+        private void comboBox_ledtype_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            ComboBox comboBox1 = (ComboBox)sender;
+            //鼠标选中在这个项上 
+            //if ((e.State & DrawItemState.Selected) != 0)
+            //{
+            //    //渐变画刷 
+            //    LinearGradientBrush brush = new LinearGradientBrush(e.Bounds, Color.FromArgb(255, 251, 237),
+            //                                     Color.FromArgb(255, 236, 181), LinearGradientMode.Vertical);
+            //    //填充区域 
+            //    Rectangle borderRect = new Rectangle(3, e.Bounds.Y, e.Bounds.Width - 5, e.Bounds.Height - 2);
+
+            //    e.Graphics.FillRectangle(brush, borderRect);
+
+            //    //画边框 
+            //    Pen pen = new Pen(Color.FromArgb(229, 195, 101));
+            //    e.Graphics.DrawRectangle(pen, borderRect);
+            //}
+            //else
+            //{
+            //    SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 255));
+            //    e.Graphics.FillRectangle(brush, e.Bounds);
+            //}
+
+            //获得项图片,绘制图片 
+            System.Drawing.Bitmap img = (System.Drawing.Bitmap)comboBox1.Items[e.Index];
+
+            //图片绘制的区域 
+            Rectangle imgRect = new Rectangle(6, e.Bounds.Y + 3, 60, 60);
+            e.Graphics.DrawImage(img, imgRect);
+        }
+
+
         //led个数
         private int lednum = 0;
 
@@ -234,6 +292,36 @@ namespace LTISForm.testconfig
         }
         #endregion
 
+        private LEDType GetInputType()
+        {
+            int index = this.comboBox_ledtype.SelectedIndex;
+            switch (index)
+            {
+                case 0:
+                    return LEDType.LED0;
+                case 1:
+                    return LEDType.LED1;
+                case 14:
+                    return LEDType.LED14;
+                case 15:
+                    return LEDType.LED15;
+                case 16:
+                    return LEDType.LED16;
+                case 17:
+                    return LEDType.LED17;
+                case 18:
+                    return LEDType.LED18;
+                case 19:
+                    return LEDType.LED19;
+                case 26:
+                    return LEDType.LED26;
+                case 27:
+                    return LEDType.LED27;
+                default:
+                    return LEDType.LED14;
+            }
+        }
+
         //下发电参数和光参数
         private void button_Save_Click(object sender, EventArgs e)
         {
@@ -301,7 +389,7 @@ namespace LTISForm.testconfig
                 }
             #endregion
 
-            if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.SaveConfig(ledtestpar, this.GetTrigerMode()))
+            if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.SaveConfig(ledtestpar, this.GetTrigerMode(), GetInputType())) ;
             {
                 MessageBox.Show("保存成功");
             }

@@ -131,6 +131,9 @@ DLLEXP int WINAPI LED_LITS_GetOriginalData(SSpectralPar spar, float dkdata[], in
 DLLEXP int WINAPI LED_LITS_GetData(SSpectralPar spar, float dkdata[], int dklen,
 	float fDx, float fDy, COLOR_PARA &dPara);
 
+//设置LED类型
+DLLEXP int WINAPI LED_LITS_SetLEDType(int ledtype);
+
 //设置电参数测试条件
 DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode);
 

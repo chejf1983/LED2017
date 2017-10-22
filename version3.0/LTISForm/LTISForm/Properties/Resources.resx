@@ -139,6 +139,39 @@
   <data name="icon_testconfig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_testconfig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="led0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led0.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led14.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led15.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led16.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led17.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led18.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led19.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led26.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led27.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\led4.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom_reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom_reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

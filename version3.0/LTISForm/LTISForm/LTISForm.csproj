@@ -315,6 +315,17 @@
   <ItemGroup>
     <Content Include="ledicon.ico" />
     <Content Include="Resources\CIE_1931.png" />
+    <None Include="Resources\led27.bmp" />
+    <None Include="Resources\led26.bmp" />
+    <None Include="Resources\led19.bmp" />
+    <None Include="Resources\led18.bmp" />
+    <None Include="Resources\led17.bmp" />
+    <None Include="Resources\led16.bmp" />
+    <None Include="Resources\led15.bmp" />
+    <None Include="Resources\led14.bmp" />
+    <None Include="Resources\led4.bmp" />
+    <None Include="Resources\led1.bmp" />
+    <None Include="Resources\led0.bmp" />
     <None Include="Resources\icon_testconfig.png" />
     <None Include="Resources\icon_test.png" />
     <None Include="Resources\icon_help.png" />

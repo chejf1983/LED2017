@@ -89,20 +89,25 @@
             this.ip3 = new System.Windows.Forms.Label();
             this.button_SaveAs = new System.Windows.Forms.Button();
             this.button_Load = new System.Windows.Forms.Button();
+            this.comboBox_ledtype = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox_nf.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // NeDelay_input
             // 
-            this.NeDelay_input.Location = new System.Drawing.Point(371, 30);
+            this.NeDelay_input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NeDelay_input.Location = new System.Drawing.Point(150, 82);
             this.NeDelay_input.Name = "NeDelay_input";
             this.NeDelay_input.Size = new System.Drawing.Size(100, 21);
             this.NeDelay_input.TabIndex = 12;
             // 
             // NeI_input
             // 
-            this.NeI_input.Location = new System.Drawing.Point(152, 57);
+            this.NeI_input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NeI_input.Location = new System.Drawing.Point(150, 53);
             this.NeI_input.Name = "NeI_input";
             this.NeI_input.Size = new System.Drawing.Size(100, 21);
             this.NeI_input.TabIndex = 13;
@@ -110,8 +115,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(256, 33);
+            this.label3.Location = new System.Drawing.Point(35, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 12);
             this.label3.TabIndex = 6;
@@ -119,8 +125,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 61);
+            this.label2.Location = new System.Drawing.Point(11, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 12);
             this.label2.TabIndex = 7;
@@ -128,7 +135,7 @@
             // 
             // button_Save
             // 
-            this.button_Save.Location = new System.Drawing.Point(150, 470);
+            this.button_Save.Location = new System.Drawing.Point(150, 549);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(91, 23);
             this.button_Save.TabIndex = 32;
@@ -179,7 +186,7 @@
             this.groupBox1.Controls.Add(this.LED1_BI_input);
             this.groupBox1.Controls.Add(this.LED2_FI_input);
             this.groupBox1.Controls.Add(this.LED1_FI_input);
-            this.groupBox1.Location = new System.Drawing.Point(12, 122);
+            this.groupBox1.Location = new System.Drawing.Point(12, 201);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(481, 342);
             this.groupBox1.TabIndex = 33;
@@ -522,17 +529,18 @@
             this.groupBox_nf.Controls.Add(this.NeTtime_input);
             this.groupBox_nf.Controls.Add(this.NeI_input);
             this.groupBox_nf.Controls.Add(this.NeDelay_input);
-            this.groupBox_nf.Location = new System.Drawing.Point(12, 12);
+            this.groupBox_nf.Location = new System.Drawing.Point(224, 16);
             this.groupBox_nf.Name = "groupBox_nf";
-            this.groupBox_nf.Size = new System.Drawing.Size(481, 104);
+            this.groupBox_nf.Size = new System.Drawing.Size(269, 179);
             this.groupBox_nf.TabIndex = 34;
             this.groupBox_nf.TabStop = false;
             this.groupBox_nf.Text = "极性判断";
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 33);
+            this.label4.Location = new System.Drawing.Point(41, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 12);
             this.label4.TabIndex = 7;
@@ -540,8 +548,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(280, 61);
+            this.label5.Location = new System.Drawing.Point(59, 113);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 12);
             this.label5.TabIndex = 6;
@@ -549,7 +558,8 @@
             // 
             // NeVol_input
             // 
-            this.NeVol_input.Location = new System.Drawing.Point(152, 30);
+            this.NeVol_input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NeVol_input.Location = new System.Drawing.Point(150, 26);
             this.NeVol_input.Name = "NeVol_input";
             this.NeVol_input.Size = new System.Drawing.Size(100, 21);
             this.NeVol_input.TabIndex = 13;
@@ -557,7 +567,8 @@
             // 
             // NeTtime_input
             // 
-            this.NeTtime_input.Location = new System.Drawing.Point(371, 58);
+            this.NeTtime_input.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.NeTtime_input.Location = new System.Drawing.Point(150, 110);
             this.NeTtime_input.Name = "NeTtime_input";
             this.NeTtime_input.Size = new System.Drawing.Size(100, 21);
             this.NeTtime_input.TabIndex = 12;
@@ -568,12 +579,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_curve.Location = new System.Drawing.Point(499, 16);
             this.panel_curve.Name = "panel_curve";
-            this.panel_curve.Size = new System.Drawing.Size(489, 448);
+            this.panel_curve.Size = new System.Drawing.Size(489, 527);
             this.panel_curve.TabIndex = 35;
             // 
             // button_retest
             // 
-            this.button_retest.Location = new System.Drawing.Point(499, 470);
+            this.button_retest.Location = new System.Drawing.Point(499, 549);
             this.button_retest.Name = "button_retest";
             this.button_retest.Size = new System.Drawing.Size(75, 23);
             this.button_retest.TabIndex = 36;
@@ -584,7 +595,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(580, 475);
+            this.label12.Location = new System.Drawing.Point(580, 554);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(23, 12);
             this.label12.TabIndex = 37;
@@ -593,7 +604,7 @@
             // ip1
             // 
             this.ip1.AutoSize = true;
-            this.ip1.Location = new System.Drawing.Point(609, 475);
+            this.ip1.Location = new System.Drawing.Point(609, 554);
             this.ip1.Name = "ip1";
             this.ip1.Size = new System.Drawing.Size(17, 12);
             this.ip1.TabIndex = 37;
@@ -602,7 +613,7 @@
             // ip2
             // 
             this.ip2.AutoSize = true;
-            this.ip2.Location = new System.Drawing.Point(674, 475);
+            this.ip2.Location = new System.Drawing.Point(674, 554);
             this.ip2.Name = "ip2";
             this.ip2.Size = new System.Drawing.Size(17, 12);
             this.ip2.TabIndex = 37;
@@ -611,7 +622,7 @@
             // ip3
             // 
             this.ip3.AutoSize = true;
-            this.ip3.Location = new System.Drawing.Point(739, 475);
+            this.ip3.Location = new System.Drawing.Point(739, 554);
             this.ip3.Name = "ip3";
             this.ip3.Size = new System.Drawing.Size(17, 12);
             this.ip3.TabIndex = 37;
@@ -619,7 +630,7 @@
             // 
             // button_SaveAs
             // 
-            this.button_SaveAs.Location = new System.Drawing.Point(247, 470);
+            this.button_SaveAs.Location = new System.Drawing.Point(247, 549);
             this.button_SaveAs.Name = "button_SaveAs";
             this.button_SaveAs.Size = new System.Drawing.Size(91, 23);
             this.button_SaveAs.TabIndex = 32;
@@ -629,7 +640,7 @@
             // 
             // button_Load
             // 
-            this.button_Load.Location = new System.Drawing.Point(344, 470);
+            this.button_Load.Location = new System.Drawing.Point(344, 549);
             this.button_Load.Name = "button_Load";
             this.button_Load.Size = new System.Drawing.Size(91, 23);
             this.button_Load.TabIndex = 32;
@@ -637,12 +648,32 @@
             this.button_Load.UseVisualStyleBackColor = true;
             this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
             // 
+            // comboBox_ledtype
+            // 
+            this.comboBox_ledtype.FormattingEnabled = true;
+            this.comboBox_ledtype.ItemHeight = 12;
+            this.comboBox_ledtype.Location = new System.Drawing.Point(39, 25);
+            this.comboBox_ledtype.Name = "comboBox_ledtype";
+            this.comboBox_ledtype.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_ledtype.TabIndex = 38;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBox_ledtype);
+            this.groupBox2.Location = new System.Drawing.Point(12, 20);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(206, 175);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "LED类型";
+            // 
             // TestConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1000, 577);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button_retest);
             this.Controls.Add(this.panel_curve);
             this.Controls.Add(this.ip3);
@@ -661,6 +692,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox_nf.ResumeLayout(false);
             this.groupBox_nf.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -727,5 +759,7 @@
         private System.Windows.Forms.Label ip3;
         private System.Windows.Forms.Button button_SaveAs;
         private System.Windows.Forms.Button button_Load;
+        private System.Windows.Forms.ComboBox comboBox_ledtype;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

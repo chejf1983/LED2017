@@ -6,6 +6,7 @@ using LTISDLL.LEDSYS;
 using LTISDLL.LEDSYS.LTISDriver.Data;
 using System.IO;
 using System.Xml;
+using LTISDLL.LEDSYS.Data;
 
 namespace LTISDLL.SYSControl
 {
@@ -35,7 +36,7 @@ namespace LTISDLL.SYSControl
         /// </summary>
         /// <param name="ledtestpar"></param>
         /// <param name="time"></param>
-        public bool SaveConfig(LEDCollectPar ledtestpar, TRIGGER_MODE mode)
+        public bool SaveConfig(LEDCollectPar ledtestpar, TRIGGER_MODE mode, LEDType ledtype)
         {
             //检查积分时间
             for (int i = 0; i < ledtestpar.lednum; i++)
@@ -62,6 +63,7 @@ namespace LTISDLL.SYSControl
                 {
                     this.ledsystem.State = ControlState.Config;
                     this.ledsystem.LedModel.LTISDev.SetElectricPar(ledtestpar);
+                    this.ledsystem.LedModel.LTISDev.SetLEDType(ledtype);
                     return true;
                 }
                 catch (Exception ex)
@@ -92,7 +94,7 @@ namespace LTISDLL.SYSControl
 
 
         /// <summary>
-        /// 保存策略图成XML文件，覆盖方式
+        /// 保存电参数配置XML文件，覆盖方式
         /// </summary>
         /// <param name="name"></param>
         /// <param name="map"></param>

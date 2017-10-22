@@ -543,6 +543,34 @@ namespace LTISDLL.LEDSYS.LTISDriver
             }
         }
 
+
+        /// <summary>
+        /// 设置光电参数
+        /// </summary>
+        /// <param name="ntestpar"></param>
+        /// <param name="ledpars"></param>
+        /// <param name="lednum"></param>
+        /// <returns></returns>
+        public bool SetLEDType(LEDType type)
+        {
+            lock (this)
+            {
+                //检查设备连接
+                if (!this.connect)
+                {
+                    throw new Exception("设备未连接");
+                }
+                
+                //下发电参数
+                if (LEDevDriver.DLL_SUCCESS != LEDevDriver.LED_LITS_SetLEDType((int)type))
+                {
+                    throw new Exception("设置类型失败！");
+                }
+
+                return false;
+            }
+        }
+
         /// <summary>
         /// 下发bin号
         /// </summary>

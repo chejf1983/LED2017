@@ -168,5 +168,39 @@ namespace LTISDLL.LEDSYS.Data
         public int lednum;        //led个数
         public CIEData[] ciedata; //光数据
         public EleData[] eledata; //电数据
-    } 
+    }
+
+    public enum LEDType
+    {
+        LED0 = 0,
+        LED1,
+        LED2,
+        LED3,
+        LED4,
+        LED5,
+        LED6,
+        LED7,
+        LED8,
+        LED9,
+        LED10,
+        LED11,
+        LED12,
+        LED13,
+        LED14,
+        LED15,
+        LED16,
+        LED17,
+        LED18,
+        LED19,
+        LED20,
+        LED21,
+        LED22,
+        LED23,
+        LED24,
+        LED25,
+        LED26,
+        LED27,
+        LED28,
+        LED29
+    }
 }

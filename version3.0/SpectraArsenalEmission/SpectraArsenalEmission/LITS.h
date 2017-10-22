@@ -47,7 +47,7 @@ LITS_API int LITS_SystemOpen(void);
 LITS_API void LITS_SystemClose(void);
 LITS_API int LITS_SetIntegrationTime (int LITSIndex, int usec);
 LITS_API int LITS_SetChannelIntegrationTime (int LITSIndex, int LedRusec, int LedGusec, int LedBusec);
-LITS_API int LITS_GetChannelIntegrationTime (int LITSIndex, int * LedRusec, int * LedGusec, int * LedBusec);
+LITS_API int LITS_GetChannelIntegrationTime (int LITSIndex, int* pLedRusec, int* pLedGusec, int* pLedBusec);
 
 LITS_API int LITS_SetAverageTimes(int LITSIndex, int AverageTimes);
 LITS_API int LITS_GetWavelengthCalibrationCoefficients (int LITSIndex, double * WavelengthCalibration);
@@ -79,6 +79,7 @@ LITS_API int LITS_GetLedNegativePara(int LITSIndex, float *pfVoltage , float *pf
 LITS_API int LITS_SetBinOutput(int LITSIndex, int iBin);
 LITS_API int LITS_GetSpectralData(int LITSIndex, double *pdSpectumData);
 LITS_API int LITS_GetPixelNumber(int LITSIndex);
+LITS_API int LITS_SetLedInterfaceType(int LITSIndex, BYTE InterfaceType);
 
 
 
