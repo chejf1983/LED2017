@@ -82,7 +82,7 @@ namespace LTISForm.testconfig
             this.comboBox_ledtype.Width = 100;
             this.comboBox_ledtype.DrawMode = DrawMode.OwnerDrawVariable;
             this.comboBox_ledtype.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.comboBox_ledtype.SelectedIndex = 1;
+            this.comboBox_ledtype.SelectedIndex = 3;
             this.comboBox_ledtype.DrawItem += new DrawItemEventHandler(comboBox_ledtype_DrawItem);
 
 
@@ -301,21 +301,21 @@ namespace LTISForm.testconfig
                     return LEDType.LED0;
                 case 1:
                     return LEDType.LED1;
-                case 14:
+                case 2:
                     return LEDType.LED14;
-                case 15:
+                case 3:
                     return LEDType.LED15;
-                case 16:
+                case 4:
                     return LEDType.LED16;
-                case 17:
+                case 5:
                     return LEDType.LED17;
-                case 18:
+                case 6:
                     return LEDType.LED18;
-                case 19:
+                case 7:
                     return LEDType.LED19;
-                case 26:
+                case 8:
                     return LEDType.LED26;
-                case 27:
+                case 9:
                     return LEDType.LED27;
                 default:
                     return LEDType.LED14;

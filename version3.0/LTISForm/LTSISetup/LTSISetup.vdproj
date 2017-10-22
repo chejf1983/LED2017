@@ -39,8 +39,38 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0C5BAD3F493CEDE043225B5B44646640"
+        "OwnerKey" = "8:_2BD5F56B037E4917B0B4FC78F6D15703"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2254911E4D41441EAC4F573B24861024"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_257433B8A7A531AD839CE31DDD11F5F9"
+        "OwnerKey" = "8:_09A8C4C180AA4A08A2C7E29BE093D1FA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_257433B8A7A531AD839CE31DDD11F5F9"
+        "OwnerKey" = "8:_0C5BAD3F493CEDE043225B5B44646640"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_257433B8A7A531AD839CE31DDD11F5F9"
+        "OwnerKey" = "8:_0C4B8B5655164E12B8FD8F51EDEDA34C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_288DE31BC8A5C4C90DEB8FAA21EC7F99"
+        "OwnerKey" = "8:_09A8C4C180AA4A08A2C7E29BE093D1FA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -71,30 +101,6 @@
         {
         "MsmKey" = "8:_64B90A9BEF404F5487298EB04440156D"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_89BE0E58E82BC43B7F2FFE17A7E6B499"
-        "OwnerKey" = "8:_09A8C4C180AA4A08A2C7E29BE093D1FA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_89BE0E58E82BC43B7F2FFE17A7E6B499"
-        "OwnerKey" = "8:_96B6586BDD937ABCAA8D35CDE64EB8E6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_89BE0E58E82BC43B7F2FFE17A7E6B499"
-        "OwnerKey" = "8:_0C4B8B5655164E12B8FD8F51EDEDA34C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_96B6586BDD937ABCAA8D35CDE64EB8E6"
-        "OwnerKey" = "8:_2BD5F56B037E4917B0B4FC78F6D15703"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -141,12 +147,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E22003169E86A14B42FCA6B4B2966AFF"
-        "OwnerKey" = "8:_09A8C4C180AA4A08A2C7E29BE093D1FA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_E778BC3E1AB94FE9BCF286A071A9666E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -172,7 +172,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_96B6586BDD937ABCAA8D35CDE64EB8E6"
+        "OwnerKey" = "8:_0C5BAD3F493CEDE043225B5B44646640"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -190,13 +190,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_89BE0E58E82BC43B7F2FFE17A7E6B499"
+        "OwnerKey" = "8:_257433B8A7A531AD839CE31DDD11F5F9"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E22003169E86A14B42FCA6B4B2966AFF"
+        "OwnerKey" = "8:_288DE31BC8A5C4C90DEB8FAA21EC7F99"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -406,6 +406,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0C5BAD3F493CEDE043225B5B44646640"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:LTISDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0C5BAD3F493CEDE043225B5B44646640"
+                    {
+                    "Name" = "8:LTISDLL.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:LTISDLL.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2254911E4D41441EAC4F573B24861024"
             {
             "SourcePath" = "8:..\\LTISForm\\bin\\Release\\x86\\SQLite.Interop.dll"
@@ -424,6 +455,68 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_257433B8A7A531AD839CE31DDD11F5F9"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_257433B8A7A531AD839CE31DDD11F5F9"
+                    {
+                    "Name" = "8:System.Data.SQLite.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:System.Data.SQLite.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_288DE31BC8A5C4C90DEB8FAA21EC7F99"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_288DE31BC8A5C4C90DEB8FAA21EC7F99"
+                    {
+                    "Name" = "8:EntityFramework.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:EntityFramework.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BD5F56B037E4917B0B4FC78F6D15703"
@@ -535,68 +628,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_89BE0E58E82BC43B7F2FFE17A7E6B499"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_89BE0E58E82BC43B7F2FFE17A7E6B499"
-                    {
-                    "Name" = "8:System.Data.SQLite.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:System.Data.SQLite.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_96B6586BDD937ABCAA8D35CDE64EB8E6"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:LTISDLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_96B6586BDD937ABCAA8D35CDE64EB8E6"
-                    {
-                    "Name" = "8:LTISDLL.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:LTISDLL.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AFB4FFF92F4243D3BE003C30F682C5FE"
@@ -739,37 +770,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E22003169E86A14B42FCA6B4B2966AFF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_E22003169E86A14B42FCA6B4B2966AFF"
-                    {
-                    "Name" = "8:EntityFramework.DLL"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:EntityFramework.DLL"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E778BC3E1AB94FE9BCF286A071A9666E"
             {
             "SourcePath" = "8:..\\LTISForm\\bin\\Release\\NH_GetColorParaDLL.dll"
@@ -909,7 +909,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LTSISystem"
         "ProductCode" = "8:{32AA6173-22BD-4ABE-A9B4-4A1F4FB855DD}"
-        "PackageCode" = "8:{4E645764-4ADD-4608-8FB0-C778A7801CAE}"
+        "PackageCode" = "8:{FB4F82EF-392A-46A7-98E6-149497BFF332}"
         "UpgradeCode" = "8:{9CD5C148-BD06-4FE9-85F0-68340F7AC890}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
