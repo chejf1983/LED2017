@@ -63,6 +63,9 @@ namespace LTISDLL.SYSControl
                 {
                     this.ledsystem.State = ControlState.Config;
                     this.ledsystem.LedModel.LTISDev.SetElectricPar(ledtestpar);
+                    ///采样间隔至少1ms
+                    System.Threading.Thread.Sleep(20);
+
                     this.ledsystem.LedModel.LTISDev.SetLEDType(ledtype);
                     return true;
                 }

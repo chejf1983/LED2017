@@ -1246,7 +1246,8 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 		}
 		LITS_SystemClose();
 		LITS_SystemOpen();
-	}
+	}	
+	Sleep(30);
 
 	retry  = 0;
 	//设置极性测试参数
@@ -1259,6 +1260,7 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 		LITS_SystemClose();
 		LITS_SystemOpen();
 	}
+	Sleep(30);
 
 	for (int i = 0; i < ledmode; i++) {
 		retry = 0;
@@ -1272,6 +1274,8 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 			LITS_SystemClose();
 			LITS_SystemOpen();
 		}
+		
+		Sleep(30);
 
 		retry = 0;
 		//设置三个晶的反向参数
@@ -1283,7 +1287,8 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 			}
 			LITS_SystemClose();
 			LITS_SystemOpen();
-		}
+		}		
+		Sleep(30);
 	}
 	return DLL_SUCCESS;
 }
