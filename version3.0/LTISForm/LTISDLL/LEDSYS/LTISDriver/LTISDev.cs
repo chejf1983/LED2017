@@ -16,10 +16,10 @@ namespace LTISDLL.LEDSYS.LTISDriver
         public LTISDev()
         {
             ///注册DLL打印
-            LEDevDriver.DLL_PRINT_SET(delegate(string buffer)
-            {
-                SysLog.Instance.PrintLog("[DLL]" + buffer);
-            });
+            //LEDevDriver.DLL_PRINT_SET(delegate(string buffer)
+            //{
+            //    SysLog.Instance.PrintLog("[DLL]" + buffer);
+            //});
         }
 
         #region 连接断开

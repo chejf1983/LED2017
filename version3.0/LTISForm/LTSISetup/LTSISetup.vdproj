@@ -909,7 +909,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LTSISystem"
         "ProductCode" = "8:{32AA6173-22BD-4ABE-A9B4-4A1F4FB855DD}"
-        "PackageCode" = "8:{FB4F82EF-392A-46A7-98E6-149497BFF332}"
+        "PackageCode" = "8:{8CF442EA-3F77-4AD2-9D92-3FFFE23AADA7}"
         "UpgradeCode" = "8:{9CD5C148-BD06-4FE9-85F0-68340F7AC890}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

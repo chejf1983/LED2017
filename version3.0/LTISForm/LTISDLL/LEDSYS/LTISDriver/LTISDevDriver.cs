@@ -113,15 +113,15 @@ namespace LTISDLL.LEDSYS.LTISDriver
         public static string dll = System.Environment.CurrentDirectory + "//SpectraArsenalEmission.dll";
 
         #region dll注册打印函数
-        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]//一定要加上这句，要不然C#中的回调函数只要被调用一次，程序就异常退出了！！！  
-        public delegate void PrintF(string buffer);
+        //[UnmanagedFunctionPointer(CallingConvention.Cdecl)]//一定要加上这句，要不然C#中的回调函数只要被调用一次，程序就异常退出了！！！  
+        //public delegate void PrintF(string buffer);
 
         /// <summary>
         /// 添加DLL打印接口
         /// </summary>
         /// <param name="ptr"></param>
-        [DllImport("SpectraArsenalEmission.dll", EntryPoint = "DLL_PRINT_SET")]
-        public static extern void DLL_PRINT_SET(PrintF ptr);
+        //[DllImport("SpectraArsenalEmission.dll", EntryPoint = "DLL_PRINT_SET")]
+        //public static extern void DLL_PRINT_SET(PrintF ptr);
         #endregion
 
         #region 初始化

@@ -87,9 +87,9 @@ typedef struct SpectralPar {
 	int iFilterBW;
 }SSpectralPar;
 
-typedef void (*Pprint)(char*);
+//typedef void (*Pprint)(char*);
 
-DLLEXP void WINAPI DLL_PRINT_SET(void(*ptr)(char*));
+//DLLEXP void WINAPI DLL_PRINT_SET(void(*ptr)(char*));
 
 /*********************************
 * LED_LITS_SEARCH() 打开连接，并搜索设备

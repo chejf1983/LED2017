@@ -487,11 +487,11 @@ inline void SA_FilterAD(double fAD[], int iPixN)
 #pragma region DLL打印接口
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-Pprint DllPrint = NULL;
+//Pprint DllPrint = NULL;
 
-DLLEXP void WINAPI DLL_PRINT_SET(void(*ptr)(char*)) {
-	DllPrint = ptr;
-}
+//DLLEXP void WINAPI DLL_PRINT_SET(void(*ptr)(char*)) {
+//	DllPrint = ptr;
+//}
 
 /*********************************
 * LED_LITS_SEARCH() 打开连接，并搜索设备
@@ -1246,8 +1246,7 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 		}
 		LITS_SystemClose();
 		LITS_SystemOpen();
-	}	
-	Sleep(30);
+	}
 
 	retry  = 0;
 	//设置极性测试参数
@@ -1260,7 +1259,6 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 		LITS_SystemClose();
 		LITS_SystemOpen();
 	}
-	Sleep(30);
 
 	for (int i = 0; i < ledmode; i++) {
 		retry = 0;
@@ -1274,8 +1272,6 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 			LITS_SystemClose();
 			LITS_SystemOpen();
 		}
-		
-		Sleep(30);
 
 		retry = 0;
 		//设置三个晶的反向参数
@@ -1287,8 +1283,7 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 			}
 			LITS_SystemClose();
 			LITS_SystemOpen();
-		}		
-		Sleep(30);
+		}
 	}
 	return DLL_SUCCESS;
 }

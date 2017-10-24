@@ -1,9 +1,9 @@
-﻿生成启动时间为 2017/10/23 11:09:15。
+﻿生成启动时间为 2017/10/24 16:16:50。
      1>项目“D:\LED2017\version3.0\SpectraArsenalEmission\SpectraArsenalEmission\SpectraArsenalEmission.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Release\SpectraArsenalEmission.lastbuildstate”。
        InitializeBuildStatus:
-         正在创建“Release\SpectraArsenalEmission.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+         正在对“Release\SpectraArsenalEmission.unsuccessfulbuild”执行 Touch 任务。
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _USRDLL /D _WINDLL /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\SpectraArsenalEmission.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
@@ -28,4 +28,4 @@
 
 生成成功。
 
-已用时间 00:00:03.30
+已用时间 00:00:05.00

@@ -389,7 +389,7 @@ namespace LTISForm.testconfig
                 }
             #endregion
 
-            if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.SaveConfig(ledtestpar, this.GetTrigerMode(), GetInputType())) ;
+            if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.SaveConfig(ledtestpar, this.GetTrigerMode(), GetInputType()))
             {
                 MessageBox.Show("保存成功");
             }
