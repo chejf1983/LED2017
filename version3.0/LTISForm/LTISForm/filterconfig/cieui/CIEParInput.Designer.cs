@@ -73,6 +73,17 @@
             this.button_right = new System.Windows.Forms.Button();
             this.button_up = new System.Windows.Forms.Button();
             this.button_down = new System.Windows.Forms.Button();
+            this.button_cut = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.t_x = new System.Windows.Forms.TextBox();
+            this.t_y = new System.Windows.Forms.TextBox();
+            this.checkBox_mouse = new System.Windows.Forms.CheckBox();
+            this.rb_x1 = new System.Windows.Forms.RadioButton();
+            this.rb_x2 = new System.Windows.Forms.RadioButton();
+            this.rb_x3 = new System.Windows.Forms.RadioButton();
+            this.rb_x4 = new System.Windows.Forms.RadioButton();
+            this.button_clear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datatable1)).BeginInit();
             this.Menu1.SuspendLayout();
             this.tablecontrol.SuspendLayout();
@@ -87,7 +98,7 @@
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(406, 32);
+            this.button_add.Location = new System.Drawing.Point(474, 33);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(75, 23);
             this.button_add.TabIndex = 8;
@@ -105,7 +116,7 @@
             this.datatable1.Location = new System.Drawing.Point(0, 0);
             this.datatable1.Name = "datatable1";
             this.datatable1.RowTemplate.Height = 23;
-            this.datatable1.Size = new System.Drawing.Size(458, 410);
+            this.datatable1.Size = new System.Drawing.Size(384, 410);
             this.datatable1.TabIndex = 5;
             // 
             // Menu1
@@ -313,7 +324,7 @@
             this.tablecontrol.Location = new System.Drawing.Point(4, 61);
             this.tablecontrol.Name = "tablecontrol";
             this.tablecontrol.SelectedIndex = 0;
-            this.tablecontrol.Size = new System.Drawing.Size(813, 439);
+            this.tablecontrol.Size = new System.Drawing.Size(887, 439);
             this.tablecontrol.TabIndex = 14;
             // 
             // tabPage1
@@ -323,17 +334,18 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(805, 413);
+            this.tabPage1.Size = new System.Drawing.Size(879, 413);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "晶一";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel_cie1
             // 
-            this.panel_cie1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_cie1.Location = new System.Drawing.Point(464, 0);
+            this.panel_cie1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_cie1.Location = new System.Drawing.Point(390, 0);
             this.panel_cie1.Name = "panel_cie1";
-            this.panel_cie1.Size = new System.Drawing.Size(340, 410);
+            this.panel_cie1.Size = new System.Drawing.Size(488, 410);
             this.panel_cie1.TabIndex = 6;
             // 
             // tabPage2
@@ -350,10 +362,11 @@
             // 
             // panel_cie2
             // 
-            this.panel_cie2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_cie2.Location = new System.Drawing.Point(464, 0);
+            this.panel_cie2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_cie2.Location = new System.Drawing.Point(316, 0);
             this.panel_cie2.Name = "panel_cie2";
-            this.panel_cie2.Size = new System.Drawing.Size(340, 410);
+            this.panel_cie2.Size = new System.Drawing.Size(488, 410);
             this.panel_cie2.TabIndex = 11;
             // 
             // datatable2
@@ -366,7 +379,7 @@
             this.datatable2.Location = new System.Drawing.Point(0, 0);
             this.datatable2.Name = "datatable2";
             this.datatable2.RowTemplate.Height = 23;
-            this.datatable2.Size = new System.Drawing.Size(458, 410);
+            this.datatable2.Size = new System.Drawing.Size(310, 410);
             this.datatable2.TabIndex = 10;
             // 
             // Menu2
@@ -405,10 +418,11 @@
             // 
             // panel_cie3
             // 
-            this.panel_cie3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_cie3.Location = new System.Drawing.Point(464, 0);
+            this.panel_cie3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_cie3.Location = new System.Drawing.Point(316, 0);
             this.panel_cie3.Name = "panel_cie3";
-            this.panel_cie3.Size = new System.Drawing.Size(340, 410);
+            this.panel_cie3.Size = new System.Drawing.Size(488, 410);
             this.panel_cie3.TabIndex = 13;
             // 
             // datatable3
@@ -421,7 +435,7 @@
             this.datatable3.Location = new System.Drawing.Point(0, 0);
             this.datatable3.Name = "datatable3";
             this.datatable3.RowTemplate.Height = 23;
-            this.datatable3.Size = new System.Drawing.Size(458, 410);
+            this.datatable3.Size = new System.Drawing.Size(310, 410);
             this.datatable3.TabIndex = 12;
             // 
             // Menu3
@@ -448,7 +462,7 @@
             // 
             // button_left
             // 
-            this.button_left.Location = new System.Drawing.Point(487, 32);
+            this.button_left.Location = new System.Drawing.Point(555, 33);
             this.button_left.Name = "button_left";
             this.button_left.Size = new System.Drawing.Size(41, 23);
             this.button_left.TabIndex = 8;
@@ -458,7 +472,7 @@
             // 
             // button_right
             // 
-            this.button_right.Location = new System.Drawing.Point(578, 31);
+            this.button_right.Location = new System.Drawing.Point(646, 32);
             this.button_right.Name = "button_right";
             this.button_right.Size = new System.Drawing.Size(41, 23);
             this.button_right.TabIndex = 8;
@@ -468,7 +482,7 @@
             // 
             // button_up
             // 
-            this.button_up.Location = new System.Drawing.Point(533, 7);
+            this.button_up.Location = new System.Drawing.Point(601, 8);
             this.button_up.Name = "button_up";
             this.button_up.Size = new System.Drawing.Size(41, 23);
             this.button_up.TabIndex = 8;
@@ -478,7 +492,7 @@
             // 
             // button_down
             // 
-            this.button_down.Location = new System.Drawing.Point(533, 31);
+            this.button_down.Location = new System.Drawing.Point(601, 32);
             this.button_down.Name = "button_down";
             this.button_down.Size = new System.Drawing.Size(41, 23);
             this.button_down.TabIndex = 8;
@@ -486,12 +500,130 @@
             this.button_down.UseVisualStyleBackColor = true;
             this.button_down.Click += new System.EventHandler(this.button_down_Click);
             // 
+            // button_cut
+            // 
+            this.button_cut.Location = new System.Drawing.Point(474, 8);
+            this.button_cut.Name = "button_cut";
+            this.button_cut.Size = new System.Drawing.Size(75, 23);
+            this.button_cut.TabIndex = 15;
+            this.button_cut.Text = "等分";
+            this.button_cut.UseVisualStyleBackColor = true;
+            this.button_cut.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(396, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 12);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "x";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(396, 38);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(11, 12);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "y";
+            // 
+            // t_x
+            // 
+            this.t_x.Location = new System.Drawing.Point(413, 7);
+            this.t_x.Name = "t_x";
+            this.t_x.Size = new System.Drawing.Size(52, 21);
+            this.t_x.TabIndex = 13;
+            this.t_x.TextChanged += new System.EventHandler(this.y2_input_TextChanged);
+            // 
+            // t_y
+            // 
+            this.t_y.Location = new System.Drawing.Point(413, 34);
+            this.t_y.Name = "t_y";
+            this.t_y.Size = new System.Drawing.Size(52, 21);
+            this.t_y.TabIndex = 13;
+            this.t_y.TextChanged += new System.EventHandler(this.y3_input_TextChanged);
+            // 
+            // checkBox_mouse
+            // 
+            this.checkBox_mouse.AutoSize = true;
+            this.checkBox_mouse.Location = new System.Drawing.Point(703, 12);
+            this.checkBox_mouse.Name = "checkBox_mouse";
+            this.checkBox_mouse.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_mouse.TabIndex = 17;
+            this.checkBox_mouse.Text = "鼠标操作";
+            this.checkBox_mouse.UseVisualStyleBackColor = true;
+            this.checkBox_mouse.CheckedChanged += new System.EventHandler(this.checkBox_mouse_CheckedChanged);
+            // 
+            // rb_x1
+            // 
+            this.rb_x1.AutoSize = true;
+            this.rb_x1.Checked = true;
+            this.rb_x1.Location = new System.Drawing.Point(703, 34);
+            this.rb_x1.Name = "rb_x1";
+            this.rb_x1.Size = new System.Drawing.Size(35, 16);
+            this.rb_x1.TabIndex = 18;
+            this.rb_x1.TabStop = true;
+            this.rb_x1.Text = "x1";
+            this.rb_x1.UseVisualStyleBackColor = true;
+            // 
+            // rb_x2
+            // 
+            this.rb_x2.AutoSize = true;
+            this.rb_x2.Location = new System.Drawing.Point(740, 34);
+            this.rb_x2.Name = "rb_x2";
+            this.rb_x2.Size = new System.Drawing.Size(35, 16);
+            this.rb_x2.TabIndex = 18;
+            this.rb_x2.Text = "x2";
+            this.rb_x2.UseVisualStyleBackColor = true;
+            // 
+            // rb_x3
+            // 
+            this.rb_x3.AutoSize = true;
+            this.rb_x3.Location = new System.Drawing.Point(778, 35);
+            this.rb_x3.Name = "rb_x3";
+            this.rb_x3.Size = new System.Drawing.Size(35, 16);
+            this.rb_x3.TabIndex = 18;
+            this.rb_x3.Text = "x3";
+            this.rb_x3.UseVisualStyleBackColor = true;
+            // 
+            // rb_x4
+            // 
+            this.rb_x4.AutoSize = true;
+            this.rb_x4.Location = new System.Drawing.Point(815, 35);
+            this.rb_x4.Name = "rb_x4";
+            this.rb_x4.Size = new System.Drawing.Size(35, 16);
+            this.rb_x4.TabIndex = 18;
+            this.rb_x4.Text = "x4";
+            this.rb_x4.UseVisualStyleBackColor = true;
+            // 
+            // button_clear
+            // 
+            this.button_clear.Location = new System.Drawing.Point(775, 8);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(75, 23);
+            this.button_clear.TabIndex = 15;
+            this.button_clear.Text = "清除";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            // 
             // CIEParInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rb_x4);
+            this.Controls.Add(this.rb_x3);
+            this.Controls.Add(this.rb_x2);
+            this.Controls.Add(this.rb_x1);
+            this.Controls.Add(this.checkBox_mouse);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button_clear);
+            this.Controls.Add(this.button_cut);
             this.Controls.Add(this.tablecontrol);
+            this.Controls.Add(this.t_y);
             this.Controls.Add(this.y3_input);
+            this.Controls.Add(this.t_x);
             this.Controls.Add(this.x3_input);
             this.Controls.Add(this.y2_input);
             this.Controls.Add(this.x2_input);
@@ -517,7 +649,7 @@
             this.Controls.Add(this.button_left);
             this.Controls.Add(this.button_add);
             this.Name = "CIEParInput";
-            this.Size = new System.Drawing.Size(818, 503);
+            this.Size = new System.Drawing.Size(892, 503);
             ((System.ComponentModel.ISupportInitialize)(this.datatable1)).EndInit();
             this.Menu1.ResumeLayout(false);
             this.tablecontrol.ResumeLayout(false);
@@ -579,5 +711,16 @@
         private System.Windows.Forms.ContextMenuStrip Menu3;
         private System.Windows.Forms.ToolStripMenuItem delete3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.Button button_cut;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox t_x;
+        private System.Windows.Forms.TextBox t_y;
+        private System.Windows.Forms.CheckBox checkBox_mouse;
+        private System.Windows.Forms.RadioButton rb_x1;
+        private System.Windows.Forms.RadioButton rb_x2;
+        private System.Windows.Forms.RadioButton rb_x3;
+        private System.Windows.Forms.RadioButton rb_x4;
+        private System.Windows.Forms.Button button_clear;
     }
 }

@@ -91,6 +91,7 @@
             this.button_Load = new System.Windows.Forms.Button();
             this.comboBox_ledtype = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ttttt = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox_nf.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -526,6 +527,7 @@
             this.groupBox_nf.Controls.Add(this.label5);
             this.groupBox_nf.Controls.Add(this.label3);
             this.groupBox_nf.Controls.Add(this.NeVol_input);
+            this.groupBox_nf.Controls.Add(this.ttttt);
             this.groupBox_nf.Controls.Add(this.NeTtime_input);
             this.groupBox_nf.Controls.Add(this.NeI_input);
             this.groupBox_nf.Controls.Add(this.NeDelay_input);
@@ -667,6 +669,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LED类型";
             // 
+            // ttttt
+            // 
+            this.ttttt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ttttt.Location = new System.Drawing.Point(150, 137);
+            this.ttttt.Name = "ttttt";
+            this.ttttt.Size = new System.Drawing.Size(100, 21);
+            this.ttttt.TabIndex = 12;
+            this.ttttt.Text = "100";
+            // 
             // TestConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -761,5 +772,6 @@
         private System.Windows.Forms.Button button_Load;
         private System.Windows.Forms.ComboBox comboBox_ledtype;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox ttttt;
     }
 }

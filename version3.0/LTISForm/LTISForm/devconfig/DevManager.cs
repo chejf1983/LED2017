@@ -50,36 +50,12 @@ namespace LTISForm.DevConfig
             this.chartcurve.Size = this.panel_curve.Size;
             this.panel_curve.Controls.Add(this.chartcurve);
 
-            LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent += new LTISDLL.SYSControl.ChangeState(ControlManager_StateChangeEvent);
-            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(UserCenter_UserChangeEvent);
-        }
-
-        /// <summary>
-        /// 用户切换事件
-        /// </summary>
-        /// <param name="user"></param>
-        void UserCenter_UserChangeEvent(LTISDLL.User.User user)
-        {
-            UpdateButtonState();
-        }
-
-        /// <summary>
-        /// 设备状态事件
-        /// </summary>
-        /// <param name="state"></param>
-        void ControlManager_StateChangeEvent(ControlState laststate, ControlState newstate)
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new EventHandler(delegate
-                {
-                    UpdateButtonState();
-                }));
-            }
-            else
-            {
+            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(delegate {
                 UpdateButtonState();
-            }
+            }); ;
+            LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent += new LTISDLL.SYSControl.ChangeState(delegate {
+                UpdateButtonState();
+            });
         }
 
         /// <summary>
@@ -87,23 +63,26 @@ namespace LTISForm.DevConfig
         /// </summary>
         private void UpdateButtonState()
         {
-            bool value = LTISDLL.LEDPlatForm.Instance.ControlManager.State == ControlState.Connect &&
-                LTISDLL.LEDPlatForm.Instance.UserCenter.CheckCurrentAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
-            this.button_darkmodify.Enabled = value;
-            this.button_collect.Enabled = value;
-            this.button_cctcal.Enabled = value;
-            this.button_advalue.Enabled = value;
-            this.button_ciecal.Enabled = value;
-            this.button_reset.Enabled = value;
+            this.Invoke(new EventHandler(delegate
+            {
+                bool value = LTISDLL.LEDPlatForm.Instance.ControlManager.State == ControlState.Connect &&
+                    LTISDLL.LEDPlatForm.Instance.UserCenter.CheckCurrentAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
+                this.button_darkmodify.Enabled = value;
+                this.button_collect.Enabled = value;
+                this.button_cctcal.Enabled = value;
+                this.button_advalue.Enabled = value;
+                this.button_ciecal.Enabled = value;
+                this.button_reset.Enabled = value;
 
-            this.input_avr.Enabled = value;
-            this.input_cct.Enabled = value;
-            this.input_filter.Enabled = value;
-            this.input_avr.Enabled = value;
-            this.input_itime.Enabled = value;
-            this.input_flux.Enabled = value;
-            this.stdx_input.Enabled = value;
-            this.stdy_input.Enabled = value;
+                this.input_avr.Enabled = value;
+                this.input_cct.Enabled = value;
+                this.input_filter.Enabled = value;
+                this.input_avr.Enabled = value;
+                this.input_itime.Enabled = value;
+                this.input_flux.Enabled = value;
+                this.stdx_input.Enabled = value;
+                this.stdy_input.Enabled = value;
+            }));
         }
         #endregion
 

@@ -19,6 +19,7 @@ namespace LED2017Form.UserManager
         {
             InitializeComponent();
 
+            this.TopMost = true;
             ///居中显示
             this.StartPosition = FormStartPosition.CenterParent;
 

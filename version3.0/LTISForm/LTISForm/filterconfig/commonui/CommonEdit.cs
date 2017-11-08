@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using LTISDLL.Models.DataFilter.condition;
 
 namespace LTISForm.filterconfig
 {
@@ -16,32 +17,17 @@ namespace LTISForm.filterconfig
             InitializeComponent();
         }
 
-        private BindingList<LineItem> ledlist;
+        private BindingList<CLine> ledlist;
         private int index;
 
-        public void InitParameter(int index, BindingList<LineItem> ledlist)
+        public void InitParameter(int index, BindingList<CLine> ledlist)
         {
             this.index = index;
             this.ledlist = ledlist;
-            LineItem line = ledlist[index];
-            this.textBox_min.Text = line.MIN.ToString();
-            this.textBox_max.Text = line.MAX.ToString();
+            CLine line = ledlist[index];
+            this.textBox_min.Text = line.Min.ToString();
+            this.textBox_max.Text = line.Max.ToString();
         }
-
-        //检查新的线段和其它线段是否有重复
-        private bool checkLine(BindingList<LineItem> list, LineItem line)
-        {
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (i != index && list[i].IsOverlap(line))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
 
         private void button_ok_Click(object sender, EventArgs e)
         {
@@ -49,16 +35,8 @@ namespace LTISForm.filterconfig
             {
                 float min = float.Parse(this.textBox_min.Text);
                 float max = float.Parse(this.textBox_max.Text);
-                LineItem tmpline = new LineItem(new float[] { min, max });
-                if (this.checkLine(this.ledlist, tmpline))
-                {
-                    this.newline = tmpline;
-                    this.Dispose();
-                }
-                else
-                {
-                    LTISDLL.FaultSystem.FaultCenter.Instance.SendFault(LTISDLL.FaultSystem.FaultLevel.ERROR, "参数有重叠");
-                }
+                this.newline = new CLine(min, max);
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -71,7 +49,7 @@ namespace LTISForm.filterconfig
             this.Dispose();
         }
 
-        private LineItem newline = null;
-        public LineItem NewLine { get { return newline; } }
+        private CLine newline = null;
+        public CLine NewLine { get { return newline; } }
     }
 }

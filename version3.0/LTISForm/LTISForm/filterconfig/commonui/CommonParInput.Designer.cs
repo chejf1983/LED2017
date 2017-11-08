@@ -51,6 +51,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button_cut = new System.Windows.Forms.Button();
+            this.textBox_cut = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.datatable1)).BeginInit();
             this.Menu_edit1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datatable2)).BeginInit();
@@ -247,12 +249,31 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "晶三：";
             // 
+            // button_cut
+            // 
+            this.button_cut.Location = new System.Drawing.Point(678, 4);
+            this.button_cut.Name = "button_cut";
+            this.button_cut.Size = new System.Drawing.Size(75, 23);
+            this.button_cut.TabIndex = 4;
+            this.button_cut.Text = "等分";
+            this.button_cut.UseVisualStyleBackColor = true;
+            this.button_cut.Click += new System.EventHandler(this.button_cut_Click);
+            // 
+            // textBox_cut
+            // 
+            this.textBox_cut.Location = new System.Drawing.Point(572, 6);
+            this.textBox_cut.Name = "textBox_cut";
+            this.textBox_cut.Size = new System.Drawing.Size(100, 21);
+            this.textBox_cut.TabIndex = 3;
+            // 
             // CommonParInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.comboBox_LED);
+            this.Controls.Add(this.button_cut);
             this.Controls.Add(this.button_add);
+            this.Controls.Add(this.textBox_cut);
             this.Controls.Add(this.max_input);
             this.Controls.Add(this.min_input);
             this.Controls.Add(this.label3);
@@ -301,5 +322,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button_cut;
+        private System.Windows.Forms.TextBox textBox_cut;
     }
 }

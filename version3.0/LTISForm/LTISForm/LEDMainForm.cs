@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using LTISDLL.User;
+using LTISDLL.SYSControl;
+using System.Threading;
+using LTISDLL.Common;
 
 namespace LTISForm
 {
@@ -23,8 +27,14 @@ namespace LTISForm
 
             this.initUserEvent();
 
-            LTISDLL.LEDPlatForm.Instance.UserCenter.UpdateUserEvent();
-            LTISDLL.LEDPlatForm.Instance.ControlManager.UpdateStateEvent();
+            this.initTimer();
+
+            new System.Threading.Timer(new TimerCallback(delegate
+            {
+                LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.Connect();
+                LTISDLL.LEDPlatForm.Instance.UserCenter.UpdateUserEvent();
+                LTISDLL.LEDPlatForm.Instance.ControlManager.UpdateStateEvent();
+            }), null, 0, 0);
         }
 
         private void InitForm()
@@ -72,14 +82,15 @@ namespace LTISForm
             resultform.Show();
             this.button_testresult.Checked = true;
 
-            
-
-            
-
             //弹出错误信息提示框
             FaultCenter.Instance.FaultEvent += FaultCenter_FaultEvent;
 
-            this.ConnectSystemInit();
+            LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent += new ChangeState(delegate
+            {
+                UpdateToolBar();
+                this.ConnectSystemInit();
+            });
+
         }
 
         /// <summary>
@@ -170,11 +181,11 @@ namespace LTISForm
         private LTISForm.help.HelpForm helpform;
         private void button_help_Click(object sender, EventArgs e)
         {
-             //helpform.BringToFront();
+            //helpform.BringToFront();
             using (Process myPro = new Process())
             {
                 myPro.StartInfo.FileName = "cmd.exe";
-                myPro.StartInfo.UseShellExecute = false;    
+                myPro.StartInfo.UseShellExecute = false;
                 myPro.StartInfo.RedirectStandardInput = true;
                 myPro.StartInfo.RedirectStandardOutput = true;
                 myPro.StartInfo.RedirectStandardError = true;
@@ -189,6 +200,22 @@ namespace LTISForm
                 myPro.Close();
                 //result = true;
             }
+        }
+
+        private void UpdateToolBar()
+        {
+            this.Invoke(new EventHandler(delegate
+                {
+                    User user = LTISDLL.LEDPlatForm.Instance.UserCenter.CurrentUser;
+                    ControlState state = LTISDLL.LEDPlatForm.Instance.ControlManager.State;
+
+
+                    this.button_filterconfig.Enabled = state == ControlState.Connect;
+
+                    this.button_syscal.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER) && state == ControlState.Connect;
+                    this.button_testconfig.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER) && state == ControlState.Connect; ;
+                    this.button_devconfig.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER) && state == ControlState.Connect; ;
+                }));
         }
         #endregion
 
@@ -226,7 +253,7 @@ namespace LTISForm
         private void MenuItem_dataoutput_Click(object sender, EventArgs e)
         {
             //相对路径
-            string relatepath = LTISDLL.LEDPlatForm.Instance.ControlManager.LedModel.DataTable.FileDB.DataDirPath;
+            string relatepath = LTISDLL.LEDPlatForm.Instance.LEDModels.DataTable.FileDB.DataDirPath;
             //转绝对路径
             string v_OpenFolderPath = System.IO.Path.GetFullPath(relatepath);
             try
@@ -261,16 +288,22 @@ namespace LTISForm
         #region 设备连接
         private void ConnectSystemInit()
         {
-            if (LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.IsDevConnect)
-            {
-                this.Lable_SystemState.Text = "连接到设备:" + LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DevInfo;
-                this.Connect.Text = "断开设备";
-            }
-            else
-            {
-                this.Lable_SystemState.Text = "未连接";
-                this.Connect.Text = "准备连接";
-            }
+            this.Invoke(new EventHandler(delegate
+                {
+                    if (LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.IsDevConnect)
+                    {
+                        this.Lable_SystemState.Text = "连接到设备:" + LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DevInfo;
+                        CopyRight.Instance.CheckDevName(LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DevInfo);
+                        this.Connect.Text = "断开设备";
+                        this.MenuItem_reg.Enabled = true;
+                    }
+                    else
+                    {
+                        this.Lable_SystemState.Text = "未连接";
+                        this.Connect.Text = "准备连接";
+                        this.MenuItem_reg.Enabled = false;
+                    }
+                }));
             //LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl;
         }
 
@@ -284,7 +317,6 @@ namespace LTISForm
             {
                 LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DisConnect();
             }
-            this.ConnectSystemInit();
         }
         #endregion
 
@@ -299,36 +331,36 @@ namespace LTISForm
 
         private void UserCenter_UserChangeEvent(LTISDLL.User.User user)
         {
-            if (user == null)
-            {
-                this.userInfo.Text = "未登录";
-            }
-            else
-            {
-                string acesstring = "";
-                switch (user.AcessLevel)
+            this.Invoke(new EventHandler(delegate
                 {
-                    case LTISDLL.User.UserCenter.Authority.USER:
-                        acesstring = "(普通用户)";
-                        break;
-                    case LTISDLL.User.UserCenter.Authority.MANAGER:
-                        acesstring = "(管理员)";
-                        break;
-                    case LTISDLL.User.UserCenter.Authority.SUPPER:
-                        acesstring = "(超级管理员)";
-                        break;
-                }
-                this.userInfo.Text = user.Name + acesstring;
-            }
+                    if (user == null)
+                    {
+                        this.userInfo.Text = "未登录";
+                    }
+                    else
+                    {
+                        string acesstring = "";
+                        switch (user.AcessLevel)
+                        {
+                            case LTISDLL.User.UserCenter.Authority.USER:
+                                acesstring = "(普通用户)";
+                                break;
+                            case LTISDLL.User.UserCenter.Authority.MANAGER:
+                                acesstring = "(管理员)";
+                                break;
+                            case LTISDLL.User.UserCenter.Authority.SUPPER:
+                                acesstring = "(超级管理员)";
+                                break;
+                        }
+                        this.userInfo.Text = user.Name + acesstring;
+                    }
 
-            this.MenuItem_logout.Enabled = user != null;
-            this.MenuItem_changepwd.Enabled = user != null;
-            this.MenuItem_usermanager.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
+                    this.MenuItem_logout.Enabled = user != null;
+                    this.MenuItem_changepwd.Enabled = user != null;
+                    this.MenuItem_usermanager.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
 
-            this.button_syscal.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
-            this.button_testconfig.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
-            this.button_devconfig.Enabled = user != null && user.CheckAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
-            
+                }));
+            this.UpdateToolBar();
         }
 
         /// <summary>
@@ -374,35 +406,62 @@ namespace LTISForm
         }
         #endregion
 
-        /*
-        private void ShowNewForm(object sender, EventArgs e)
+        #region 系统时间
+        private void initTimer()
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "窗口 " + childFormNumber++;
-            childForm.Show();
+            System.Windows.Forms.Timer time = new System.Windows.Forms.Timer();
+            time.Tick += new EventHandler(time_Tick);
+            time.Interval = 1000;
+            time.Start();
         }
 
-        private void OpenFile(object sender, EventArgs e)
+        private int tick = 0;
+        private LTISForm.other.Register reform = null;
+        private void time_Tick(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "文本文件(*.txt)|*.txt|所有文件(*.*)|*.*";
-            if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+            this.label_time.Text = DateTime.Now.ToString("yyyy-MM-dd, HH:mm:ss");
+
+            if (tick++ > 180)
             {
-                string FileName = openFileDialog.FileName;
+                tick = 0;
+                if (LTISDLL.LEDPlatForm.Instance.ControlManager.State != ControlState.DisConnect)
+                {
+                    if (CopyRight.Instance.IsTimeOut())
+                    {
+                        if (reform == null)
+                        {
+                            reform = new other.Register();
+                            reform.ShowDialog();
+                            if (CopyRight.Instance.IsTimeOut())
+                            {
+                                Close();
+                            }
+                        }
+                        else
+                        {
+                            if (!reform.IsDisposed)
+                            {
+                                reform.Dispose();
+                                reform = null;
+                            }
+                        }
+                    }
+                }
+
             }
         }
 
-        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Close()
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "文本文件(*.txt)|*.txt|所有文件(*.*)|*.*";
-            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-            {
-                string FileName = saveFileDialog.FileName;
-            }
-        }*/
+            this.Invoke(new EventHandler(delegate
+                { this.Dispose(); }));
+        }
+        #endregion
+
+        private void 注册ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reform = new other.Register();
+            reform.ShowDialog();
+        }
     }
 }

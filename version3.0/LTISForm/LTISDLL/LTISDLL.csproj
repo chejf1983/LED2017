@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.0\lib\net40\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +56,8 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,44 +65,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FaultSystem\FaultCenter.cs" />
-    <Compile Include="ILEDPlatForm.cs" />
+    <Compile Include="CopyRight\Base64.cs" />
+    <Compile Include="CopyRight\CopyRight.cs" />
+    <Compile Include="Common\FaultCenter.cs" />
+    <Compile Include="CopyRight\DES.cs" />
+    <Compile Include="CopyRight\RSA.cs" />
     <Compile Include="LEDPlatForm.cs" />
-    <Compile Include="LEDSYS\DataFilter\FilterSaver.cs" />
-    <Compile Include="LEDSYS\DataFilter\LEDataFilter.cs" />
-    <Compile Include="LEDSYS\DataFilter\ConditionElement\AreaElement.cs" />
-    <Compile Include="LEDSYS\DataFilter\ConditionElement\IElement.cs" />
-    <Compile Include="LEDSYS\DataFilter\ConditionElement\LineElement.cs" />
-    <Compile Include="LEDSYS\DataFilter\Data\DataDefine.cs" />
-    <Compile Include="LEDSYS\DataFilter\FilterCondition\DefPolicy.cs" />
-    <Compile Include="LEDSYS\DataFilter\FilterCondition\FilterMap.cs" />
-    <Compile Include="LEDSYS\DataFilter\FilterCondition\FilterPolicy.cs" />
-    <Compile Include="LEDSYS\DataReport\DataSaver.cs" />
-    <Compile Include="LEDSYS\DataReport\FileDB.cs" />
-    <Compile Include="LEDSYS\Data\LEDData.cs" />
-    <Compile Include="LEDSYS\Data\LEDNum.cs" />
-    <Compile Include="LEDSYS\LEDSystem.cs" />
-    <Compile Include="LEDSYS\LTISDriver\Data\ADValueList.cs" />
-    <Compile Include="LEDSYS\LTISDriver\DevConfiger.cs" />
-    <Compile Include="LEDSYS\LTISDriver\Data\SPCollectPar.cs" />
-    <Compile Include="LEDSYS\LTISDriver\Data\EleCollectPar.cs" />
-    <Compile Include="LEDSYS\LTISDriver\LTISDev.cs" />
-    <Compile Include="LEDSYS\LTISDriver\LTISDevDriver.cs" />
-    <Compile Include="LOGSYS\SysLog.cs" />
+    <Compile Include="Models\DataFilter\condition\AreaCondition.cs" />
+    <Compile Include="Models\DataFilter\condition\ConditionDB.cs" />
+    <Compile Include="Models\DataFilter\Data\FilterResult.cs" />
+    <Compile Include="Models\DataFilter\condition\ICondition.cs" />
+    <Compile Include="Models\DataFilter\condition\LineCondition.cs" />
+    <Compile Include="Models\DataFilter\filter\RoadMap.cs" />
+    <Compile Include="Models\DataFilter\filter\BinRoad.cs" />
+    <Compile Include="Models\DataFilter\LEDataFilter.cs" />
+    <Compile Include="Models\DataFilter\Data\DataDefine.cs" />
+    <Compile Include="Models\DataReport\DataSaver.cs" />
+    <Compile Include="Models\DataReport\FileDB.cs" />
+    <Compile Include="Models\Data\LEDData.cs" />
+    <Compile Include="Models\Data\LEDNum.cs" />
+    <Compile Include="Models\LEDModels.cs" />
+    <Compile Include="Models\LTISDriver\Data\ADValueList.cs" />
+    <Compile Include="Models\LTISDriver\Data\SPCollectPar.cs" />
+    <Compile Include="Models\LTISDriver\Data\EleCollectPar.cs" />
+    <Compile Include="Models\LTISDriver\LTISDev.cs" />
+    <Compile Include="Models\LTISDriver\LTISDevDriver.cs" />
+    <Compile Include="Common\SysLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="SYSControl\CalControl.cs" />
-    <Compile Include="SYSControl\ControlSystem.cs" />
-    <Compile Include="LEDSYS\LTISDriver\Data\CalData.cs" />
-    <Compile Include="SYSControl\FilterConfig.cs" />
-    <Compile Include="SYSControl\LEDTest.cs" />
-    <Compile Include="SYSControl\LEDTestConfig.cs" />
-    <Compile Include="SYSControl\SPDevControl.cs" />
-    <Compile Include="SYSControl\ConnectControl.cs" />
+    <Compile Include="Controls\CalControl.cs" />
+    <Compile Include="Controls\ControlSystem.cs" />
+    <Compile Include="Models\LTISDriver\Data\CalData.cs" />
+    <Compile Include="Models\DKDataStore\DKDataStore.cs" />
+    <Compile Include="Controls\DKControl.cs" />
+    <Compile Include="Controls\FilterConfig.cs" />
+    <Compile Include="Controls\LEDTest.cs" />
+    <Compile Include="Controls\LEDTestConfig.cs" />
+    <Compile Include="Controls\SPDevControl.cs" />
+    <Compile Include="Controls\ConnectControl.cs" />
     <Compile Include="User\NahonUser.cs" />
     <Compile Include="User\SQLDB.cs" />
     <Compile Include="User\SQLiteTest.cs" />

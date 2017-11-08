@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Root>
+  <ElementMap>
+    <ElementList>
+      <Element>
+        <LEDNUM>ONE</LEDNUM>
+        <Type>VF</Type>
+        <ParList>
+          <Par>0</Par>
+          <Par>1</Par>
+        </ParList>
+      </Element>
+    </ElementList>
+  </ElementMap>
+  <PolicyMap>
+    <PolicyNode>
+      <BinNum>1</BinNum>
+      <Path>
+        <Element>
+          <LEDNUM>ONE</LEDNUM>
+          <Type>VF</Type>
+          <ParList>
+            <Par>0</Par>
+            <Par>1</Par>
+          </ParList>
+        </Element>
+      </Path>
+    </PolicyNode>
+  </PolicyMap>
+  <DefPolcy>
+    <BinNum>255</BinNum>
+  </DefPolcy>
+</Root>

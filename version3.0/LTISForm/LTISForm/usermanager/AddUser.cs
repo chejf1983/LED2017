@@ -16,6 +16,7 @@ namespace LED2017Form.UserManager
         {
             InitializeComponent();
 
+            this.TopMost = true;
             // LED2017.User.UserCenter.Authority
             comboBox_Auth.Items.AddRange(new[] {
             "管理员","普通用户"});

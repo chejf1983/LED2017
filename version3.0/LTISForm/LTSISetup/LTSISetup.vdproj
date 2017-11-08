@@ -33,6 +33,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0A65142832954B9597ED94FB859E00FF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0BF29E6BA17847C0AF5E9A5A2055A0F1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0C4B8B5655164E12B8FD8F51EDEDA34C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -41,6 +53,12 @@
         {
         "MsmKey" = "8:_0C5BAD3F493CEDE043225B5B44646640"
         "OwnerKey" = "8:_2BD5F56B037E4917B0B4FC78F6D15703"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_194F287BC89C4DE49814485FCDFDC885"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -87,6 +105,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3E08551E52D342F1A7BC53008CF123C0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4EDA317631224B95ABE4E4402B738248"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -105,7 +129,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_65DC9F48DFAD4AA3A691BA7B9153C385"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6E7E854C4F2F4469B959BF0BBBEA794D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A6D1C38EC7142E3AEF8C6FC803F47A0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A5FC5157A45344268B48DE871B338D91"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_AFB4FFF92F4243D3BE003C30F682C5FE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B51D2E0FC1F1490D89B47D70D6017AB1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -141,6 +195,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D6646CF6E531495CAC45E58FF55D4795"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D75E6449AFD14C51AF87474945D0F380"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -154,6 +214,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F6F62EC78DAD450C89B01A8098DC80C7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FBE76755A3EB46DEB26C1C1860AC6C23"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -375,6 +441,46 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0A65142832954B9597ED94FB859E00FF"
+            {
+            "SourcePath" = "8:..\\lib\\msvcr100.dll"
+            "TargetName" = "8:msvcr100.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0BF29E6BA17847C0AF5E9A5A2055A0F1"
+            {
+            "SourcePath" = "8:..\\lib\\mfc100cht.dll"
+            "TargetName" = "8:mfc100cht.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0C4B8B5655164E12B8FD8F51EDEDA34C"
             {
             "AssemblyRegister" = "3:1"
@@ -435,6 +541,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_194F287BC89C4DE49814485FCDFDC885"
+            {
+            "SourcePath" = "8:..\\lib\\msvcp100.dll"
+            "TargetName" = "8:msvcp100.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2254911E4D41441EAC4F573B24861024"
@@ -570,6 +696,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3E08551E52D342F1A7BC53008CF123C0"
+            {
+            "SourcePath" = "8:..\\lib\\mfc100chs.dll"
+            "TargetName" = "8:mfc100chs.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4EDA317631224B95ABE4E4402B738248"
             {
             "SourcePath" = "8:..\\LTISForm\\bin\\Release\\NhGetcolor.nh"
@@ -630,12 +776,92 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6E7E854C4F2F4469B959BF0BBBEA794D"
+            {
+            "SourcePath" = "8:..\\lib\\mfc100.dll"
+            "TargetName" = "8:mfc100.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A6D1C38EC7142E3AEF8C6FC803F47A0"
+            {
+            "SourcePath" = "8:..\\lib\\mfc100enu.dll"
+            "TargetName" = "8:mfc100enu.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A5FC5157A45344268B48DE871B338D91"
+            {
+            "SourcePath" = "8:..\\lib\\mfc100u.dll"
+            "TargetName" = "8:mfc100u.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AFB4FFF92F4243D3BE003C30F682C5FE"
             {
             "SourcePath" = "8:..\\LTISForm\\bin\\Release\\Calibration\\temp.dat"
             "TargetName" = "8:temp.dat"
             "Tag" = "8:"
             "Folder" = "8:_69373817959F4F0DB1E26BDA39F6DC0A"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B51D2E0FC1F1490D89B47D70D6017AB1"
+            {
+            "SourcePath" = "8:..\\lib\\mfc100esn.dll"
+            "TargetName" = "8:mfc100esn.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_FF6594801D484E68A8A51877776F5703"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -909,7 +1135,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LTSISystem"
         "ProductCode" = "8:{32AA6173-22BD-4ABE-A9B4-4A1F4FB855DD}"
-        "PackageCode" = "8:{8CF442EA-3F77-4AD2-9D92-3FFFE23AADA7}"
+        "PackageCode" = "8:{425D9BDF-50AD-4D82-AAD4-50D38096A9EF}"
         "UpgradeCode" = "8:{9CD5C148-BD06-4FE9-85F0-68340F7AC890}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1439,6 +1665,48 @@
         }
         "MergeModule"
         {
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_65DC9F48DFAD4AA3A691BA7B9153C385"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files (x86)\\common files\\merge modules\\microsoft_vc100_mfc_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_D6646CF6E531495CAC45E58FF55D4795"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files (x86)\\common files\\merge modules\\microsoft_vc100_mfcloc_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
+            "{CEE29DC0-9FBA-4B99-8D47-5BC643D9B626}:_FBE76755A3EB46DEB26C1C1860AC6C23"
+            {
+            "UseDynamicProperties" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "SourcePath" = "8:c:\\program files (x86)\\common files\\merge modules\\microsoft_vc100_crt_x86.msm"
+                "Properties"
+                {
+                }
+            "LanguageId" = "3:0"
+            "Exclude" = "11:FALSE"
+            "Folder" = "8:"
+            "Feature" = "8:"
+            "IsolateTo" = "8:"
+            }
         }
         "ProjectOutput"
         {

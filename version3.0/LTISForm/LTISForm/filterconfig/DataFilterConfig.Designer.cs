@@ -108,7 +108,7 @@
             // button_Clear
             // 
             this.button_Clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Clear.Location = new System.Drawing.Point(261, 484);
+            this.button_Clear.Location = new System.Drawing.Point(167, 484);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(75, 23);
             this.button_Clear.TabIndex = 4;
@@ -118,8 +118,8 @@
             // 
             // button_Read
             // 
-            this.button_Read.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Read.Location = new System.Drawing.Point(804, 484);
+            this.button_Read.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Read.Location = new System.Drawing.Point(329, 484);
             this.button_Read.Name = "button_Read";
             this.button_Read.Size = new System.Drawing.Size(75, 23);
             this.button_Read.TabIndex = 3;
@@ -129,8 +129,8 @@
             // 
             // button_Save
             // 
-            this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Save.Location = new System.Drawing.Point(723, 484);
+            this.button_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Save.Location = new System.Drawing.Point(248, 484);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(75, 23);
             this.button_Save.TabIndex = 3;
@@ -141,18 +141,18 @@
             // button_loaddev
             // 
             this.button_loaddev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_loaddev.Location = new System.Drawing.Point(12, 484);
+            this.button_loaddev.Location = new System.Drawing.Point(86, 484);
             this.button_loaddev.Name = "button_loaddev";
             this.button_loaddev.Size = new System.Drawing.Size(75, 23);
             this.button_loaddev.TabIndex = 2;
-            this.button_loaddev.Text = "重新读取";
+            this.button_loaddev.Text = "重置";
             this.button_loaddev.UseVisualStyleBackColor = true;
             this.button_loaddev.Click += new System.EventHandler(this.button_loaddev_Click);
             // 
             // button_Set
             // 
-            this.button_Set.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Set.Location = new System.Drawing.Point(93, 484);
+            this.button_Set.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Set.Location = new System.Drawing.Point(804, 484);
             this.button_Set.Name = "button_Set";
             this.button_Set.Size = new System.Drawing.Size(75, 23);
             this.button_Set.TabIndex = 2;
@@ -163,7 +163,7 @@
             // button_autoBuild
             // 
             this.button_autoBuild.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_autoBuild.Location = new System.Drawing.Point(180, 484);
+            this.button_autoBuild.Location = new System.Drawing.Point(5, 484);
             this.button_autoBuild.Name = "button_autoBuild";
             this.button_autoBuild.Size = new System.Drawing.Size(75, 23);
             this.button_autoBuild.TabIndex = 1;

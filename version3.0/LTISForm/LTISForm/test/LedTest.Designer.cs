@@ -44,16 +44,13 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.listView_config2 = new System.Windows.Forms.ListView();
             this.listView_testconfig = new System.Windows.Forms.ListView();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.listView_total = new System.Windows.Forms.ListView();
-            this.listView_data = new System.Windows.Forms.ListView();
             this.button_open = new System.Windows.Forms.Button();
             this.button_clear = new System.Windows.Forms.Button();
             this.button_Set = new System.Windows.Forms.Button();
             this.button_cie = new System.Windows.Forms.Button();
-            this.button_dkModify = new System.Windows.Forms.Button();
             this.button_sustaintest = new System.Windows.Forms.Button();
             this.button_onetest = new System.Windows.Forms.Button();
+            this.checkBox_still = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitcontainer)).BeginInit();
             this.splitcontainer.Panel1.SuspendLayout();
             this.splitcontainer.Panel2.SuspendLayout();
@@ -63,12 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.table_result)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitcontainer
@@ -88,13 +80,13 @@
             // 
             // splitcontainer.Panel2
             // 
+            this.splitcontainer.Panel2.Controls.Add(this.checkBox_still);
             this.splitcontainer.Panel2.Controls.Add(this.checkBox_configvisible);
             this.splitcontainer.Panel2.Controls.Add(this.splitContainer2);
             this.splitcontainer.Panel2.Controls.Add(this.button_open);
             this.splitcontainer.Panel2.Controls.Add(this.button_clear);
             this.splitcontainer.Panel2.Controls.Add(this.button_Set);
             this.splitcontainer.Panel2.Controls.Add(this.button_cie);
-            this.splitcontainer.Panel2.Controls.Add(this.button_dkModify);
             this.splitcontainer.Panel2.Controls.Add(this.button_sustaintest);
             this.splitcontainer.Panel2.Controls.Add(this.button_onetest);
             this.splitcontainer.Size = new System.Drawing.Size(1053, 598);
@@ -245,17 +237,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 34);
+            this.splitContainer2.Location = new System.Drawing.Point(3, 39);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.listView_config2);
             this.splitContainer2.Panel1.Controls.Add(this.listView_testconfig);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.splitContainer1);
             this.splitContainer2.Size = new System.Drawing.Size(838, 557);
             this.splitContainer2.SplitterDistance = 301;
             this.splitContainer2.TabIndex = 10;
@@ -280,49 +268,6 @@
             this.listView_testconfig.Size = new System.Drawing.Size(291, 229);
             this.listView_testconfig.TabIndex = 0;
             this.listView_testconfig.UseCompatibleStateImageBehavior = false;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.listView_total);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.listView_data);
-            this.splitContainer1.Size = new System.Drawing.Size(523, 552);
-            this.splitContainer1.SplitterDistance = 174;
-            this.splitContainer1.TabIndex = 8;
-            // 
-            // listView_total
-            // 
-            this.listView_total.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView_total.Location = new System.Drawing.Point(0, 3);
-            this.listView_total.Name = "listView_total";
-            this.listView_total.Size = new System.Drawing.Size(519, 169);
-            this.listView_total.TabIndex = 4;
-            this.listView_total.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView_data
-            // 
-            this.listView_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView_data.Location = new System.Drawing.Point(0, 2);
-            this.listView_data.Name = "listView_data";
-            this.listView_data.Size = new System.Drawing.Size(519, 368);
-            this.listView_data.TabIndex = 3;
-            this.listView_data.UseCompatibleStateImageBehavior = false;
             // 
             // button_open
             // 
@@ -368,16 +313,6 @@
             this.button_cie.UseVisualStyleBackColor = true;
             this.button_cie.Click += new System.EventHandler(this.button_cie_Click);
             // 
-            // button_dkModify
-            // 
-            this.button_dkModify.Location = new System.Drawing.Point(165, 3);
-            this.button_dkModify.Name = "button_dkModify";
-            this.button_dkModify.Size = new System.Drawing.Size(75, 23);
-            this.button_dkModify.TabIndex = 0;
-            this.button_dkModify.Text = "暗电流修正";
-            this.button_dkModify.UseVisualStyleBackColor = true;
-            this.button_dkModify.Click += new System.EventHandler(this.button_dkModify_Click);
-            // 
             // button_sustaintest
             // 
             this.button_sustaintest.Location = new System.Drawing.Point(84, 3);
@@ -398,6 +333,17 @@
             this.button_onetest.UseVisualStyleBackColor = true;
             this.button_onetest.Click += new System.EventHandler(this.button_onetest_Click);
             // 
+            // checkBox_still
+            // 
+            this.checkBox_still.AutoSize = true;
+            this.checkBox_still.Location = new System.Drawing.Point(168, 7);
+            this.checkBox_still.Name = "checkBox_still";
+            this.checkBox_still.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_still.TabIndex = 11;
+            this.checkBox_still.Text = "重复测试";
+            this.checkBox_still.UseVisualStyleBackColor = true;
+            this.checkBox_still.CheckedChanged += new System.EventHandler(this.checkBox_still_CheckedChanged);
+            // 
             // TestResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -417,13 +363,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_result)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -438,23 +379,20 @@
         private System.Windows.Forms.Button button_sustaintest;
         private System.Windows.Forms.Button button_onetest;
         private System.Windows.Forms.Button button_cie;
-        private System.Windows.Forms.ListView listView_data;
         private System.Windows.Forms.CheckBox checkBox_hide;
         private System.Windows.Forms.Button button_Set;
-        private System.Windows.Forms.Button button_dkModify;
-        private System.Windows.Forms.ListView listView_total;
         private System.Windows.Forms.Button button_clear;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label_IP1;
         private System.Windows.Forms.Button button_open;
         private System.Windows.Forms.Label label_IP3;
         private System.Windows.Forms.Label label_IP2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.ListView listView_testconfig;
         private System.Windows.Forms.CheckBox checkBox_configvisible;
+        private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ListView listView_config2;
+        private System.Windows.Forms.ListView listView_testconfig;
+        private System.Windows.Forms.CheckBox checkBox_still;
     }
 }

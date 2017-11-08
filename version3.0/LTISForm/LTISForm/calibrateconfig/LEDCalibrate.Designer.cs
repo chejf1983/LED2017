@@ -31,7 +31,6 @@
             this.table_1 = new System.Windows.Forms.DataGridView();
             this.table_2 = new System.Windows.Forms.DataGridView();
             this.table_3 = new System.Windows.Forms.DataGridView();
-            this.button_save = new System.Windows.Forms.Button();
             this.button_cal = new System.Windows.Forms.Button();
             this.textBox_describe = new System.Windows.Forms.TextBox();
             this.button_collect = new System.Windows.Forms.Button();
@@ -39,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_clear = new System.Windows.Forms.Button();
+            this.button_SetPar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.table_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_3)).BeginInit();
@@ -77,25 +77,15 @@
             this.table_3.Size = new System.Drawing.Size(638, 104);
             this.table_3.TabIndex = 0;
             // 
-            // button_save
-            // 
-            this.button_save.Location = new System.Drawing.Point(167, 12);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(75, 23);
-            this.button_save.TabIndex = 1;
-            this.button_save.Text = "保存";
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
-            // 
             // button_cal
             // 
             this.button_cal.Location = new System.Drawing.Point(89, 12);
             this.button_cal.Name = "button_cal";
             this.button_cal.Size = new System.Drawing.Size(75, 23);
             this.button_cal.TabIndex = 1;
-            this.button_cal.Text = "定标";
+            this.button_cal.Text = "计算系数";
             this.button_cal.UseVisualStyleBackColor = true;
-            this.button_cal.Click += new System.EventHandler(this.button_cal_Click_1);
+            this.button_cal.Click += new System.EventHandler(this.button_cal_Click);
             // 
             // textBox_describe
             // 
@@ -147,7 +137,7 @@
             // 
             // button_clear
             // 
-            this.button_clear.Location = new System.Drawing.Point(247, 12);
+            this.button_clear.Location = new System.Drawing.Point(243, 12);
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(75, 23);
             this.button_clear.TabIndex = 1;
@@ -155,16 +145,26 @@
             this.button_clear.UseVisualStyleBackColor = true;
             this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
             // 
+            // button_SetPar
+            // 
+            this.button_SetPar.Location = new System.Drawing.Point(166, 12);
+            this.button_SetPar.Name = "button_SetPar";
+            this.button_SetPar.Size = new System.Drawing.Size(75, 23);
+            this.button_SetPar.TabIndex = 4;
+            this.button_SetPar.Text = "定标";
+            this.button_SetPar.UseVisualStyleBackColor = true;
+            this.button_SetPar.Click += new System.EventHandler(this.button_SetPar_Click);
+            // 
             // LEDCalibrate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 555);
+            this.Controls.Add(this.button_SetPar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_clear);
-            this.Controls.Add(this.button_save);
             this.Controls.Add(this.textBox_describe);
             this.Controls.Add(this.button_collect);
             this.Controls.Add(this.button_cal);
@@ -186,7 +186,6 @@
         private System.Windows.Forms.DataGridView table_1;
         private System.Windows.Forms.DataGridView table_2;
         private System.Windows.Forms.DataGridView table_3;
-        private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Button button_cal;
         private System.Windows.Forms.TextBox textBox_describe;
         private System.Windows.Forms.Button button_collect;
@@ -194,5 +193,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_clear;
+        private System.Windows.Forms.Button button_SetPar;
     }
 }

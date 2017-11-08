@@ -53,6 +53,8 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.Connect = new System.Windows.Forms.ToolStripMenuItem();
             this.Lable_SystemState = new System.Windows.Forms.ToolStripMenuItem();
+            this.label_time = new System.Windows.Forms.Label();
+            this.MenuItem_reg = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.username.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -87,7 +89,8 @@
             // 
             this.username.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.用户管理ToolStripMenuItem,
-            this.系统配置ToolStripMenuItem});
+            this.系统配置ToolStripMenuItem,
+            this.MenuItem_reg});
             this.username.Location = new System.Drawing.Point(0, 25);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(1038, 25);
@@ -149,7 +152,7 @@
             // MenuItem_dataoutput
             // 
             this.MenuItem_dataoutput.Name = "MenuItem_dataoutput";
-            this.MenuItem_dataoutput.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem_dataoutput.Size = new System.Drawing.Size(152, 22);
             this.MenuItem_dataoutput.Text = "打开文件目录";
             this.MenuItem_dataoutput.ToolTipText = "打开文件目录";
             this.MenuItem_dataoutput.Click += new System.EventHandler(this.MenuItem_dataoutput_Click);
@@ -157,7 +160,7 @@
             // MenuItem_OpenLog
             // 
             this.MenuItem_OpenLog.Name = "MenuItem_OpenLog";
-            this.MenuItem_OpenLog.Size = new System.Drawing.Size(148, 22);
+            this.MenuItem_OpenLog.Size = new System.Drawing.Size(152, 22);
             this.MenuItem_OpenLog.Text = "打开LOG";
             this.MenuItem_OpenLog.Click += new System.EventHandler(this.MenuItem_OpenLog_Click);
             // 
@@ -284,11 +287,28 @@
             this.Lable_SystemState.Text = "未连接";
             this.Lable_SystemState.ToolTipText = "连接设备名称";
             // 
+            // label_time
+            // 
+            this.label_time.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_time.AutoSize = true;
+            this.label_time.Location = new System.Drawing.Point(889, 616);
+            this.label_time.Name = "label_time";
+            this.label_time.Size = new System.Drawing.Size(0, 12);
+            this.label_time.TabIndex = 9;
+            // 
+            // MenuItem_reg
+            // 
+            this.MenuItem_reg.Name = "MenuItem_reg";
+            this.MenuItem_reg.Size = new System.Drawing.Size(44, 21);
+            this.MenuItem_reg.Text = "注册";
+            this.MenuItem_reg.Click += new System.EventHandler(this.注册ToolStripMenuItem_Click);
+            // 
             // LEDMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 632);
+            this.Controls.Add(this.label_time);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.username);
@@ -335,6 +355,8 @@
         private System.Windows.Forms.ToolStripMenuItem 系统配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItem_dataoutput;
         private System.Windows.Forms.ToolStripMenuItem MenuItem_OpenLog;
+        private System.Windows.Forms.Label label_time;
+        private System.Windows.Forms.ToolStripMenuItem MenuItem_reg;
     }
 }
 

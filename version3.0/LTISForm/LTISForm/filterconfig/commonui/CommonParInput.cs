@@ -6,8 +6,8 @@ using System.Windows.Forms;
 using LTISDLL.LEDSYS.Data;
 using LTISDLL.LEDSYS.DataFilter.Data;
 using LTISDLL.LEDSYS.DataFilter;
-using LTISDLL.LEDSYS.DataFilter.ConditionElement;
 using LTISDLL.FaultSystem;
+using LTISDLL.Models.DataFilter.condition;
 
 namespace LTISForm.filterconfig
 {
@@ -30,18 +30,8 @@ namespace LTISForm.filterconfig
             this.Menu_edit3.Enabled = value;
 
             this.button_add.Enabled = value;
+            this.button_cut.Enabled = value;
         }
-
-        /// <summary>
-        /// 数据源
-        /// </summary>
-        private BindingList<LineItem>[] ledlist = new BindingList<LineItem>[3];
-
-        /// <summary>
-        /// 数据类型
-        /// </summary>
-        private CONDITIONTYPE datatype;
-        public CONDITIONTYPE DataType { get { return datatype; } }
 
         #region 初始化
         /// <summary>
@@ -49,7 +39,7 @@ namespace LTISForm.filterconfig
         /// </summary>
         /// <param name="table"></param>
         /// <param name="datasorce"></param>
-        private void initTable(DataGridView table, BindingList<LineItem> datasorce)
+        private void initTable(DataGridView table, BindingList<CLine> list)
         {
             ///初始化表结构
             //table.RowHeadersVisible = false;
@@ -63,10 +53,20 @@ namespace LTISForm.filterconfig
             table.RowHeadersVisible = true;
             table.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             table.MultiSelect = false;
-            // table.ReadOnly = false;
 
-            ///绑定数据源
-            table.DataSource = datasorce;
+            DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "最小";
+            column.DataPropertyName = "Min";
+            //column.Width = 80;
+            table.Columns.Add(column);
+
+            column = new DataGridViewTextBoxColumn();
+            column.HeaderText = "最大";
+            column.DataPropertyName = "Max";
+            //column.Width = 800;
+            table.Columns.Add(column);
+
+            table.DataSource = list;
         }
 
         /// <summary>
@@ -77,11 +77,6 @@ namespace LTISForm.filterconfig
         {
             ///设置元素类型
             this.datatype = datatype;
-
-            for (int i = 0; i < this.ledlist.Length; i++)
-            {
-                this.ledlist[i] = new BindingList<LineItem>();
-            }
 
             //初始化三晶的数据表
             this.initTable(this.datatable1, this.ledlist[0]);
@@ -104,16 +99,16 @@ namespace LTISForm.filterconfig
         /// </summary>
         /// <param name="lednum"></param>
         /// <param name="par"></param>
-        public void InitParameter(LEDNUM lednum, List<IElement> par)
+        public void InitParameter(LineCondition condition)
         {
-            int index = (int)lednum - 1;
-            this.ledlist[index].Clear();
-
-            par.ForEach(npar =>
+            this.Clear();
+            for (int i = 0; i < 3; i++)
             {
-                this.ledlist[index].Add(new LineItem(npar.parmeters));
-            });
-
+                condition.lines[i].ForEach(line =>
+                {
+                    this.ledlist[i].Add(new CLine(line));
+                });
+            }
         }
 
         /// <summary>
@@ -127,27 +122,39 @@ namespace LTISForm.filterconfig
         }
         #endregion
 
+
+        /// <summary>
+        /// 数据源
+        /// </summary>
+        private BindingList<CLine>[] ledlist = new BindingList<CLine>[] { new BindingList<CLine>(), new BindingList<CLine>(), new BindingList<CLine>() };
+
+        /// <summary>
+        /// 数据类型
+        /// </summary>
+        private CONDITIONTYPE datatype;
+        public CONDITIONTYPE DataType { get { return datatype; } }
+
+
         /// <summary>
         /// 获取过滤参数
         /// </summary>
         /// <param name="lednum"></param>
         /// <returns></returns>
-        public IElement[] GetInputParameter(LEDNUM lednum)
+        public LineCondition GetInputParameter()
         {
-            List<LineElement> ret = new List<LineElement>();
+            LineCondition lcondition = new LineCondition(this.DataType);
 
-            int index = (int)lednum - 1;
-
-            foreach (LineItem item in this.ledlist[index])
+            for (int i = 0; i < 3; i++)
             {
-                ret.Add(new LineElement(lednum,
-                    datatype, item.MIN, item.MAX));
+                foreach(CLine line in this.ledlist[i])
+                {
+                    lcondition.lines[i].Add(new CLine(line));
+                }
             }
-
-            ret.Sort();
-            return ret.ToArray();
+            return lcondition;
         }
 
+        #region 添加参数
         /// <summary>
         /// 添加新的条件
         /// </summary>
@@ -175,35 +182,55 @@ namespace LTISForm.filterconfig
             }
 
             ///加入到单独的条件数组里
-            LineItem line = new LineItem(new float[] { min, max });
-            BindingList<LineItem> linelist = this.ledlist[this.comboBox_LED.SelectedIndex];
-            this.addLine(linelist, line);
+            CLine line = new CLine(min, max);
+            this.addLine(this.ledlist[this.comboBox_LED.SelectedIndex], line);
         }
 
-        //检查新的线段和其它线段是否有重复
-        private bool checkLine(BindingList<LineItem> list, LineItem line)
+        private void button_cut_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < list.Count; i++)
+            float min;
+            float max;
+            float cut;
+            try
             {
-                if (list[i].IsOverlap(line))
+                ///获取输入
+                min = float.Parse(this.min_input.Text);
+                max = float.Parse(this.max_input.Text);
+                cut = int.Parse(this.textBox_cut.Text);
+                if (min >= max)
                 {
-                    return false;
+                    FaultCenter.Instance.SendFault(FaultLevel.ERROR, "输入参数错误,最小值 >= 最大值");
+                    return;
                 }
             }
+            catch (Exception ex)
+            {
+                FaultCenter.Instance.SendFault(FaultLevel.ERROR, "输入参数错误:" + ex.Message);
+                return;
+            }
 
-            return true;
+            float num = (max - min) / cut;
+
+            for(int i = 0; i < cut; i++)
+            {
+                ///加入到单独的条件数组里
+                CLine line = new CLine(min, min + num);
+                this.addLine(this.ledlist[this.comboBox_LED.SelectedIndex], line);
+                min += num;
+            }
+
         }
 
         //按最小值，从小到大排序
-        private void SortList(BindingList<LineItem> list)
+        private void SortList(BindingList<CLine> list)
         {
             for (int i = 0; i < list.Count; i++)
             {
                 for (int j = i + 1; j < list.Count; j++)
                 {
-                    if (list[i].MIN > list[j].MIN)
+                    if (list[i].Min > list[j].Max)
                     {
-                        LineItem tmp = list[i];
+                        CLine tmp = list[i];
                         list[i] = list[j];
                         list[j] = tmp;
                     }
@@ -216,7 +243,7 @@ namespace LTISForm.filterconfig
         /// </summary>
         /// <param name="list"></param>
         /// <param name="line"></param>
-        private bool addLine(BindingList<LineItem> list, LineItem line)
+        private bool addLine(BindingList<CLine> list, CLine line)
         {
             //检查输入参数是否正确
             //if (!this.checkLine(list, line))
@@ -228,14 +255,9 @@ namespace LTISForm.filterconfig
             list.Add(line);
 
             this.SortList(list);
-
-            //自动累加
-            float min = list[list.Count - 1].MIN;
-            float max = list[list.Count - 1].MAX;
-            this.min_input.Text = max.ToString();
-            this.max_input.Text = (max + max - min).ToString();
             return true;
         }
+        #endregion
 
         #region 弹出菜单
         private void MenuItem_Del_Click(object sender, EventArgs e)
@@ -253,7 +275,7 @@ namespace LTISForm.filterconfig
             this.DeleteRow(this.datatable3, ledlist[2]);
         }
 
-        private void DeleteRow(System.Windows.Forms.DataGridView datatable, BindingList<LineItem> ledlist)
+        private void DeleteRow(System.Windows.Forms.DataGridView datatable, BindingList<CLine> ledlist)
         {
             if (datatable.SelectedRows.Count > 0)
             {
@@ -279,7 +301,7 @@ namespace LTISForm.filterconfig
             this.ChangeData(this.datatable3, ledlist[2]);
         }
 
-        private void ChangeData(System.Windows.Forms.DataGridView datatable, BindingList<LineItem> ledlist)
+        private void ChangeData(System.Windows.Forms.DataGridView datatable, BindingList<CLine> ledlist)
         {
             if (datatable.SelectedRows.Count > 0)
             {
@@ -301,44 +323,6 @@ namespace LTISForm.filterconfig
             }
         }
         #endregion
-    }
 
-    public class LineItem
-    {
-        private float[] pars;
-        public LineItem(float[] pars)
-        {
-            this.pars = pars;
-        }
-
-        /// <summary>
-        /// 最小值
-        /// </summary>
-        public float MIN
-        {
-            get { return this.pars[0]; }
-            set { this.pars[0] = value; }
-        }
-
-        /// <summary>
-        /// 最大值
-        /// </summary>
-        public float MAX
-        {
-            get { return this.pars[1]; }
-            set { this.pars[1] = value; }
-        }
-
-        public float Center2() { return (this.MAX + this.MIN); }
-
-        public bool IsOverlap(LineItem line)
-        {
-            
-            float centerlen = Math.Abs(line.Center2() - this.Center2());
-
-            float blen = this.MAX - this.MIN + line.MAX - line.MIN;
-
-            return ((centerlen) < blen);
-        }
     }
 }

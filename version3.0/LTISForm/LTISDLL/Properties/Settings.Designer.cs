@@ -85,13 +85,73 @@ namespace LTISDLL.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int testTriggerMode {
+        [global::System.Configuration.DefaultSettingValueAttribute("./devconfig/")]
+        public string configDir {
             get {
-                return ((int)(this["testTriggerMode"]));
+                return ((string)(this["configDir"]));
             }
             set {
-                this["testTriggerMode"] = value;
+                this["configDir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("./dk/")]
+        public string dkdata_dir {
+            get {
+                return ((string)(this["dkdata_dir"]));
+            }
+            set {
+                this["dkdata_dir"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11/08/2017 14:39:00")]
+        public global::System.DateTime dead_time {
+            get {
+                return ((global::System.DateTime)(this["dead_time"]));
+            }
+            set {
+                this["dead_time"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11/07/2017 14:39:00")]
+        public global::System.DateTime current_time {
+            get {
+                return ((global::System.DateTime)(this["current_time"]));
+            }
+            set {
+                this["current_time"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool copy_right {
+            get {
+                return ((bool)(this["copy_right"]));
+            }
+            set {
+                this["copy_right"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("nah")]
+        public string dev_name {
+            get {
+                return ((string)(this["dev_name"]));
+            }
+            set {
+                this["dev_name"] = value;
             }
         }
     }

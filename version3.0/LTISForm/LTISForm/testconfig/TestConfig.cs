@@ -24,13 +24,22 @@ namespace LTISForm.testconfig
         {
             InitializeComponent();
 
+            //初始化配置界面
             this.initConfigUI();
+
+            //初始化预测界面
+            this.InitSPCurve();
+
+            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(UserCenter_UserChangeEvent);
         }
 
         #region 界面刷新控制
         void UserCenter_UserChangeEvent(LTISDLL.User.User user)
         {
-            UpdateButtonState();
+            this.Invoke(new EventHandler(delegate
+            {
+                UpdateButtonState();
+            }));
         }
 
         private void UpdateButtonState()
@@ -42,19 +51,11 @@ namespace LTISForm.testconfig
             this.groupBox1.Enabled = value;
             this.groupBox_nf.Enabled = value;
         }
-
-        //系统状态更新事件
-        private void ControlManager_StateChangeEvent(ControlState laststate, ControlState state)
-        {
-            //系统连接成功，刷新电参数配置
-            if (laststate == ControlState.DisConnect && state == ControlState.Connect)
-            {
-                this.ReadParameter();
-            }
-        }
         #endregion
 
         #region 测试配置控制
+
+        #region 配置界面初始化
         private void initConfigUI()
         {
             //触发模式初始化
@@ -63,7 +64,7 @@ namespace LTISForm.testconfig
             this.comboBox_triggermode.Items.Add("软件触发");
             this.comboBox_triggermode.Items.Add("高电平触发");
             this.comboBox_triggermode.Items.Add("低电平触发");
-            this.comboBox_triggermode.SelectedIndex = 0;
+            this.comboBox_triggermode.SelectedIndex = 2;
 
             this.comboBox_triggermode.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -82,159 +83,19 @@ namespace LTISForm.testconfig
             this.comboBox_ledtype.Width = 100;
             this.comboBox_ledtype.DrawMode = DrawMode.OwnerDrawVariable;
             this.comboBox_ledtype.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.comboBox_ledtype.SelectedIndex = 3;
+            this.comboBox_ledtype.SelectedIndex = 4;
             this.comboBox_ledtype.DrawItem += new DrawItemEventHandler(comboBox_ledtype_DrawItem);
-
 
             //初始化界面
             this.UpdateLEDGroup();
 
-            //初始化预测界面
-            this.InitSPCurve();
-
-            //添加系统控制状态刷新事件
-            LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent +=
-                new LTISDLL.SYSControl.ChangeState(ControlManager_StateChangeEvent);
-
-            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(UserCenter_UserChangeEvent);
-        }
-
-        //绘制图片combox
-        private void comboBox_ledtype_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            ComboBox comboBox1 = (ComboBox)sender;
-            //鼠标选中在这个项上 
-            //if ((e.State & DrawItemState.Selected) != 0)
-            //{
-            //    //渐变画刷 
-            //    LinearGradientBrush brush = new LinearGradientBrush(e.Bounds, Color.FromArgb(255, 251, 237),
-            //                                     Color.FromArgb(255, 236, 181), LinearGradientMode.Vertical);
-            //    //填充区域 
-            //    Rectangle borderRect = new Rectangle(3, e.Bounds.Y, e.Bounds.Width - 5, e.Bounds.Height - 2);
-
-            //    e.Graphics.FillRectangle(brush, borderRect);
-
-            //    //画边框 
-            //    Pen pen = new Pen(Color.FromArgb(229, 195, 101));
-            //    e.Graphics.DrawRectangle(pen, borderRect);
-            //}
-            //else
-            //{
-            //    SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 255));
-            //    e.Graphics.FillRectangle(brush, e.Bounds);
-            //}
-
-            //获得项图片,绘制图片 
-            System.Drawing.Bitmap img = (System.Drawing.Bitmap)comboBox1.Items[e.Index];
-
-            //图片绘制的区域 
-            Rectangle imgRect = new Rectangle(6, e.Bounds.Y + 3, 60, 60);
-            e.Graphics.DrawImage(img, imgRect);
-        }
-
-
-        //led个数
-        private int lednum = 0;
-
-        //读取电参数
-        private void ReadParameter()
-        {
-            //设备连接时，才从设备读取默认电参数
-            if (LTISDLL.LEDPlatForm.Instance.ControlManager.State != LTISDLL.SYSControl.ControlState.Connect)
-            {
-                return;
-            }
-
-            //读取电参数
-            LEDCollectPar epar = LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.LEDTestPar;
-
-            this.UpdateParameterUI(epar);
-
-            //读取测试模式
-            this.comboBox_triggermode.SelectedIndex = GetTriggerIndex(
-               LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.TestMode);
-        }
-
-        private void UpdateParameterUI(LEDCollectPar epar)
-        {
-            lednum = epar.lednum;
-
-            NeVol_input.Text = epar.NeVoltage.ToString();
-            NeI_input.Text = epar.NeCurrent.ToString();
-            NeDelay_input.Text = epar.NeDelay.ToString();
-            NeTtime_input.Text = epar.NeTime.ToString();
-
-            LED1_Itime_input.Text = LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.LEDTestPar.itime[0].ToString();
-            LED1_FV_input.Text = epar.FVoltage[0].ToString();
-            LED1_FI_input.Text = epar.FCurrent[0].ToString();
-            LED1_FDT_input.Text = epar.FDelay[0].ToString();
-            LED1_FTT_input.Text = epar.FTime[0].ToString();
-
-            LED1_BV_input.Text = epar.RVoltage[0].ToString();
-            LED1_BI_input.Text = epar.RCurrent[0].ToString();
-            LED1_BDT_input.Text = epar.RDelay[0].ToString();
-            LED1_BTT_input.Text = epar.RTime[0].ToString();
-
-            LED2_Itime_input.Text = LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.LEDTestPar.itime[1].ToString();
-            LED2_FV_input.Text = epar.FVoltage[1].ToString();
-            LED2_FI_input.Text = epar.FCurrent[1].ToString();
-            LED2_FDT_input.Text = epar.FDelay[1].ToString();
-            LED2_FTT_input.Text = epar.FTime[1].ToString();
-
-            LED2_BV_input.Text = epar.RVoltage[1].ToString();
-            LED2_BI_input.Text = epar.RCurrent[1].ToString();
-            LED2_BDT_input.Text = epar.RDelay[1].ToString();
-            LED2_BTT_input.Text = epar.RTime[1].ToString();
-
-            LED3_Itime_input.Text = LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.LEDTestPar.itime[2].ToString();
-            LED3_FV_input.Text = epar.FVoltage[2].ToString();
-            LED3_FI_input.Text = epar.FCurrent[2].ToString();
-            LED3_FDT_input.Text = epar.FDelay[2].ToString();
-            LED3_FTT_input.Text = epar.FTime[2].ToString();
-
-            LED3_BV_input.Text = epar.RVoltage[2].ToString();
-            LED3_BI_input.Text = epar.RCurrent[2].ToString();
-            LED3_BDT_input.Text = epar.RDelay[2].ToString();
-            LED3_BTT_input.Text = epar.RTime[2].ToString();
-
-            radioButton_led1.Checked = epar.lednum == 1;
-            radioButton_led2.Checked = epar.lednum == 2;
-            radioButton_led3.Checked = epar.lednum == 3;
-        }
-
-        //获取触发模式
-        private TRIGGER_MODE GetTrigerMode()
-        {
-            switch (this.comboBox_triggermode.SelectedIndex)
-            {
-                case 0:
-                    return TRIGGER_MODE.SOFTWARE_SYNCHRONOUS;
-                case 1:
-                    return TRIGGER_MODE.EXINT_HIGH_LEVEL;
-                case 2:
-                    return TRIGGER_MODE.EXINT_LOW_LEVEL;
-                default:
-                    return TRIGGER_MODE.SOFTWARE_SYNCHRONOUS;
-            }
-
-        }
-
-        private int GetTriggerIndex(TRIGGER_MODE mode)
-        {
-            switch (mode)
-            {
-                case TRIGGER_MODE.SOFTWARE_SYNCHRONOUS:
-                    return 0;
-                case TRIGGER_MODE.EXINT_HIGH_LEVEL:
-                    return 1;
-                case TRIGGER_MODE.EXINT_LOW_LEVEL:
-                    return 2;
-                default:
-                    return 0;
-            }
+            //加载配置的参数
+            this.UpdateConfigPar(LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar);
         }
 
         #region LED组互斥更新
+        private int lednum = 0;
+
         /// <summary>
         /// LED组互斥更新
         /// </summary>
@@ -271,8 +132,6 @@ namespace LTISForm.testconfig
             LED3_BTT_input.Enabled = lednum >= 3;
         }
 
-
-
         private void radioButton_led1_CheckedChanged(object sender, EventArgs e)
         {
             lednum = 1;
@@ -292,9 +151,142 @@ namespace LTISForm.testconfig
         }
         #endregion
 
-        private LEDType GetInputType()
+        //绘制图片combox
+        private void comboBox_ledtype_DrawItem(object sender, DrawItemEventArgs e)
         {
-            int index = this.comboBox_ledtype.SelectedIndex;
+            ComboBox comboBox1 = (ComboBox)sender;
+            //鼠标选中在这个项上 
+            //if ((e.State & DrawItemState.Selected) != 0)
+            //{
+            //    //渐变画刷 
+            //    LinearGradientBrush brush = new LinearGradientBrush(e.Bounds, Color.FromArgb(255, 251, 237),
+            //                                     Color.FromArgb(255, 236, 181), LinearGradientMode.Vertical);
+            //    //填充区域 
+            //    Rectangle borderRect = new Rectangle(3, e.Bounds.Y, e.Bounds.Width - 5, e.Bounds.Height - 2);
+
+            //    e.Graphics.FillRectangle(brush, borderRect);
+
+            //    //画边框 
+            //    Pen pen = new Pen(Color.FromArgb(229, 195, 101));
+            //    e.Graphics.DrawRectangle(pen, borderRect);
+            //}
+            //else
+            //{
+            //    SolidBrush brush = new SolidBrush(Color.FromArgb(255, 255, 255));
+            //    e.Graphics.FillRectangle(brush, e.Bounds);
+            //}
+
+            //获得项图片,绘制图片 
+            System.Drawing.Bitmap img = (System.Drawing.Bitmap)comboBox1.Items[e.Index];
+
+            //图片绘制的区域 
+            Rectangle imgRect = new Rectangle(6, e.Bounds.Y + 3, 60, 60);
+            e.Graphics.DrawImage(img, imgRect);
+        }
+        #endregion
+
+        #region 读取配置参数
+        //刷新配置参数
+        private void UpdateConfigPar(ConfigData par)
+        {
+            LEDTestConfig config = LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig;
+            //读取电参数
+            LEDCollectPar epar = par.LEDTestPar;
+
+            NeVol_input.Text = epar.NeVoltage.ToString();
+            NeI_input.Text = epar.NeCurrent.ToString();
+            NeDelay_input.Text = epar.NeDelay.ToString();
+            NeTtime_input.Text = epar.NeTime.ToString();
+
+            LED1_Itime_input.Text = par.LEDTestPar.itime[0].ToString();
+            LED1_FV_input.Text = epar.FVoltage[0].ToString();
+            LED1_FI_input.Text = epar.FCurrent[0].ToString();
+            LED1_FDT_input.Text = epar.FDelay[0].ToString();
+            LED1_FTT_input.Text = epar.FTime[0].ToString();
+
+            LED1_BV_input.Text = epar.RVoltage[0].ToString();
+            LED1_BI_input.Text = epar.RCurrent[0].ToString();
+            LED1_BDT_input.Text = epar.RDelay[0].ToString();
+            LED1_BTT_input.Text = epar.RTime[0].ToString();
+
+            LED2_Itime_input.Text = par.LEDTestPar.itime[1].ToString();
+            LED2_FV_input.Text = epar.FVoltage[1].ToString();
+            LED2_FI_input.Text = epar.FCurrent[1].ToString();
+            LED2_FDT_input.Text = epar.FDelay[1].ToString();
+            LED2_FTT_input.Text = epar.FTime[1].ToString();
+
+            LED2_BV_input.Text = epar.RVoltage[1].ToString();
+            LED2_BI_input.Text = epar.RCurrent[1].ToString();
+            LED2_BDT_input.Text = epar.RDelay[1].ToString();
+            LED2_BTT_input.Text = epar.RTime[1].ToString();
+
+            LED3_Itime_input.Text = par.LEDTestPar.itime[2].ToString();
+            LED3_FV_input.Text = epar.FVoltage[2].ToString();
+            LED3_FI_input.Text = epar.FCurrent[2].ToString();
+            LED3_FDT_input.Text = epar.FDelay[2].ToString();
+            LED3_FTT_input.Text = epar.FTime[2].ToString();
+
+            LED3_BV_input.Text = epar.RVoltage[2].ToString();
+            LED3_BI_input.Text = epar.RCurrent[2].ToString();
+            LED3_BDT_input.Text = epar.RDelay[2].ToString();
+            LED3_BTT_input.Text = epar.RTime[2].ToString();
+
+            radioButton_led1.Checked = epar.lednum == LEDNUM.ONE;
+            radioButton_led2.Checked = epar.lednum == LEDNUM.TWO;
+            radioButton_led3.Checked = epar.lednum == LEDNUM.THREE;
+
+            //读取LED个数
+            this.lednum = (int)epar.lednum;
+
+            //读取测试模式
+            this.comboBox_triggermode.SelectedIndex = GetTriggerIndex(par.TestMode);
+
+            //读取LED类型
+            this.comboBox_ledtype.SelectedIndex = this.GetTypeIndex(par.LedType);
+
+            //读取延时
+            this.ttttt.Text = par.TimeLag.ToString();
+        }
+
+        #region 触发模式
+        //获取触发模式
+        private TRIGGER_MODE GetTrigerMode(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    return TRIGGER_MODE.SOFTWARE_SYNCHRONOUS;
+                case 1:
+                    return TRIGGER_MODE.EXINT_HIGH_LEVEL;
+                case 2:
+                    return TRIGGER_MODE.EXINT_LOW_LEVEL;
+                default:
+                    return TRIGGER_MODE.SOFTWARE_SYNCHRONOUS;
+            }
+
+        }
+
+        private int GetTriggerIndex(TRIGGER_MODE mode)
+        {
+            switch (mode)
+            {
+                case TRIGGER_MODE.SOFTWARE_SYNCHRONOUS:
+                    return 0;
+                case TRIGGER_MODE.EXINT_HIGH_LEVEL:
+                    return 1;
+                case TRIGGER_MODE.EXINT_LOW_LEVEL:
+                    return 2;
+                default:
+                    return 0;
+            }
+        }
+        #endregion
+
+        #region LED类型
+        //获取LED类型
+        private LEDType GetInputType(int index)
+        {
+            //int index = this.comboBox_ledtype.SelectedIndex;
             switch (index)
             {
                 case 0:
@@ -322,11 +314,45 @@ namespace LTISForm.testconfig
             }
         }
 
+        private int GetTypeIndex(LEDType type)
+        {
+            switch (type)
+            {
+                case LEDType.LED0:
+                    return 0;
+                case LEDType.LED1:
+                    return 1;
+                case LEDType.LED14:
+                    return 2;
+                case LEDType.LED15:
+                    return 3;
+                case LEDType.LED16:
+                    return 4;
+                case LEDType.LED17:
+                    return 5;
+                case LEDType.LED18:
+                    return 6;
+                case LEDType.LED19:
+                    return 7;
+                case LEDType.LED26:
+                    return 8;
+                case LEDType.LED27:
+                    return 9;
+                default:
+                    return 3;
+            }
+        }
+        #endregion
+        #endregion
+
         //下发电参数和光参数
         private void button_Save_Click(object sender, EventArgs e)
         {
-            #region 赋值电参数
+            #region 赋值
             LEDCollectPar ledtestpar = new LEDCollectPar();
+            int timelag;
+            TRIGGER_MODE mode;
+            LEDType type;
 
             try
             {
@@ -370,26 +396,27 @@ namespace LTISForm.testconfig
                 ledtestpar.RCurrent[2] = float.Parse(LED3_BI_input.Text);
                 ledtestpar.RDelay[2] = float.Parse(LED3_BDT_input.Text);
                 ledtestpar.RTime[2] = float.Parse(LED3_BTT_input.Text);
+
+                //获取延时时间
+                timelag = int.Parse(ttttt.Text);
+                //获取LED类型
+                type = this.GetInputType(this.comboBox_ledtype.SelectedIndex);
+                //获取触发模式
+                mode = this.GetTrigerMode(this.comboBox_triggermode.SelectedIndex);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("请输入合法的参数:" + ex.Message);
                 return;
             }
-            ledtestpar.lednum = this.lednum;
+            ledtestpar.lednum = (LEDNUM)this.lednum;
             #endregion
 
             #region 赋值积分时间
-
-            for (int i = 0; i < ledtestpar.lednum; i++)
-                if (ledtestpar.itime[i] > ledtestpar.FTime[i])
-                {
-                    MessageBox.Show("LED" + (i + 1) + "积分时间超过了正向电压时间！");
-                    return;
-                }
             #endregion
 
-            if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.SaveConfig(ledtestpar, this.GetTrigerMode(), GetInputType()))
+            ConfigData par = new ConfigData(timelag, type, mode, ledtestpar);
+            if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ChangeTestPar(par))
             {
                 MessageBox.Show("保存成功");
             }
@@ -399,7 +426,6 @@ namespace LTISForm.testconfig
         //另存配置
         private void button_SaveAs_Click(object sender, EventArgs e)
         {
-            Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
             saveFileDialog1.Filter = "xml files   (*.xml)|*.xml";
@@ -409,14 +435,13 @@ namespace LTISForm.testconfig
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                using (Stream myStream = saveFileDialog1.OpenFile())
                 {
                     Properties.Settings.Default.config_path = System.IO.Path.GetDirectoryName(saveFileDialog1.FileName);
                     Properties.Settings.Default.Save();
-                    LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.SaveToFile(myStream,
-                        LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.LEDTestPar);
+                    LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar.SaveToFile(myStream);
                 }
-            } 
+            }
         }
 
         //读取配置
@@ -429,16 +454,13 @@ namespace LTISForm.testconfig
             openFileDialog1.RestoreDirectory = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Stream myStream;
-                if ((myStream = openFileDialog1.OpenFile()) != null)
+                using (Stream myStream = openFileDialog1.OpenFile())
                 {
                     Properties.Settings.Default.config_path = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
                     Properties.Settings.Default.Save();
-                    LEDCollectPar ledtestpar = new LEDCollectPar();
-                    if (LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ReadFromFile(myStream, ref ledtestpar))
-                    {
-                        this.UpdateParameterUI(ledtestpar);
-                    }
+                    ConfigData par = new ConfigData();
+                    par.ReadFromFile(myStream);
+                    this.UpdateConfigPar(par);
                 }
             }
         }
@@ -462,11 +484,11 @@ namespace LTISForm.testconfig
         private void button_retest_Click(object sender, EventArgs e)
         {
             //this.chartcurve.displayData
-            LEDData data = LTISDLL.LEDPlatForm.Instance.ControlManager.TestControl.PreCollectOrignalData();
+            LEDData data = LTISDLL.LEDPlatForm.Instance.ControlManager.TestControl.CollectDataOnly();
 
             if (data != null)
             {
-                for (int i = 0; i < data.lednum; i++)
+                for (int i = 0; i < (int)data.lednum; i++)
                 {
                     float[] tmp = data.ciedata[i].fPL;
 
@@ -476,7 +498,7 @@ namespace LTISForm.testconfig
                     if (tmp != null)
                         for (int j = 0; j < tmp.Length; j++)
                         {
-                            x[j] = j;
+                            x[j] = data.ciedata[i].fSpect1 + j * data.ciedata[i].fInterval;
                             y[j] = tmp[j];
                         }
 

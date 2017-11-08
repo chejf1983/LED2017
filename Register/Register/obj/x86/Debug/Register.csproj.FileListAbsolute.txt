@@ -1,0 +1,12 @@
+D:\LED2017\Register\Register\bin\Debug\Register.exe
+D:\LED2017\Register\Register\bin\Debug\Register.pdb
+D:\LED2017\Register\Register\obj\x86\Debug\Register.Form1.resources
+D:\LED2017\Register\Register\obj\x86\Debug\Register.Properties.Resources.resources
+D:\LED2017\Register\Register\obj\x86\Debug\Register.csproj.GenerateResource.Cache
+D:\LED2017\Register\Register\obj\x86\Debug\Register.exe
+D:\LED2017\Register\Register\obj\x86\Debug\Register.pdb
+D:\LED2017\Register\Register\bin\Debug\LTISDLL.dll
+D:\LED2017\Register\Register\bin\Debug\System.Data.SQLite.dll
+D:\LED2017\Register\Register\bin\Debug\LTISDLL.pdb
+D:\LED2017\Register\Register\bin\Debug\System.Data.SQLite.xml
+D:\LED2017\Register\Register\obj\x86\Debug\Register.csprojResolveAssemblyReference.cache

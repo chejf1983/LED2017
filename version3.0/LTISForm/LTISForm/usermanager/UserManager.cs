@@ -16,6 +16,7 @@ namespace LED2017Form.UserManager
         {
             InitializeComponent();
 
+            this.TopMost = true;
             this.InitUserList();
         }
 

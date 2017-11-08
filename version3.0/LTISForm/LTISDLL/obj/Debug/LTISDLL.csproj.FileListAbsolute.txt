@@ -35,6 +35,5 @@ D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.Linq.dll
 D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.xml
 D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\EntityFramework.SqlServer.xml
 D:\LED2017\version3.0\LTISForm\LTISDLL\bin\Debug\System.Data.SQLite.xml
-D:\LED2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.csprojResolveAssemblyReference.cache
 D:\LED2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.dll
 D:\LED2017\version3.0\LTISForm\LTISDLL\obj\Debug\LTISDLL.pdb

@@ -8,7 +8,7 @@ using LTISDLL.SYSControl;
 
 namespace LTISDLL
 {
-    public class LEDPlatForm : ILEDPlatForm
+    public class LEDPlatForm 
     {
         private static LEDPlatForm instance = null;
         private LEDPlatForm()
@@ -16,7 +16,7 @@ namespace LTISDLL
 
         }
 
-        public static ILEDPlatForm Instance
+        public static LEDPlatForm Instance
         {
             get
             {
@@ -41,22 +41,28 @@ namespace LTISDLL
             this.userCenter.InitUserCenter();
 
             //初始LED控制实验系统
-            this.ledLaboruary = new LTISDLL.LEDSYS.LEDSystem();
+            this.ledmodels = new LTISDLL.LEDSYS.LEDModels();
             //this.ledLaboruary.InitSystem();
 
-            this.controlmanager = new ControlSystem(this.ledLaboruary);
+            this.controlmanager = new ControlSystem();
             this.controlmanager.InitControlSystem();
         }
 
         /// <summary>
-        /// LED分光控制系统
+        /// LED系统模块
         /// </summary>
-        private LEDSystem ledLaboruary;
-        public LEDSystem LEDLabor { get { return this.ledLaboruary; } }
+        private LEDModels ledmodels;
+        public LEDModels LEDModels { get { return this.ledmodels; } }
 
+        /// <summary>
+        /// 用户管理系统
+        /// </summary>
         private User.UserCenter userCenter;
         public User.UserCenter UserCenter { get { return this.userCenter; } }
 
+        /// <summary>
+        /// 控制系统
+        /// </summary>
         private ControlSystem controlmanager;
         public ControlSystem ControlManager { get { return this.controlmanager; } }
 

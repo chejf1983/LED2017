@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using LTISDLL.Models.DataFilter.filter;
 
 namespace LTISForm.filterconfig
 {
@@ -17,52 +18,37 @@ namespace LTISForm.filterconfig
         }
 
         private int index;
-        private LTISDLL.LEDSYS.DataFilter.FilterMap filterMap;
+        private RoadMap filterMap;
 
-        public void InitPolicy(int index, LTISDLL.LEDSYS.DataFilter.FilterMap filterMap)
+        public void InitPolicy(int index, RoadMap filterMap)
         {
             this.index = index;
             this.filterMap = filterMap;
 
-            if (index < filterMap.Polices.Count)
+            if (index < filterMap.roads.Count)
             {
-                this.textBox_binnum.Text = filterMap.Polices[index].BinNum.ToString();
-            }
-            else
-            {
-                this.textBox_binnum.Text = filterMap.DefPolicy.BinNum.ToString();
+                this.textBox_binnum.Text = filterMap.roads[index].BinNum.ToString();
             }
         }
 
         //检查参数
         private bool checknum(int newbin)
         {
-            if (index < filterMap.Polices.Count)
+            if (index < filterMap.roads.Count)
             {
-                for (int i = 0; i < this.filterMap.Polices.Count; i++)
+                for (int i = 0; i < this.filterMap.roads.Count; i++)
                 {
-                    if (i != index && newbin == this.filterMap.Polices[i].BinNum)
+                    if (i != index && newbin == this.filterMap.roads[i].BinNum)
                     {
                         return false;
                     }
                 }
 
-                filterMap.Polices[index].BinNum = newbin;
+                filterMap.roads[index].BinNum = newbin;
                 return true;
             }
-            else
-            {
 
-                if (newbin != this.filterMap.DefPolicy.BinNum)
-                {
-                    this.filterMap.DefPolicy.BinNum = newbin;
-                    return true;
-                }
-                else
-                    return false;
-            }
-
-
+            return false;
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using LTISDLL.FaultSystem;
-using LTISDLL.LEDSYS.DataFilter.ConditionElement;
+using LTISDLL.Models.DataFilter.condition;
 
 namespace LTISForm.filterconfig
 {
@@ -19,13 +19,13 @@ namespace LTISForm.filterconfig
         }
 
         private int index;
-        private BindingList<AreaItem> ledlist;
-        public void InitPar(int index, BindingList<AreaItem> ledlist)
+        private BindingList<CArea> ledlist;
+        public void InitPar(int index, BindingList<CArea> ledlist)
         {
             this.index = index;
             this.ledlist = ledlist;
 
-            AreaItem area = ledlist[index];
+            CArea area = ledlist[index];
 
             this.x1_input.Text = area.X1.ToString("#0.00");
             this.y1_input.Text = area.Y1.ToString("#0.00");
@@ -64,12 +64,19 @@ namespace LTISForm.filterconfig
                 return;
             }
 
-            AreaItem item = new AreaItem(new float[] { x1, y1, x2, y2, x3, y3, x4, y4 });
+            CArea item = new CArea(new CPoint(x1, y1), 
+                new CPoint(x2, y2),
+                new CPoint(x3, y3), 
+                new CPoint(x4, y4));
 
             //检查参数大小
-            for (int i = 0; i < item.AllPoints().Count; i++)
+            for (int i = 0; i < 4; i++)
             {
-                APoint p = item.AllPoints()[i];
+                CPoint p = item.P1;
+                if (i == 1) p = item.P1;
+                if (i == 2) p = item.P2;
+                if (i == 3) p = item.P3;
+                if (i == 4) p = item.P4;
                 if (!(p.X > 0 && p.X < 1 && p.Y > 0 && p.Y < 1))
                 {
                     FaultCenter.Instance.SendFault(FaultLevel.ERROR, "输入参数错误,参数值必须在0-1之间");

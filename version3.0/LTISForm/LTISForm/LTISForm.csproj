@@ -69,6 +69,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.105.0\lib\net40\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -104,11 +105,11 @@
     <Compile Include="filterconfig\cieui\cieedit.Designer.cs">
       <DependentUpon>cieedit.cs</DependentUpon>
     </Compile>
-    <Compile Include="commonui\CieArea.cs">
+    <Compile Include="commonui\CIATarget.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="commonui\CieArea.Designer.cs">
-      <DependentUpon>CieArea.cs</DependentUpon>
+    <Compile Include="commonui\CIATarget.Designer.cs">
+      <DependentUpon>CIATarget.cs</DependentUpon>
     </Compile>
     <Compile Include="filterconfig\cieui\CIEParInput.cs">
       <SubType>UserControl</SubType>
@@ -158,17 +159,17 @@
     <Compile Include="LEDMainForm.Designer.cs">
       <DependentUpon>LEDMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="test\CIEView.cs">
+    <Compile Include="other\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="test\CIEView.Designer.cs">
-      <DependentUpon>CIEView.cs</DependentUpon>
+    <Compile Include="other\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="test\DKModify.cs">
-      <SubType>Form</SubType>
+    <Compile Include="test\CIETargetView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="test\DKModify.Designer.cs">
-      <DependentUpon>DKModify.cs</DependentUpon>
+    <Compile Include="test\CIETargetView.Designer.cs">
+      <DependentUpon>CIETargetView.cs</DependentUpon>
     </Compile>
     <Compile Include="other\CieLine.cs" />
     <Compile Include="Program.cs" />
@@ -179,17 +180,23 @@
     <Compile Include="testconfig\TestConfig.Designer.cs">
       <DependentUpon>TestConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="test\LedTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test\LedTest.Designer.cs">
+      <DependentUpon>LedTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="test\ListConfig.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="test\ListConfig.Designer.cs">
       <DependentUpon>ListConfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="test\LedTest.cs">
-      <SubType>Form</SubType>
+    <Compile Include="test\TableView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="test\LedTest.Designer.cs">
-      <DependentUpon>LedTest.cs</DependentUpon>
+    <Compile Include="test\TableView.Designer.cs">
+      <DependentUpon>TableView.cs</DependentUpon>
     </Compile>
     <Compile Include="usermanager\AddUser.cs">
       <SubType>Form</SubType>
@@ -224,8 +231,8 @@
     <EmbeddedResource Include="commonui\spchart.resx">
       <DependentUpon>spchart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="commonui\CieArea.resx">
-      <DependentUpon>CieArea.cs</DependentUpon>
+    <EmbeddedResource Include="commonui\CIATarget.resx">
+      <DependentUpon>CIATarget.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="filterconfig\cieui\cieedit.resx">
       <DependentUpon>cieedit.cs</DependentUpon>
@@ -254,11 +261,11 @@
     <EmbeddedResource Include="LEDMainForm.resx">
       <DependentUpon>LEDMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test\CIEView.resx">
-      <DependentUpon>CIEView.cs</DependentUpon>
+    <EmbeddedResource Include="other\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test\DKModify.resx">
-      <DependentUpon>DKModify.cs</DependentUpon>
+    <EmbeddedResource Include="test\CIETargetView.resx">
+      <DependentUpon>CIETargetView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -273,11 +280,14 @@
     <EmbeddedResource Include="testconfig\TestConfig.resx">
       <DependentUpon>TestConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="test\LedTest.resx">
+      <DependentUpon>LedTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="test\ListConfig.resx">
       <DependentUpon>ListConfig.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test\LedTest.resx">
-      <DependentUpon>LedTest.cs</DependentUpon>
+    <EmbeddedResource Include="test\TableView.resx">
+      <DependentUpon>TableView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usermanager\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>

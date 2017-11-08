@@ -17,8 +17,23 @@
     <Setting Name="filter_deffile" Type="System.String" Scope="User">
       <Value Profile="(Default)">nadefmap.xml</Value>
     </Setting>
-    <Setting Name="testTriggerMode" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="configDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./devconfig/</Value>
+    </Setting>
+    <Setting Name="dkdata_dir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./dk/</Value>
+    </Setting>
+    <Setting Name="dead_time" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">11/08/2017 14:39:00</Value>
+    </Setting>
+    <Setting Name="current_time" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">11/07/2017 14:39:00</Value>
+    </Setting>
+    <Setting Name="copy_right" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="dev_name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">nah</Value>
     </Setting>
   </Settings>
 </SettingsFile>

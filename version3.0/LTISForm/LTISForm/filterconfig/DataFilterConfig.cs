@@ -1,8 +1,6 @@
 ﻿using LTISDLL.LEDSYS.Data;
 using LTISDLL.LEDSYS.DataFilter;
-using LTISDLL.LEDSYS.DataFilter.ConditionElement;
 using LTISDLL.LEDSYS.DataFilter.Data;
-using LTISDLL.LEDSYS.DataFilter.FilterCondition;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +13,8 @@ using System.Windows.Forms;
 using LTISDLL.LEDSYS;
 using LTISDLL.SYSControl;
 using System.IO;
+using LTISDLL.Models.DataFilter.condition;
+using LTISDLL.Models.DataFilter.filter;
 
 namespace LTISForm.filterconfig
 {
@@ -33,14 +33,8 @@ namespace LTISForm.filterconfig
         private void initEvent()
         {
             LTISDLL.LEDPlatForm.Instance.ControlManager.StateChangeEvent += ControlManager_StateChangeEvent;
-            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(UserCenter_UserChangeEvent);
+            LTISDLL.LEDPlatForm.Instance.UserCenter.UserChangeEvent += new LTISDLL.User.UserStateChanged(delegate { UpdateButtonState(); });
             this.filtermap = LTISDLL.LEDPlatForm.Instance.ControlManager.FilterConfig.CurrentFilterMap;
-            this.UpdateDataSource();
-        }
-
-        void UserCenter_UserChangeEvent(LTISDLL.User.User user)
-        {
-            UpdateButtonState();
         }
 
         void ControlManager_StateChangeEvent(ControlState laststate, ControlState state)
@@ -54,17 +48,20 @@ namespace LTISForm.filterconfig
 
         private void UpdateButtonState()
         {
-            bool value = LTISDLL.LEDPlatForm.Instance.UserCenter.CheckCurrentAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
+            this.Invoke(new EventHandler(delegate
+            {
+                bool value = LTISDLL.LEDPlatForm.Instance.UserCenter.CheckCurrentAccessLevel(LTISDLL.User.UserCenter.Authority.MANAGER);
 
-            this.button_Clear.Enabled = value;
-            this.button_Save.Enabled = value;
-            this.button_autoBuild.Enabled = value;
-            this.Menu_filter.Enabled = value;
+                this.button_Clear.Enabled = value;
+                this.button_Save.Enabled = value;
+                this.button_autoBuild.Enabled = value;
+                this.Menu_filter.Enabled = value;
 
-            value = LTISDLL.LEDPlatForm.Instance.UserCenter.CheckCurrentAccessLevel(LTISDLL.User.UserCenter.Authority.USER);
-            this.button_loaddev.Enabled = value;
-            this.button_Set.Enabled = value;
-            this.button_Read.Enabled = value;
+                value = LTISDLL.LEDPlatForm.Instance.UserCenter.CheckCurrentAccessLevel(LTISDLL.User.UserCenter.Authority.USER);
+                this.button_loaddev.Enabled = value;
+                this.button_Set.Enabled = value;
+                this.button_Read.Enabled = value;
+            }));
         }
         #endregion
 
@@ -146,57 +143,53 @@ namespace LTISForm.filterconfig
         /// </summary>
         private void UpdateDataSource()
         {
-            //cie清除数据
-            cieinput.Clear();
-
-            foreach (CommonParInput comminput in inputlist)
-            {
-                //每个条件清除数据
-                comminput.Clear();
-            }
-
-            this.datasource.Clear();
-
-            if (filtermap != null)
-            {
-                //分发元素到各个分界面
-                filtermap.Elementmap.ForEach(elementlist =>
+            this.Invoke(new EventHandler(delegate
                 {
-                    if (elementlist.Count > 0)
-                    {
-                        LEDNUM lednum = elementlist[0].LedNum;
-                        CONDITIONTYPE type = elementlist[0].Type;
+                    //cie清除数据
+                    cieinput.Clear();
 
-                        if (type == cieinput.DataType)
+                    foreach (CommonParInput comminput in inputlist)
+                    {
+                        //每个条件清除数据
+                        comminput.Clear();
+                    }
+
+                    this.datasource.Clear();
+
+                    if (filtermap != null)
+                    {
+                        //分发元素到各个分界面
+                        filtermap.cdb.conditions.ForEach(condition =>
                         {
-                            cieinput.InitParameter(lednum, elementlist);
-                        }
-                        else
-                        {
-                            for (int i = 0; i < inputlist.Length; i++)
+                            if (condition.Type == CONDITIONTYPE.CIE)
                             {
-                                if (inputlist[i].DataType == type)
+                                cieinput.InitParameter((AreaCondition)condition);
+                            }
+                            else
+                            {
+                                for (int i = 0; i < inputlist.Length; i++)
                                 {
-                                    inputlist[i].InitParameter(lednum, elementlist);
-                                    break;
+                                    if (inputlist[i].DataType == condition.Type)
+                                    {
+                                        inputlist[i].InitParameter((LineCondition)condition);
+                                        break;
+                                    }
                                 }
                             }
+
+                        });
+
+                        //显示
+                        this.datasource.Clear();
+                        if (this.filtermap != null)
+                        {
+                            filtermap.roads.ForEach(road =>
+                            {
+                                this.datasource.Add(new ConditionPar(road, this.filtermap.cdb));
+                            });
                         }
                     }
-                });
-
-                //显示
-                this.datasource.Clear();
-                if (this.filtermap != null)
-                {
-                    filtermap.Polices.ForEach(policy =>
-                    {
-                        this.datasource.Add(new ConditionPar(policy));
-                    });
-                    this.datasource.Add(new ConditionPar(filtermap.DefPolicy));
-                }
-            }
-
+                }));
         }
         #endregion
 
@@ -204,7 +197,7 @@ namespace LTISForm.filterconfig
         /// <summary>
         /// 过滤条件
         /// </summary>
-        private FilterMap filtermap;
+        private RoadMap filtermap;
 
         /// <summary>
         /// 自动生成条件
@@ -213,40 +206,32 @@ namespace LTISForm.filterconfig
         /// <param name="e"></param>
         private void autoBuild_Click(object sender, EventArgs e)
         {
-            List<List<IElement>> elementmap = new List<List<IElement>>();
+            List<ICondition> conditions = new List<ICondition>();
 
-            //根据led晶号，遍历所有条件
-            for (int i = (int)LEDNUM.ONE; i <= (int)LEDNUM.THREE; i++)
+            foreach (CommonParInput comminput in inputlist)
             {
-                IElement[] ret = cieinput.GetInputParameter((LEDNUM)i);
-                if (ret.Length > 0)
-                    elementmap.Add(new List<IElement>(ret));
-
-                foreach (CommonParInput comminput in inputlist)
-                {
-                    ret = comminput.GetInputParameter((LEDNUM)i);
-                    if (ret.Length > 0)
-                        elementmap.Add(new List<IElement>(ret));
-                }
+                conditions.Add(comminput.GetInputParameter());
             }
+            conditions.Add(cieinput.GetInputParameter());
 
-            filtermap = LEDataFilter.BuildMap(elementmap);
+            filtermap = new RoadMap();
+            filtermap.InitMap(new ConditionDB(conditions));
+
 
             //显示policy
             this.datasource.Clear();
             if (this.filtermap != null)
             {
-                filtermap.Polices.ForEach(policy =>
+                filtermap.roads.ForEach(policy =>
                 {
-                    this.datasource.Add(new ConditionPar(policy));
+                    this.datasource.Add(new ConditionPar(policy, this.filtermap.cdb));
                 });
-                this.datasource.Add(new ConditionPar(filtermap.DefPolicy));
             }
 
             this.control_list.SelectedIndex = 0;
         }
 
-        private String lastpath = Path.GetFullPath(FilterSaver.DefaultPath);
+        private String lastpath = Path.GetFullPath(LEDataFilter.DefaultPath);
 
         /// <summary>
         /// 将条件保存为文件
@@ -269,7 +254,7 @@ namespace LTISForm.filterconfig
                 {
                     lastpath = System.IO.Path.GetDirectoryName(saveFileDialog1.FileName);
 
-                    FilterSaver.SaveToFile(myStream, filtermap);
+                    LEDataFilter.SaveMapTo(myStream, filtermap);
                 }
             }
         }
@@ -292,7 +277,8 @@ namespace LTISForm.filterconfig
                 if ((myStream = openFileDialog1.OpenFile()) != null)
                 {
                     lastpath = System.IO.Path.GetDirectoryName(openFileDialog1.FileName);
-                    if (FilterSaver.ReadFromFile(myStream, ref filtermap))
+                    filtermap = LEDataFilter.ReadRoadMap(myStream);
+                    if (filtermap != null)
                         this.UpdateDataSource();
                     else
                         MessageBox.Show("读取配置文件失败");
@@ -378,16 +364,16 @@ namespace LTISForm.filterconfig
             }
         }
         #endregion
-
-
     }
 
     public class ConditionPar
     {
-        FilterPolicy par;
-        public ConditionPar(FilterPolicy par)
+        ConditionDB db;
+        BinRoad par;
+        public ConditionPar(BinRoad par, ConditionDB db)
         {
             this.par = par;
+            this.db = db;
         }
 
         /// <summary>
@@ -404,7 +390,7 @@ namespace LTISForm.filterconfig
         /// </summary>
         public String Condition
         {
-            get { return this.par.Describe(); }
+            get { return par.GetString(db); }
         }
     }
 }
