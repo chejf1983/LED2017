@@ -144,7 +144,7 @@ namespace LTISForm.testdata
             lblist[0].Text = "";
             lblist[1].Text = "";
             lblist[2].Text = "";
-            for (int i = 0; i < (int)lastdata.lednum; i++)
+            for (int i = 0; i < (int)lastdata.rgb_num; i++)
             {
                 float pecent = lastdata.ciedata[i].fIp / 65535;
                 if (pecent > 0.99)
@@ -279,6 +279,8 @@ namespace LTISForm.testdata
             this.listView_testconfig.Items.Add
                     (new ListViewItem(new string[] { "测试电流(mA):", config.FCurrent[0].ToString(), config.FCurrent[1].ToString(), config.FCurrent[2].ToString() }));
             this.listView_testconfig.Items.Add
+                    (new ListViewItem(new string[] { "空测电压(V):", config.EVoltage[0].ToString(), config.EVoltage[1].ToString(), config.EVoltage[2].ToString() }));
+            this.listView_testconfig.Items.Add
                     (new ListViewItem(new string[] { "保护电压(V):", config.FVoltage[0].ToString(), config.FVoltage[1].ToString(), config.FVoltage[2].ToString() }));
             this.listView_testconfig.Items.Add
                     (new ListViewItem(new string[] { "正向延时(ms):", config.FDelay[0].ToString(), config.FDelay[1].ToString(), config.FDelay[2].ToString() }));
@@ -296,7 +298,7 @@ namespace LTISForm.testdata
 
             this.listView_config2.Items.Clear();
             this.listView_config2.Items.Add
-                   (new ListViewItem(new string[] { "晶体个数:", config.lednum.ToString() }));
+                   (new ListViewItem(new string[] { "晶体个数:", config.cl_num.ToString() }));
             this.listView_config2.Items.Add
                    (new ListViewItem(new string[] { "极性判断电压(V):", config.NeVoltage.ToString() }));
             this.listView_config2.Items.Add
@@ -305,6 +307,8 @@ namespace LTISForm.testdata
                    (new ListViewItem(new string[] { "极性判断延时(ms):", config.NeDelay.ToString() }));
             this.listView_config2.Items.Add
                    (new ListViewItem(new string[] { "极性测试延时(ms):", config.NeTime.ToString() }));
+            this.listView_config2.Items.Add
+                   (new ListViewItem(new string[] { "连续测试延时(ms):", LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar.TimeLag.ToString() }));
 
 
             string mode = "";
@@ -340,13 +344,6 @@ namespace LTISForm.testdata
                 | System.Windows.Forms.AnchorStyles.Right)));
             this.tableview.Size = this.splitContainer2.Panel2.Size;
 
-            this.cieview.Anchor = ((System.Windows.Forms.AnchorStyles)
-                ((((System.Windows.Forms.AnchorStyles.Top
-                | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
-            this.cieview.Size = this.splitContainer2.Panel2.Size;
-
             this.splitContainer2.Panel2.Controls.Add(tableview);
         }
 
@@ -366,10 +363,24 @@ namespace LTISForm.testdata
             this.splitContainer2.Panel2.Controls.Clear();
             if (this.iscieenable)
             {
+                this.tableview.Anchor = ((System.Windows.Forms.AnchorStyles)
+                    ((((System.Windows.Forms.AnchorStyles.Top
+                    | System.Windows.Forms.AnchorStyles.Bottom)
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+                this.tableview.Size = this.splitContainer2.Panel2.Size;
+
                 this.splitContainer2.Panel2.Controls.Add(tableview);
             }
             else
             {
+                this.cieview.Anchor = ((System.Windows.Forms.AnchorStyles)
+                    ((((System.Windows.Forms.AnchorStyles.Top
+                    | System.Windows.Forms.AnchorStyles.Bottom)
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+                this.cieview.Size = this.splitContainer2.Panel2.Size;
+
                 this.splitContainer2.Panel2.Controls.Add(cieview);
             }
 
@@ -496,17 +507,9 @@ namespace LTISForm.testdata
                     this.UpdateConfigList();
                 }
 
-                if (this.InvokeRequired)
-                    this.Invoke(new EventHandler(delegate
-                   {
-                       this.button_onetest.Enabled = state == ControlState.Connect;
-                       this.checkBox_still.Enabled = state == ControlState.Connect;
-                   }));
-                else
-                {
-                    this.button_onetest.Enabled = state == ControlState.Connect;
-                    this.checkBox_still.Enabled = state == ControlState.Connect;
-                }
+                this.button_onetest.Enabled = state == ControlState.Connect;
+                this.button_dkclear.Enabled = state == ControlState.Connect;
+                this.checkBox_still.Enabled = state == ControlState.Connect;
             }));
         }
 
@@ -549,6 +552,16 @@ namespace LTISForm.testdata
         }
 
         /// <summary>
+        /// 清除暗电流
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button_dkclear_Click(object sender, EventArgs e)
+        {
+            LTISDLL.LEDPlatForm.Instance.ControlManager.DKControl.ClearALLDK();
+        }
+
+        /// <summary>
         /// 打开数据目录
         /// </summary>
         /// <param name="sender"></param>
@@ -583,7 +596,7 @@ namespace LTISForm.testdata
         /// <param name="e"></param>
         private void checkBox_still_CheckedChanged(object sender, EventArgs e)
         {
-            this.ledtest.NeedSetBin = checkBox_still.Checked;
+            this.ledtest.NeedSetBin = !checkBox_still.Checked;
         }
 
         /// <summary>
@@ -610,6 +623,7 @@ namespace LTISForm.testdata
         {
             LEDPlatForm.Instance.LEDModels.DataTable.CleanTable();
 
+            this.cieview.Clear();
             this.tableview.Clear();
             this.ClearResultTable();
             this.ClearChannelInfo();

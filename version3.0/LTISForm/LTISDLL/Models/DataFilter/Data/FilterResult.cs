@@ -14,7 +14,7 @@ namespace LTISDLL.Models.DataFilter.condition
     {
         public int binnum = 0;
         public bool pass = false;
-        public List<RoadStation> result = new List<RoadStation>();
+        public List<RoadStation>result = new List<RoadStation>();
 
         public FilterResult(FilterResult binReport)
         {

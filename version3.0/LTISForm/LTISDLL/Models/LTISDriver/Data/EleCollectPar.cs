@@ -9,7 +9,18 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
 {
     public class LEDCollectPar
     {
-        public LEDNUM lednum;
+        private LEDMODE mode;
+        public LEDMODE emode
+        {
+            get { return mode; }
+            set {
+                if (value == LEDMODE.LONE) rclnum = 1;
+                if (value == LEDMODE.LTWO) rclnum = 2;
+                if (value == LEDMODE.LTHREE) rclnum = 3;
+                rclnum = 1;
+            this.mode = value; } }     //测试模式
+        private int rclnum;
+        public int cl_num { get { return rclnum; } }
 
         public float NeVoltage;  //极性电压
         public float NeCurrent;  //极性电流
@@ -18,6 +29,7 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
 
         public float[] itime;    //积分时间
 
+        public float[] EVoltage; //空测电压
         public float[] FVoltage; //LED正向电压
         public float[] FCurrent; //LED正向电流
         public float[] FDelay;   //LED正向延时
@@ -30,13 +42,15 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
 
         public LEDCollectPar()
         {
-            lednum = 0;
+            emode = LEDMODE.LONE;
+            rclnum = 1;
             NeVoltage = 0;
             NeCurrent = 0;
             NeDelay = 0;
             NeTime = 0;
 
             this.itime = new float[3];
+            EVoltage = new float[3];
 
             FVoltage = new float[3];
             FCurrent = new float[3];
@@ -51,7 +65,8 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
 
         public LEDCollectPar(LEDCollectPar electircPar)
         {
-            lednum = electircPar.lednum;
+            emode = electircPar.emode;
+            this.rclnum = electircPar.cl_num;
             NeVoltage = electircPar.NeVoltage;
             NeCurrent = electircPar.NeCurrent;
             NeDelay = electircPar.NeDelay;
@@ -84,5 +99,23 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
                 RTime[i] = electircPar.RTime[i];
             }
         }
+    }
+
+    public enum ElcTestMode
+    {
+        TFCurrent = 0,  //正向电流测试
+        TFVolt,         //正向电压测试
+        TRCurrent,      //反向电流测试
+        TRVolt,         //反向电压测试
+    }
+
+    public class ElcTestPar
+    {
+        public int rgb_index;
+        public ElcTestMode tmode;
+        public float Volt;
+        public float Current;
+        public float delay;
+        public float time;
     }
 }

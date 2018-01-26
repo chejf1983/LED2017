@@ -1013,6 +1013,18 @@ inline void ConvertToColor(double* SpectumNew, int iLength, float fIntTime, int 
 	}	
 }
 
+
+//重置软件模式
+DLLEXP int WINAPI LED_LITS_ResetModel_I(int index){
+	
+	if(SA_API_SUCCESS != LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS))
+	{
+		return DLL_FAILED;
+	}
+
+	return DLL_SUCCESS;
+}
+
 //重置软件模式
 DLLEXP int WINAPI LED_LITS_ResetModel()
 {
@@ -1022,12 +1034,7 @@ DLLEXP int WINAPI LED_LITS_ResetModel()
 		return DEV_NOT_INIT;
 	}
 
-	if(SA_API_SUCCESS != LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS))
-	{
-		return DLL_FAILED;
-	}
-
-	return DLL_SUCCESS;
+	return LED_LITS_ResetModel_I(selectdev);
 }
 #pragma endregion
 
@@ -1209,15 +1216,10 @@ DLLEXP int WINAPI LED_LITS_SetLEDType(int ledtype)
 		return DEV_NOT_INIT;
 	}
 
-	int retry  = 0;
 	//设置模式
-	while (SA_API_SUCCESS != LITS_SetLedInterfaceType(selectdev, (BYTE)(ledtype)))
+	if (SA_API_SUCCESS != LITS_SetLedInterfaceType(selectdev, (BYTE)(ledtype)))
 	{
-		if(retry ++ > 3){
-			return DLL_FAILED;
-		}
-		LITS_SystemClose();
-		LITS_SystemOpen();
+		return DLL_FAILED;
 	}
 	
 	return DLL_SUCCESS;
@@ -1237,6 +1239,13 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 		return INVALID_PAR;
 	}
 
+	//char a, b;
+	//LITS_GetMode(selectdev, &a, &b);
+	
+	//char tmp [100];
+	//sprintf(tmp, "mode:%d type: %d", a, b);
+	//AfxMessageBox(tmp);
+
 	int retry  = 0;
 	//设置模式
 	while (SA_API_SUCCESS != LITS_SetMode(selectdev, 0x03, (char)(ledmode - 1)))
@@ -1248,42 +1257,31 @@ DLLEXP int WINAPI LED_LITS_SetElectricPar(SElectricPar epar, int ledmode)
 		LITS_SystemOpen();
 	}
 
-	retry  = 0;
+	Sleep(10);
 	//设置极性测试参数
-	while (SA_API_SUCCESS != LITS_SetPolarityJudgmentPara(
+	if (SA_API_SUCCESS != LITS_SetPolarityJudgmentPara(
 		selectdev, epar.NeVoltage, epar.NeCurrent, epar.NeDelay, epar.NeTime))
 	{
-		if(retry ++ > 3){
-				return DLL_FAILED;
-		}
-		LITS_SystemClose();
-		LITS_SystemOpen();
+		return DLL_FAILED;
 	}
+	Sleep(10);
 
-	for (int i = 0; i < ledmode; i++) {
-		retry = 0;
+	for (int i = 0; i < epar.lednum; i++) {
 		//设置三个晶的正向参数
-		while (SA_API_SUCCESS != LITS_SetLedPositivePara(
+		if (SA_API_SUCCESS != LITS_SetLedPositivePara(
 			selectdev, epar.FVoltage[i], epar.FCurrent[i], epar.FDelay[i], epar.FTime[i], i))
 		{
-			if(retry ++ > 3){
-				return DLL_FAILED;
-			}
-			LITS_SystemClose();
-			LITS_SystemOpen();
+			return DLL_FAILED;
 		}
+		Sleep(10);
 
-		retry = 0;
 		//设置三个晶的反向参数
-		while (SA_API_SUCCESS != LITS_SetLedNegativePara(
+		if (SA_API_SUCCESS != LITS_SetLedNegativePara(
 			selectdev, epar.RVoltage[i], epar.RCurrent[i], epar.RDelay[i], epar.RTime[i], i))
 		{
-			if(retry ++ > 3){
-				return DLL_FAILED;
-			}
-			LITS_SystemClose();
-			LITS_SystemOpen();
+			return DLL_FAILED;
 		}
+		Sleep(10);
 	}
 	return DLL_SUCCESS;
 }
@@ -1312,41 +1310,26 @@ DLLEXP int WINAPI LED_LITS_GetElectricPar(SElectricPar& epar, int& ledmode)
 
 	ledmode = (int)cledmode + 1;
 
-	retry = 0;
 	//设置极性测试参数
-	while (SA_API_SUCCESS != LITS_GetPolarityJudgmentPara(
+	if (SA_API_SUCCESS != LITS_GetPolarityJudgmentPara(
 		selectdev, &epar.NeVoltage, &epar.NeCurrent, &epar.NeDelay, &epar.NeTime))
 	{
-		if(retry ++ > 3){
-				return DLL_FAILED;
-		}
-		LITS_SystemClose();
-		LITS_SystemOpen();
+		return DLL_FAILED;
 	}
 
 	for (int i = 0; i < 3; i++) {
-		retry = 0;
 		//设置三个晶的正向参数
-		while (SA_API_SUCCESS != LITS_GetLedPositivePara(
+		if (SA_API_SUCCESS != LITS_GetLedPositivePara(
 			selectdev, &epar.FVoltage[i], &epar.FCurrent[i], &epar.FDelay[i], &epar.FTime[i], i))
 		{
-			if(retry ++ > 3){
-				return DLL_FAILED;
-			}
-			LITS_SystemClose();
-			LITS_SystemOpen();
+			return DLL_FAILED;
 		}
 		
-		retry = 0;
 		//设置三个晶的反向参数
-		while (SA_API_SUCCESS != LITS_GetLedNegativePara(
+		if (SA_API_SUCCESS != LITS_GetLedNegativePara(
 			selectdev, &epar.RVoltage[i], &epar.RCurrent[i], &epar.RDelay[i], &epar.RTime[i], i))
 		{
-			if(retry ++ > 3){
-				return DLL_FAILED;
-			}
-			LITS_SystemClose();
-			LITS_SystemOpen();
+			return DLL_FAILED;
 		}
 	}
 	return DLL_SUCCESS;
@@ -1472,11 +1455,11 @@ DLLEXP int WINAPI LED_LITS_GetLEDOriginalData(
 	{
 		if(SA_API_SUCCESS != LITS_GetMeasureDataHWTrigger(selectdev, Spectum[0], electrl[0],
 			Spectum[1], electrl[1], Spectum[2], electrl[2], mode, timeout)){				
-				LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);	
+				//LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);	
 				return DLL_FAILED;
 		}
 
-		LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);			
+		//LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);			
 	}
 	else
 	{
@@ -1615,14 +1598,14 @@ DLLEXP int WINAPI LED_LITS_GetLEDData(
 	{
 		if(SA_API_SUCCESS != LITS_GetMeasureDataHWTrigger(selectdev, Spectum[0], electrl[0],
 			Spectum[1], electrl[1], Spectum[2], electrl[2], spar[0].TriggerMode, timeout)){
-			LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);	
+			//LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);	
 			return DLL_FAILED;
 		}
 		
-		LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);	
+		//LIST_SetTriggerMode(selectdev, SOFTWARE_SYNCHRONOUS);	
 	}
 	else
-	{		
+	{
 		while(SA_API_SUCCESS != LITS_GetMeasureData(selectdev, Spectum[0], electrl[0],
 			Spectum[1], electrl[1], Spectum[2], electrl[2])){
 			if(retry ++ > 3){
@@ -1713,6 +1696,56 @@ DLLEXP int WINAPI LED_LITS_SetBin(int bin)
 #pragma endregion 
 
 #pragma endregion 
+
+#pragma region 电参数测试
+
+//电参数板子输出测试
+DLLEXP int WINAPI LED_LITS_TestElcBord(EleTestPar spar, ElectricData& ret){
+	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	//检查初始化的设备号
+	if (selectdev < 0) {
+		return DEV_NOT_INIT;
+	}
+
+	int retry  = 0;
+	//设置模式 testmode 0x01 光参数使能 0x02 电参数使能 0x04 电参数测试
+	while (SA_API_SUCCESS != LITS_SetLedTestPara(selectdev, spar.fVol, spar.fCurrent, spar.fdelay, spar.ftime, spar.rgb_index, false, spar.test_mode))
+	{
+		if(retry ++ > 3){
+			return INVALID_PAR;
+		}
+		LITS_SystemClose();
+		LITS_SystemOpen();
+	}
+
+	
+	double Spectum1 [5000];
+	double Spectum2 [5000];
+	double Spectum3 [5000];
+	double* Spectum[3] = {Spectum1,Spectum2, Spectum3};
+
+	float electrl1 [10];
+	float electrl2 [10];
+	float electrl3 [10];
+	float* electrl[3] = {electrl1,electrl2,electrl3};
+
+	retry  = 0;
+	while(SA_API_SUCCESS != LITS_GetMeasureData(selectdev, Spectum[0], electrl[0],
+			Spectum[1], electrl[1], Spectum[2], electrl[2])){
+			if(retry ++ > 3){
+				return DLL_FAILED;
+			}
+			LITS_SystemClose();
+			LITS_SystemOpen();
+	}
+	
+	//获取电参数
+	ret.fVol = electrl[spar.rgb_index][1];
+	ret.fIr = electrl[spar.rgb_index][2];
+
+	return DLL_SUCCESS;
+}
+#pragma endregion
 
 #pragma region 定标
 

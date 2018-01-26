@@ -24,12 +24,20 @@ namespace LTISForm.test
             this.initCie();
         }
 
+        public void Clear()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                this.led[i].clearCIE();
+            }
+            
+        }
+
         #region 数据刷新
 
         //更新打靶数据
         public void UpdateCieData(List<LEDData> bufferOutput)
         {
-
             RoadMap map = LTISDLL.LEDPlatForm.Instance.ControlManager.FilterConfig.CurrentFilterMap;
             map.cdb.conditions.ForEach(list =>
             {
@@ -50,7 +58,7 @@ namespace LTISForm.test
             {
                 LEDData data = bufferOutput[j];
 
-                for (int i = 0; i < (int)data.lednum; i++)
+                for (int i = 0; i < (int)data.rgb_num; i++)
                 {
                     led[i].addCiePointNoLable(data.ciedata[i].fx, data.ciedata[i].fy);
                 }
@@ -59,7 +67,7 @@ namespace LTISForm.test
             //显示最后一条曲线
             LEDData lastdata = bufferOutput[bufferOutput.Count - 1];
 
-            for (int i = 0; i < (int)lastdata.lednum; i++)
+            for (int i = 0; i < (int)lastdata.rgb_num; i++)
             {
                 int gap = 20;
                 double[] x = new double[(lastdata.ciedata[i].fPL.Length / gap) + 1];
@@ -73,7 +81,7 @@ namespace LTISForm.test
                     }
 
 
-                //this.spcurve.displayData("LED " + (i + 1), i, x, y);
+                this.spcurve.displayData("LED " + (i + 1), i, x, y);
             }
         }
         #endregion
@@ -82,7 +90,7 @@ namespace LTISForm.test
         //CIE控件
         private CIATarget[] led = new CIATarget[3];
         //曲线控件
-        //private spchart spcurve = new spchart();
+        private spchart spcurve = new spchart();
         //初始化控件
         private void initCie()
         {
@@ -91,8 +99,7 @@ namespace LTISForm.test
             this.led[0].Anchor = ((System.Windows.Forms.AnchorStyles)
             ((((System.Windows.Forms.AnchorStyles.Top
             | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left))));
             this.led[0].Size = this.panel_cie1.Size;
             this.panel_cie1.Controls.Add(led[0]);
 
@@ -101,8 +108,7 @@ namespace LTISForm.test
             this.led[1].Anchor = ((System.Windows.Forms.AnchorStyles)
             ((((System.Windows.Forms.AnchorStyles.Top
             | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left))));
             this.led[1].Size = this.panel_cie2.Size;
             this.panel_cie2.Controls.Add(led[1]);
 
@@ -111,23 +117,31 @@ namespace LTISForm.test
             this.led[2].Anchor = ((System.Windows.Forms.AnchorStyles)
             ((((System.Windows.Forms.AnchorStyles.Top
             | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left))));
             this.led[2].Size = this.panel_cie3.Size;
             this.panel_cie3.Controls.Add(led[2]);
 
-            /*
             //添加曲线
-            //this.spcurve.Anchor = ((System.Windows.Forms.AnchorStyles)
+            this.spcurve.Anchor = ((System.Windows.Forms.AnchorStyles)
              ((((System.Windows.Forms.AnchorStyles.Top
              | System.Windows.Forms.AnchorStyles.Bottom)
              | System.Windows.Forms.AnchorStyles.Left)
              | System.Windows.Forms.AnchorStyles.Right)));
             this.spcurve.Size = this.panel_spcurve.Size;
             this.panel_spcurve.Controls.Add(spcurve);
-            */
 
+            this.tabControl1.Resize += new EventHandler(delegate
+            {
+                this.led[0].Width = this.led[0].Height;
+                this.led[1].Width = this.led[1].Height;
+                this.led[2].Width = this.led[2].Height;
+            });
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

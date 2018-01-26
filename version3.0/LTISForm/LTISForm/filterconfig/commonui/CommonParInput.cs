@@ -53,6 +53,7 @@ namespace LTISForm.filterconfig
             table.RowHeadersVisible = true;
             table.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             table.MultiSelect = false;
+            table.DefaultCellStyle.Format = "0.0000";
 
             DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
             column.HeaderText = "最小";

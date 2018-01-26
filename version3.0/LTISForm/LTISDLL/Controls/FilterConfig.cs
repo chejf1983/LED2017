@@ -25,15 +25,7 @@ namespace LTISDLL.SYSControl
         {
             lock (this.ledsystem)
             {
-                if (this.ledsystem.State != ControlState.Connect)
-                {
-                    FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR,
-                            "无法下发分bin策略，当前设备:" + ControlStateString.ToString(this.ledsystem.State));
-                }
-                else
-                {
-                    LEDPlatForm.Instance.LEDModels.filterPolicy.FilterMap = (fmap);
-                }
+                LEDPlatForm.Instance.LEDModels.filterPolicy.FilterMap = (fmap);
             }
         }
 

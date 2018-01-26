@@ -19,9 +19,9 @@ namespace LTISForm.test
         {
             InitializeComponent();
 
-            this.initListViewTable();
-
             this.initTotalList();
+
+            this.initListViewTable();
         }
 
         public void Clear()
@@ -75,7 +75,7 @@ namespace LTISForm.test
         /// <param name="data"></param>
         private void AddTotalData(string title, LEDData data)
         {
-            for (int i = 0; i < (int)data.lednum; i++)
+            for (int i = 0; i < (int)data.rgb_num; i++)
             {
                 //创建新行
                 ListViewItem lvi = new ListViewItem();
@@ -173,9 +173,7 @@ namespace LTISForm.test
             this.listView_data.Columns.Add("光通量(lm)", 100, HorizontalAlignment.Center);
             this.listView_data.Columns.Add("辐射通量(mW)", 100, HorizontalAlignment.Center);
             this.listView_data.Columns.Add("光效", 100, HorizontalAlignment.Center);
-
-            this.initTotalList();
-
+            
             UpdateListColumns();
         }
 
@@ -189,7 +187,7 @@ namespace LTISForm.test
             {
                 LEDData data = bufferOutput[j];
 
-                for (int i = 0; i < (int)data.lednum; i++)
+                for (int i = 0; i < (int)data.rgb_num; i++)
                 {
                     //检查listtable的长度
                     if (this.listView_data.Items.Count > LTISDLL.LEDSYS.DataReport.DataSaver.MaxDataListNum)

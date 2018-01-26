@@ -96,9 +96,9 @@ namespace LTISDLL.LEDSYS.DataReport
         private void CheckMaxMinValue(LEDData dataPacket)
         {
             //找最大最小值
-            if (this.minvalue == null || this.minvalue.lednum != dataPacket.lednum
-                || this.maxvalue == null || this.maxvalue.lednum != dataPacket.lednum
-                || this.avrvalue == null || this.avrvalue.lednum != dataPacket.lednum)
+            if (this.minvalue == null || this.minvalue.rgb_num != dataPacket.rgb_num
+                || this.maxvalue == null || this.maxvalue.rgb_num != dataPacket.rgb_num
+                || this.avrvalue == null || this.avrvalue.rgb_num != dataPacket.rgb_num)
             {
                 this.minvalue = new LEDData(dataPacket);
                 this.maxvalue = new LEDData(dataPacket);
@@ -116,7 +116,7 @@ namespace LTISDLL.LEDSYS.DataReport
                 double oneKp = ((double)1 / (this.recordnum + 1));
                 this.avrvalue.timeconsume = this.avrvalue.timeconsume * avrKp + dataPacket.timeconsume * oneKp;
 
-                for (int i = 0; i < (int)this.minvalue.lednum; i++)
+                for (int i = 0; i < (int)this.minvalue.rgb_num; i++)
                 {
                     //最小值
                     this.minvalue.ciedata[i].fx = this.minvalue.ciedata[i].fx > dataPacket.ciedata[i].fx ?

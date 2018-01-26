@@ -19,8 +19,10 @@ namespace LTISDLL.Models.DataFilter.condition
         {
             FilterResult ret = new FilterResult();
 
+            //循环匹配每种条件
             conditions.ForEach(condition =>
             {
+                //将每种条件的匹配结果保存下来
                 condition.MatchStation(data).ForEach(station => ret.result.Add(station));
             });
 

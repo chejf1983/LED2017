@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using LTISDLL.LEDSYS;
+using LTISDLL.LEDSYS.LTISDriver;
 
 namespace LTISDLL.SYSControl
 {
@@ -22,6 +23,36 @@ namespace LTISDLL.SYSControl
         /// 系统是否连接
         /// </summary>
         public bool IsDevConnect { get { return ledsystem.State == ControlState.Connect; } }
+
+        #region 电参数板子测试
+        public EleData GetLecTestData(ElcTestPar elctest_par)
+        {
+            lock (this.ledsystem)
+            {
+                //检查系统状态
+                if (this.ledsystem.State != ControlState.Connect)
+                {
+                    FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR,
+                       "无法开始采集，当前设备:" + ControlStateString.ToString(this.ledsystem.State));
+                }
+
+                try
+                {
+                    this.ledsystem.State = ControlState.Calibrate;
+                    return LEDPlatForm.Instance.LEDModels.LTISDev.GetLecTestData(elctest_par);
+                }
+                catch (Exception ex)
+                {
+                    FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, "采集数据失败：" + ex.Message);
+                    return null;
+                }
+                finally
+                {
+                    this.ledsystem.State = ControlState.Connect;
+                }
+            }
+        }
+        #endregion 
 
         #region 采集控制
         private float lasttime; //上一次积分时间
@@ -211,7 +242,7 @@ namespace LTISDLL.SYSControl
                 }
                 finally
                 {
-                    this.ledsystem.State = ControlState.Config;
+                    this.ledsystem.State = ControlState.Connect;
                 }
             }
         }

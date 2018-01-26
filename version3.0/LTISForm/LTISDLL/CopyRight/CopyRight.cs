@@ -45,7 +45,7 @@ namespace LTISDLL.Common
                 this.device_serialnum = devname;
                 this.isAuthority = false;
                 this.lasttime = DateTime.Now;
-                this.deadtime = DateTime.Now.AddDays(30);
+                this.deadtime = DateTime.Now;
                 this.Save();
             }
         }
@@ -62,6 +62,11 @@ namespace LTISDLL.Common
             //创建文件名
             string xmlFilePath = copy_path + copy_file;
 
+            return this.Save(xmlFilePath);
+        }
+
+        public bool Save(string xmlFilePath)
+        {
             try
             {
                 //初始化一个xml实例
@@ -83,15 +88,15 @@ namespace LTISDLL.Common
                 root.AppendChild(enode);
 
                 enode = xmldoc.CreateElement("deadtime");
-                enode.InnerText = NHRSA.Encryption(deadtime.ToString(@"yyyy_MM_dd HH:mm:ss"),device_serialnum);
+                enode.InnerText = NHDES.Encryption(deadtime.ToString(@"yyyy_MM_dd HH:mm:ss"), GetKeyFromDevName(device_serialnum));
                 root.AppendChild(enode);
 
                 enode = xmldoc.CreateElement("currenttime");
-                enode.InnerText = NHRSA.Encryption(lasttime.ToString(@"yyyy_MM_dd HH:mm:ss"), device_serialnum);
+                enode.InnerText = NHDES.Encryption(lasttime.ToString(@"yyyy_MM_dd HH:mm:ss"), GetKeyFromDevName(device_serialnum));
                 root.AppendChild(enode);
 
                 enode = xmldoc.CreateElement("isAuthority");
-                enode.InnerText = NHRSA.Encryption(isAuthority.ToString(), device_serialnum);
+                enode.InnerText = NHDES.Encryption(isAuthority.ToString(), GetKeyFromDevName(device_serialnum));
                 root.AppendChild(enode);
 
                 root.AppendChild(enode);
@@ -103,7 +108,7 @@ namespace LTISDLL.Common
             }
             catch (Exception ex)
             {
-                FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, "保存授权文件失败!" + ex.Message);
+                FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, "保存授权文件失败!");
                 return false;
             }
         }
@@ -123,6 +128,29 @@ namespace LTISDLL.Common
                 return;
             }
 
+            this.Read(xmlFilePath);
+        }
+
+        public void Read(Stream xmlFilePath)
+        {
+            //初始化一个xml实例
+            XmlDocument myXmlDoc = new XmlDocument();
+            //加载xml文件（参数为xml文件的路径）
+            myXmlDoc.Load(xmlFilePath);
+            //获得第一个姓名匹配的节点（SelectSingleNode）：此xml文件的根节点
+            XmlNode rootNode = myXmlDoc.SelectSingleNode("Root");
+            //获取所有条件node
+            XmlNodeList rootlist = rootNode.ChildNodes;
+
+            device_serialnum = Base64.DecodeBase64(rootlist[0].InnerText);
+            deadtime = DateTime.ParseExact(NHDES.Decrypt(rootlist[1].InnerText, GetKeyFromDevName(device_serialnum)), @"yyyy_MM_dd HH:mm:ss", null);
+            lasttime = DateTime.ParseExact(NHDES.Decrypt(rootlist[2].InnerText, GetKeyFromDevName(device_serialnum)), @"yyyy_MM_dd HH:mm:ss", null);
+            isAuthority = bool.Parse(NHDES.Decrypt(rootlist[3].InnerText, GetKeyFromDevName(device_serialnum)));
+
+        }
+
+        public void Read(string xmlFilePath)
+        {
             try
             {
                 //初始化一个xml实例
@@ -134,14 +162,14 @@ namespace LTISDLL.Common
                 //获取所有条件node
                 XmlNodeList rootlist = rootNode.ChildNodes;
 
-                device_serialnum = Base64.DecodeBase64(rootlist[3].InnerText);
-                deadtime = DateTime.ParseExact(NHRSA.Decrypt(rootlist[0].InnerText, device_serialnum), @"yyyy_MM_dd HH:mm:ss", null);
-                lasttime = DateTime.ParseExact(NHRSA.Decrypt(rootlist[1].InnerText, device_serialnum), @"yyyy_MM_dd HH:mm:ss", null);
-                isAuthority = bool.Parse(NHRSA.Decrypt(rootlist[2].InnerText, device_serialnum));
+                device_serialnum =             Base64.DecodeBase64(rootlist[0].InnerText);
+                deadtime = DateTime.ParseExact(NHDES.Decrypt(rootlist[1].InnerText, GetKeyFromDevName(device_serialnum)), @"yyyy_MM_dd HH:mm:ss", null);
+                lasttime = DateTime.ParseExact(NHDES.Decrypt(rootlist[2].InnerText, GetKeyFromDevName(device_serialnum)), @"yyyy_MM_dd HH:mm:ss", null);
+                isAuthority =       bool.Parse(NHDES.Decrypt(rootlist[3].InnerText, GetKeyFromDevName(device_serialnum)));
             }
             catch (Exception ex)
             {
-                FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, "读取授权文件失败!" + ex.Message);
+                FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, "读取授权文件失败!");
             }
         }
         #endregion
@@ -158,7 +186,7 @@ namespace LTISDLL.Common
             string[] element = new string[0];
             try
             {
-                string msg = NHRSA.Decrypt(keword, this.DeviceSerial);
+                string msg = NHDES.Decrypt(keword, GetKeyFromDevName(this.DeviceSerial));
                 element = msg.Split(new Char[] { '#' });
             }
             catch (Exception ex)
@@ -168,7 +196,7 @@ namespace LTISDLL.Common
             }
 
             //设备号匹配，同时key的内容正确时才注册
-            if (element.Length == 3 && element[0].Equals(keyhead))
+            if (element.Length == 3 && element[0].Equals(this.DeviceSerial))
             {
                 //如果是永久码
                 if (element[1].Equals(everkey))
@@ -213,23 +241,27 @@ namespace LTISDLL.Common
             }
         }
 
-        private static string keyhead = "NHKEY";
         private static string everkey = "EVER";
         private static string tempkey = "TEMP";
+        private static string GetKeyFromDevName(string devname)
+        {
+            if (devname.Length > 8)
+            {
+                return devname.Substring(devname.Length - 8, 8);
+            }
+
+            return "NAH-2013";
+        }
 
 
         public static string CreateKey(string devname)
         {
-            //return NHRSA.Encryption(keyhead + "#" + everkey + "#true", devname);
-            //return Base64.EncodeBase64(keyhead + "#" + everkey + "#true");
-            //return Base64.EncodeBase64(devname);
-
-            return NHRSA.Encryption(keyhead + "#" + everkey + "#true", devname);
+            return NHDES.Encryption(devname + "#" + everkey + "#true", GetKeyFromDevName(devname));
         }
 
         public static string CreateTMPKey(string devname, DateTime time)
         {
-            return NHRSA.Encryption(keyhead + "#" + tempkey + "#" + time.ToString(@"yyyy-MM-dd hh:mm:ss"), devname);
+            return NHDES.Encryption(devname + "#" + tempkey + "#" + time.ToString(@"yyyy-MM-dd hh:mm:ss"), GetKeyFromDevName(devname));
         }
 
         #endregion

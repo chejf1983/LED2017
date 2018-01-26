@@ -15,7 +15,11 @@ namespace LTISDLL.LOGSYS
         {
             get
             {
-                if (instance == null) { instance = new SysLog(); }
+                if (instance == null)
+                {
+                    instance = new SysLog();
+                    instance.InitSysLog();
+                    ; }
                 return instance;
             }
         }
@@ -23,7 +27,7 @@ namespace LTISDLL.LOGSYS
         /// <summary>
         /// 初始化Log
         /// </summary>
-        public void InitSysLog()
+        private void InitSysLog()
         {
             ///初始化，检查log文件夹是否存在
             if (!Directory.Exists(logDir))

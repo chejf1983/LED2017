@@ -70,6 +70,9 @@ namespace LTISDLL.LEDSYS.DataFilter.Data
 
     public class RoadStation
     {
+        public static int missing_value = -1;
+        public static int empty_value = -2;
+
         public RoadStation(CONDITIONTYPE type, LEDNUM lednum, int value)
         {
             this.type = type;

@@ -99,6 +99,18 @@
     <Compile Include="commonui\spchart.Designer.cs">
       <DependentUpon>spchart.cs</DependentUpon>
     </Compile>
+    <Compile Include="devconfig\ElcBordTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="devconfig\ElcBordTest.Designer.cs">
+      <DependentUpon>ElcBordTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="devconfig\SPDevTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="devconfig\SPDevTest.Designer.cs">
+      <DependentUpon>SPDevTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="filterconfig\cieui\cieedit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="commonui\CIATarget.resx">
       <DependentUpon>CIATarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devconfig\ElcBordTest.resx">
+      <DependentUpon>ElcBordTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="devconfig\SPDevTest.resx">
+      <DependentUpon>SPDevTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="filterconfig\cieui\cieedit.resx">
       <DependentUpon>cieedit.cs</DependentUpon>

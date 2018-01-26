@@ -84,6 +84,11 @@ namespace LTISDLL.SYSControl
         /// <param name="fadvalue"></param>
         public void SaveDKDat(float fIntTime, float[] fadvalue)
         {
+            for (int i = 0; i < fadvalue.Length; i++)
+            {
+                fadvalue[i] += 50;
+            }
+                
             dklist.Remove(fIntTime);
             dklist.Add(fIntTime, fadvalue);
             this.SaveDkData((int)fIntTime, fadvalue);

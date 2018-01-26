@@ -74,6 +74,7 @@ namespace LTISForm.filterconfig
             datatable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             datatable.MultiSelect = false;
             datatable.RowHeadersVisible = true;
+            datatable.DefaultCellStyle.Format = "#0.0000";
 
 
             DataGridViewTextBoxColumn column = new DataGridViewTextBoxColumn();
@@ -182,13 +183,14 @@ namespace LTISForm.filterconfig
         public void InitPanel(CONDITIONTYPE datatype)
         {
             this.datatype = datatype;
-            this.initpage(this.datatable1, ledlist[0]);
-            this.initpage(this.datatable2, ledlist[1]);
-            this.initpage(this.datatable3, ledlist[2]);
 
             this.initcie(this.panel_cie1, ledlist[0], cieview[0]);
             this.initcie(this.panel_cie2, ledlist[1], cieview[1]);
             this.initcie(this.panel_cie3, ledlist[2], cieview[2]);
+
+            this.initpage(this.datatable1, ledlist[0]);
+            this.initpage(this.datatable2, ledlist[1]);
+            this.initpage(this.datatable3, ledlist[2]);
 
             this.rb_x1.Enabled = false;
             this.rb_x2.Enabled = false;

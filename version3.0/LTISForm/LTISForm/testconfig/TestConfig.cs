@@ -94,59 +94,63 @@ namespace LTISForm.testconfig
         }
 
         #region LED组互斥更新
-        private int lednum = 0;
+        private int rgb_num = 0;
+        private LEDMODE mode = LEDMODE.LONE;
 
         /// <summary>
         /// LED组互斥更新
         /// </summary>
         private void UpdateLEDGroup()
         {
-            LED1_Itime_input.Enabled = lednum >= 1;
-            LED1_FI_input.Enabled = lednum >= 1;
-            LED1_FV_input.Enabled = lednum >= 1;
-            LED1_FDT_input.Enabled = lednum >= 1;
-            LED1_FTT_input.Enabled = lednum >= 1;
-            LED1_BI_input.Enabled = lednum >= 1;
-            LED1_BV_input.Enabled = lednum >= 1;
-            LED1_BDT_input.Enabled = lednum >= 1;
-            LED1_BTT_input.Enabled = lednum >= 1;
+            LED1_Itime_input.Enabled = rgb_num >= 1;
+            LED1_FI_input.Enabled = rgb_num >= 1;
+            LED1_FV_input.Enabled = rgb_num >= 1;
+            LED1_FDT_input.Enabled = rgb_num >= 1;
+            LED1_FTT_input.Enabled = rgb_num >= 1;
+            LED1_BI_input.Enabled = rgb_num >= 1;
+            LED1_BV_input.Enabled = rgb_num >= 1;
+            LED1_BDT_input.Enabled = rgb_num >= 1;
+            LED1_BTT_input.Enabled = rgb_num >= 1;
 
-            LED2_Itime_input.Enabled = lednum >= 2;
-            LED2_FI_input.Enabled = lednum >= 2;
-            LED2_FV_input.Enabled = lednum >= 2;
-            LED2_FDT_input.Enabled = lednum >= 2;
-            LED2_FTT_input.Enabled = lednum >= 2;
-            LED2_BI_input.Enabled = lednum >= 2;
-            LED2_BV_input.Enabled = lednum >= 2;
-            LED2_BDT_input.Enabled = lednum >= 2;
-            LED2_BTT_input.Enabled = lednum >= 2;
+            LED2_Itime_input.Enabled = rgb_num >= 2;
+            LED2_FI_input.Enabled = rgb_num >= 2;
+            LED2_FV_input.Enabled = rgb_num >= 2;
+            LED2_FDT_input.Enabled = rgb_num >= 2;
+            LED2_FTT_input.Enabled = rgb_num >= 2;
+            LED2_BI_input.Enabled = rgb_num >= 2;
+            LED2_BV_input.Enabled = rgb_num >= 2;
+            LED2_BDT_input.Enabled = rgb_num >= 2;
+            LED2_BTT_input.Enabled = rgb_num >= 2;
 
-            LED3_Itime_input.Enabled = lednum >= 3;
-            LED3_FI_input.Enabled = lednum >= 3;
-            LED3_FV_input.Enabled = lednum >= 3;
-            LED3_FDT_input.Enabled = lednum >= 3;
-            LED3_FTT_input.Enabled = lednum >= 3;
-            LED3_BI_input.Enabled = lednum >= 3;
-            LED3_BV_input.Enabled = lednum >= 3;
-            LED3_BDT_input.Enabled = lednum >= 3;
-            LED3_BTT_input.Enabled = lednum >= 3;
+            LED3_Itime_input.Enabled = rgb_num >= 3;
+            LED3_FI_input.Enabled = rgb_num >= 3;
+            LED3_FV_input.Enabled = rgb_num >= 3;
+            LED3_FDT_input.Enabled = rgb_num >= 3;
+            LED3_FTT_input.Enabled = rgb_num >= 3;
+            LED3_BI_input.Enabled = rgb_num >= 3;
+            LED3_BV_input.Enabled = rgb_num >= 3;
+            LED3_BDT_input.Enabled = rgb_num >= 3;
+            LED3_BTT_input.Enabled = rgb_num >= 3;
         }
 
         private void radioButton_led1_CheckedChanged(object sender, EventArgs e)
         {
-            lednum = 1;
+            rgb_num = 1;
+            mode = LEDMODE.LONE;
             this.UpdateLEDGroup();
         }
 
         private void radioButton_led2_CheckedChanged(object sender, EventArgs e)
         {
-            lednum = 2;
+            rgb_num = 2;
+            mode = LEDMODE.LTWO;
             this.UpdateLEDGroup();
         }
 
         private void radioButton_led3_CheckedChanged(object sender, EventArgs e)
         {
-            lednum = 3;
+            rgb_num = 3;
+            mode = LEDMODE.LTHREE;
             this.UpdateLEDGroup();
         }
         #endregion
@@ -199,6 +203,7 @@ namespace LTISForm.testconfig
             NeTtime_input.Text = epar.NeTime.ToString();
 
             LED1_Itime_input.Text = par.LEDTestPar.itime[0].ToString();
+            LED1_EV_input.Text = epar.EVoltage[0].ToString();
             LED1_FV_input.Text = epar.FVoltage[0].ToString();
             LED1_FI_input.Text = epar.FCurrent[0].ToString();
             LED1_FDT_input.Text = epar.FDelay[0].ToString();
@@ -210,6 +215,7 @@ namespace LTISForm.testconfig
             LED1_BTT_input.Text = epar.RTime[0].ToString();
 
             LED2_Itime_input.Text = par.LEDTestPar.itime[1].ToString();
+            LED2_EV_input.Text = epar.EVoltage[1].ToString();
             LED2_FV_input.Text = epar.FVoltage[1].ToString();
             LED2_FI_input.Text = epar.FCurrent[1].ToString();
             LED2_FDT_input.Text = epar.FDelay[1].ToString();
@@ -221,6 +227,7 @@ namespace LTISForm.testconfig
             LED2_BTT_input.Text = epar.RTime[1].ToString();
 
             LED3_Itime_input.Text = par.LEDTestPar.itime[2].ToString();
+            LED3_EV_input.Text = epar.EVoltage[2].ToString();
             LED3_FV_input.Text = epar.FVoltage[2].ToString();
             LED3_FI_input.Text = epar.FCurrent[2].ToString();
             LED3_FDT_input.Text = epar.FDelay[2].ToString();
@@ -231,12 +238,12 @@ namespace LTISForm.testconfig
             LED3_BDT_input.Text = epar.RDelay[2].ToString();
             LED3_BTT_input.Text = epar.RTime[2].ToString();
 
-            radioButton_led1.Checked = epar.lednum == LEDNUM.ONE;
-            radioButton_led2.Checked = epar.lednum == LEDNUM.TWO;
-            radioButton_led3.Checked = epar.lednum == LEDNUM.THREE;
+            radioButton_led1.Checked = epar.emode == LEDMODE.LONE;
+            radioButton_led2.Checked = epar.emode == LEDMODE.LTWO;
+            radioButton_led3.Checked = epar.emode == LEDMODE.LTHREE;
 
             //读取LED个数
-            this.lednum = (int)epar.lednum;
+            this.rgb_num = (int)epar.cl_num;
 
             //读取测试模式
             this.comboBox_triggermode.SelectedIndex = GetTriggerIndex(par.TestMode);
@@ -245,7 +252,7 @@ namespace LTISForm.testconfig
             this.comboBox_ledtype.SelectedIndex = this.GetTypeIndex(par.LedType);
 
             //读取延时
-            this.ttttt.Text = par.TimeLag.ToString();
+            this.test_lag.Text = par.TimeLag.ToString();
         }
 
         #region 触发模式
@@ -366,6 +373,7 @@ namespace LTISForm.testconfig
                 ledtestpar.itime[1] = float.Parse(LED2_Itime_input.Text);
                 ledtestpar.itime[2] = float.Parse(LED3_Itime_input.Text);
 
+                ledtestpar.EVoltage[0] = float.Parse(LED1_EV_input.Text);
                 ledtestpar.FVoltage[0] = float.Parse(LED1_FV_input.Text);
                 ledtestpar.FCurrent[0] = float.Parse(LED1_FI_input.Text);
                 ledtestpar.FDelay[0] = float.Parse(LED1_FDT_input.Text);
@@ -376,6 +384,7 @@ namespace LTISForm.testconfig
                 ledtestpar.RDelay[0] = float.Parse(LED1_BDT_input.Text);
                 ledtestpar.RTime[0] = float.Parse(LED1_BTT_input.Text);
 
+                ledtestpar.EVoltage[1] = float.Parse(LED2_EV_input.Text);
                 ledtestpar.FVoltage[1] = float.Parse(LED2_FV_input.Text);
                 ledtestpar.FCurrent[1] = float.Parse(LED2_FI_input.Text);
                 ledtestpar.FDelay[1] = float.Parse(LED2_FDT_input.Text);
@@ -387,6 +396,7 @@ namespace LTISForm.testconfig
                 ledtestpar.RTime[1] = float.Parse(LED2_BTT_input.Text);
 
 
+                ledtestpar.EVoltage[2] = float.Parse(LED3_EV_input.Text);
                 ledtestpar.FVoltage[2] = float.Parse(LED3_FV_input.Text);
                 ledtestpar.FCurrent[2] = float.Parse(LED3_FI_input.Text);
                 ledtestpar.FDelay[2] = float.Parse(LED3_FDT_input.Text);
@@ -398,7 +408,7 @@ namespace LTISForm.testconfig
                 ledtestpar.RTime[2] = float.Parse(LED3_BTT_input.Text);
 
                 //获取延时时间
-                timelag = int.Parse(ttttt.Text);
+                timelag = int.Parse(test_lag.Text);
                 //获取LED类型
                 type = this.GetInputType(this.comboBox_ledtype.SelectedIndex);
                 //获取触发模式
@@ -409,7 +419,7 @@ namespace LTISForm.testconfig
                 MessageBox.Show("请输入合法的参数:" + ex.Message);
                 return;
             }
-            ledtestpar.lednum = (LEDNUM)this.lednum;
+            ledtestpar.emode = this.mode;
             #endregion
 
             #region 赋值积分时间
@@ -488,7 +498,7 @@ namespace LTISForm.testconfig
 
             if (data != null)
             {
-                for (int i = 0; i < (int)data.lednum; i++)
+                for (int i = 0; i < (int)data.rgb_num; i++)
                 {
                     float[] tmp = data.ciedata[i].fPL;
 
@@ -504,10 +514,38 @@ namespace LTISForm.testconfig
 
 
                     this.chartcurve.displayData("LED " + (i + 1), i, x, y);
+
+                    if (i == 0) ip1.Text = data.ciedata[i].fIp.ToString();
+                    if (i == 1) ip2.Text = data.ciedata[i].fIp.ToString();
+                    if (i == 2) ip3.Text = data.ciedata[i].fIp.ToString();
                 }
             }
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ADValueList data = LTISDLL.LEDPlatForm.Instance.ControlManager.TestControl.ColllectOriginalData();
+
+            if (data != null)
+            {
+                for (int i = 0; i < (int)data.num; i++)
+                {
+                    double[] y = new double[0];
+                    if (i == 0) y = data.advalue1;
+                    if (i == 1) y = data.advalue2;
+                    if (i == 2) y = data.advalue3;
+
+                    double[] x = new double[y.Length];
+                    for (int j = 0; j < x.Length; j++)
+                    {
+                        x[j] = j + 1;
+                    }
+                    this.chartcurve.displayData("LED " + (i + 1), i, x, y);
+
+                }
+            }
+        }
 
     }
 }

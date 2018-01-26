@@ -19,6 +19,10 @@ namespace LTISDLL.SYSControl
         {
             this.ledsystem = ledsystem;
             this.cal_parameter = this.ReadFromFile(cal_par_file);
+            if (this.cal_parameter == null)
+            {
+                this.cal_parameter = new CalData();
+            }
         }
 
         /// <summary>
@@ -48,6 +52,10 @@ namespace LTISDLL.SYSControl
                     {
                         //获取三晶LED结果，并且不进行修正
                         retarray[i] = this.ledsystem.TestControl.CollectDataOnly();
+                        if (retarray[i] == null)
+                        {
+                            return null;
+                        }
                     }
 
                     //平均值
@@ -56,7 +64,7 @@ namespace LTISDLL.SYSControl
                     //将测量结果取平均
                     foreach (LEDData tdata in retarray)
                     {
-                        for (int i = 0; i < (int)tdata.lednum; i++)
+                        for (int i = 0; i < (int)tdata.rgb_num; i++)
                         {
                             ret.fPh[i] += tdata.ciedata[i].fPh / avrtime;
                             ret.fLd[i] += tdata.ciedata[i].fLd / avrtime;

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="gb2312"?>
 <Root>
   <Negtive>
-    <LedNum>ONE</LedNum>
-    <NeVoltage>9</NeVoltage>
-    <NeCurrent>5</NeCurrent>
-    <NeDelay>2</NeDelay>
-    <NeTime>5</NeTime>
+    <LedNum>1</LedNum>
+    <TMode>LONE</TMode>
+    <NeVoltage>10</NeVoltage>
+    <NeCurrent>20</NeCurrent>
+    <NeDelay>10</NeDelay>
+    <NeTime>10</NeTime>
   </Negtive>
   <ListN0>
-    <itime>5</itime>
-    <FVoltage>1</FVoltage>
+    <itime>8</itime>
+    <FVoltage>9</FVoltage>
     <FCurrent>20</FCurrent>
-    <FDelay>5</FDelay>
+    <FDelay>10</FDelay>
     <FTime>10</FTime>
-    <RVoltage>10</RVoltage>
-    <RCurrent>20</RCurrent>
-    <RDelay>5</RDelay>
-    <RTime>5</RTime>
+    <RVoltage>5</RVoltage>
+    <RCurrent>10</RCurrent>
+    <RDelay>10</RDelay>
+    <RTime>10</RTime>
+    <EVoltage>9</EVoltage>
   </ListN0>
   <ListN1>
     <itime>0</itime>
@@ -28,6 +30,7 @@
     <RCurrent>0</RCurrent>
     <RDelay>0</RDelay>
     <RTime>0</RTime>
+    <EVoltage>0</EVoltage>
   </ListN1>
   <ListN2>
     <itime>0</itime>
@@ -39,10 +42,11 @@
     <RCurrent>0</RCurrent>
     <RDelay>0</RDelay>
     <RTime>0</RTime>
+    <EVoltage>0</EVoltage>
   </ListN2>
   <Other>
     <LEDType>LED0</LEDType>
-    <TrigerMode>0</TrigerMode>
-    <LagTime>10</LagTime>
+    <TrigerMode>SOFTWARE_SYNCHRONOUS</TrigerMode>
+    <LagTime>80</LagTime>
   </Other>
 </Root>

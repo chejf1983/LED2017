@@ -28,7 +28,7 @@ namespace LTISForm.other
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             //openFileDialog1.InitialDirectory = Properties.Settings.Default.config_path;
-            openFileDialog1.Filter = "xml files (*.nkey)|*.nkey";
+            openFileDialog1.Filter = "nkey files (*.nkey)|*.nkey";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)

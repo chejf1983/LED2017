@@ -108,15 +108,14 @@
             // 
             // datatable1
             // 
-            this.datatable1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datatable1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.datatable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datatable1.ContextMenuStrip = this.Menu1;
             this.datatable1.Location = new System.Drawing.Point(0, 0);
             this.datatable1.Name = "datatable1";
             this.datatable1.RowTemplate.Height = 23;
-            this.datatable1.Size = new System.Drawing.Size(384, 410);
+            this.datatable1.Size = new System.Drawing.Size(572, 410);
             this.datatable1.TabIndex = 5;
             // 
             // Menu1
@@ -341,11 +340,12 @@
             // 
             // panel_cie1
             // 
-            this.panel_cie1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel_cie1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_cie1.Location = new System.Drawing.Point(390, 0);
+            this.panel_cie1.Location = new System.Drawing.Point(578, 0);
             this.panel_cie1.Name = "panel_cie1";
-            this.panel_cie1.Size = new System.Drawing.Size(488, 410);
+            this.panel_cie1.Size = new System.Drawing.Size(300, 410);
             this.panel_cie1.TabIndex = 6;
             // 
             // tabPage2
@@ -355,31 +355,31 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(805, 413);
+            this.tabPage2.Size = new System.Drawing.Size(879, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "晶二";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel_cie2
             // 
-            this.panel_cie2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel_cie2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_cie2.Location = new System.Drawing.Point(316, 0);
+            this.panel_cie2.Location = new System.Drawing.Point(578, 0);
             this.panel_cie2.Name = "panel_cie2";
-            this.panel_cie2.Size = new System.Drawing.Size(488, 410);
+            this.panel_cie2.Size = new System.Drawing.Size(298, 410);
             this.panel_cie2.TabIndex = 11;
             // 
             // datatable2
             // 
-            this.datatable2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datatable2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.datatable2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datatable2.ContextMenuStrip = this.Menu2;
             this.datatable2.Location = new System.Drawing.Point(0, 0);
             this.datatable2.Name = "datatable2";
             this.datatable2.RowTemplate.Height = 23;
-            this.datatable2.Size = new System.Drawing.Size(310, 410);
+            this.datatable2.Size = new System.Drawing.Size(572, 410);
             this.datatable2.TabIndex = 10;
             // 
             // Menu2
@@ -411,31 +411,31 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(805, 413);
+            this.tabPage3.Size = new System.Drawing.Size(879, 413);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "晶三";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel_cie3
             // 
-            this.panel_cie3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel_cie3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel_cie3.Location = new System.Drawing.Point(316, 0);
+            this.panel_cie3.Location = new System.Drawing.Point(578, 0);
             this.panel_cie3.Name = "panel_cie3";
-            this.panel_cie3.Size = new System.Drawing.Size(488, 410);
+            this.panel_cie3.Size = new System.Drawing.Size(298, 410);
             this.panel_cie3.TabIndex = 13;
             // 
             // datatable3
             // 
-            this.datatable3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datatable3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.datatable3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datatable3.ContextMenuStrip = this.Menu3;
             this.datatable3.Location = new System.Drawing.Point(0, 0);
             this.datatable3.Name = "datatable3";
             this.datatable3.RowTemplate.Height = 23;
-            this.datatable3.Size = new System.Drawing.Size(310, 410);
+            this.datatable3.Size = new System.Drawing.Size(572, 410);
             this.datatable3.TabIndex = 12;
             // 
             // Menu3
@@ -559,7 +559,7 @@
             // 
             this.rb_x1.AutoSize = true;
             this.rb_x1.Checked = true;
-            this.rb_x1.Location = new System.Drawing.Point(703, 34);
+            this.rb_x1.Location = new System.Drawing.Point(808, 11);
             this.rb_x1.Name = "rb_x1";
             this.rb_x1.Size = new System.Drawing.Size(35, 16);
             this.rb_x1.TabIndex = 18;
@@ -570,7 +570,7 @@
             // rb_x2
             // 
             this.rb_x2.AutoSize = true;
-            this.rb_x2.Location = new System.Drawing.Point(740, 34);
+            this.rb_x2.Location = new System.Drawing.Point(849, 11);
             this.rb_x2.Name = "rb_x2";
             this.rb_x2.Size = new System.Drawing.Size(35, 16);
             this.rb_x2.TabIndex = 18;
@@ -580,7 +580,7 @@
             // rb_x3
             // 
             this.rb_x3.AutoSize = true;
-            this.rb_x3.Location = new System.Drawing.Point(778, 35);
+            this.rb_x3.Location = new System.Drawing.Point(849, 35);
             this.rb_x3.Name = "rb_x3";
             this.rb_x3.Size = new System.Drawing.Size(35, 16);
             this.rb_x3.TabIndex = 18;
@@ -590,7 +590,7 @@
             // rb_x4
             // 
             this.rb_x4.AutoSize = true;
-            this.rb_x4.Location = new System.Drawing.Point(815, 35);
+            this.rb_x4.Location = new System.Drawing.Point(808, 35);
             this.rb_x4.Name = "rb_x4";
             this.rb_x4.Size = new System.Drawing.Size(35, 16);
             this.rb_x4.TabIndex = 18;
@@ -599,7 +599,7 @@
             // 
             // button_clear
             // 
-            this.button_clear.Location = new System.Drawing.Point(775, 8);
+            this.button_clear.Location = new System.Drawing.Point(703, 32);
             this.button_clear.Name = "button_clear";
             this.button_clear.Size = new System.Drawing.Size(75, 23);
             this.button_clear.TabIndex = 15;

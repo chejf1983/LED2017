@@ -81,5 +81,11 @@ LITS_API int LITS_GetSpectralData(int LITSIndex, double *pdSpectumData);
 LITS_API int LITS_GetPixelNumber(int LITSIndex);
 LITS_API int LITS_SetLedInterfaceType(int LITSIndex, BYTE InterfaceType);
 
+/*
+Type,  0x00: 正向电流测试   0x01: 正向电压测试 0x02: 反向电流测试   0x03: 反向电压测试
+SpectralEnable 0x00: 不使能   0x01: 使能
+*/
+
+LITS_API int LITS_SetLedTestPara(int LITSIndex, float fVoltage , float fCurrent, float fDelay, float fTime, int iChannelID, int SpectralEnable, int Type);
 
 

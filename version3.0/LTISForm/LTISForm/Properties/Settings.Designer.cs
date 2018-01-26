@@ -58,5 +58,65 @@ namespace LTISForm.Properties {
                 this["config_path"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public float EclBord_Current {
+            get {
+                return ((float)(this["EclBord_Current"]));
+            }
+            set {
+                this["EclBord_Current"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
+        public float EclBord_Volt {
+            get {
+                return ((float)(this["EclBord_Volt"]));
+            }
+            set {
+                this["EclBord_Volt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public float EclBord_Delay {
+            get {
+                return ((float)(this["EclBord_Delay"]));
+            }
+            set {
+                this["EclBord_Delay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public float EclBord_Time {
+            get {
+                return ((float)(this["EclBord_Time"]));
+            }
+            set {
+                this["EclBord_Time"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int EclBord_IRGB {
+            get {
+                return ((int)(this["EclBord_IRGB"]));
+            }
+            set {
+                this["EclBord_IRGB"] = value;
+            }
+        }
     }
 }

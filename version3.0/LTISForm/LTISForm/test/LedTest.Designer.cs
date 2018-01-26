@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.table_result = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.checkBox_still = new System.Windows.Forms.CheckBox();
             this.checkBox_configvisible = new System.Windows.Forms.CheckBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.listView_config2 = new System.Windows.Forms.ListView();
@@ -48,9 +49,9 @@
             this.button_clear = new System.Windows.Forms.Button();
             this.button_Set = new System.Windows.Forms.Button();
             this.button_cie = new System.Windows.Forms.Button();
+            this.button_dkclear = new System.Windows.Forms.Button();
             this.button_sustaintest = new System.Windows.Forms.Button();
             this.button_onetest = new System.Windows.Forms.Button();
-            this.checkBox_still = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitcontainer)).BeginInit();
             this.splitcontainer.Panel1.SuspendLayout();
             this.splitcontainer.Panel2.SuspendLayout();
@@ -87,6 +88,7 @@
             this.splitcontainer.Panel2.Controls.Add(this.button_clear);
             this.splitcontainer.Panel2.Controls.Add(this.button_Set);
             this.splitcontainer.Panel2.Controls.Add(this.button_cie);
+            this.splitcontainer.Panel2.Controls.Add(this.button_dkclear);
             this.splitcontainer.Panel2.Controls.Add(this.button_sustaintest);
             this.splitcontainer.Panel2.Controls.Add(this.button_onetest);
             this.splitcontainer.Size = new System.Drawing.Size(1053, 598);
@@ -219,10 +221,21 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "统计结果";
             // 
+            // checkBox_still
+            // 
+            this.checkBox_still.AutoSize = true;
+            this.checkBox_still.Location = new System.Drawing.Point(217, 7);
+            this.checkBox_still.Name = "checkBox_still";
+            this.checkBox_still.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_still.TabIndex = 11;
+            this.checkBox_still.Text = "重复测试";
+            this.checkBox_still.UseVisualStyleBackColor = true;
+            this.checkBox_still.CheckedChanged += new System.EventHandler(this.checkBox_still_CheckedChanged);
+            // 
             // checkBox_configvisible
             // 
             this.checkBox_configvisible.AutoSize = true;
-            this.checkBox_configvisible.Location = new System.Drawing.Point(246, 7);
+            this.checkBox_configvisible.Location = new System.Drawing.Point(289, 7);
             this.checkBox_configvisible.Name = "checkBox_configvisible";
             this.checkBox_configvisible.Size = new System.Drawing.Size(72, 16);
             this.checkBox_configvisible.TabIndex = 11;
@@ -255,7 +268,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView_config2.Location = new System.Drawing.Point(3, 238);
             this.listView_config2.Name = "listView_config2";
-            this.listView_config2.Size = new System.Drawing.Size(291, 315);
+            this.listView_config2.Size = new System.Drawing.Size(291, 324);
             this.listView_config2.TabIndex = 0;
             this.listView_config2.UseCompatibleStateImageBehavior = false;
             // 
@@ -272,7 +285,7 @@
             // button_open
             // 
             this.button_open.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_open.Location = new System.Drawing.Point(511, 5);
+            this.button_open.Location = new System.Drawing.Point(557, 5);
             this.button_open.Name = "button_open";
             this.button_open.Size = new System.Drawing.Size(87, 23);
             this.button_open.TabIndex = 9;
@@ -283,9 +296,9 @@
             // button_clear
             // 
             this.button_clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_clear.Location = new System.Drawing.Point(604, 5);
+            this.button_clear.Location = new System.Drawing.Point(645, 5);
             this.button_clear.Name = "button_clear";
-            this.button_clear.Size = new System.Drawing.Size(75, 23);
+            this.button_clear.Size = new System.Drawing.Size(63, 23);
             this.button_clear.TabIndex = 7;
             this.button_clear.Text = "清除数据";
             this.button_clear.UseVisualStyleBackColor = true;
@@ -294,9 +307,9 @@
             // button_Set
             // 
             this.button_Set.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Set.Location = new System.Drawing.Point(685, 5);
+            this.button_Set.Location = new System.Drawing.Point(710, 5);
             this.button_Set.Name = "button_Set";
-            this.button_Set.Size = new System.Drawing.Size(75, 23);
+            this.button_Set.Size = new System.Drawing.Size(65, 23);
             this.button_Set.TabIndex = 7;
             this.button_Set.Text = "设置";
             this.button_Set.UseVisualStyleBackColor = true;
@@ -305,19 +318,29 @@
             // button_cie
             // 
             this.button_cie.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_cie.Location = new System.Drawing.Point(766, 5);
+            this.button_cie.Location = new System.Drawing.Point(777, 5);
             this.button_cie.Name = "button_cie";
-            this.button_cie.Size = new System.Drawing.Size(75, 23);
+            this.button_cie.Size = new System.Drawing.Size(64, 23);
             this.button_cie.TabIndex = 4;
             this.button_cie.Text = "打靶显示";
             this.button_cie.UseVisualStyleBackColor = true;
             this.button_cie.Click += new System.EventHandler(this.button_cie_Click);
             // 
+            // button_dkclear
+            // 
+            this.button_dkclear.Location = new System.Drawing.Point(141, 3);
+            this.button_dkclear.Name = "button_dkclear";
+            this.button_dkclear.Size = new System.Drawing.Size(75, 23);
+            this.button_dkclear.TabIndex = 0;
+            this.button_dkclear.Text = "重校暗电流";
+            this.button_dkclear.UseVisualStyleBackColor = true;
+            this.button_dkclear.Click += new System.EventHandler(this.button_dkclear_Click);
+            // 
             // button_sustaintest
             // 
-            this.button_sustaintest.Location = new System.Drawing.Point(84, 3);
+            this.button_sustaintest.Location = new System.Drawing.Point(73, 3);
             this.button_sustaintest.Name = "button_sustaintest";
-            this.button_sustaintest.Size = new System.Drawing.Size(75, 23);
+            this.button_sustaintest.Size = new System.Drawing.Size(67, 23);
             this.button_sustaintest.TabIndex = 0;
             this.button_sustaintest.Text = "连续测试";
             this.button_sustaintest.UseVisualStyleBackColor = true;
@@ -327,22 +350,11 @@
             // 
             this.button_onetest.Location = new System.Drawing.Point(3, 3);
             this.button_onetest.Name = "button_onetest";
-            this.button_onetest.Size = new System.Drawing.Size(75, 23);
+            this.button_onetest.Size = new System.Drawing.Size(68, 23);
             this.button_onetest.TabIndex = 0;
             this.button_onetest.Text = "单次测试";
             this.button_onetest.UseVisualStyleBackColor = true;
             this.button_onetest.Click += new System.EventHandler(this.button_onetest_Click);
-            // 
-            // checkBox_still
-            // 
-            this.checkBox_still.AutoSize = true;
-            this.checkBox_still.Location = new System.Drawing.Point(168, 7);
-            this.checkBox_still.Name = "checkBox_still";
-            this.checkBox_still.Size = new System.Drawing.Size(72, 16);
-            this.checkBox_still.TabIndex = 11;
-            this.checkBox_still.Text = "重复测试";
-            this.checkBox_still.UseVisualStyleBackColor = true;
-            this.checkBox_still.CheckedChanged += new System.EventHandler(this.checkBox_still_CheckedChanged);
             // 
             // TestResult
             // 
@@ -394,5 +406,6 @@
         private System.Windows.Forms.ListView listView_config2;
         private System.Windows.Forms.ListView listView_testconfig;
         private System.Windows.Forms.CheckBox checkBox_still;
+        private System.Windows.Forms.Button button_dkclear;
     }
 }

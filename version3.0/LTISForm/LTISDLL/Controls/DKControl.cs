@@ -36,7 +36,7 @@ namespace LTISDLL.SYSControl
         /// </summary>
         /// <param name="ftime"></param>
         /// <returns></returns>
-        public bool CheckDKData(float[] ftime, LEDNUM num)
+        public bool CheckDKData(float[] ftime, int num)
         {
             float[] time = new float[(int)num];
 
@@ -139,6 +139,15 @@ namespace LTISDLL.SYSControl
                 //返回暗电流
                 return true;
             }
+        }
+
+        /// <summary>
+        /// 清除暗电流
+        /// </summary>
+        public void ClearALLDK()
+        {
+            //如果需要重新效暗电流，清除所有旧记录
+            LEDPlatForm.Instance.LEDModels.DKStore.ClearAllDkData();
         }
     }
 }

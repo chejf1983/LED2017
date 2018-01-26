@@ -58,8 +58,19 @@ namespace LTISDLL.LEDSYS.LTISDriver
         public float fIr;
     };
 
+    public struct SEleTestPar
+    {
+        public int rgb_index;
+        public int test_mode;   //极性 0 正向电流 1正向电压 2 反向电流 3 反向电压
+        public float fVol;
+        public float fCurrent;
+        public float fdelay;
+        public float ftime;	
+    };
+
     public struct SElectricPar
     {
+        public int   rgb_num;
         public float NeVoltage;  //极性电压
         public float NeCurrent;  //极性电流
         public float NeDelay;    //测量延时
@@ -154,6 +165,16 @@ namespace LTISDLL.LEDSYS.LTISDriver
         /// <returns></returns>
         [DllImport("SpectraArsenalEmission.dll", EntryPoint = "LED_LITS_GetDevInfo")]
         public static extern int LED_LITS_GetDevInfo(byte[] serialnum, ref int pixelnum);
+
+        /// <summary>
+        /// 重置设备模式
+        /// </summary>
+        /// <returns></returns>
+        [DllImport("SpectraArsenalEmission.dll", EntryPoint = "LED_LITS_ResetModel")]
+        public static extern int LED_LITS_ResetModel();
+
+        [DllImport("SpectraArsenalEmission.dll", EntryPoint = "LED_LITS_ResetModel_I")]
+        public static extern int LED_LITS_ResetModel_I(int index);
         #endregion
 
         #region 单光谱仪控制
@@ -319,6 +340,18 @@ namespace LTISDLL.LEDSYS.LTISDriver
             float[] dkdata1, float[] dkdata2, float[] dkdata3, int dklen,
             double[] advalue1, double[] advalue2, double[] advalue3, int advaluelen, 
             ref ElectricData ePara1, ref ElectricData ePara2, ref ElectricData ePara3, int ledmode, int timeout);
+        #endregion
+
+        #region 电参数板子测试
+
+        /// <summary>
+        /// 电参数板子测试
+        /// </summary>
+        /// <param name="epar"></param>
+        /// <param name="ledmode"></param>
+        /// <returns></returns>
+        [DllImport("SpectraArsenalEmission.dll", EntryPoint = "LED_LITS_TestElcBord")]
+        public static extern int LED_LITS_TestElcBord(SEleTestPar epar, ref ElectricData edata);
         #endregion
     }
 }

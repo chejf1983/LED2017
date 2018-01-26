@@ -39,18 +39,22 @@ namespace LTISDLL.Models.DataFilter.condition
                     break;
                 }
 
+                int index = 0;
                 //匹配所有条件，返回一个路标结果
-                for (int index = 0; index < line.Count; index++)
+                for (index = 0; index < line.Count; index++)
                 {
-                    if (line[index].IsInLine(this.GetValue(ledata, i)));
+                    if (line[index].IsInLine(this.GetValue(ledata, i)))
                     {
                         stations.Add(new RoadStation(this.Type, (LEDNUM)(i + 1), index));
                         break;
                     }
                 }
 
-                //如果没有命中，返回全部命中路标（-1）
-                stations.Add(new RoadStation(this.Type, (LEDNUM)(i +1), -1));
+                if (index >= line.Count)
+                {
+                    //如果没有命中，返回全部命中路标（-1）
+                    stations.Add(new RoadStation(this.Type, (LEDNUM)(i + 1), RoadStation.missing_value));
+                }
             }
 
             return stations;
@@ -99,7 +103,7 @@ namespace LTISDLL.Models.DataFilter.condition
 
             CLine line = lines[(int)lednum - 1][index];
             return ConditionTypeHelper.GetTitle(type) + "LED:" + (int)lednum +
-                "(" + line.Min + "->" + line.Max + ")";
+                "(" + line.Min.ToString("0.0000") + "->" + line.Max.ToString("0.0000") + ")";
         }
     }
 

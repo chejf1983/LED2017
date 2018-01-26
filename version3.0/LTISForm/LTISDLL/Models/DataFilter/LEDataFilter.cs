@@ -14,6 +14,10 @@ namespace LTISDLL.LEDSYS.DataFilter
 {
     public class LEDataFilter
     {
+        public LEDataFilter()
+        {
+            InitFilter();
+        }
         private static string defmapname = "last.xml";
         /// <summary>
         /// 默认路径（目前不支持修改位置）
@@ -48,7 +52,13 @@ namespace LTISDLL.LEDSYS.DataFilter
             }
             set
             {
-                this.filtermap = value;
+                this.filtermap = value;    
+                
+                //删除旧配置文件
+                if (File.Exists(DefFile))
+                {
+                    File.Delete(DefFile);
+                }
                 FileStream file = new FileStream(DefFile, FileMode.OpenOrCreate, FileAccess.ReadWrite);
                 SaveMapTo(file, value);
             }
@@ -85,9 +95,22 @@ namespace LTISDLL.LEDSYS.DataFilter
                 return;
             }
 
+            ///检查空bin
+            for (int i = 0; i < ledata.rgb_num; i++)
+            {
+                if (ledata.eledata[i].fVol > LEDPlatForm.Instance.LEDModels.LTISDev.LEDTestPar.EVoltage[i])
+                {
+                    FilterResult ret = new FilterResult();
+                    ret.binnum = 0;
+                    ret.pass = false;
+                    ledata.report = ret;
+                    return;
+                }
+            }
+
             //保存分bin结果
             FilterResult report = this.filtermap.cdb.FilterData(ledata);
-            this.filtermap.FilterData(report);
+            this.filtermap.MatchRoad(report);
             ledata.report = report;
         }
 
@@ -247,6 +270,10 @@ namespace LTISDLL.LEDSYS.DataFilter
 
         public static bool SaveMapTo(Stream file, RoadMap map)
         {
+            if (map == null)
+            {
+                return true;
+            }
             try
             {
                 //初始化一个xml实例

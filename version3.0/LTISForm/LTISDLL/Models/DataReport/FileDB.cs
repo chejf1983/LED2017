@@ -243,10 +243,10 @@ namespace LTISDLL.LEDSYS.DataReport
         /// <returns></returns>
         private string[] ConvertDataToString(LEDData ciedata)
         {
-            string[] ret = new string[(int)ciedata.lednum];
+            string[] ret = new string[(int)ciedata.rgb_num];
 
 
-            for (int i = 0; i < (int)ciedata.lednum; i++)
+            for (int i = 0; i < (int)ciedata.rgb_num; i++)
             {
                 if (i == 0)
                 {

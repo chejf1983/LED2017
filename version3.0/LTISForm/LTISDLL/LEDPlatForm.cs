@@ -34,7 +34,7 @@ namespace LTISDLL
             //this.faultcenter = new FaultCenter();
 
             //初始化log信息
-            LOGSYS.SysLog.Instance.InitSysLog();
+            //LOGSYS.SysLog.Instance.InitSysLog();
 
             //初始化用户信息
             this.userCenter = new User.UserCenter();

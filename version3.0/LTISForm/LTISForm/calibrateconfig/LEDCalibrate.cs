@@ -179,7 +179,7 @@ namespace LTISForm.ledcalibrate
             this.testdata = LTISDLL.LEDPlatForm.Instance.ControlManager.CalControl.GetCalOriginalData(10);
             if (testdata != null)
             {
-                for (int i = 0; i < (int)LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar.LEDTestPar.lednum; i++)
+                for (int i = 0; i < (int)LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar.LEDTestPar.cl_num; i++)
                 {
                     this.tables[i].Rows[0].Cells[0].Value = testdata.fPh[i].ToString();
                     this.tables[i].Rows[0].Cells[1].Value = testdata.fLd[i].ToString();
@@ -208,7 +208,7 @@ namespace LTISForm.ledcalibrate
             }
 
             this.button_cal.Enabled = false;
-            int lednum = (int)LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar.LEDTestPar.lednum;
+            int lednum = (int)LTISDLL.LEDPlatForm.Instance.ControlManager.TestConfig.ConfigPar.LEDTestPar.cl_num;
 
             //读取标准值
             this.stddata = new CalData();

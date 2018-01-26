@@ -48,7 +48,7 @@ namespace LTISDLL.SYSControl
         public bool ChangeTestPar(ConfigData data)
         {
             //检查积分时间
-            for (int i = 0; i < (int)data.LEDTestPar.lednum; i++)
+            for (int i = 0; i < (int)data.LEDTestPar.cl_num; i++)
                 if (data.LEDTestPar.itime[i] > data.LEDTestPar.FTime[i])
                 {
                     LTISDLL.FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, "LED" + (i + 1) + "积分时间超过了正向电压时间！");
@@ -173,6 +173,7 @@ namespace LTISDLL.SYSControl
                 //添加LEDCollectPar
                 ///<Negtive>
                 ///---<LedNum></LedNum>
+                ///---<TMode></TMode>
                 ///---<NeVoltage></NeVoltage>
                 ///---<NeCurrent></NeCurrent>
                 ///---<NeDelay></NeDelay>
@@ -188,6 +189,7 @@ namespace LTISDLL.SYSControl
                 ///---<RCurrent></RCurrent>
                 ///---<RDelay></RDelay>
                 ///---<RTime></RTime>
+                ///---<EVoltage></EVoltage>
                 ///</ListN1>
                 ///<ListN2>
                 ///</ListN2>
@@ -199,7 +201,11 @@ namespace LTISDLL.SYSControl
                 root.AppendChild(NPHead);
                 {
                     XmlElement element = xmldoc.CreateElement("LedNum");
-                    element.InnerText = collect_par.lednum.ToString();
+                    element.InnerText = collect_par.cl_num.ToString();
+                    NPHead.AppendChild(element);
+
+                    element = xmldoc.CreateElement("TMode");
+                    element.InnerText = collect_par.emode.ToString();
                     NPHead.AppendChild(element);
 
                     element = xmldoc.CreateElement("NeVoltage");
@@ -250,6 +256,10 @@ namespace LTISDLL.SYSControl
                         element = xmldoc.CreateElement("RTime");
                         element.InnerText = collect_par.RTime[i].ToString();
                         NList.AppendChild(element);
+                        
+                        element = xmldoc.CreateElement("EVoltage");
+                        element.InnerText = collect_par.EVoltage[i].ToString();
+                        NList.AppendChild(element);
                     }
                 }
 
@@ -268,7 +278,7 @@ namespace LTISDLL.SYSControl
                     element.InnerText = this.leddtype.ToString();
                     Other.AppendChild(element);
                     element = xmldoc.CreateElement("TrigerMode");
-                    element.InnerText = ((int)this.trigger_mode).ToString();
+                    element.InnerText = this.trigger_mode.ToString();
                     Other.AppendChild(element);
                     element = xmldoc.CreateElement("LagTime");
                     element.InnerText = this.TimeLag.ToString();
@@ -329,6 +339,7 @@ namespace LTISDLL.SYSControl
                 ///---<RCurrent></RCurrent>
                 ///---<RDelay></RDelay>
                 ///---<RTime></RTime>
+                ///---<EVoltage></EVoltage>
                 ///</ListN1>
                 ///<ListN2>
                 ///</ListN2>
@@ -338,11 +349,12 @@ namespace LTISDLL.SYSControl
                 //读取Ne参数
                 XmlNode Negtive = rootlist[0];
                 XmlNodeList nodepars = Negtive.ChildNodes;
-                collect_par.lednum = (LEDNUM)Enum.Parse(typeof(LEDNUM), nodepars[0].InnerText);
-                collect_par.NeVoltage = float.Parse(nodepars[1].InnerText);
-                collect_par.NeCurrent = float.Parse(nodepars[2].InnerText);
-                collect_par.NeDelay = float.Parse(nodepars[3].InnerText);
-                collect_par.NeTime = float.Parse(nodepars[4].InnerText);
+                //collect_par.rclnum = int.Parse(nodepars[0].InnerText);
+                collect_par.emode = (LEDMODE)Enum.Parse(typeof(LEDMODE), nodepars[1].InnerText);
+                collect_par.NeVoltage = float.Parse(nodepars[2].InnerText);
+                collect_par.NeCurrent = float.Parse(nodepars[3].InnerText);
+                collect_par.NeDelay = float.Parse(nodepars[4].InnerText);
+                collect_par.NeTime = float.Parse(nodepars[5].InnerText);
 
                 //遍历MAP，读取电参数
                 for (int i = 0; i < 3; i++)
@@ -360,14 +372,16 @@ namespace LTISDLL.SYSControl
                     collect_par.RCurrent[i] = float.Parse(nodepars[6].InnerText);
                     collect_par.RDelay[i] = float.Parse(nodepars[7].InnerText);
                     collect_par.RTime[i] = float.Parse(nodepars[8].InnerText);
+
+                    collect_par.EVoltage[i] = float.Parse(nodepars[9].InnerText);
                 }
                 #endregion
 
                 #region 读取其它配置
                 XmlNode Other = rootlist[4];
                 nodepars = Other.ChildNodes;
-                this.leddtype = (LEDType)int.Parse(nodepars[0].InnerText);
-                this.trigger_mode = (TRIGGER_MODE)int.Parse(nodepars[1].InnerText);
+                this.leddtype = (LEDType)Enum.Parse(typeof(LEDType), nodepars[0].InnerText);
+                this.trigger_mode = (TRIGGER_MODE)Enum.Parse(typeof(TRIGGER_MODE), nodepars[1].InnerText);
                 this.timelag = int.Parse(nodepars[2].InnerText);
                 #endregion
 

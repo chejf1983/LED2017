@@ -122,21 +122,21 @@ namespace LTISDLL.LEDSYS.Data
             this.num = data.num;
             this.report = new FilterResult(data.report);
             this.time = data.time;
-            this.lednum = data.lednum;
+            this.rgb_num = data.rgb_num;
             this.timeconsume = data.timeconsume;
 
-            this.ciedata = new CIEData[(int)lednum];
-            this.eledata = new EleData[(int)lednum];
-            for (int i = 0; i < (int)lednum; i++)
+            this.ciedata = new CIEData[(int)rgb_num];
+            this.eledata = new EleData[(int)rgb_num];
+            for (int i = 0; i < (int)rgb_num; i++)
             {
                 this.ciedata[i] = new CIEData(data.ciedata[i]);
                 this.eledata[i] = new EleData(data.eledata[i]);
             }
         }
 
-        public LEDData(LEDNUM num)
+        public LEDData(int num)
         {
-            this.lednum = num;
+            this.rgb_num = num;
             this.ciedata = new CIEData[(int)num];
             this.eledata = new EleData[(int)num];
             time = DateTime.Now; 
@@ -145,7 +145,7 @@ namespace LTISDLL.LEDSYS.Data
         public FilterResult report;   //分bin报告
         public DateTime time;      //时间
         public double timeconsume;  //消耗时间
-        public LEDNUM lednum;        //led个数
+        public int rgb_num;        //led个数
         public CIEData[] ciedata;  //光数据
         public EleData[] eledata;  //电数据
     }

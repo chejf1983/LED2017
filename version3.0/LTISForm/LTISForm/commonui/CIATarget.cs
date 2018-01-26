@@ -22,6 +22,7 @@ namespace LTISForm.filterconfig
             this.initCIE1931();
         }
 
+        public ChartArea CArea { get { return this.cie1931.ChartAreas[0]; } }
         /// <summary>
         /// 初始化
         /// </summary>
@@ -126,6 +127,20 @@ namespace LTISForm.filterconfig
 
             //绘制CIE曲线，serires[0];
             cie1931.Series.Clear();
+
+            //初始化CIE标准线
+            this.initCieChart();
+
+            //打靶点初始化
+            this.InitPointsArea();
+
+            //打靶分割区显示初始化
+            this.InitTargetArea();
+        }
+
+        #region 初始化CIE标准线
+        private void initCieChart()
+        {
             cie1931.Series.Add(new Series("CIE1931"));
             //绘制CIE曲线
             cie1931.Series[0].ChartType = SeriesChartType.Line;
@@ -139,11 +154,53 @@ namespace LTISForm.filterconfig
                 //cie1931.Series[0].Points[cie1931.Series[0].Points.Count - 1].Label = (380 + i / 100).ToString();
             };
             cie1931.Series[0].Points.AddXY(cieline[0].x, cieline[0].y);
+        }
+        #endregion
 
+        #region 显示数据点
+        private void InitPointsArea()
+        {
             //绘制点图，serires[1];
             cie1931.Series.Add(new Series(""));
             cie1931.Series[1].ChartType = SeriesChartType.Point;
+            cie1931.Series[1].MarkerSize = 2;
+        }
 
+        public void clearCIE()
+        {
+            Series series = this.cie1931.Series[1];
+            series.Points.Clear();
+        }
+
+        public void addCiePointNoLable(float x, float y)
+        {
+            Series series = this.cie1931.Series[1];
+            if (series.Points.Count > LTISDLL.LEDSYS.DataReport.DataSaver.MaxDataListNum)
+            {
+                series.Points.RemoveAt(0);
+            }
+            series.IsValueShownAsLabel = false;
+            series.Points.AddXY(x, y);
+        }
+
+        public void addCiePoint(float x, float y)
+        {
+            Series series = this.cie1931.Series[1];
+            if (series.Points.Count > LTISDLL.LEDSYS.DataReport.DataSaver.MaxDataListNum)
+            {
+                series.Points.RemoveAt(0);
+            }
+            series.IsValueShownAsLabel = true;
+            series.Label = x.ToString("#0.0000") + " , " + y.ToString("#0.0000");
+            series.Points.AddXY(x, y);
+        }
+        #endregion
+        
+        #region 虚拟框显示
+        //虚拟区域series[2]，用来显示虚拟框
+        private BindingList<CArea> preArea;
+        private void InitTargetArea()
+        {
             cie1931.Series.Add(new Series(""));
             cie1931.Series[2].ChartType = SeriesChartType.FastLine;
             cie1931.Series[2].Color = Color.LightPink;
@@ -151,9 +208,6 @@ namespace LTISForm.filterconfig
             cie1931.Series[2].BorderDashStyle = ChartDashStyle.DashDot;
         }
 
-        #region 预先显示
-        //虚拟区域series[2]，用来显示虚拟框
-        private BindingList<CArea> preArea;
         public void SetPreArea(BindingList<CArea> preArea)
         {
             this.preArea = preArea;
@@ -194,7 +248,6 @@ namespace LTISForm.filterconfig
             {
                 HitTestResult result = this.cie1931.HitTest(e.X, e.Y);
                 //this.cie1931.
-                //MessageBox.Show(e.X + ":" + e.Y);
                 x = this.cie1931.ChartAreas[0].AxisX.PixelPositionToValue(e.X);
                 y = this.cie1931.ChartAreas[0].AxisY.PixelPositionToValue(e.Y);
 
@@ -204,9 +257,11 @@ namespace LTISForm.filterconfig
                 }
             }
         }
+
+        
         #endregion
 
-        #region 打靶区域 series[2]开始
+        #region 打靶分割区域
         //打靶区域显示
         private BindingList<CArea> datasource;
         //设置区域框图
@@ -246,37 +301,6 @@ namespace LTISForm.filterconfig
                 //area.Points[4].IsValueShownAsLabel = false;
                 this.cie1931.Series.Add(area);
             }
-        }
-        #endregion
-
-        #region 显示数据点
-        public void clearCIE()
-        {
-            Series series = this.cie1931.Series[1];
-            series.Points.Clear();
-        }
-
-        public void addCiePointNoLable(float x, float y)
-        {
-            Series series = this.cie1931.Series[1];
-            if (series.Points.Count > LTISDLL.LEDSYS.DataReport.DataSaver.MaxDataListNum)
-            {
-                series.Points.RemoveAt(0);
-            }
-            series.IsValueShownAsLabel = false;
-            series.Points.AddXY(x, y);
-        }
-
-        public void addCiePoint(float x, float y)
-        {
-            Series series = this.cie1931.Series[1];
-            if (series.Points.Count > LTISDLL.LEDSYS.DataReport.DataSaver.MaxDataListNum)
-            {
-                series.Points.RemoveAt(0);
-            }
-            series.IsValueShownAsLabel = true;
-            series.Label = x.ToString("#0.0000") + " , " + y.ToString("#0.0000");
-            series.Points.AddXY(x, y);
         }
         #endregion
 

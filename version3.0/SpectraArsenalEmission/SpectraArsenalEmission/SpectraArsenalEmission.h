@@ -53,10 +53,12 @@ public:
 
 typedef struct TestMode {
 	int LedMark;  //   单晶，双晶，三晶
-	int testMode; //   BIT0：光谱测试使能 BIT1：电测试使能
+	int testMode; //   BIT0：光谱测试使能 BIT1：电测试使能 BIT2：电参数测试
 }STestMode;
 
 typedef struct ElectricPar {
+	int lednum;       //RGB通道使能个数
+
 	float NeVoltage;  //极性电压
 	float NeCurrent;  //极性电流
 	float NeDelay;    //测量延时
@@ -74,10 +76,19 @@ typedef struct ElectricPar {
 
 }SElectricPar;
 
+typedef struct EleTestPar {
+	int rgb_index;
+	int test_mode;   //极性 0 正向电流 1正向电压 2 反向电流 3 反向电压
+	float fVol;
+	float fCurrent;	
+	float fdelay;
+	float ftime;	
+}SEleTestPar;
+
 typedef struct ElectricData {
 	float NeType;   //极性 0 正向 1反向
-	float fVol;
-	float fIr;	
+	float fVol;		//V
+	float fIr;	    //mA
 }SElectricData;
 
 typedef struct SpectralPar {
@@ -191,4 +202,12 @@ DLLEXP int WINAPI LED_LITS_Calib(SSpectralPar spar, float dkdata[], int dklen,
 
 //重新校准
 DLLEXP int WINAPI LED_LITS_ReCal(COLOR_PARA &dPara, float fDx, float fDy);
+
+//电参数板子输出测试
+DLLEXP int WINAPI LED_LITS_TestElcBord(EleTestPar spar, ElectricData& ret);
+
+//重置软件模式
+DLLEXP int WINAPI LED_LITS_ResetModel();
+
+DLLEXP int WINAPI LED_LITS_ResetModel_I(int index);
 

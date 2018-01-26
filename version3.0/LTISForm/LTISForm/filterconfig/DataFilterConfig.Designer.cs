@@ -151,8 +151,8 @@
             // 
             // button_Set
             // 
-            this.button_Set.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_Set.Location = new System.Drawing.Point(804, 484);
+            this.button_Set.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Set.Location = new System.Drawing.Point(410, 484);
             this.button_Set.Name = "button_Set";
             this.button_Set.Size = new System.Drawing.Size(75, 23);
             this.button_Set.TabIndex = 2;

@@ -40,8 +40,10 @@ namespace LTISDLL.Models.DataFilter.condition
                     break;
                 }
 
+
+                int index = 0;
                 //匹配所有条件，返回一个路标结果
-                for (int index = 0; index < line.Count; index++)
+                for (index = 0; index < line.Count; index++)
                 {
                     if (line[index].IsInArea(new CPoint(ledata.ciedata[i].fx, ledata.ciedata[i].fy)))
                     {
@@ -50,8 +52,11 @@ namespace LTISDLL.Models.DataFilter.condition
                     }
                 }
 
-                //如果没有命中，返回全部命中路标（-1）
-                stations.Add(new RoadStation(this.Type, (LEDNUM)(i + 1), -1));
+                //如果没有一个条件命中，返回条件匹配失败（-1）
+                if (index >= line.Count)
+                {
+                    stations.Add(new RoadStation(this.Type, (LEDNUM)(i + 1), RoadStation.missing_value));
+                }
             }
 
             return stations;
@@ -72,11 +77,11 @@ namespace LTISDLL.Models.DataFilter.condition
             }
 
             CArea area = lines[(int)lednum - 1][index];
-            return ConditionTypeHelper.GetTitle(type) + "LED:" + (int)lednum + 
-                "(" + area.P1.X + "," + area.P1.Y + ")" +
-                "(" + area.P2.X + "," + area.P2.Y + ")" +
-                "(" + area.P2.X + "," + area.P3.Y + ")" +
-                "(" + area.P4.X + "," + area.P4.Y + ")";
+            return ConditionTypeHelper.GetTitle(type) + "LED:" + (int)lednum +
+                "(" + area.P1.X.ToString("0.0000") + "," + area.P1.Y.ToString("0.0000") + ")" +
+                "(" + area.P2.X.ToString("0.0000") + "," + area.P2.Y.ToString("0.0000") + ")" +
+                "(" + area.P2.X.ToString("0.0000") + "," + area.P3.Y.ToString("0.0000") + ")" +
+                "(" + area.P4.X.ToString("0.0000") + "," + area.P4.Y.ToString("0.0000") + ")";
         }
     }
 

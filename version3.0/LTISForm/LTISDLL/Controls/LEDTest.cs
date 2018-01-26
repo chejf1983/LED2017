@@ -40,7 +40,7 @@ namespace LTISDLL.SYSControl
             //检查暗电流是否已经扣除
             if (!this.ledsystem.DKControl.CheckDKData(
                 this.ledsystem.TestConfig.ConfigPar.LEDTestPar.itime, 
-                this.ledsystem.TestConfig.ConfigPar.LEDTestPar.lednum))
+                this.ledsystem.TestConfig.ConfigPar.LEDTestPar.cl_num))
             {
                 this.ledsystem.State = ControlState.Connect;
                 return false;
@@ -171,7 +171,8 @@ namespace LTISDLL.SYSControl
 
                                 //分bin
                                 LEDPlatForm.Instance.LEDModels.filterPolicy.FilterData(leddata);
-                                
+
+                                Thread.Sleep(1);
                                 if (needsetbin)
                                 //下发bin数据
                                 LEDPlatForm.Instance.LEDModels.LTISDev.SetBin(leddata.report.binnum);
@@ -195,6 +196,9 @@ namespace LTISDLL.SYSControl
                                 sw.Stop();
                             }
                         }
+
+                        //重置软件模式
+                        LEDPlatForm.Instance.LEDModels.LTISDev.Reset();
                         //如果循环结束，重置状态
                         this.ledsystem.State = ControlState.Connect;
                         ///出现异常，停止采集
@@ -224,6 +228,32 @@ namespace LTISDLL.SYSControl
         #endregion
 
         #region 空测试
+        public ADValueList ColllectOriginalData()
+        {
+            lock (this.ledsystem)
+            {
+                if (this.PreparTest())
+                {
+                    try
+                    {
+                        return LEDPlatForm.Instance.LEDModels.LTISDev.GetOriginalThreeLEDData();
+                    }
+                    catch (Exception ex)
+                    {
+                        //采集失败
+                        FaultSystem.FaultCenter.Instance.SendFault(FaultSystem.FaultLevel.ERROR, ex.Message);
+                        return null;
+                    }
+                    finally
+                    {
+                        this.ledsystem.State = ControlState.Connect;
+                    }
+                }
+
+                return null;
+            }
+        }
+
         public LEDData CollectDataOnly()
         {
             lock (this.ledsystem)

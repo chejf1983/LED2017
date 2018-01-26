@@ -23,6 +23,9 @@ namespace LTISDLL.LEDSYS.LTISDriver
         }
 
         #region 连接与断开
+        public static void ResetDev(int index){
+            LEDevDriver.LED_LITS_ResetModel_I(index);
+        }
         /// <summary>
         /// 连接光谱仪
         /// </summary>
@@ -70,10 +73,17 @@ namespace LTISDLL.LEDSYS.LTISDriver
             {
                 if (this.connect)
                 {
+                    LEDevDriver.LED_LITS_ResetModel();
                     LEDevDriver.LED_LITS_CLOSE();
                     this.connect = false;
                 }
             }
+        }
+
+        //重置软件模式
+        public void Reset()
+        {
+            LEDevDriver.LED_LITS_ResetModel();
         }
         #endregion
 
@@ -114,9 +124,9 @@ namespace LTISDLL.LEDSYS.LTISDriver
             serialNum = serialNum.Trim();
 
             //获取电参数
-            int lednum = 0;
+            int mode = 1;
             SElectricPar epar = new SElectricPar();
-            ret = LEDevDriver.LED_LITS_GetElectricPar(ref epar, ref lednum);
+            ret = LEDevDriver.LED_LITS_GetElectricPar(ref epar, ref mode);
             if (LEDevDriver.DLL_SUCCESS != ret)
             {
                 SysLog.Instance.PrintLog("无法获取电参数信息！" + ret);
@@ -124,8 +134,8 @@ namespace LTISDLL.LEDSYS.LTISDriver
             }
             else
             {
-                this.elcpar.lednum = (LEDNUM)lednum;
 
+                this.elcpar.emode = (LEDMODE)mode;
                 this.elcpar.NeVoltage = epar.NeVoltage;
                 this.elcpar.NeCurrent = epar.NeCurrent;
                 this.elcpar.NeDelay = epar.NeDelay;
@@ -361,7 +371,7 @@ namespace LTISDLL.LEDSYS.LTISDriver
         /// </summary>
         public LEDCollectPar LEDTestPar { get { return elcpar; } }
 
-        private int timeout = 200;
+        private int timeout = 2500;
 
         /// <summary>
         /// 设置光电参数
@@ -375,6 +385,7 @@ namespace LTISDLL.LEDSYS.LTISDriver
             //赋值电参数
             SElectricPar elcpar = new SElectricPar();
 
+            elcpar.rgb_num = ntestpar.cl_num;
             elcpar.NeVoltage = ntestpar.NeVoltage;
             elcpar.NeCurrent = ntestpar.NeCurrent;
             elcpar.NeDelay = ntestpar.NeDelay;
@@ -403,7 +414,7 @@ namespace LTISDLL.LEDSYS.LTISDriver
             }
 
             //下发电参数
-            if (LEDevDriver.DLL_SUCCESS != LEDevDriver.LED_LITS_SetElectricPar(elcpar, (int)ntestpar.lednum))
+            if (LEDevDriver.DLL_SUCCESS != LEDevDriver.LED_LITS_SetElectricPar(elcpar, (int)ntestpar.emode))
             {
                 throw new Exception("设置电参数失败！");
             }
@@ -466,13 +477,13 @@ namespace LTISDLL.LEDSYS.LTISDriver
                     throw new Exception("设备未连接");
                 }
 
-                ADValueList ret = new ADValueList(elcpar.lednum, this.pixlenum);
+                ADValueList ret = new ADValueList(elcpar.cl_num, this.pixlenum);
 
                 ElectricData[] edatas = new ElectricData[3];
                 for (int i = 0; i < 3; i++)
                 {
                     //检查暗电流是否扣除
-                    if (!LEDPlatForm.Instance.LEDModels.DKStore.IsDKDataAvailable(LEDTestPar.itime[i]))
+                    if (i < (int)this.LEDTestPar.cl_num && !LEDPlatForm.Instance.LEDModels.DKStore.IsDKDataAvailable(LEDTestPar.itime[i]))
                     {
                         throw new Exception("暗电流没有扣除");
                     }
@@ -489,13 +500,13 @@ namespace LTISDLL.LEDSYS.LTISDriver
                     dkdata1, dkdata2, dkdata3, dkdata1.Length,
                     ret.advalue1, ret.advalue2, ret.advalue3, ret.advalue1.Length,
                     ref edatas[0], ref edatas[1], ref edatas[2],
-                    (int)elcpar.lednum, timeout))
+                    (int)elcpar.cl_num, timeout))
                 {
                     throw new Exception("采集数据失败");
                 }
 
                 //转换数据结构
-                for (int i = 0; i < (int)elcpar.lednum; i++)
+                for (int i = 0; i < (int)elcpar.cl_num; i++)
                 {
                     ret.edatas[i].NeType = edatas[i].NeType;
                     ret.edatas[i].fVol = edatas[i].fVol;
@@ -538,7 +549,7 @@ namespace LTISDLL.LEDSYS.LTISDriver
                 for (int i = 0; i < 3; i++)
                 {
                     //检查暗电流是否扣除
-                    if (i < (int)this.LEDTestPar.lednum && !LEDPlatForm.Instance.LEDModels.DKStore.IsDKDataAvailable(LEDTestPar.itime[i]))
+                    if (i < (int)this.LEDTestPar.cl_num && !LEDPlatForm.Instance.LEDModels.DKStore.IsDKDataAvailable(LEDTestPar.itime[i]))
                     {
                         throw new Exception("暗电流没有扣除");
                     }
@@ -562,15 +573,15 @@ namespace LTISDLL.LEDSYS.LTISDriver
                     dx, dy,
                     ref ciedatas[0], ref ciedatas[1], ref ciedatas[2],
                     ref edatas[0], ref edatas[1], ref edatas[2],
-                    (int)elcpar.lednum, timeout))
+                    (int)elcpar.cl_num, timeout))
                 {
                     throw new Exception("采集数据失败");
                 }
 
 
                 //转换数据
-                LEDData leddata = new LEDData(elcpar.lednum);
-                for (int i = 0; i < (int)elcpar.lednum; i++)
+                LEDData leddata = new LEDData(elcpar.cl_num);
+                for (int i = 0; i < (int)elcpar.cl_num; i++)
                 {
                     leddata.ciedata[i] = ConvertToCieData(ciedatas[i]);
                     /*
@@ -602,7 +613,7 @@ namespace LTISDLL.LEDSYS.LTISDriver
                 if (calmodify != null)
                 {
                     //选取结果和修正系数中，晶数小的值，进行遍历
-                    int clnum = (int)leddata.lednum < (int)calmodify.lednum ? (int)leddata.lednum : (int)calmodify.lednum;
+                    int clnum = (int)leddata.rgb_num < (int)calmodify.lednum ? (int)leddata.rgb_num : (int)calmodify.lednum;
                     //修正结果
                     for (int i = 0; i < clnum; i++)
                     {
@@ -626,6 +637,41 @@ namespace LTISDLL.LEDSYS.LTISDriver
         //光谱仪x,y校准系数
         public float fDx { get { return Properties.Settings.Default.fdx; } set { Properties.Settings.Default.fdx = value; Properties.Settings.Default.Save(); } }
         public float fDy { get { return Properties.Settings.Default.fdy; } set { Properties.Settings.Default.fdy = value; Properties.Settings.Default.Save(); } }
+        #endregion
+
+        #region 电参数测试
+        public EleData GetLecTestData(ElcTestPar elctest_par)
+        {
+            lock (this)
+            {
+                //检查设备连接
+                if (!this.connect)
+                {
+                    throw new Exception("设备未连接");
+                }
+
+                ElectricData ret = new ElectricData();
+                SEleTestPar par = new SEleTestPar();
+                par.rgb_index = elctest_par.rgb_index;
+                par.fCurrent = elctest_par.Current;
+                par.fVol = elctest_par.Volt;
+                par.fdelay = elctest_par.delay;
+                par.ftime = elctest_par.time;
+                par.test_mode = (int)elctest_par.tmode;
+                //采集三晶数据
+                int DLL_RET = LEDevDriver.LED_LITS_TestElcBord(par, ref ret);
+                if (LEDevDriver.DLL_SUCCESS != DLL_RET)
+                {
+                    throw new Exception("采集数据失败:" + DLL_RET);
+                }
+
+                EleData eret = new EleData();
+                eret.fIr = ret.fIr;
+                eret.fVol = ret.fVol;
+                eret.NeType = ret.NeType;
+                return eret;
+            }
+        }
         #endregion
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="gb2312"?>
 <Root Name="copy_right">
-  <device_serialnum>TkFIMDUwMTAxNzEwOTAwMw==</device_serialnum>
-  <deadtime>EiJu+/tBKN6Y2oBVSePiY7XXIGqLt21V3dkYd9d6ZrpHaeVrmjTwZgrzGqw3FacbAlC4WwbecfF6YGV8jY75MSTT3FZoqRzr3noDxvyfIdqOUpPsdbG4BgvQEJzbWcBskanwh3+kYs6g8Lq1auvRF+xJqsWRheH/qZNQTx1lm80=</deadtime>
-  <currenttime>AvrWBuMz78uJ7BlRW8lznCFB6Ab2L23IC1IMrAcgiBKwGPQaXq2SIjAyRz9RqIW/zisi9sf54FTTgmWtWkT0Ey4odCTjHix/5Cs4dPSblWzes0EFR0NeARRCOGrfK620dVM7pdPpfzsKyRG8WcZ1Kyz2DD4ElWYLC1HCsd5IpjI=</currenttime>
-  <isAuthority>EKsY/cSCakgiSvwTbiISGeKq/w+3QidFGr5tmRKgTqnto96UJPkU1xrCmHOTA2muYgShoZ9p3QjBl5YxeyZhzqtLG7ICR26/zOAznVhZTUeUYr8uIzzglWvN0SZC2xi2ECAfAh/3kSgYvl9hQdSJA235qh8YRG7Xm+hf3mY0Whk=</isAuthority>
+  <device_serialnum>TkFIMDUwMTAxNzEwOTAwMQ==</device_serialnum>
+  <deadtime>031F9CD076CCDA9ECD134E203F087B85E38F0DCFA67DDDCA</deadtime>
+  <currenttime>031F9CD076CCDA9EEB9B441DE97FB1F6B8FD4505D82C28DA</currenttime>
+  <isAuthority>DE9241911CAFA18C</isAuthority>
 </Root>

@@ -292,8 +292,8 @@ namespace LTISForm
                 {
                     if (LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.IsDevConnect)
                     {
-                        this.Lable_SystemState.Text = "连接到设备:" + LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DevInfo;
                         CopyRight.Instance.CheckDevName(LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DevInfo);
+                        this.Lable_SystemState.Text = "连接到设备:" + LTISDLL.LEDPlatForm.Instance.ControlManager.ConnectControl.DevInfo;
                         this.Connect.Text = "断开设备";
                         this.MenuItem_reg.Enabled = true;
                     }
@@ -421,6 +421,7 @@ namespace LTISForm
         {
             this.label_time.Text = DateTime.Now.ToString("yyyy-MM-dd, HH:mm:ss");
 
+            
             if (tick++ > 180)
             {
                 tick = 0;

@@ -43,6 +43,7 @@
             this.系统配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem_dataoutput = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItem_OpenLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem_reg = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.button_testresult = new System.Windows.Forms.ToolStripButton();
             this.button_filterconfig = new System.Windows.Forms.ToolStripButton();
@@ -54,7 +55,6 @@
             this.Connect = new System.Windows.Forms.ToolStripMenuItem();
             this.Lable_SystemState = new System.Windows.Forms.ToolStripMenuItem();
             this.label_time = new System.Windows.Forms.Label();
-            this.MenuItem_reg = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.username.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -152,7 +152,7 @@
             // MenuItem_dataoutput
             // 
             this.MenuItem_dataoutput.Name = "MenuItem_dataoutput";
-            this.MenuItem_dataoutput.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem_dataoutput.Size = new System.Drawing.Size(148, 22);
             this.MenuItem_dataoutput.Text = "打开文件目录";
             this.MenuItem_dataoutput.ToolTipText = "打开文件目录";
             this.MenuItem_dataoutput.Click += new System.EventHandler(this.MenuItem_dataoutput_Click);
@@ -160,9 +160,16 @@
             // MenuItem_OpenLog
             // 
             this.MenuItem_OpenLog.Name = "MenuItem_OpenLog";
-            this.MenuItem_OpenLog.Size = new System.Drawing.Size(152, 22);
+            this.MenuItem_OpenLog.Size = new System.Drawing.Size(148, 22);
             this.MenuItem_OpenLog.Text = "打开LOG";
             this.MenuItem_OpenLog.Click += new System.EventHandler(this.MenuItem_OpenLog_Click);
+            // 
+            // MenuItem_reg
+            // 
+            this.MenuItem_reg.Name = "MenuItem_reg";
+            this.MenuItem_reg.Size = new System.Drawing.Size(44, 21);
+            this.MenuItem_reg.Text = "注册";
+            this.MenuItem_reg.Click += new System.EventHandler(this.注册ToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -228,7 +235,7 @@
             this.button_devconfig.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.button_devconfig.Name = "button_devconfig";
             this.button_devconfig.Size = new System.Drawing.Size(80, 80);
-            this.button_devconfig.Text = "设备管理";
+            this.button_devconfig.Text = "设备测试";
             this.button_devconfig.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button_devconfig.ToolTipText = "设备管理";
             this.button_devconfig.Click += new System.EventHandler(this.button_devconfig_Click);
@@ -295,13 +302,6 @@
             this.label_time.Name = "label_time";
             this.label_time.Size = new System.Drawing.Size(0, 12);
             this.label_time.TabIndex = 9;
-            // 
-            // MenuItem_reg
-            // 
-            this.MenuItem_reg.Name = "MenuItem_reg";
-            this.MenuItem_reg.Size = new System.Drawing.Size(44, 21);
-            this.MenuItem_reg.Text = "注册";
-            this.MenuItem_reg.Click += new System.EventHandler(this.注册ToolStripMenuItem_Click);
             // 
             // LEDMainForm
             // 

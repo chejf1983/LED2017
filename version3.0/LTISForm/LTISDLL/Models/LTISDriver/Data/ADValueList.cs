@@ -8,7 +8,7 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
 {
     public class ADValueList
     {
-        public ADValueList(LEDNUM num, int pixlenum)
+        public ADValueList(int num, int pixlenum)
         {
             this.num = num;
 
@@ -23,7 +23,7 @@ namespace LTISDLL.LEDSYS.LTISDriver.Data
             }
         }
 
-        public LEDNUM num;
+        public int num;
         public double[] advalue1;
         public double[] advalue2;
         public double[] advalue3;

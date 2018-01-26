@@ -15,20 +15,25 @@ namespace LTISDLL.Models.DataFilter.filter
         public ConditionDB cdb = new ConditionDB();
 
         //分bin
-        public void FilterData(FilterResult ret)
+        public void MatchRoad(FilterResult ret)
         {
             foreach (BinRoad road in roads)
             {
                 if (road.MatchRoad(ret))
                 {
                     ret.binnum = road.BinNum;//赋值bin号
-                    ret.pass = road.Stations.Count > 1; // 单参数失败的路径只有一个station
+                    ret.pass = true;
+                    ret.result.ForEach(station =>
+                    {
+                        if (station.value == RoadStation.missing_value || 
+                            station.value == RoadStation.empty_value)
+                        {
+                            ret.pass = false;
+                        }
+                    });
+                    return;
                 }
             }
-
-            //默认丢到0号bin
-            ret.binnum = 0;
-            ret.pass = false;
         }
 
         /// <summary>
@@ -51,7 +56,7 @@ namespace LTISDLL.Models.DataFilter.filter
                     if (condition.GetConditionNum((LEDNUM)i) > 0)
                     {
                         //创建一个默认路径
-                        roads.Add(this.CreateZeroRoad(condition.Type, (LEDNUM)i));
+               //         roads.Add(this.CreateZeroRoad(condition.Type, (LEDNUM)i));
                         //创建一个路标组
                         List<RoadStation> tmp = new List<RoadStation>();
                         for (int j = 0; j < condition.GetConditionNum((LEDNUM)i); j++)
@@ -76,13 +81,26 @@ namespace LTISDLL.Models.DataFilter.filter
                 roads.Add(road);
             });
 
+            //添加默认路径组
+            cdb.conditions.ForEach(condition =>
+            {
+                for (int i = (int)LEDNUM.ONE; i <= (int)LEDNUM.THREE; i++)
+                {
+                    if (condition.GetConditionNum((LEDNUM)i) > 0)
+                    {
+                        //创建一个默认路径
+                        roads.Add(this.CreateZeroRoad(condition.Type, (LEDNUM)i));
+                    }
+                }
+            });
+
             //赋值bin号，0留给默认bin
             for (int i = 0; i < roads.Count; i++)
             {
                 roads[i].BinNum = i + 1;
             }
 
-            roads.Insert(0,new BinRoad());
+            roads.Add(new BinRoad());
         }
 
         /// <summary>
@@ -93,7 +111,7 @@ namespace LTISDLL.Models.DataFilter.filter
         private BinRoad CreateZeroRoad(CONDITIONTYPE type, LEDNUM lednum)
         {
             BinRoad road = new BinRoad();
-            road.Stations.Add(new RoadStation(type,lednum, -1));
+            road.Stations.Add(new RoadStation(type, lednum, -1));
             return road;
         }
 

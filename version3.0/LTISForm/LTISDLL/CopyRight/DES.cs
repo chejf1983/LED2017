@@ -16,7 +16,7 @@ namespace LTISDLL.CopyRight
         /// <param name="pToEncrypt">需要加密的字符串</param>  
         /// <param name="sKey">密钥</param>  
         /// <returns></returns>  
-        public static string DesEncrypt(string pToEncrypt, string sKey)  
+        public static string Encryption(string pToEncrypt, string sKey)  
         {  
             StringBuilder ret = new StringBuilder();  
   
@@ -51,7 +51,7 @@ namespace LTISDLL.CopyRight
         /// <param name="pToDecrypt">需要解密的字符串</param>  
         /// <param name="sKey">密钥</param>  
         /// <returns></returns>  
-        public static string DesDecrypt(string pToDecrypt, string sKey)  
+        public static string Decrypt(string pToDecrypt, string sKey)  
         {    
             MemoryStream ms = new MemoryStream();  
   

@@ -5,10 +5,8 @@
       <CTYPE>2</CTYPE>
       <TYPE>VF</TYPE>
       <LEDList>
-        <XNode>0</XNode>
-        <XNode>1</XNode>
-        <XNode>0</XNode>
-        <XNode>1</XNode>
+        <XNode>7</XNode>
+        <XNode>8</XNode>
       </LEDList>
       <LEDList />
       <LEDList />
@@ -79,65 +77,30 @@
     <condition>
       <CTYPE>8</CTYPE>
       <TYPE>CIE</TYPE>
-      <LEDList>
-        <XNode>0.1</XNode>
-        <XNode>0.2</XNode>
-        <XNode>0.2</XNode>
-        <XNode>0.2</XNode>
-        <XNode>0.2</XNode>
-        <XNode>0.1</XNode>
-        <XNode>0.1</XNode>
-        <XNode>0.1</XNode>
-      </LEDList>
+      <LEDList />
       <LEDList />
       <LEDList />
     </condition>
   </conditions>
   <roadmap>
     <road>
-      <BinNum>0</BinNum>
-    </road>
-    <road>
       <BinNum>1</BinNum>
       <station>
         <LEDNUM>ONE</LEDNUM>
         <Type>VF</Type>
-        <value>-1</value>
+        <value>0</value>
       </station>
     </road>
     <road>
       <BinNum>2</BinNum>
       <station>
         <LEDNUM>ONE</LEDNUM>
-        <Type>CIE</Type>
+        <Type>VF</Type>
         <value>-1</value>
       </station>
     </road>
     <road>
-      <BinNum>3</BinNum>
-      <station>
-        <LEDNUM>ONE</LEDNUM>
-        <Type>VF</Type>
-        <value>0</value>
-      </station>
-      <station>
-        <LEDNUM>ONE</LEDNUM>
-        <Type>CIE</Type>
-        <value>0</value>
-      </station>
-    </road>
-    <road>
-      <BinNum>4</BinNum>
-      <station>
-        <LEDNUM>ONE</LEDNUM>
-        <Type>VF</Type>
-        <value>1</value>
-      </station>
-      <station>
-        <LEDNUM>ONE</LEDNUM>
-        <Type>CIE</Type>
-        <value>0</value>
-      </station>
+      <BinNum>0</BinNum>
     </road>
   </roadmap>
 </Root>
